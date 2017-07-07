@@ -1,29 +1,29 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
-import { TypographyStyle } from "react-typography"
-import typography from "./utils/typography"
+import { TypographyStyle } from 'react-typography';
+import typography from './utils/typography';
 
-const BUILD_TIME = new Date().getTime()
+const BUILD_TIME = new Date().getTime();
 
 export default class HTML extends React.Component {
   static propTypes = {
     body: PropTypes.string,
-  }
+  };
 
   render() {
-    const head = Helmet.rewind()
+    const head = Helmet.rewind();
 
-    let css
-    if (process.env.NODE_ENV === "production") {
+    let css;
+    if (process.env.NODE_ENV === 'production') {
       css = (
         <style
           dangerouslySetInnerHTML={{
-            __html: require("!raw!../public/styles.css"),
+            __html: require('!raw!../public/styles.css'),
           }}
         />
-      )
+      );
     }
 
     return (
@@ -47,6 +47,6 @@ export default class HTML extends React.Component {
           {this.props.postBodyComponents}
         </body>
       </html>
-    )
+    );
   }
 }

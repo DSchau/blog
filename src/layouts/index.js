@@ -1,13 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Link from "gatsby-link"
-import Helmet from "react-helmet"
-import { rhythm } from "../utils/typography"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
+import { rhythm } from '../utils/typography';
 
 export default class Template extends React.Component {
   static propTypes = {
     children: PropTypes.func,
-  }
+  };
 
   render() {
     return (
@@ -15,8 +15,8 @@ export default class Template extends React.Component {
         <Helmet
           title="Dustin Schau - Blog"
           meta={[
-            { name: "description", content: "Sample" },
-            { name: "keywords", content: "sample, something" },
+            { name: 'description', content: 'Sample' },
+            { name: 'keywords', content: 'sample, something' },
           ]}
         />
         <div
@@ -36,8 +36,8 @@ export default class Template extends React.Component {
               <Link
                 to="/"
                 style={{
-                  color: "white",
-                  textDecoration: "none",
+                  color: 'white',
+                  textDecoration: 'none',
                 }}
               >
                 Gatsby
@@ -56,6 +56,6 @@ export default class Template extends React.Component {
           {this.props.children()}
         </div>
       </div>
-    )
+    );
   }
 }

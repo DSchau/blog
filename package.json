@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "blog-dschau",
+  "description": "Dustin Schau's personal blog",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Dustin Schau <dustinschau@gmail.com>",
   "dependencies": {
     "gatsby": "^1.0.1",
     "gatsby-link": "^1.0.1",
@@ -13,7 +13,8 @@
     "typography-plugin-code": "^0.15.9"
   },
   "devDependencies": {
-    "gh-pages": "^0.12.0"
+    "gh-pages": "^0.12.0",
+    "prettier": "~1.5.2"
   },
   "keywords": [
     "gatsby"
@@ -23,8 +24,9 @@
   "scripts": {
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-links && gh-pages -d public",
+    "develop": "npm run start",
     "start": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --single-quote --write \"pages/*.js\" \"utils/*.js\" \"wrappers/*.js\" \"html.js\"",
+    "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
