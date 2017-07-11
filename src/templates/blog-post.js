@@ -1,24 +1,39 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import styled from 'styled-components';
 
 import Post from '../components/Post';
+import Tags from '../components/Tags';
+import User from '../components/User';
 
 import 'prismjs/themes/prism-okaidia.css';
 
+const Container = styled.div`
+  max-width: 100%;
+`;
+
 export default function BlogPost({
-  data = {}
+  data = {},
+  location
 }) {
   const { markdownRemark: post } = data;
 
+  const isColophon = location.pathname.match(/colophon/);
+
   return (
-    <div>
+    <Container>
       <Helmet title={`Dustin Schau - ${post.frontmatter.title}`} />
       <Post
+        className="blog-post"  
         html={post.html}
+        date={post.frontmatter.date}
         linkTo={post.frontmatter.link || '/'}
         title={post.frontmatter.title}
-      />
-    </div>
+      >
+        <Tags list={post.frontmatter.tags} />
+        {isColophon && <User />}
+      </Post>  
+    </Container>
   )
 }
 
@@ -36,6 +51,7 @@ export const pageQuery = graphql`
       frontmatter {
         date
         path
+        tags
         title
       }
     }

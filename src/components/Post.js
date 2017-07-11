@@ -3,61 +3,22 @@ import styled, { injectGlobal } from 'styled-components';
 import { rhythm } from '../utils/typography';
 import Link from 'gatsby-link';
 
+import format from 'date-fns/format';
+
 import StyledLink from './Link';
 
+import '../css/posts.css';
+
 injectGlobal`
-  .gatsby-highlight-code-line {
-    background-color: #444;
-    display: block;
-    margin-right: -1em;
-    margin-left: -1em;
-    padding-right: 1em;
-    padding-left: 0.75em;
-    border-left: 0.25em solid #66d9ef;
-  }
-
-  .gatsby-highlight {
-    background-color: #272822;
-    border-radius: 0.3em;
-    margin: .5em 0;
-    padding: 1em;
-    overflow: auto;
-  }
-  
-  /**
-   * Remove the default PrismJS theme background-color, border-radius, margin,
-   * padding and overflow.
-   * 1. Make the element just wide enough to fit its content.
-   * 2. Always fill the visible space in .gatsby-highlight.
-   */
-  .gatsby-highlight pre[class*="language-"] {
-    background-color: transparent;
-    margin: 0;
-    padding: 0;
-    overflow: initial;
-    float: left; /* 1 */
-    min-width: 100%; /* 2 */
-  }
-
-  .wf-active .post h1, .wf-active .post h2, .wf-active .post h3 {
-    font-family: 'Bitter', sans-serif;
-  }
-
-  .post h1, .post h2, .post h3, .post h4 {
-    font-family: Georgia, serif;
-  }
-
-  .post h1 {
+  h1.post-title {
     text-align: center;
     font-weight: 700;
-    padding: ${rhythm(1 / 2)} ${rhythm(1 / 4)};
-    margin: ${rhythm(1 / 2)} auto;
     border-top: 4px solid #ff6138;
     border-bottom: 4px solid #ff6138;
     display: inline-block;
   }
 
-  .post h2 {
+  .post-content h2 {
     color: #333;
     margin: ${rhythm(1 / 4)} 0;
     padding: ${rhythm(1 / 4)} 0;
@@ -65,7 +26,7 @@ injectGlobal`
     font-weight: 400;
   }
 
-  .post h3 {
+  .post-content h3 {
     color: #444;
     margin: ${rhythm(1 / 6)} 0;
     padding: ${rhythm(1 / 6)} 0;
@@ -73,7 +34,7 @@ injectGlobal`
     font-weight: 400;
   }
 
-  .post p {
+  .post-content p {
     margin: 0;
     padding-bottom: ${rhythm(1 / 2)};
     line-height: ${rhythm(1.3)};
@@ -81,11 +42,39 @@ injectGlobal`
   }
 `;
 
+const TopLeftLink = styled(Link)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #002635;
+  color: white;
+  text-decoration: none;
+  width: ${rhythm(1.5)};;
+  height: ${rhythm(1.5)};;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 125ms ease-in-out;
+  &:hover {
+    background-color: #FF6138;
+  }
+`;
+
+const Flipped = styled.span`
+  display: inline-block;
+  transform: scale(-1, 1);
+  margin-right: 0.5rem;
+  position: relative;
+  left: 0.25rem;
+`;
+
 const Post = styled.section`
+  position: relative;
   width: 100%;
   background-color: white;
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, .2);
-  padding: ${rhythm(1)} ${rhythm(1)};
+  padding: ${rhythm(1.25)} ${rhythm(1)};
   background-color: white;
   outline: 1px solid rgba(0, 0, 0, 0.125);
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, .2);
@@ -98,32 +87,71 @@ const Post = styled.section`
   }
   @media only screen and (min-width: 768px) {
     padding: ${rhythm(2)} ${rhythm(2)};
-    padding-top: ${rhythm(1)};
     margin-bottom: ${props => props.preview ? rhythm(2) : 0};
   }
 `;
 
+const PostContents = styled.div`
+  max-width: 100%;
+  padding-bottom: ${rhythm(1 / 2)};
+`;
+
+const PostTitle = styled.h1`
+  margin: ${rhythm(1 / 2)} ${rhythm(1 / 4)};
+  padding: ${rhythm(1 / 2)} ${rhythm(1 / 4)};
+  transition: all 125ms ease-in-out;
+  &:hover {
+    ${props => props.isPost ? '' : 'border-color: #002635;'};
+  }
+`;
+
+const PostDate = styled.h2`
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: ${rhythm(1 / 4)};
+  color: #888;
+  font-size: ${rhythm(1)};
+  font-weight: 400;
+`;
+
+const Divider = styled.hr`
+  border: 0;
+  width: 75%;
+  margin: ${rhythm(1 / 2)} auto;
+  border-bottom: 1px solid #EEE;
+`;
+
 export default function ({
+  children,
+  className,
+  date,
   html: __html,
   linkTo,
   title,
   ...rest
 }) {
-  const isPost = (truthy, falsy) => {
+  const isPost = (truthy, falsy = null) => {
     if (linkTo === '/') {
       return truthy;
     }
     return falsy;
   };
+  const now = new Date();
   return (
-    <Post className="post" {...rest} >
-      <h1>
+    <Post className={[`post`].concat(className || []).join(' ')} {...rest}>
+      {isPost(<TopLeftLink to={linkTo} alt="Back to all posts"><Flipped>&#10140;</Flipped></TopLeftLink>)}
+      <PostTitle className="post-title" isPost={isPost(true)}>
         {
           isPost(title, <Link style={{ color: 'inherit', textDecoration: 'none' }} to={linkTo}>{title}</Link>)
         }
-      </h1>
-      <div dangerouslySetInnerHTML={{ __html }} />
-      <StyledLink href={linkTo}>{isPost('Back', 'Read more')}</StyledLink>
+      </PostTitle>
+      <PostDate>{format(date, `MMM DD${new Date(date).getFullYear() !== now.getFullYear() ? ', YYYY' : ''}`.trim())}</PostDate>
+      <PostContents className="post-content" dangerouslySetInnerHTML={{ __html }} />
+      {children}
+      <Divider />
+      <StyledLink to={linkTo}>{isPost(<span><Flipped>&#10140;</Flipped>All posts</span>, 'Read more')}</StyledLink>
     </Post>
   );
 };

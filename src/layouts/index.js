@@ -28,6 +28,9 @@ export default class Template extends React.Component {
   }
 
   render() {
+    const { children, location } = this.props;
+    const isPost = location.pathname !== '/' && !location.pathname.match(/^\/blog\/?$/);
+
     return (
       <Root>
         <Helmet
@@ -37,9 +40,9 @@ export default class Template extends React.Component {
             { name: 'keywords', content: 'Developer, javascript, programming, designer, angular, react, node, user experience, design, omaha, nebraska' },
           ]}
         />
-        <Header />
-        <Content>
-          {this.props.children()}
+        <Header isPost={isPost} />
+        <Content isPost={isPost}>
+          {children()}
         </Content>
       </Root>
     );

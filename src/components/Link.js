@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { rhythm } from '../utils/typography';
+import Link from 'gatsby-link';
 
-const Link = styled.a`
+export default styled(Link)`
   display: inline-block;
   background-color: white;
   padding: ${rhythm(1 / 3)} ${rhythm(1)};
@@ -19,5 +20,3 @@ const Link = styled.a`
     border-color: #ff6138;
   }
 `;
-
-export default Link;

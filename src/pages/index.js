@@ -3,26 +3,25 @@ import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
 import Preview from '../components/Preview';
+import Tags from '../components/Tags';
 
-const getParams = () => {
-  if (!window || !window.location) {
-    return {};
-  }
-  return window.location.search.replace('?', '')
-      .split('&')
-      .reduce((params, keyValue) => {
-        const [key, value = ''] = keyValue.split('=');
-        if (key && value) {
-          params[key] = value.match(/^\d+$/) ? +value : value;
-        }
-        return params;
-      }, {});
+const getParams = search => {
+  return search.replace('?', '')
+    .split('&')
+    .reduce((params, keyValue) => {
+      const [key, value = ''] = keyValue.split('=');
+      if (key && value) {
+        params[key] = value.match(/^\d+$/) ? +value : value;
+      }
+      return params;
+    }, {});
 };
 
 export default class Index extends React.Component {
   render() {
-    const { data } = this.props;
+    const { data, location } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
+    const { start = 0, end = 10 } = getParams(location.search);
     return (
       <div>
         {
@@ -30,11 +29,13 @@ export default class Index extends React.Component {
             .filter(post => {
               return post.node.frontmatter.title.length > 0;
             })
+            .slice(start, end)
             .map(({ node: post }) => {
               return (
                 <Preview
                   key={post.id}
                   html={post.html}
+                  date={post.frontmatter.date}
                   title={post.frontmatter.title}
                   to={post.frontmatter.path}
                 />
@@ -60,6 +61,7 @@ export const pageQuery = graphql`
           html
           id
           frontmatter {
+            tags
             title
             date
             path

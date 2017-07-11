@@ -3,14 +3,14 @@ import styled from 'styled-components';
 
 const Content = styled.main`
   position: absolute;
-  top: 35vh;
+  top: ${props => props.isPost ? '15vh' : '25vh'};
   right: 0;
   left: 0;
   margin: 0 auto;
   max-width: 960px;
   z-index: 2;
   @media only screen and (min-width: 768px) {
-    top: 40vh;
+    top: ${props => props.isPost ? '25vh' : '40vh'};
   }
 `;
 

@@ -19,12 +19,20 @@ module.exports = {
       options: {
         plugins: [
           'gatsby-remark-copy-linked-files',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 480
+            }
+          },
           'gatsby-remark-prismjs',
           'gatsby-remark-smartypants'
         ]
       }
     },
     `gatsby-plugin-react-helmet`,
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`
   ],
 }

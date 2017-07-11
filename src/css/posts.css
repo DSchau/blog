@@ -1,0 +1,57 @@
+.gatsby-highlight-code-line {
+    background-color: #444;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid #66d9ef;
+  }
+
+.gatsby-highlight {
+  background-color: #272822;
+  border-radius: 0.3em;
+  margin: .5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+/**
+  * Remove the default PrismJS theme background-color, border-radius, margin,
+  * padding and overflow.
+  * 1. Make the element just wide enough to fit its content.
+  * 2. Always fill the visible space in .gatsby-highlight.
+  */
+.gatsby-highlight pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+}
+
+.wf-active .post h1.post-title, .wf-active .post h2, .wf-active .post h3 {
+  font-family: 'Bitter', sans-serif;
+}
+
+.post h1, .post h2, .post h3, .post h4 {
+  font-family: Georgia, serif;
+  letter-spacing: 0.6px;
+  word-spacing: 0px;
+}
+
+.post-content a {
+  color: #FF6138;
+  text-decoration: none;
+  padding: 0.125rem 0.2rem;
+  position: relative;
+  z-index: 2;
+  transition: all 125ms ease-in-out;
+}
+
+.post-content a:hover {
+  background-color: #FF6138;
+  color: white;
+}
+  

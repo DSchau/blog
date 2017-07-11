@@ -10,7 +10,7 @@ import { animateBackground, animateShake } from '../css/animations';
 const Header = styled.header`
   ${animateBackground}
   ${animateShake}
-  height: 35vh;
+  height: ${props => props.isPost ? '15vh' : '25vh'};
   background-color: #ffa81f;
   color: blue;
   position: fixed;
@@ -27,7 +27,7 @@ const Header = styled.header`
   transition: height 250ms ease-in-out;
   user-select: none;
   @media only screen and (min-width: 768px) {
-    height: 45vh;
+    height: ${props => props.isPost ? '30vh' : '45vh'};
   }
 `;
 
