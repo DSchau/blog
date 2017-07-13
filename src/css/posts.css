@@ -35,23 +35,58 @@
   font-family: 'Bitter', sans-serif;
 }
 
-.post h1, .post h2, .post h3, .post h4 {
-  font-family: Georgia, serif;
+.post h1, .post h2, .post h3, .post h4, .post h5 {
+  font-family: 'Georgia', serif;
   letter-spacing: 0.6px;
   word-spacing: 0px;
 }
 
+/*
+ * https://codepen.io/ibrahimjabbari/pen/kgxAa
+ */
 .post-content a {
-  color: #FF6138;
-  text-decoration: none;
-  padding: 0.125rem 0.2rem;
+  display: inline;
+  color: #d85d15;
   position: relative;
-  z-index: 2;
-  transition: all 125ms ease-in-out;
+  text-decoration: none;
+  padding: 2px;
+  transition: all 175ms ease-in-out;
+}
+
+.post-content a:before, .post-content a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #d85d15;
 }
 
 .post-content a:hover {
-  background-color: #FF6138;
-  color: white;
+  background-color: rgba(216, 93, 21, 0.05);
+}
+
+.post-content a:after {
+  bottom: -2px;
+  transition: 200ms ease-out;
+}
+
+.post-content a:before {
+  top: -2px;
+  transform: translateY(24px);
+  opacity: 0; 
+  transition: 200ms ease-out;
+}
+
+.post-content a:hover:before {
+  transform-origin: center top;
+  transform: translateY(0) scaleX(1.025);
+  opacity: 1;
+}
+
+.post-content a:hover:after {
+  transform-origin: center bottom;
+  transform: scaleX(1.025);
 }
   

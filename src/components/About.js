@@ -2,9 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import { rhythm } from '../utils/typography';
 
-import Social from './Social';
+import SocialIcons from './SocialIcons';
 
 import me from '../images/me.jpeg';
+
+const Container = styled.div`
+  display: flex;
+  margin: ${rhythm(1)} auto;
+  margin-bottom: 0;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  @media only screen and (min-width: 768px) {
+    max-width: 75%;
+  }
+`;
 
 const Image = styled.img`
   width: ${rhythm(3)};
@@ -17,17 +29,14 @@ const Image = styled.img`
   }
 `;
 
-const Container = styled.div`
-  display: flex;
-  margin: ${rhythm(1)} auto;
-  margin-bottom: 0;
-`;
-
 const Details = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-left: ${rhythm(1 / 2)};
+  margin: 0 ${rhythm(1 / 2)};
+  @media only screen and (min-width: 768px) {
+    margin: 0 ${rhythm(1)};
+  }
 `;
 
 const Name = styled.h1`
@@ -44,9 +53,7 @@ const Name = styled.h1`
   }
 `;
 
-const Last = styled.span`
-  font-weight: 400;
-`;
+const Last = styled.span`font-weight: 400;`;
 
 const Description = styled.p`
   margin-bottom: 0;
@@ -59,10 +66,15 @@ export default function User() {
     <Container>
       <Image src={me} />
       <Details>
-        <Name>Dustin <Last>Schau</Last></Name>
-        <Description>Front-end development is my passion, and I am incredibly lucky to be able to <strong>love</strong> what I do each and every day.</Description>
+        <Name>
+          Dustin <Last>Schau</Last>
+        </Name>
+        <Description>
+          Front-end development is my passion, and I am incredibly lucky to be
+          able to <strong>love</strong> what I do each and every day.
+        </Description>
       </Details>
-      <Social />
+      <SocialIcons />
     </Container>
   );
 }

@@ -15,9 +15,9 @@ export default function loadWebFonts() {
         sessionStorage.fonts = families.join(' ');
       },
       google: {
-        families
+        families,
       },
-      timeout: 2000
+      timeout: 2000,
     });
   });
 }

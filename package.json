@@ -5,7 +5,6 @@
   "private": true,
   "author": "Dustin Schau <dustinschau@gmail.com>",
   "dependencies": {
-    "date-fns": "~1.28.5",
     "gatsby": "^1.0.1",
     "gatsby-link": "^1.0.1",
     "gatsby-plugin-catch-links": "~1.0.1",
@@ -21,6 +20,7 @@
     "gatsby-transformer-remark": "~1.0.1",
     "gatsby-transformer-sharp": "~1.0.1",
     "particles.js": "dschau/particles.js#f421a5bd31efd572842645884c803c0c09d364fe",
+    "react-icons": "~2.2.5",
     "react-typography": "^0.15.0",
     "styled-components": "~2.1.1",
     "typography": "^0.15.8",

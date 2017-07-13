@@ -3,20 +3,32 @@ import styled from 'styled-components';
 import { rhythm } from '../utils/typography';
 import Link from 'gatsby-link';
 
+import { getColorFromString } from '../utils/color';
+
+const getColors = props => {
+  const color = getColorFromString(props.title);
+  return `
+      color: ${color};
+      border-color: ${color};
+      &:hover {
+        color: white;
+        background-color: ${color};
+      }
+    `;
+};
+
 export default styled(Link)`
   display: inline-block;
   background-color: white;
   padding: ${rhythm(1 / 3)} ${rhythm(1)};
-  color: #002635;
   font-size: ${rhythm(3 / 4)};
+  font-weight: bold;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  border: 2px solid #002635;
+  border-width: 2px;
+  border-style: solid;
   transition: all 125ms ease-in-out;
   font-family: sans-serif;
-  &:hover {
-    color: #ff6138;
-    border-color: #ff6138;
-  }
+  ${props => getColors(props)};
 `;

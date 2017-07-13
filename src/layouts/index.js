@@ -29,15 +29,24 @@ export default class Template extends React.Component {
 
   render() {
     const { children, location } = this.props;
-    const isPost = location.pathname !== '/' && !location.pathname.match(/^\/blog\/?$/);
+    const isPost =
+      location.pathname !== '/' && !location.pathname.match(/^\/blog\/?$/);
 
     return (
       <Root>
         <Helmet
           title="Dustin Schau - Blog"
           meta={[
-            { name: 'description', content: 'The blog of the Omaha, Nebraska based front-end developer, Dustin Schau' },
-            { name: 'keywords', content: 'Developer, javascript, programming, designer, angular, react, node, user experience, design, omaha, nebraska' },
+            {
+              name: 'description',
+              content:
+                'The blog of the Omaha, Nebraska based front-end developer, Dustin Schau',
+            },
+            {
+              name: 'keywords',
+              content:
+                'Developer, javascript, programming, designer, angular, react, node, user experience, design, omaha, nebraska',
+            },
           ]}
         />
         <Header isPost={isPost} />

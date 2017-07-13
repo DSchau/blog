@@ -7,24 +7,21 @@ const ArchiveContainer = styled.div`
   min-height: 100%;
 `;
 
-export default function Archive({
-  data
-}) {
+export default function Archive({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <ArchiveContainer>
       <ul>
-        {
-          posts
-            .map(({ node: post }) => {
-              const { frontmatter } = post;
-              return (
-                <li key={post.id}>
-                  <Link to={frontmatter.path}>{frontmatter.title}</Link>
-                </li>
-              );
-            })
-        }
+        {posts.map(({ node: post }) => {
+          const { frontmatter } = post;
+          return (
+            <li key={post.id}>
+              <Link to={frontmatter.path}>
+                {frontmatter.title}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </ArchiveContainer>
   );
@@ -52,4 +49,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

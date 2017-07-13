@@ -8,9 +8,8 @@ import '../css/particle-styles.css';
 import { animateBackground, animateShake } from '../css/animations';
 
 const Header = styled.header`
-  ${animateBackground}
-  ${animateShake}
-  height: ${props => props.isPost ? '15vh' : '25vh'};
+  ${animateBackground} ${animateShake} height: ${props =>
+      props.isPost ? '15vh' : '25vh'};
   background-color: #ffa81f;
   color: blue;
   position: fixed;
@@ -27,7 +26,7 @@ const Header = styled.header`
   transition: height 250ms ease-in-out;
   user-select: none;
   @media only screen and (min-width: 768px) {
-    height: ${props => props.isPost ? '30vh' : '45vh'};
+    height: ${props => (props.isPost ? '30vh' : '45vh')};
   }
 `;
 
@@ -45,6 +44,9 @@ const Name = styled.h1`
   margin: 0;
   width: auto;
   user-select: text;
+  .wf-active & {
+    font-family: 'Montserrat', sans-serif;
+  }
   @media only screen and (min-width: 375px) {
     font-size: 2.5rem;
   }
@@ -74,11 +76,9 @@ const Last = styled.span`
   white-space: nowrap;
 `;
 
-const NoWrap = styled.span`
-  white-space: nowrap;
-`;
+const NoWrap = styled.span`white-space: nowrap;`;
 
-const StyledLink = styled(Link) `
+const StyledLink = styled(Link)`
   color: inherit;
 `;
 
@@ -87,7 +87,7 @@ class BlogHeader extends Component {
     if (window) {
       require.ensure('particles.js', () => {
         this.Particles = require('particles.js');
-        this.Particles(`blog-header`, particlesConfig)
+        this.Particles(`blog-header`, particlesConfig);
       });
     }
   }
@@ -104,23 +104,23 @@ class BlogHeader extends Component {
         <Name className="name">
           <StyledLink to="/">
             <First>
-              {
-                'Dustin'
-                  .split('')
-                  .map((letter, index) => <Letter key={`${letter}-${index}`}>{letter}</Letter>)
-              }
+              {'Dustin'.split('').map((letter, index) =>
+                <Letter key={`${letter}-${index}`}>
+                  {letter}
+                </Letter>
+              )}
             </First>
             <Last>
-              {
-                'Schau'
-                  .split('')
-                  .map((letter, index) => <Letter key={`${letter}-${index}`}>{letter}</Letter>)
-              }
+              {'Schau'.split('').map((letter, index) =>
+                <Letter key={`${letter}-${index}`}>
+                  {letter}
+                </Letter>
+              )}
             </Last>
           </StyledLink>
         </Name>
       </Header>
-    )
+    );
   }
 }
 

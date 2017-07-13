@@ -4,37 +4,35 @@ import styled from 'styled-components';
 
 import Post from '../components/Post';
 import Tags from '../components/Tags';
-import User from '../components/User';
+import About from '../components/About';
 
 import 'prismjs/themes/prism-okaidia.css';
 
-const Container = styled.div`
-  max-width: 100%;
-`;
+const Container = styled.div`max-width: 100%;`;
 
-export default function BlogPost({
-  data = {},
-  location
-}) {
+export default function BlogPost({ data = {}, location, pathContext }) {
   const { markdownRemark: post } = data;
+  const { next, prev } = pathContext;
 
-  const isColophon = location.pathname.match(/colophon/);
+  const isAbout = location.pathname.match(/about/);
 
   return (
     <Container>
       <Helmet title={`Dustin Schau - ${post.frontmatter.title}`} />
       <Post
-        className="blog-post"  
+        className="blog-post"
         html={post.html}
         date={post.frontmatter.date}
         linkTo={post.frontmatter.link || '/'}
         title={post.frontmatter.title}
+        next={next}
+        prev={prev}
       >
         <Tags list={post.frontmatter.tags} />
-        {isColophon && <User />}
-      </Post>  
+        {isAbout && <About />}
+      </Post>
     </Container>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -49,11 +47,11 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date
+        date(formatString: "MMMM DD, YYYY")
         path
         tags
         title
       }
     }
   }
-`
+`;
