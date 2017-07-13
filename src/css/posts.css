@@ -49,10 +49,14 @@
   word-spacing: 0px;
 }
 
+.post-content ul li {
+  list-style-type: none
+}
+
 /*
  * https://codepen.io/ibrahimjabbari/pen/kgxAa
  */
- .post-content a {
+ .post-content a:not(.anchor) {
   display: inline;
   color: #d85d15;
   position: relative;

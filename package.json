@@ -19,6 +19,7 @@
     "gatsby-source-filesystem": "~1.0.1",
     "gatsby-transformer-remark": "~1.0.1",
     "gatsby-transformer-sharp": "~1.0.1",
+    "gatsby-typegen-remark-expo-autolink": "~1.2.0",
     "particles.js": "dschau/particles.js#f421a5bd31efd572842645884c803c0c09d364fe",
     "react-icons": "~2.2.5",
     "react-typography": "^0.15.0",
