@@ -31,6 +31,14 @@
   min-width: 100%; /* 2 */
 }
 
+/*
+ * This should not be required. Why is it?
+ * TODO: Fix
+ */
+.gatsby-resp-image-wrapper {
+  z-index: 1 !important;
+}
+
 .wf-active .post h1.post-title, .wf-active .post h2, .wf-active .post h3 {
   font-family: 'Bitter', sans-serif;
 }
@@ -44,7 +52,7 @@
 /*
  * https://codepen.io/ibrahimjabbari/pen/kgxAa
  */
-.post-content a {
+ .post-content a {
   display: inline;
   color: #d85d15;
   position: relative;
@@ -88,5 +96,5 @@
 .post-content a:hover:after {
   transform-origin: center bottom;
   transform: scaleX(1.025);
-}
+} 
   

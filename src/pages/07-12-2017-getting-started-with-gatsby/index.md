@@ -7,7 +7,7 @@ tags: ["gatsby", "react", "javascript"]
 
 Gatsby is an incredibly cool static site generator with React as its underlying rendering engine. It uses server-side rendering to scaffold out static HTML pages (with [react-dom-server][react-dom-server]), that can then be enhanced with dynamic client-side JavaScript via React.
 
-Gatsby [recently released][gatsby-release] a v1.0.0 with a bunch of new features, including (but not limited to) the ability to create content queries with GraphQL, integration with various CMSs--including WordPress, Contentful, Drupal, etc., and route based code splitting to keep the end-user experience as snappy as possible. In this post, we're going to create a blog using gatsby and some of these new features. Let's get started!
+Gatsby [recently released][gatsby-release] a v1.0.0 with a bunch of new features, including (but not limited to) the ability to create content queries with GraphQL, integration with various CMSs--including WordPress, Contentful, Drupal, etc., and route based code splitting to keep the end-user experience as snappy as possible. In this post, we're going to create a blog using Gatsby and some of these new features. Let's get started!
 
 ## Getting started
 
@@ -23,7 +23,7 @@ Gatsby ships with a great CLI that also has the functionality to scaffold out a 
 
 `gatsby new personal-blog && cd $_`
 
-This command will create the folder `personal-blog` and then change into that directory. From this point, a working `gatsby` statically generated application can be developed upon. The gatsby CLI includes many common development features such as `gatsby build` (build a production, statically generated version of the project), `gatsby develop` (launch a hot-reload enabled web development server), etc.
+This command will create the folder `personal-blog` and then change into that directory. From this point, a working `gatsby` statically generated application can be developed upon. The Gatsby CLI includes many common development features such as `gatsby build` (build a production, statically generated version of the project), `gatsby develop` (launch a hot-reload enabled web development server), etc.
 
 From this point we can begin the exciting task of actually developing on the site, and creating a functional, modern blog.
 
@@ -33,7 +33,7 @@ gatsby supports a [rich plugin interface][gatsby-plugins], and many incredibly u
 
 ### Functional plugins
 
-Functional plugins either implement some functionality (e.g. offline support, generating a sitemap, etc.) _or_ they extend gatsby functionality and allow for content to be authored in typescript, sass, etc.
+Functional plugins either implement some functionality (e.g. offline support, generating a sitemap, etc.) _or_ they extend Gatsby functionality and allow for content to be authored in typescript, sass, etc.
 
 We'll want to add the following functional plugins:
 
@@ -94,18 +94,18 @@ module.exports = {
 }
 ```
 
-Some explanation will be helpful here! An `options` object can be passed to a plugin, and we're passing the filesystem `path` (i.e. where our markdown files will be located), and then a `name` for the source files. Now that gatsby knows about our source files, we can begin applying some useful transformers to convert those files into usable data!
+Some explanation will be helpful here! An `options` object can be passed to a plugin, and we're passing the filesystem `path` (i.e. where our markdown files will be located), and then a `name` for the source files. Now that Gatsby knows about our source files, we can begin applying some useful transformers to convert those files into usable data!
 
 ### Transformer plugins
 
-As mentioned, a transformer plugin takes some underlying data format that is not inherently usable in its current form (e.g. markdown, json, yaml, etc.), and transforms it into a format that gatsby can understand, and that we can query against with GraphQL.
+As mentioned, a transformer plugin takes some underlying data format that is not inherently usable in its current form (e.g. markdown, json, yaml, etc.), and transforms it into a format that Gatsby can understand, and that we can query against with GraphQL.
 
 Let's get some plugins installed! We'll be using the following plugins:
 
 - [gatsby-transformer-remark][gatsby-transformer-remark]
   - Uses the [remark][remark] markdown parser to transform .md files on disk into HTML; additionally this transformer can optionally take plugins to further extend functionality--e.g. add syntax highlighting with `gatsby-remark-prismjs`, `gatsby-remark-copy-linked-files` to copy relative files specified in markdown, etc.
 - [gatsby-transformer-sharp][gatsby-transformer-sharp]
-  - Uses the [sharp][sharp] image transformation library to apply transforms (e.g. png -> jpg), image compression, etc. Any image loaded with gatsby will use this transformer
+  - Uses the [sharp][sharp] image transformation library to apply transforms (e.g. png -> jpg), image compression, etc. Any image loaded with Gatsby will use this transformer
 
 Let's get these installed, following the same song and dance as previously (install, then add to config):
 
@@ -128,7 +128,7 @@ module.exports = {
 };
 ```
 
-Whew! Seems like a lot of set up, but collectively these plugins are going to give gatsby superpowers, and give us an incredibly powerful (yet relatively simple!) development environment. We have one more set up step (it's an easy one!): we're simply going to create a markdown file that will contain the content of our first blog post. Let's get to it.
+Whew! Seems like a lot of set up, but collectively these plugins are going to give Gatsby superpowers, and give us an incredibly powerful (yet relatively simple!) development environment. We have one more set up step (it's an easy one!): we're simply going to create a markdown file that will contain the content of our first blog post. Let's get to it.
 
 ## Writing our first markdown blog post
 
@@ -336,7 +336,7 @@ export const pageQuery = graphql`
 `;
 ```
 
-OK! So we've followed a similar approach to our blog post template, so this should hopefully seem pretty familiar. Once more we're exporting `pageQuery` which contains a graphql query. Note that we're pulling a slightly different data set, specifically we are pulling an `excerpt` of 250 characters rather than the full HTML, as well as we are formatting the pulled date with a format string! GraphQL is awesome.
+OK! So we've followed a similar approach to our blog post template, so this should hopefully seem pretty familiar. Once more we're exporting `pageQuery` which contains a GraphQL query. Note that we're pulling a slightly different data set, specifically we are pulling an `excerpt` of 250 characters rather than the full HTML, as well as we are formatting the pulled date with a format string! GraphQL is awesome.
 
 The actual React component is fairly trivial, but one important note should be made. It's important that when linking to internal content, i.e. other blog links, that it's always advisable to use `gatsby-link`. This is for a variety of reasons, but one key one is that the `Link` component includes the ability to use a prefix (e.g. if the blog will not be hosted at a root, the paths can be re-written).
 
@@ -348,17 +348,18 @@ OK OK OK, now this is getting exciting and it feels like we're finally getting s
 
 With our new found knowledge of Gatsby and its API, you should feel empowered to build something great. A blog is just the starting point; Gatsby's rich ecosystem, extensible API, and incredibly querying capabilities provide a powerful toolset for building _much_ more than just a simple blog!
 
+![Dream Bigger](./images/dream-bigger.jpeg)
+
 ## Links
 
 - [`@dschau/gatsby-blog-starter-kit`][source-code]
   - A working repo demonstrating all of the aforementioned functionality of Gatsby
-- [Source code for this blog][blog-source-code]
-  - The source code for this blog, which takes the gatsby-starter-blog-post (previous link), and expands upin it with a bunch of features and some more advanced functionality
 - [`@dschau/create-gatsby-blog-post`][create-gatsby-blog-post]
   - A utility and CLI I created to scaffold out a blog post following the predefined Gatsby structure with frontmatter, date, path, etc.
+- [Source code for this blog][blog-source-code]
+  - The source code for this blog, which takes the gatsby-starter-blog-post (previous link), and expands upin it with a bunch of features and some more advanced functionality
 
-*PS: Oh yeah--**This blog** was created with... Gatsby!*
-
+*PS: Oh yeah--**This blog** was built with... Gatsby!*
 
 [react-dom-server]: https://facebook.github.io/react/docs/react-dom-server.html
 [gatsby-release]: https://www.gatsbyjs.org/blog/gatsby-v1/
