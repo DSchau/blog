@@ -22,6 +22,11 @@ export default function Index({ data, location }) {
   return (
     <div>
       {posts
+        .sort((a, b) => {
+          const getDate = post => new Date(post.node.frontmatter.date);
+          return getDate(a) - getDate(b);
+        })
+        .reverse()
         .filter(post => post.node.frontmatter.title.length > 0)
         .slice(start, end)
         .map(({ node: post }) => {
