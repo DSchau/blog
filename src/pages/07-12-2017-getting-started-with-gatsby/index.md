@@ -38,22 +38,19 @@ Functional plugins either implement some functionality (e.g. offline support, ge
 We'll want to add the following functional plugins:
 
 - [`gatsby-plugin-catch-links`][gatsby-plugin-catch-links] (implements the history `pushState` API, and does not require a page reload on navigating to a different page in the blog)
-- [`gatsby-plugin-styled-components`][gatsby-plugin-styled-components] (allows for [styled-components][styled-components] support to generate CSS to be injected into the static HTML)
 - [`gatsby-plugin-react-helmet`][gatsby-plugin-react-helmet] ([react-helmet][react-helmet] is a tool that allows for modification of the `head` tags; this plugin statically renders these changes for each page)
-- [`gatsby-plugin-offline`][gatsby-plugin-offline] (Registers a service worker that caches content offline in browsers that support service workers (pretty much everything except Safari/mobile Safari))
-- [`gatsby-plugin-sharp`][gatsby-plugin-sharp] (exposes the [sharp][sharp] image transform functionality for other plugins, which allows for image optimization/conversion)
 
 with the following command:
 
 ```bash
-yarn add --dev gatsby-plugin-catch-links gatsby-plugin-styled-components gatsby-source-filesystem gatsby-plugin-react-helmet gatsby-plugin-offline gatsby-plugin-sharp
+yarn add --dev gatsby-plugin-catch-links gatsby-plugin-react-helmet
 ```
 
 We're using [yarn][yarn], but npm can just as easily be used with `npm i --save-dev [deps]`.
 
 After installing each of these functional plugins, we'll edit `gatsby-config.js`, which Gatsby loads at build-time to implement the exposed functionality of the specified plugins.
 
-```javascript{6-12}
+```javascript{6-9}
 module.exports = {
   siteMetadata: {
     title: `Your Name - Blog`,
@@ -61,10 +58,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-offline',
-    `gatsby-plugin-sharp`
   ],
 }
 ```
@@ -79,10 +73,12 @@ Since the bulk of the blog's content, and each article, will be authored in mark
 yarn add --dev gatsby-source-filesystem
 ```
 
-```javascript{4-9}
+```javascript{6-11}
 module.exports = {
   // previous configuration
   plugins: [
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -100,30 +96,36 @@ Some explanation will be helpful here! An `options` object can be passed to a pl
 
 As mentioned, a transformer plugin takes some underlying data format that is not inherently usable in its current form (e.g. markdown, json, yaml, etc.), and transforms it into a format that Gatsby can understand, and that we can query against with GraphQL.
 
-Let's get some plugins installed! We'll be using the following plugins:
+We'll only be using one plugin (a markdown transformer), so let's get that installed.
 
 - [gatsby-transformer-remark][gatsby-transformer-remark]
   - Uses the [remark][remark] markdown parser to transform .md files on disk into HTML; additionally this transformer can optionally take plugins to further extend functionality--e.g. add syntax highlighting with `gatsby-remark-prismjs`, `gatsby-remark-copy-linked-files` to copy relative files specified in markdown, etc.
-- [gatsby-transformer-sharp][gatsby-transformer-sharp]
-  - Uses the [sharp][sharp] image transformation library to apply transforms (e.g. png -> jpg), image compression, etc. Any image loaded with Gatsby will use this transformer
 
-Let's get these installed, following the same song and dance as previously (install, then add to config):
+The process should be familiar by now, install and then add to config.
 
 ```bash
-yarn add --dev gatsby-transformer-remark gatsby-transformer-sharp
+yarn add --dev gatsby-transformer-remark
 ```
 
 and editing `gatsby-config.js`
 
-```javascript{3-9}
+```javascript{13-16}
 module.exports = {
   // previous setup
-  plugins: [
+    plugins: [
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
+      },
+    },
     {
       resolve: 'gatsby-transformer-remark',
       options: {} // just in case those previously mentioned remark plugins sound cool :)
     },
-    'gatsby-transformer-sharp'
   ]
 };
 ```
@@ -139,17 +141,17 @@ gatsby is not at all prescriptive of naming, but a typical practice for blog pos
 The content of this markdown file will be our blog post, authored in markdown (of course!). Here's what it'll look like:
 
 ```markdown
-___
+---
 path: "/hello-world.html"
 date: "2017-07-12T17:12:33.962Z"
 title: "My First Gatsby Post"
-___
+---
 
 Oooooh-weeee, my first blog post!
 
 ```
 
-_Fairly_ typical stuff, except for the block surrounded in underscores. What is that? That is what is referred to as [`frontmatter`][frontmatter], and the contents of the block will be used to inject React components with the specified data, e.g. path, date, title, etc. Any piece of data can be injected here (e.g. tags, sub-title, etc.), so feel free to experiment!
+_Fairly_ typical stuff, except for the block surrounded in dashes. What is that? That is what is referred to as [`frontmatter`][frontmatter], and the contents of the block will be used to inject React components with the specified data, e.g. path, date, title, etc. Any piece of data can be injected here (e.g. tags, sub-title, etc.), so feel free to experiment!
 
 Now that we have created a blog post with frontmatter and some content, we can begin actually writing some React components that will display this data! 
 
@@ -223,14 +225,15 @@ At this point, we have a bunch of plugins installed to load files off of disk, t
 
 Gatsby has a standard for its Node API, and that standard is `gatsby-node.js` in the root directory of your project--e.g. at the same level as `gatsby-config.js`. Each export found in this file will be parsed by gatsby, as specified by its [Node API specification][node-spec]. However, we only care about one API in this instance, `createPages`.
 
-```javascript{1,2,4,5,7-22,29-33,37-41}
+```javascript{1,2,4,5,7-22,30-35,39-43}
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
     const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
 
-    return graphql(`{
+    resolve(
+      graphql(`{
         allMarkdownRemark(limit: 1000) {
           edges {
             node {
@@ -245,7 +248,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             }
           }
         }
-      }`)
+      }`
+    )
       .then(result => {
         if (result.errors) {
           reject(result.errors);
@@ -266,7 +270,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               context: {} // additional data can be passed via context
             });
           });
-      });
+      })
   });
 };
 ```
@@ -301,6 +305,12 @@ export default function Index({
   return (
     <div className="blog-posts">
       {posts
+        .sort((a, b) => {
+          const getDate = post => new Date(post.node.frontmatter.date);
+
+          return getDate(a) - getDate(b);
+        })
+        .reverse()
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
           return (
@@ -347,6 +357,8 @@ OK OK OK, now this is getting exciting and it feels like we're finally getting s
 - adding navigation between a specific blog post and past/present blog posts (the `context` API of `createPages` is useful here), etc.
 
 With our new found knowledge of Gatsby and its API, you should feel empowered to build something great. A blog is just the starting point; Gatsby's rich ecosystem, extensible API, and incredibly querying capabilities provide a powerful toolset for building _much_ more than just a simple blog!
+
+Now go build something great.
 
 ![Dream Bigger](./images/dream-bigger.jpeg)
 

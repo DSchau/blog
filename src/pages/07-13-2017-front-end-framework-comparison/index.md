@@ -2,6 +2,7 @@
 path: "/front-end-framework-comparison.html"
 date: "2017-07-13T20:46:01.519Z"
 title: "Front End Framework Comparison"
+tags: ["frameworks", "react", "angular", "vue", "comparison", "matrix"]
 ---
 
 |Category|AngularJS|Angular|React|Vue|Polymer|

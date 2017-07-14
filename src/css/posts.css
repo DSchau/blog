@@ -39,7 +39,7 @@
   z-index: 1 !important;
 }
 
-.wf-active .post h1.post-title, .wf-active .post h2, .wf-active .post h3 {
+.wf-active .post h1, .wf-active .post h2, .wf-active .post h3 {
   font-family: 'Bitter', sans-serif;
 }
 

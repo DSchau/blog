@@ -54,7 +54,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               id
               timeToRead
               frontmatter {
-                date
+                date(formatString: "MMMM DD, YYYY")
                 path
                 tags
                 title

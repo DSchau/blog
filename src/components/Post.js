@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { injectGlobal } from 'styled-components';
 import { rhythm } from '../utils/typography';
 import Link from 'gatsby-link';
-import BackIcon from 'react-icons/lib/fa/chevron-left';
+import MdListIcon from 'react-icons/lib/md/list';
 
 import PostTitle from './PostTitle';
 import Toolbar from './PostToolbar';
@@ -80,6 +80,16 @@ const Divider = styled.hr`
   border-bottom: 1px solid #eee;
 `;
 
+const ListIcon = styled(MdListIcon)`
+  font-size: 32px;
+  margin-right: 0.5rem;
+`;
+
+const AllPostsContainer = styled.span`
+  display: flex;
+  align-items: center;
+`;
+
 export default function({
   children,
   className,
@@ -117,9 +127,9 @@ export default function({
       </PostContents>
       <StyledLink to={linkTo} title={title}>
         {isPost(
-          <span>
-            <BackIcon />All posts
-          </span>,
+          <AllPostsContainer>
+            <ListIcon />All posts
+          </AllPostsContainer>,
           'Read more'
         )}
       </StyledLink>
