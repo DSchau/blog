@@ -67,9 +67,9 @@ Without any additional work besides a `yarn install` and editing a config file, 
 
 ### Source plugins
 
-Source plugins create _nodes_ which can then be transformed into a usable format (if not already usable) by a transformer plugin. For instance, a typical workflow often involves using [`gatsby-source-filesystem`][gatsby-source-filesystem], which loads files off of disk--e.g. markdown files--and then specifying a markdown transformer to transform the markdown into HTML.
+Source plugins create _nodes_ which can then be transformed into a usable format (if not already usable) by a transformer plugin. For instance, a typical workflow often involves using [`gatsby-source-filesystem`][gatsby-source-filesystem], which loads files off of disk--e.g. Markdown files--and then specifying a Markdown transformer to transform the Markdown into HTML.
 
-Since the bulk of the blog's content, and each article, will be authored in markdown, let's add that [`gatsby-source-filesystem`][gatsby-source-filesystem] plugin. Similarly to our previous step, we'll install the plugin and then inject into our `gatsby-config.js`, like so:
+Since the bulk of the blog's content, and each article, will be authored in Markdown, let's add that [`gatsby-source-filesystem`][gatsby-source-filesystem] plugin. Similarly to our previous step, we'll install the plugin and then inject into our `gatsby-config.js`, like so:
 
 ```bash
 yarn add gatsby-source-filesystem
@@ -92,16 +92,16 @@ module.exports = {
 }
 ```
 
-Some explanation will be helpful here! An `options` object can be passed to a plugin, and we're passing the filesystem `path` (i.e. where our markdown files will be located), and then a `name` for the source files. Now that Gatsby knows about our source files, we can begin applying some useful transformers to convert those files into usable data!
+Some explanation will be helpful here! An `options` object can be passed to a plugin, and we're passing the filesystem `path` (i.e. where our Markdown files will be located), and then a `name` for the source files. Now that Gatsby knows about our source files, we can begin applying some useful transformers to convert those files into usable data!
 
 ### Transformer plugins
 
-As mentioned, a transformer plugin takes some underlying data format that is not inherently usable in its current form (e.g. markdown, json, yaml, etc.), and transforms it into a format that Gatsby can understand, and that we can query against with GraphQL. Jointly, the filesystem source plugin will load file nodes (as markdown) off of our filesystem, and then the markdown transformer will take over and convert to usable HTML.
+As mentioned, a transformer plugin takes some underlying data format that is not inherently usable in its current form (e.g. Markdown, json, yaml, etc.), and transforms it into a format that Gatsby can understand, and that we can query against with GraphQL. Jointly, the filesystem source plugin will load file nodes (as Markdown) off of our filesystem, and then the Markdown transformer will take over and convert to usable HTML.
 
-We'll only be using one transformer plugin (for markdown), so let's get that installed.
+We'll only be using one transformer plugin (for Markdown), so let's get that installed.
 
 - [gatsby-transformer-remark][gatsby-transformer-remark]
-  - Uses the [remark][remark] markdown parser to transform .md files on disk into HTML; additionally this transformer can optionally take plugins to further extend functionality--e.g. add syntax highlighting with `gatsby-remark-prismjs`, `gatsby-remark-copy-linked-files` to copy relative files specified in markdown, `gatsby-remark-images` to compress images and add responsive images with `srcset`, etc.
+  - Uses the [remark][remark] Markdown parser to transform .md files on disk into HTML; additionally this transformer can optionally take plugins to further extend functionality--e.g. add syntax highlighting with `gatsby-remark-prismjs`, `gatsby-remark-copy-linked-files` to copy relative files specified in markdown, `gatsby-remark-images` to compress images and add responsive images with `srcset`, etc.
 
 The process should be familiar by now, install and then add to config.
 
@@ -134,15 +134,15 @@ module.exports = {
 };
 ```
 
-Whew! Seems like a lot of set up, but collectively these plugins are going to super charge Gatsby, and give us an incredibly powerful (yet relatively simple!) development environment. We have one more set up step and it's an easy one. We're simply going to create a markdown file that will contain the content of our first blog post. Let's get to it.
+Whew! Seems like a lot of set up, but collectively these plugins are going to super charge Gatsby, and give us an incredibly powerful (yet relatively simple!) development environment. We have one more set up step and it's an easy one. We're simply going to create a Markdown file that will contain the content of our first blog post. Let's get to it.
 
-## Writing our first markdown blog post
+## Writing our first Markdown blog post
 
 The `gatsby-source-filesystem` plugin we configured earlier expects our content to be in `src/pages`, so that's exactly where we'll put it!
 
-gatsby is not at all prescriptive in naming conventions, but a typical practice for blog posts is to name the folder something like `MM-DD-YYYY-title`, e.g. `07-12-2017-hello-world`. Let's do just that, and create the folder `src/pages/07-12-2017-getting-started`, and place an `index.md` inside!
+Gatsby is not at all prescriptive in naming conventions, but a typical practice for blog posts is to name the folder something like `MM-DD-YYYY-title`, e.g. `07-12-2017-hello-world`. Let's do just that, and create the folder `src/pages/07-12-2017-getting-started`, and place an `index.md` inside!
 
-The content of this markdown file will be our blog post, authored in markdown (of course!). Here's what it'll look like:
+The content of this Markdown file will be our blog post, authored in Markdown (of course!). Here's what it'll look like:
 
 ```markdown
 ---
@@ -219,11 +219,11 @@ If you're not familar with GraphQL, this may seem slightly confusing, but we can
 
 The underlying query name `BlogPostByPath` (note: these query names need to be unique!) will be injected with the current path, e.g. the specific blog post we are viewing. This path will be available as `$path` in our query. For instance, if we were viewing our previously created blog post, the path of the file that data will be pulled from will be `/hello-world.html`.
 
-`markdownRemark` is the main data pull, and each item we pull from the underlying data store will be available to our React component as `data.markdownRemark.someValue`, e.g. `data.markdownRemark.html` will be the injected HTML content transformed from the original markdown source.
+`markdownRemark` is the main data pull, and each item we pull from the underlying data store will be available to our React component as `data.markdownRemark.someValue`, e.g. `data.markdownRemark.html` will be the injected HTML content transformed from the original Markdown source.
 
-`frontmatter`, is of course our data structure we provided at the beginning of our markdown file. Each key we define there will be available to be injected into the query.
+`frontmatter`, is of course our data structure we provided at the beginning of our Markdown file. Each key we define there will be available to be injected into the query.
 
-At this point, we have a bunch of plugins installed to load files off of disk, transform markdown to HTML, and other utilities. We have a single, lonely markdown file that will be rendered as a blog post. Finally, we have a React template for blog posts, as well as a wired up GraphQL query to query for a blog post and inject the React template with the queried data. Next up: programatically creating the necessary static pages (and injecting the templates) with Gatsby's Node API. Let's get down to it.
+At this point, we have a bunch of plugins installed to load files off of disk, transform Markdown to HTML, and other utilities. We have a single, lonely Markdown file that will be rendered as a blog post. Finally, we have a React template for blog posts, as well as a wired up GraphQL query to query for a blog post and inject the React template with the queried data. Next up: programatically creating the necessary static pages (and injecting the templates) with Gatsby's Node API. Let's get down to it.
 
 An important note to make at this point is that the GraphQL query takes place at **build** time. The component is injected with the `data` prop that is seeded by the GraphQL query. Unless anything dynamic (e.g. logic in `componentDidMount`, state changes, etc.) occurs, this component will be pure, rendered HTML generated via the React rendering engine, GraphQL, and Gatsby!
 
@@ -241,7 +241,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 }
 ```
 
-Nothing super complex yet! We're using the `createPages` API (which Gatsby will call at build time with injected parameters). We're also grabbing the _path_ to our blogPostTemplate we created earlier. Finally, we're using the `createPage` action creator/function made available in boundActionCreators. Gatsby uses Redux internally to manage its state, and `boundActionCreators` are simply the exposed action creators of Gatsby, of which `createPage` is one of the action creators! For the full list of exposed action creators, check out [Gatby's documentation][gatsby-bound-action-creators]. We can now construct the GraphQL query, which will fetch all of our Markdown posts.
+Nothing super complex yet! We're using the `createPages` API (which Gatsby will call at build time with injected parameters). We're also grabbing the _path_ to our blogPostTemplate we created earlier. Finally, we're using the `createPage` action creator/function made available in boundActionCreators. Gatsby uses Redux internally to manage its state, and `boundActionCreators` are simply the exposed action creators of Gatsby, of which `createPage` is one of the action creators! For the full list of exposed action creators, check out [Gatsby's documentation][gatsby-bound-action-creators]. We can now construct the GraphQL query, which will fetch all of our Markdown posts.
 
 ### Querying for posts
 
@@ -277,7 +277,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 }
 ```
 
-We're using GraphQL to get all markdown nodes and making them available under the `allMarkdownRemark` GraphQL property. Each exposed property (on `node`) is made available for querying against. We're effectively seeding a GraphQL "database" that we can then query against via page-level GraphQL queries. One note here is that the `exports.createPages` API expects a Promise to be returned, so it works seamlessly with the `graphql` function, which returns a Promise (althougn note a callback API is also available if that's more your thing).
+We're using GraphQL to get all Markdown nodes and making them available under the `allMarkdownRemark` GraphQL property. Each exposed property (on `node`) is made available for querying against. We're effectively seeding a GraphQL "database" that we can then query against via page-level GraphQL queries. One note here is that the `exports.createPages` API expects a Promise to be returned, so it works seamlessly with the `graphql` function, which returns a Promise (althougn note a callback API is also available if that's more your thing).
 
 One cool note here is that the `gatsby-plugin-remark` plugin exposes some useful data for us to query with GraphQL, e.g. `excerpt` (a short snippet to display as a preview), `id` (a unique identifier for each post), etc.
 
@@ -437,7 +437,7 @@ Now go build something great.
 - [`@dschau/create-gatsby-blog-post`][create-gatsby-blog-post]
   - A utility and CLI I created to scaffold out a blog post following the predefined Gatsby structure with frontmatter, date, path, etc.
 - [Source code for this blog][blog-source-code]
-  - The source code for this blog, which takes the gatsby-starter-blog-post (previous link), and expands upin it with a bunch of features and some more advanced functionality
+  - The source code for this blog, which takes the gatsby-starter-blog-post (previous link), and expands upon it with a bunch of features and some more advanced functionality
 
 *PS: Oh yeah--**This blog** was built with... Gatsby!*
 
