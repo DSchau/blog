@@ -8,11 +8,12 @@ import { getColorFromString } from '../utils/color';
 const getColors = props => {
   const color = getColorFromString(props.title);
   return `
-      color: ${color};
+      background-color: ${color};
+      color: white;
       border-color: ${color};
       &:hover {
-        color: white;
-        background-color: ${color};
+        color: ${color};
+        background-color: white;
       }
     `;
 };

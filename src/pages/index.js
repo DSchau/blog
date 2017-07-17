@@ -33,7 +33,7 @@ export default function Index({ data, location }) {
           return (
             <div key={post.id}>
               <Preview
-                excerpt={post.excerpt}
+                excerpt={post.frontmatter.description || post.excerpt}
                 date={post.frontmatter.date}
                 title={post.frontmatter.title}
                 to={post.frontmatter.path}
@@ -59,10 +59,10 @@ export const pageQuery = graphql`
           excerpt(pruneLength: 250)
           id
           frontmatter {
-            tags
-            title
             date(formatString: "MMMM DD, YYYY")
             path
+            tags
+            title
           }
         }
       }

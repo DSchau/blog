@@ -8,6 +8,7 @@ import { rhythm } from '../utils/typography';
 import loadWebFonts from '../services/web-fonts';
 
 import Content from '../components/Content';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 import '../css/base.css';
@@ -50,7 +51,7 @@ export default class Template extends React.Component {
           ]}
         />
         <Header isPost={isPost} />
-        <Content isPost={isPost}>
+        <Content isPost={isPost} Footer={Footer} >
           {children()}
         </Content>
       </Root>

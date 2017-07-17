@@ -7,7 +7,7 @@ const getHashCode = str => {
 };
 
 const getHSL = (number, saturation, lightness) => {
-  var shortened = number % 360;
+  var shortened = Math.abs(number % 360);
   return `hsl(${shortened}, ${saturation}%, ${lightness}%)`;
 };
 

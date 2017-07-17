@@ -7,20 +7,21 @@ import SocialButton from './SocialButton';
 
 const SocialContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${props => props.flexDirection ? props.flexDirection : 'column'};
   align-items: center;
   justify-content: space-between;
+  width: ${props => props.width || 'auto'};
   .button {
     margin: ${rhythm(1 / 3)} 0;
   }
 `;
 
-export default function Social() {
+export default function Social(props) {
   return (
-    <SocialContainer>
-      <SocialButton className="button" type="git" />
-      <SocialButton className="button" type="twitter" />
-      <SocialButton className="button" type="facebook" />
+    <SocialContainer {...props}>
+      <SocialButton className="button" type="git" {...props} />
+      <SocialButton className="button" type="twitter" {...props} />
+      <SocialButton className="button" type="facebook" {...props} />
     </SocialContainer>
   );
 }

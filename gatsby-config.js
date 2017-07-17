@@ -22,7 +22,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 600
+              linkImagesToOriginal: false
             }
           },
           'gatsby-remark-prismjs',
@@ -31,7 +31,7 @@ module.exports = {
         ]
       }
     },
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`

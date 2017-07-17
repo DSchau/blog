@@ -14,10 +14,11 @@ const Content = styled.main`
   }
 `;
 
-export default function MainContent({ children, ...rest }) {
+export default function MainContent({ children, Footer, ...rest }) {
   return (
     <Content {...rest}>
       {children}
+      {Footer && <Footer />}
     </Content>
   );
 }

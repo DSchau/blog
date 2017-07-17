@@ -5,7 +5,7 @@
   "private": true,
   "author": "Dustin Schau <dustinschau@gmail.com>",
   "dependencies": {
-    "gatsby": "^1.0.1",
+    "gatsby": "~1.2.0",
     "gatsby-link": "^1.0.1",
     "gatsby-plugin-catch-links": "~1.0.1",
     "gatsby-plugin-offline": "~1.0.1",
@@ -14,7 +14,7 @@
     "gatsby-plugin-styled-components": "~1.0.1",
     "gatsby-remark-autolink-headers": "~1.0.1",
     "gatsby-remark-copy-linked-files": "~1.0.1",
-    "gatsby-remark-images": "~1.0.1",
+    "gatsby-remark-images": "~1.2.0",
     "gatsby-remark-prismjs": "~1.0.1",
     "gatsby-remark-smartypants": "~1.0.1",
     "gatsby-source-filesystem": "~1.0.1",
@@ -30,7 +30,9 @@
     "webfontloader": "~1.6.28"
   },
   "devDependencies": {
+    "del-cli": "~1.1.0",
     "gh-pages": "^0.12.0",
+    "jest": "~20.0.4",
     "prettier": "~1.5.2"
   },
   "keywords": [
@@ -41,14 +43,17 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "prebuild": "npm run clean",
     "build": "gatsby build --prefix-paths",
-    "predeploy": "npm run build",
+    "clean": "del-cli \"public/**/*\" \".cache/**/*\"",
+    "predeploy": "gatsby build --prefix-paths",
     "deploy": "deploy-to-ftp-server",
     "develop": "npm run start",
     "preserve": "gatsby build",
     "serve": "gatsby serve",
-    "start": "gatsby develop",
+    "start": "gatsby develop --open",
     "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest -- --watch"
   }
 }

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getColorFromString matches snapshot 1`] = `
+Array [
+  Array [
+    "hello world",
+    "hsl(332, 90%, 20%)",
+  ],
+  Array [
+    "about",
+    "hsl(29, 90%, 20%)",
+  ],
+  Array [
+    "front end frameworks",
+    "hsl(231, 90%, 20%)",
+  ],
+  Array [
+    "getting started",
+    "hsl(227, 90%, 20%)",
+  ],
+  Array [
+    "hola",
+    "hsl(60, 90%, 20%)",
+  ],
+]
+`;
