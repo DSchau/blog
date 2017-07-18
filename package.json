@@ -43,10 +43,9 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "prebuild": "npm run clean",
     "build": "gatsby build --prefix-paths",
     "clean": "del-cli \"public/**/*\" \".cache/**/*\"",
-    "predeploy": "gatsby build --prefix-paths",
+    "predeploy": "npm run clean && gatsby build --prefix-paths",
     "deploy": "deploy-to-ftp-server",
     "develop": "npm run start",
     "preserve": "gatsby build",

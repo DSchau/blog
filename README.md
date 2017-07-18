@@ -2,6 +2,8 @@
 
 The source code for the [Gatsby][gatsby] driven staticly generated blog
 
+![blog](./assets/blog.png)
+
 ## Tech stack
 
 1. [gatsby][gatsby]
@@ -20,3 +22,4 @@ The source code for the [Gatsby][gatsby] driven staticly generated blog
 [particles.js]: https://github.com/VincentGarreau/particles.js/
 [markdown]: https://en.wikipedia.org/wiki/Markdown
 [remark]: http://remark.js.org/
+[jest]: https://facebook.github.io/jest/
