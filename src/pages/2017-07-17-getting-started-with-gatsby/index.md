@@ -444,13 +444,13 @@ Now go build something great.
   - The source code for my blog, which takes the gatsby-starter-blog-post (previous link), and expands upon it with a bunch of features and some more advanced functionality
 
 [react-dom-server]: https://facebook.github.io/react/docs/react-dom-server.html
-[gatsby-release]: /blog/gatsby-v1/
+[gatsby-release]: https://gatsbyjs.org/blog/gatsby-v1/
 
-[gatsby-plugins]: /docs/plugins/
+[gatsby-plugins]: https://gatsbyjs.org/docs/plugins/
 
-[gatsby-plugin-catch-links]: /packages/gatsby-plugin-catch-links/
-[gatsby-plugin-react-helmet]: /packages/gatsby-plugin-react-helmet/
-[gatsby-plugin-preact]: /packages/gatsby-plugin-preact/
+[gatsby-plugin-catch-links]: https://gatsbyjs.org/packages/gatsby-plugin-catch-links/
+[gatsby-plugin-react-helmet]: https://gatsbyjs.org/packages/gatsby-plugin-react-helmet/
+[gatsby-plugin-preact]: https://gatsbyjs.org/packages/gatsby-plugin-preact/
 
 [gatsby-transformer-remark]: /packages/gatsby-transformer-remark/
 [remark]: https://github.com/wooorm/remark
@@ -462,7 +462,7 @@ Now go build something great.
 [frontmatter]: https://jekyllrb.com/docs/frontmatter/
 
 [learn-graphql]: https://www.howtographql.com
-[node-spec]: /docs/node-apis/
+[node-spec]: https://gatsbyjs.org/docs/node-apis/
 [gatsby-bound-action-creators]: /docs/bound-action-creators/
 
 [styled-components]: https://github.com/styled-components/styled-components
