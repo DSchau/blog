@@ -28,7 +28,7 @@
   padding: 0;
   overflow: initial;
   float: left; /* 1 */
-  min-width: 100%; /* 2 */
+  min-max-width: 100%; /* 2 */
 }
 
 /*
@@ -96,5 +96,9 @@
 .post-content a:hover:after {
   transform-origin: center bottom;
   transform: scaleX(1.025);
-} 
-  
+}
+
+.post-content video.responsive {
+  max-width: 100%;
+  max-height: 100%;
+}

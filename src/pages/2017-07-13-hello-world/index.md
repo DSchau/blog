@@ -6,7 +6,7 @@ tags: ["intro", "about"]
 ---
 
 <div>
-<video controls="controls" autoplay="true" loop="true">
+<video class="responsive" autoplay="true" loop="true">
   <source type="video/mp4" src="https://media.giphy.com/media/QQkyLVLAbQRKU/giphy.mp4"></source>
   <p>Your browser does not support the video element.</p>
 </video>
