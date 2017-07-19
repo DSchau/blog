@@ -34,4 +34,4 @@ Now that we have that out of the way, I hope you enjoy your time here! Please al
 
 [opi]: https://objectpartners.com/
 [union-pacific]: https://up.com
-[website]: https://dustinschau.com
+[website]: https://www.dustinschau.com
