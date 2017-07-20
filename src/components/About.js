@@ -61,7 +61,7 @@ const Description = styled.p`
   font-family: 'Bitter', sans-serif;
 `;
 
-export default function User() {
+export default function About() {
   return (
     <Container>
       <Image src={me} />
