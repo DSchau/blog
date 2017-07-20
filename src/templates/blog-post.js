@@ -6,9 +6,18 @@ import Post from '../components/Post';
 import Tags from '../components/Tags';
 import About from '../components/About';
 
+import { fadeInBottom } from '../css/animations';
+
 import 'prismjs/themes/prism-okaidia.css';
 
-const Container = styled.div`max-width: 100%;`;
+const Container = styled.div`
+  ${fadeInBottom};
+  max-width: 100%;
+  transform: translateY(16px) scale(.99);
+  transform-origin: 50% 0;
+  opacity: 0;
+  animation: fade-in-bottom 0.3s cubic-bezier(.39, .575, .565, 1) both;
+`;
 
 export default function BlogPost({ data = {}, location, pathContext }) {
   const { markdownRemark: post } = data;

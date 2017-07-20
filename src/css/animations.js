@@ -34,3 +34,12 @@ export const animateShake = `
     }
   }
 `.trim();
+
+export const fadeInBottom = `
+  @keyframes fade-in-bottom {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+`;

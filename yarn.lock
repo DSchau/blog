@@ -295,7 +295,7 @@ async@^1.3.0, async@^1.4.0, async@^1.5.0:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
-async@^2.1.2, async@^2.1.4, async@^2.4.1:
+async@^2.1.2, async@^2.1.4:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/async/-/async-2.5.0.tgz#843190fd6b7357a0b9e1c956edddd5ec8462b54d"
   dependencies:
@@ -962,7 +962,7 @@ babel-polyfill@^6.23.0:
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
 
-babel-preset-env@^1.5.2:
+babel-preset-env@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.6.0.tgz#2de1c782a780a0a5d605d199c957596da43c44e4"
   dependencies:
@@ -1649,7 +1649,7 @@ cheerio@^0.22.0:
     lodash.reject "^4.4.0"
     lodash.some "^4.4.0"
 
-cheerio@^1.0.0-rc.1:
+cheerio@^1.0.0-rc.2:
   version "1.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/cheerio/-/cheerio-1.0.0-rc.2.tgz#4b9f53a81b27e4d5dac31c0ffd0cfa03cc6830db"
   dependencies:
@@ -3350,34 +3350,34 @@ function-bind@^1.0.2:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.0.tgz#16176714c801798e4e8f2cf7f7529467bb4a5771"
 
-gatsby-link@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.0.1.tgz#018ba8b1028a34c7ede2d804a3bf7228aa5af91f"
+gatsby-link@/Users/dschau1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.3.0.tgz#51e41b2257d4c00d7e2f96484fd1c06adcc5c0fb"
   dependencies:
     prop-types "^15.5.8"
     ric "^1.3.0"
 
-gatsby-plugin-catch-links@~1.0.1:
+gatsby-plugin-catch-links@/Users/dschau1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-1.0.1.tgz#6d02e3018d167ed9f5b14b73ea80f5687e496aa6"
 
-gatsby-plugin-offline@~1.0.1:
+gatsby-plugin-offline@/Users/dschau1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-1.0.1.tgz#1ac610a6bf17cdefb6e8a0789db5c4601712aba8"
   dependencies:
     sw-precache "^5.0.0"
 
-gatsby-plugin-react-helmet@^1.0.1:
+gatsby-plugin-react-helmet@/Users/dschau1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-1.0.1.tgz#98d60ed796f9115dc08daba89ac6a622c94e1897"
   dependencies:
     react-helmet "^5.1.3"
 
-gatsby-plugin-sharp@~1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.0.1.tgz#b961f9783815557edf67d862c82eaddfe35337e9"
+gatsby-plugin-sharp@/Users/dschau1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.3.0.tgz#c20421bdc80346ced11a79dd7b1bb4ae6c878019"
   dependencies:
-    async "^2.4.1"
+    async "^2.1.2"
     bluebird "^3.5.0"
     image-size "^0.5.1"
     imagemin "^5.2.2"
@@ -3386,13 +3386,13 @@ gatsby-plugin-sharp@~1.0.1:
     progress "^1.1.8"
     sharp "^0.17.3"
 
-gatsby-plugin-styled-components@~1.0.1:
+gatsby-plugin-styled-components@/Users/dschau1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-1.0.1.tgz#aea2358b6b2ca99cb2a85b4908b882bd87c9e029"
   dependencies:
     styled-components "^2.0.0"
 
-gatsby-remark-autolink-headers@~1.0.1:
+gatsby-remark-autolink-headers@/Users/dschau1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-remark-autolink-headers/-/gatsby-remark-autolink-headers-1.0.1.tgz#aea46508de40786f1a09b18e9f4f64c23195c1d9"
   dependencies:
@@ -3400,35 +3400,36 @@ gatsby-remark-autolink-headers@~1.0.1:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-copy-linked-files@~1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.0.1.tgz#f833e10d6a5018be37f6c6c06f3466c5d4ea5f46"
+gatsby-remark-copy-linked-files@/Users/dschau1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-1.3.0.tgz#62e64ae481041ed793ea53cd16d352d2d052d15f"
   dependencies:
-    cheerio "^1.0.0-rc.1"
+    cheerio "^1.0.0-rc.2"
     fs-extra "^3.0.1"
     is-relative-url "^2.0.0"
     lodash "^4.17.4"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-images@~1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.2.0.tgz#04be416487fc58e97e9d8c5c1422d302ae5e04e7"
+gatsby-remark-images@/Users/dschau1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-1.3.1.tgz#ece4d392d1baf05a868c6d25ed61c31f5c90e0da"
   dependencies:
-    cheerio "^1.0.0-rc.1"
+    cheerio "^1.0.0-rc.2"
     image-size "^0.5.1"
     is-relative-url "^2.0.0"
     lodash "^4.17.4"
+    slash "^1.0.0"
     unist-util-select "^1.5.0"
 
-gatsby-remark-prismjs@~1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-1.0.1.tgz#13fd96e825ac2c7366ad14da2c94ce40eba1be28"
+gatsby-remark-prismjs@/Users/dschau1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-1.2.0.tgz#5171d0b08e0869de03060f1139ad7acf079e768a"
   dependencies:
     parse-numeric-range "^0.0.2"
     prismjs "^1.6.0"
     unist-util-visit "^1.1.1"
 
-gatsby-remark-smartypants@~1.0.1:
+gatsby-remark-smartypants@/Users/dschau1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-remark-smartypants/-/gatsby-remark-smartypants-1.0.1.tgz#3676593a8f25265d877a4b3248ac624b24d8c78e"
   dependencies:
@@ -3436,7 +3437,7 @@ gatsby-remark-smartypants@~1.0.1:
     retext-smartypants "^2.0.0"
     unist-util-visit "^1.1.1"
 
-gatsby-source-filesystem@~1.0.1:
+gatsby-source-filesystem@/Users/dschau1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-1.0.1.tgz#d7229fbbbdc895ef669a3101d6199df90c31e5e7"
   dependencies:
@@ -3446,9 +3447,9 @@ gatsby-source-filesystem@~1.0.1:
     pretty-bytes "^4.0.2"
     slash "^1.0.0"
 
-gatsby-transformer-remark@~1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.0.1.tgz#2a6d535040ff29906fe964d32b5868277412d3fd"
+gatsby-transformer-remark@/Users/dschau1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.1.0.tgz#c7954abcd8485fe66481a8ab3ec5fec1006721bc"
   dependencies:
     bluebird "^3.5.0"
     gray-matter "^2.1.0"
@@ -3461,22 +3462,22 @@ gatsby-transformer-remark@~1.0.1:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby-transformer-sharp@~1.0.1:
+gatsby-transformer-sharp@/Users/dschau1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-1.0.1.tgz#52493b9f68c3d2c8ebb0fa892cfd17b0168b37db"
   dependencies:
     bluebird "^3.5.0"
 
-gatsby@~1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.2.0.tgz#55a15500f7de9f792c30c82f2b93ff89517b610a"
+gatsby@/Users/dschau1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.3.0.tgz#ee8c8846b5cf9cbc0807c374fe73dc9ed20c1c2a"
   dependencies:
     async "^2.1.2"
     babel-core "^6.24.1"
     babel-loader "^6.0.0"
     babel-plugin-add-module-exports "^0.2.1"
     babel-plugin-transform-object-assign "^6.8.0"
-    babel-preset-env "^1.5.2"
+    babel-preset-env "^1.6.0"
     babel-preset-es2015 "^6.24.1"
     babel-preset-react "^6.24.1"
     babel-preset-stage-0 "^6.24.1"
@@ -7076,10 +7077,6 @@ pretty-format@^20.0.3:
     ansi-regex "^2.1.1"
     ansi-styles "^3.0.0"
 
-prism-themes@~1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/prism-themes/-/prism-themes-1.0.0.tgz#58089547ed39df273e5195e1628c69177341bf88"
-
 prismjs@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.6.0.tgz#118d95fb7a66dba2272e343b345f5236659db365"
@@ -7332,7 +7329,7 @@ react-router-dom@^4.1.1:
     prop-types "^15.5.4"
     react-router "^4.1.1"
 
-react-router-scroll@ytase/react-router-scroll#build:
+"react-router-scroll@github:ytase/react-router-scroll#build":
   version "0.4.1"
   resolved "https://codeload.github.com/ytase/react-router-scroll/tar.gz/991ecddb08885e1fb80ec1e9dbf3a35844b7d4cd"
   dependencies:
