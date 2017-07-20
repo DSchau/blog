@@ -48,7 +48,10 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
 
   return graphql(`{
-    allMarkdownRemark(limit: 1000) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 1000
+    ) {
       edges {
         node {
           excerpt(pruneLength: 250)
@@ -70,12 +73,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         return reject(result.errors)
       }
 
-      const posts = result.data.allMarkdownRemark.edges
-        .sort((postA, postB) => {
-          const getDate = date => new Date(date);
-
-          return getDate(postA.node.frontmatter.date) - getDate(postB.node.frontmatter.date);
-        });
+      const posts = result.data.allMarkdownRemark.edges;
 
       createTagPages(createPage, posts);
 
@@ -90,6 +88,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           }
         });
       });
+
+      return posts;
     });
 };
 
