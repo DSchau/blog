@@ -13,7 +13,7 @@ const Content = styled.main`
   right: 0;
   left: 0;
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 840px;
   z-index: 2;
   @media only screen and (min-width: 768px) {
     top: ${props => (props.isPost ? '25vh' : '40vh')};
