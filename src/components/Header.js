@@ -88,7 +88,7 @@ class BlogHeader extends Component {
       require.ensure('particles.js', () => {
         this.Particles = require('particles.js');
         this.Particles(`blog-header`, particlesConfig);
-      });
+      }, 'particles.js');
     }
   }
 

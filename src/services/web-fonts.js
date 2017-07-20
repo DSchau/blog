@@ -19,5 +19,5 @@ export default function loadWebFonts() {
       },
       timeout: 2000,
     });
-  });
+  }, 'webfontloader');
 }
