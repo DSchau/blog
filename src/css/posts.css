@@ -27,8 +27,8 @@
   margin: 0;
   padding: 0;
   overflow: initial;
-  float: left; /* 1 */
-  min-max-width: 100%; /* 2 */
+  float: left;
+  min-width: 100%;
 }
 
 /*
@@ -39,8 +39,8 @@
   z-index: 1 !important;
 }
 
-.wf-active .post h1, .wf-active .post h2, .wf-active .post h3 {
-  font-family: 'Bitter', sans-serif;
+.wf-active .post h1 {
+  font-family: 'Bitter', 'Georgia', serif;
 }
 
 .post h1, .post h2, .post h3, .post h4, .post h5 {

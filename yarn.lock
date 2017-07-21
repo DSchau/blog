@@ -3361,9 +3361,15 @@ gatsby-plugin-catch-links@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-1.0.1.tgz#6d02e3018d167ed9f5b14b73ea80f5687e496aa6"
 
-gatsby-plugin-google-analytics@/Users/dschau1.0.1:
+gatsby-plugin-google-analytics@~.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.1.tgz#849b452b6fad7da5c63230b0944e9eb2f3d3959d"
+
+gatsby-plugin-manifest@/Users/dschau1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-1.0.1.tgz#caeca2c1fac4160032680cfbe7d9e4b1266f9813"
+  dependencies:
+    bluebird "^3.5.0"
 
 gatsby-plugin-offline@~1.0.1:
   version "1.0.1"

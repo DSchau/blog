@@ -25,9 +25,69 @@ export default function BlogPost({ data = {}, location, pathContext }) {
 
   const isAbout = location.pathname.match(/about/);
 
+  const description = post.frontmatter.excerpt ? post.frontmatter.excerpt : post.excerpt;
+  const image = post.frontmatter.image.childImageSharp.resize.src;
+  const author = data.site.siteMetadata.author;
+
   return (
     <Container>
-      <Helmet title={`Dustin Schau - ${post.frontmatter.title}`} />
+      <Helmet
+        title={`Dustin Schau - ${post.frontmatter.title}`}
+        meta={[
+          {
+            name: `description`,
+            content: description,
+          },
+          {
+            name: `og:description`,
+            content: description,
+          },
+          {
+            name: `twitter:description`,
+            content: description,
+          },
+          {
+            name: `og:title`,
+            content: post.frontmatter.title,
+          },
+          {
+            name: `og:image`,
+            content: image,
+          },
+          {
+            name: `twitter:image`,
+            content: image,
+          },
+          {
+            name: `og:type`,
+            content: `article`,
+          },
+          {
+            name: `article:author`,
+            content: author,
+          },
+          {
+            name: `twitter:creator`,
+            content: `schaudustin`,
+          },
+          {
+            name: `author`,
+            content: author,
+          },
+          {
+            name: `twitter:label1`,
+            content: `Reading time`,
+          },
+          {
+            name: `twitter:data1`,
+            content: `${post.timeToRead} min read`,
+          },
+          {
+            name: `article:published_time`,
+            content: post.frontmatter.rawDate,
+          }
+        ]}
+      />
       <Post
         className="blog-post"
         html={post.html}
@@ -55,11 +115,22 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       id
       html
+      excerpt(pruneLength: 160)
+      timeToRead
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
+        rawDate: date
+        excerpt
         path
         tags
         title
+        image {
+          childImageSharp {
+            resize(width: 1500, height: 1500) {
+              src
+            }
+          }
+        }
       }
     }
   }

@@ -3,9 +3,11 @@ title: Creating a Blog with Gatsby
 path: "/getting-started-with-gatsby"
 date: "2017-07-17T17:12:33.962Z"
 tags: ["gatsby", "react", "javascript"]
+image: "preview.png"
+excerpt: "Gatsby is an incredible static site generator that lets you build a static site that still has all the benefits expected from a modern web application…"
 ---
 
-*This blog post was originally published at https://objectpartners.com/2017/07/19/creating-a-static-blog-with-gatsby/*
+*This blog post was originally published at [Object Partners, Inc.](https://objectpartners.com/2017/07/19/creating-a-static-blog-with-gatsby/), and has since been cross-posted at the [official gatsby blog](https://www.gatsbyjs.org/blog/2017-07-19-creating-a-blog-with-gatsby/)*
 
 Gatsby is an incredible static site generator that allows for React to be used as the underlying rendering engine to scaffold out a static site that truly has all the benefits expected in a modern web application. It does this by rendering dynamic React components into static HTML content via [server side rendering][react-dom-server] at build time. This means that your users get all the benefits of a static site such as the ability to work without JavaScript, search engine friendliness, speedy load times, etc. without losing the dynamism and interactivity that is expected of the modern web. Once rendered to static HTML, client-site React/JavaScript _can_ take over (if creating stateful components or logic in `componentDidMount`) and add dynamism to the statically generated content.
 
