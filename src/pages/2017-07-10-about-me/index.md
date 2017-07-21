@@ -1,19 +1,21 @@
 ---
-path: "/about"
-date: "2017-07-10T23:36:56.503Z"
-title: "About this Site"
-tags: ["tech stack", "colophon", "about"]
-image: "ui-and-code.png"
+path: /about
+date: '2017-07-10T23:36:56.503Z'
+title: About this Site
+tags:
+  - tech stack
+  - colophon
+  - about
+image: ui-and-code.png
 ---
-
 Welcome to the second version of my blog, powered by [gatsby][gatsby], an incredible static site generator.
 
 Inspired by [Daring Fireball][df], some detail will be provided for the technologies, applications, and techniques that power this site.
 
 ## Mac apps
 
-- [VSCode][vscode]
-- [Hyper][hyper]
+-   [VSCode][vscode]
+-   [Hyper][hyper]
 
 ## Backend software
 
@@ -25,12 +27,12 @@ The content is partially server-side rendered via [gatsby][gatsby], which uses r
 
 The following gatsby plugins are each used as the backbone for much of the functionality present in this blog:
 
-- [gatsby-plugin-styled-components][gatsby-plugin-styled-components]
-- [gatsby-source-filesystem][gatsby-source-filesystem]
-- [gatsby-transformer-remark][gatsby-transformer-remark]
-- [gatsby-remark-copy-linked-files][gatsby-remark-copy-linked-files]
-- [gatsby-remark-smartypants][gatsby-remark-smartypants]
-- [gatsby-plugin-react-helmet][gatsby-plugin-react-helmet]
+-   [gatsby-plugin-styled-components][gatsby-plugin-styled-components]
+-   [gatsby-source-filesystem][gatsby-source-filesystem]
+-   [gatsby-transformer-remark][gatsby-transformer-remark]
+-   [gatsby-remark-copy-linked-files][gatsby-remark-copy-linked-files]
+-   [gatsby-remark-smartypants][gatsby-remark-smartypants]
+-   [gatsby-plugin-react-helmet][gatsby-plugin-react-helmet]
 
 ## Web technologies
 
@@ -68,27 +70,41 @@ export default function loadWebFonts() {
     });
   });
 }
+
 ```
 
 [gatsby]: https://github.com/gatsbyjs/gatsby
+
 [df]: https://daringfireball.net/colophon/
 
 [vscode]: https://code.visualstudio.com/
+
 [hyper]: https://hyper.is/
 
 [media-temple]: https://mediatemple.net
+
 [remark]: https://www.npmjs.com/package/remark
 
 [gatsby-plugin-catch-links]: https://www.npmjs.com/package/gatsby-plugin-catch-links
+
 [gatsby-plugin-styled-components]: https://www.npmjs.com/package/gatsby-plugin-styled-components
+
 [gatsby-source-filesystem]: https://www.npmjs.com/package/gatsby-source-filesystem
+
 [gatsby-transformer-remark]: https://www.npmjs.com/package/gatsby-transformer-remark
+
 [gatsby-remark-copy-linked-files]: https://www.npmjs.com/package/gatsby-remark-copy-linked-files
+
 [gatsby-remark-prismjs]: https://www.npmjs.com/package/gatsby-remark-prismjs
+
 [gatsby-remark-smartypants]: https://www.npmjs.com/package/gatsby-remark-smartypants
+
 [gatsby-plugin-react-helmet]: https://www.npmjs.com/package/gatsby-plugin-react-helmet
+
 [gatsby-plugin-offline]: https://www.npmjs.com/package/gatsby-plugin-offline
 
 [styled-components]: https://www.styled-components.com/
+
 [google-fonts]: https://fonts.google.com/
+
 [webfontloader]: https://github.com/typekit/webfontloader
