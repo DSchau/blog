@@ -1,6 +1,6 @@
 # blog (1.0.0)
 
-The source code for the [Gatsby][gatsby] driven staticly generated blog
+The source code for the [Gatsby][gatsby] driven statically generated blog
 
 ![blog](./assets/blog.png)
 
