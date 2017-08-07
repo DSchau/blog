@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 
-import { getColorFromString } from '../utils/color';
+import { getColorFromString, getGradientFromString } from '../utils/color';
 import { rhythm } from '../utils/typography';
 
 const toStyle = props => {
@@ -10,7 +10,7 @@ const toStyle = props => {
     return `
       cursor: pointer;
       &:hover {
-        background-color: ${getColorFromString(props.title, 30, 100)};
+        background: ${getColorFromString(props.title, 30, 100)};
       }
     `;
   }
@@ -22,7 +22,7 @@ const TitleContainer = styled.div`
   width: 100%;
   justify-content: center;
   z-index: 1;
-  background-color: ${props => getColorFromString(props.title)};
+  background: ${props => getColorFromString(props.title)};
   color: white;
   position: relative;
   padding-top: ${rhythm(1)};

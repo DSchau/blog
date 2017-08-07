@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 
+import NavigationButton from './NavigationButton';
+
 import particlesConfig from '../json/particles-config.json';
 
 import '../css/particle-styles.css';
@@ -17,6 +19,7 @@ const Header = styled.header`
   right: 0;
   left: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(#ffa81f, #d85d15);
@@ -82,14 +85,27 @@ const StyledLink = styled(Link)`
   color: inherit;
 `;
 
+const BackContainer = styled.div`
+  position: fixed;
+  z-index: 2;
+  top: 4px;
+  left: 0;
+`;
+
 class BlogHeader extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showBackButton: document.referrer.match('dustinschau')
+    };
+  }
+
   componentDidMount() {
-    if (window) {
-      require.ensure('particles.js', () => {
-        this.Particles = require('particles.js');
-        this.Particles(`blog-header`, particlesConfig);
-      }, 'particles.js');
-    }
+    require.ensure('particles.js', () => {
+      this.Particles = require('particles.js');
+      this.Particles(`blog-header`, particlesConfig);
+    }, 'particles.js');
   }
 
   componentWillUnmount() {
@@ -99,8 +115,15 @@ class BlogHeader extends Component {
   }
 
   render() {
+    const { showBackButton } = this.state;
     return (
       <Header id="blog-header" {...this.props}>
+        {
+          showBackButton &&
+          <BackContainer>
+            <NavigationButton to="https://www.dustinschau.com" prev>Back to Home</NavigationButton>
+          </BackContainer>
+        }
         <Name className="name">
           <StyledLink to="/">
             <First>

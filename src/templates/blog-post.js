@@ -26,67 +26,71 @@ export default function BlogPost({ data = {}, location, pathContext }) {
   const isAbout = location.pathname.match(/about/);
 
   const description = post.frontmatter.excerpt ? post.frontmatter.excerpt : post.excerpt;
-  const image = post.frontmatter.image.childImageSharp.resize.src;
+  const image = post.frontmatter.image ?post.frontmatter.image.childImageSharp.resize.src : null;
   const author = data.site.siteMetadata.author;
+
+  const meta = [
+    {
+      name: `description`,
+      content: description,
+    },
+    {
+      name: `og:description`,
+      content: description,
+    },
+    {
+      name: `twitter:description`,
+      content: description,
+    },
+    {
+      name: `og:title`,
+      content: post.frontmatter.title,
+    },
+    {
+      name: `og:type`,
+      content: `article`,
+    },
+    {
+      name: `article:author`,
+      content: author,
+    },
+    {
+      name: `twitter:creator`,
+      content: `schaudustin`,
+    },
+    {
+      name: `author`,
+      content: author,
+    },
+    {
+      name: `twitter:label1`,
+      content: `Reading time`,
+    },
+    {
+      name: `twitter:data1`,
+      content: `${post.timeToRead} min read`,
+    },
+    {
+      name: `article:published_time`,
+      content: post.frontmatter.rawDate,
+    }
+  ]
+    .concat(image ? [
+      {
+        name: `og:image`,
+        content: image,
+      },
+      {
+        name: `twitter:image`,
+        content: image,
+      }
+    ] : []);
 
   return (
     <Container>
       <Helmet
         title={`Dustin Schau - ${post.frontmatter.title}`}
-        meta={[
-          {
-            name: `description`,
-            content: description,
-          },
-          {
-            name: `og:description`,
-            content: description,
-          },
-          {
-            name: `twitter:description`,
-            content: description,
-          },
-          {
-            name: `og:title`,
-            content: post.frontmatter.title,
-          },
-          {
-            name: `og:image`,
-            content: image,
-          },
-          {
-            name: `twitter:image`,
-            content: image,
-          },
-          {
-            name: `og:type`,
-            content: `article`,
-          },
-          {
-            name: `article:author`,
-            content: author,
-          },
-          {
-            name: `twitter:creator`,
-            content: `schaudustin`,
-          },
-          {
-            name: `author`,
-            content: author,
-          },
-          {
-            name: `twitter:label1`,
-            content: `Reading time`,
-          },
-          {
-            name: `twitter:data1`,
-            content: `${post.timeToRead} min read`,
-          },
-          {
-            name: `article:published_time`,
-            content: post.frontmatter.rawDate,
-          }
-        ]}
+        meta={meta}
       />
       <Post
         className="blog-post"

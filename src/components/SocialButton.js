@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import GithubIcon from 'react-icons/lib/fa/github';
 import FacebookIcon from 'react-icons/lib/fa/facebook-square';
+import HomeIcon from 'react-icons/lib/fa/home';
 import TwitterIcon from 'react-icons/lib/fa/twitter';
 
 const Container = styled.div`
@@ -45,6 +46,14 @@ const Types = {
     return (
       <ExternalLink hoverColor="#333333" href="https://github.com/DSchau" {...props}>
         <GithubIcon size={32} />
+      </ExternalLink>
+    );
+  },
+  home(props) {
+    return (
+      <ExternalLink hoverColor="#fff" href="https://www.dustinschau.com"
+        {...props}>
+        <HomeIcon size={32} />
       </ExternalLink>
     );
   },

@@ -22,13 +22,18 @@ export default function Index({ data, location }) {
   return (
     <div>
       {posts
-        .filter(post => post.node.frontmatter.title.length > 0)
+        .filter(post => {
+          if (process.env.NODE_ENV === 'production' && post.frontmatter.draft) {
+            return false;
+          }
+          return post.node.frontmatter.title.length > 0;
+        })
         .slice(start, end)
         .map(({ node: post }) => {
           return (
             <div key={post.id}>
               <Preview
-                excerpt={post.frontmatter.description || post.excerpt}
+                excerpt={post.frontmatter.excerpt || post.excerpt}
                 date={post.frontmatter.date}
                 title={post.frontmatter.title}
                 to={post.frontmatter.path}
@@ -55,6 +60,8 @@ export const pageQuery = graphql`
           id
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
+            draft
+            excerpt
             path
             tags
             title

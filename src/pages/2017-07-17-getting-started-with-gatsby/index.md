@@ -7,12 +7,10 @@ tags:
   - react
   - javascript
 image: preview.png
-excerpt: >-
-  Gatsby is an incredible static site generator that lets you build a static
-  site that still has all the benefits expected from a modern web application…
+excerpt: Gatsby is an incredible static site generator that lets you build a static site that still has all the benefits expected from a modern web application. In this tutorial, we'll create a static blog, and get an in-depth look at Gatsby and its feature-set.
 ---
 
-_This blog post was originally published at [Object Partners, Inc.](https://objectpartners.com/2017/07/19/creating-a-static-blog-with-gatsby/), and has since been cross-posted at the [official gatsby blog](https://www.gatsbyjs.org/blog/2017-07-19-creating-a-blog-with-gatsby/)_
+_This blog post was originally published at [Object Partners, Inc.](https://objectpartners.com/2017/07/19/creating-a-static-blog-with-gatsby/), and has since been cross-posted to the [official gatsby blog](https://www.gatsbyjs.org/blog/2017-07-19-creating-a-blog-with-gatsby/)_
 
 Gatsby is an incredible static site generator that allows for React to be used as the underlying rendering engine to scaffold out a static site that truly has all the benefits expected in a modern web application. It does this by rendering dynamic React components into static HTML content via [server side rendering][react-dom-server] at build time. This means that your users get all the benefits of a static site such as the ability to work without JavaScript, search engine friendliness, speedy load times, etc. without losing the dynamism and interactivity that is expected of the modern web. Once rendered to static HTML, client-site React/JavaScript _can_ take over (if creating stateful components or logic in `componentDidMount`) and add dynamism to the statically generated content.
 
@@ -42,10 +40,10 @@ Functional plugins either implement some functionality (e.g. offline support, ge
 
 For this particular blog post, we want a single page app-like feel (without page reloads), as well as the ability to dynamically change the `title` tag within the `head` tags. As noted, the Gatsby plugin ecosystem is rich, vibrant, and growing, so oftentimes a plugin already exists that solves the particular problem you're trying to solve. To address the functionality we want for _this_ blog, we'll use the following plugins:
 
--   [`gatsby-plugin-catch-links`][gatsby-plugin-catch-links]
-    -   implements the history `pushState` API, and does not require a page reload on navigating to a different page in the blog
--   [`gatsby-plugin-react-helmet`][gatsby-plugin-react-helmet]
-    -   [react-helmet][react-helmet] is a tool that allows for modification of the `head` tags; Gatsby statically renders any of these `head` tag changes
+- [`gatsby-plugin-catch-links`][gatsby-plugin-catch-links]
+  - implements the history `pushState` API, and does not require a page reload on navigating to a different page in the blog
+- [`gatsby-plugin-react-helmet`][gatsby-plugin-react-helmet]
+  - [react-helmet][react-helmet] is a tool that allows for modification of the `head` tags; Gatsby statically renders any of these `head` tag changes
 
 with the following command:
 
@@ -57,7 +55,7 @@ We're using [yarn][yarn], but npm can just as easily be used with `npm i --save 
 
 After installing each of these functional plugins, we'll edit `gatsby-config.js`, which Gatsby loads at build-time to implement the exposed functionality of the specified plugins.
 
-```javascript{6-9}
+```javascript{6}
 module.exports = {
   siteMetadata: {
     title: `Your Name - Blog`,
@@ -106,8 +104,8 @@ As mentioned, a transformer plugin takes some underlying data format that is not
 
 We'll only be using one transformer plugin (for Markdown), so let's get that installed.
 
--   [gatsby-transformer-remark][gatsby-transformer-remark]
-    -   Uses the [remark][remark] Markdown parser to transform .md files on disk into HTML; additionally this transformer can optionally take plugins to further extend functionality--e.g. add syntax highlighting with `gatsby-remark-prismjs`, `gatsby-remark-copy-linked-files` to copy relative files specified in markdown, `gatsby-remark-images` to compress images and add responsive images with `srcset`, etc.
+- [gatsby-transformer-remark][gatsby-transformer-remark]
+  - Uses the [remark][remark] Markdown parser to transform .md files on disk into HTML; additionally this transformer can optionally take plugins to further extend functionality--e.g. add syntax highlighting with `gatsby-remark-prismjs`, `gatsby-remark-copy-linked-files` to copy relative files specified in markdown, `gatsby-remark-images` to compress images and add responsive images with `srcset`, etc.
 
 The process should be familiar by now, install and then add to config.
 
@@ -117,7 +115,7 @@ yarn add gatsby-transformer-remark
 
 and editing `gatsby-config.js`
 
-```javascript{13-18}
+```javascript{14-18}
 module.exports = {
   // previous setup
   plugins: [
@@ -445,9 +443,9 @@ Now this is getting exciting and it feels like we're finally getting somewhere! 
 
 It's now on you to make something incredible with the knowledge you've gained in following along with this tutorial! You can not only make it pretty and style with CSS (or [styled-components][styled-components]!), but you could improve it functionally by implementing some of the following:
 
--   Add a tag listing and tag search page
-    -   hint: the `createPages` API in `gatsby-node.js` file is useful here, as is frontmatter
--   adding navigation between a specific blog post and past/present blog posts (the `context` API of `createPages` is useful here), etc.
+- Add a tag listing and tag search page
+  - hint: the `createPages` API in `gatsby-node.js` file is useful here, as is frontmatter
+- adding navigation between a specific blog post and past/present blog posts (the `context` API of `createPages` is useful here), etc.
 
 With our new found knowledge of Gatsby and its API, you should feel empowered to begin to utilize Gatsby to its fullest potential. A blog is just the starting point; Gatsby's rich ecosystem, extensible API, and advanced querying capabilities provide a powerful toolset for building truly incredible, performant sites.
 
@@ -457,47 +455,31 @@ Now go build something great.
 
 ## Links
 
--   [`@dschau/gatsby-blog-starter-kit`][source-code]
-    -   A working repo demonstrating all of the aforementioned functionality of Gatsby
--   [`@dschau/create-gatsby-blog-post`][create-gatsby-blog-post]
-    -   A utility and CLI I created to scaffold out a blog post following the predefined Gatsby structure with frontmatter, date, path, etc.
--   [Source code for my blog][blog-source-code]
-    -   The source code for my blog, which takes the gatsby-starter-blog-post (previous link), and expands upon it with a bunch of features and some more advanced functionality
+- [`@dschau/gatsby-blog-starter-kit`][source-code]
+  - A working repo demonstrating all of the aforementioned functionality of Gatsby
+- [`@dschau/create-gatsby-blog-post`][create-gatsby-blog-post]
+  - A utility and CLI I created to scaffold out a blog post following the predefined Gatsby structure with frontmatter, date, path, etc.
+- [Source code for my blog][blog-source-code]
+  - The source code for my blog, which takes the gatsby-starter-blog-post (previous link), and expands upon it with a bunch of features and some more advanced functionality
 
 [react-dom-server]: https://facebook.github.io/react/docs/react-dom-server.html
-
 [gatsby-release]: https://gatsbyjs.org/blog/gatsby-v1/
-
 [gatsby-plugins]: https://gatsbyjs.org/docs/plugins/
-
 [gatsby-plugin-catch-links]: https://gatsbyjs.org/packages/gatsby-plugin-catch-links/
-
 [gatsby-plugin-react-helmet]: https://gatsbyjs.org/packages/gatsby-plugin-react-helmet/
-
 [gatsby-plugin-preact]: https://gatsbyjs.org/packages/gatsby-plugin-preact/
-
 [gatsby-transformer-remark]: /packages/gatsby-transformer-remark/
-
 [remark]: https://github.com/wooorm/remark
-
 [gatsby-source-filesystem]: /packages/gatsby-source-filesystem/
-
 [react-helmet]: https://github.com/nfl/react-helmet
 
 [frontmatter]: https://jekyllrb.com/docs/frontmatter/
-
 [learn-graphql]: https://www.howtographql.com
-
 [node-spec]: https://gatsbyjs.org/docs/node-apis/
-
 [gatsby-bound-action-creators]: /docs/bound-action-creators/
-
 [styled-components]: https://github.com/styled-components/styled-components
-
 [yarn]: https://yarnpkg.com/en/
 
 [source-code]: https://github.com/dschau/gatsby-blog-starter-kit
-
 [blog-source-code]: https://github.com/dschau/blog
-
 [create-gatsby-blog-post]: https://github.com/DSchau/create-gatsby-blog-post

@@ -42,6 +42,7 @@ const StyledLink = styled(Link)`
   @media only screen and (min-width: 768px) {
     .content {
       display: inline-block;
+      white-space: nowrap;
     }
   }
 `;
