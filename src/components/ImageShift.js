@@ -5,13 +5,7 @@ import debounce from 'lodash.debounce';
 const Image = styled.img`
   display: block;
   max-width: 100%;
-  filter: ${(props) => {
-    const definedHeight = document.body.clientHeight;
-    if (props.scrollHeight === document.body.scrollHeight) {
-      return 1;
-    }
-    return props.y / props.scrollHeight;
-  }};
+  transition: 175ms ease-in-out;
 `;
 
 export default class ImageShift extends Component {
@@ -19,7 +13,7 @@ export default class ImageShift extends Component {
     super(props);
 
     this.state = {
-      y: 0,
+      scrollTop: 0,
       scrollHeight: 0
     };
   }
@@ -40,10 +34,10 @@ export default class ImageShift extends Component {
     return debounce(ev => {
       requestAnimationFrame(() => {
         this.setState({
-          y: document.body.clientHeight + document.body.scrollTop
+          scrollTop: document.body.scrollTop
         });
       });
-    }, 10);
+    }, 20);
   }
 
   handlePageResize() {
@@ -61,11 +55,30 @@ export default class ImageShift extends Component {
     });
   }
 
+  getImageStyle(state = this.state) {
+    const { scrollTop, scrollHeight } = state;
+    const { clientHeight } = document.body;
+    const maxHeight = Math.max(scrollHeight - clientHeight, 0);
+    let grayscale = 0;
+    let blur = 0;
+    if (scrollHeight !== clientHeight) {
+      grayscale = scrollTop / maxHeight;
+      blur = grayscale * 5;
+    }
+    return {
+      filter: `grayscale(${grayscale}) blur(${blur}px)`
+    };
+  }
+
   render() {
     const { src } = this.props;
-    const { scrollHeight, y } = this.state;
+    const style = this.getImageStyle();
     return (
-      <Image src={src} y={y} scrollHeight={scrollHeight} onLoad={() => this.setHeight()}/>
+      <Image
+        src={src}
+        style={style}
+        onLoad={() => this.setHeight()}
+      />
     );
   }
 }

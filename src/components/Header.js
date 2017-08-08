@@ -97,11 +97,15 @@ class BlogHeader extends Component {
     super(props);
 
     this.state = {
-      showBackButton: document.referrer.match('dustinschau')
+      showBackButton: false
     };
   }
 
   componentDidMount() {
+    this.setState({
+      showBackButton: document.referrer.match('dustinschau')
+    });
+
     require.ensure('particles.js', () => {
       this.Particles = require('particles.js');
       this.Particles(`blog-header`, particlesConfig);

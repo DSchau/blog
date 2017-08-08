@@ -52,6 +52,7 @@ module.exports = {
         orientation: 'portrait',
         display: 'minimal-ui'
       }
-    }
+    },
+    `gatsby-plugin-offline`
   ],
 }

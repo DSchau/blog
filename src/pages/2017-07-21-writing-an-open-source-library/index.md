@@ -13,7 +13,7 @@ image: preview.png
 draft: true
 ---
 
-It can be incredibly difficult to keep up with the seemingly nebulous and always changing JavaScript ecosystem. This struggle, and oftentimes misunderstanding of the value/purpose of tools, has led to what many self-diagnose as "JavaScript fatigue." _However_, I **strongly** disagree with this assertion. Incredible tooling, incredible utilities, and incredible libraries coalesce to form what I believe to be the strongest foundation JavaScript has had in years. In this post, I plan to outline the origin story and creation of an open source (NodeJS) utility, and in doing so, touch on a plethora of these incredible tools, utilities, and libraries that collectively form what I believe to be a **JavaScript Renaissance.**
+It can be incredibly difficult to keep up with the seemingly nebulous and always changing JavaScript ecosystem. This struggle, and oftentimes misunderstanding of the value/purpose of tools, has led to what many self-diagnose as "JavaScript fatigue." _However_, I **strongly** disagree with this assertion. Incredible tooling, incredible utilities, and incredible libraries coalesce to form what I believe to be the strongest foundation JavaScript has had in years. In this post, I plan to outline the origin story and creation of an open source (NodeJS) utility, and in doing so, touch on a plethora of these incredible tools, utilities, and libraries that collectively make up the foundation of what some have called the **JavaScript Renaissance.**
 
 > JavaScript fatigue is what happens when people use tools they don't need to solve problems they don't have.
 >
