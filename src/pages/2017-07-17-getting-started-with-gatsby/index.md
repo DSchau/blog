@@ -490,7 +490,7 @@ Now go build something great.
 
 [node-spec]: https://gatsbyjs.org/docs/node-apis/
 
-[gatsby-bound-action-creators]: /docs/bound-action-creators/
+[gatsby-bound-action-creators]: //www.gatsbyjs.org/docs/bound-action-creators/
 
 [styled-components]: https://github.com/styled-components/styled-components
 
