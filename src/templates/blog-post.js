@@ -1,14 +1,14 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import styled from 'styled-components';
+import React from 'react'
+import Helmet from 'react-helmet'
+import styled from 'styled-components'
 
-import Post from '../components/Post';
-import Tags from '../components/Tags';
-import About from '../components/About';
+import Post from '../components/Post'
+import Tags from '../components/Tags'
+import About from '../components/About'
 
-import { fadeInBottom } from '../css/animations';
+import { fadeInBottom } from '../css/animations'
 
-import 'prismjs/themes/prism-okaidia.css';
+import 'prismjs/themes/prism-okaidia.css'
 
 const Container = styled.div`
   ${fadeInBottom};
@@ -17,77 +17,85 @@ const Container = styled.div`
   transform-origin: 50% 0;
   opacity: 0;
   animation: fade-in-bottom 0.3s cubic-bezier(.39, .575, .565, 1) both;
-`;
+`
 
 export default function BlogPost({ data = {}, location, pathContext }) {
-  const { markdownRemark: post } = data;
-  const { next, prev } = pathContext;
+  const { markdownRemark: post } = data
+  const { next, prev } = pathContext
 
-  const isAbout = location.pathname.match(/about/);
+  const isAbout = location.pathname.match(/about/)
 
-  const description = post.frontmatter.excerpt ? post.frontmatter.excerpt : post.excerpt;
-  const image = post.frontmatter.image.childImageSharp.resize.src;
-  const author = data.site.siteMetadata.author;
+  const description = post.frontmatter.excerpt
+    ? post.frontmatter.excerpt
+    : post.excerpt
+  const image = post.frontmatter.image
+    ? post.frontmatter.image.childImageSharp.resize.src
+    : null
+  const author = data.site.siteMetadata.author
 
-  return (
-    <Container>
-      <Helmet
-        title={`Dustin Schau - ${post.frontmatter.title}`}
-        meta={[
-          {
-            name: `description`,
-            content: description,
-          },
-          {
-            name: `og:description`,
-            content: description,
-          },
-          {
-            name: `twitter:description`,
-            content: description,
-          },
-          {
-            name: `og:title`,
-            content: post.frontmatter.title,
-          },
+  const meta = [
+    {
+      name: `description`,
+      content: description
+    },
+    {
+      name: `og:description`,
+      content: description
+    },
+    {
+      name: `twitter:description`,
+      content: description
+    },
+    {
+      name: `og:title`,
+      content: post.frontmatter.title
+    },
+    {
+      name: `og:type`,
+      content: `article`
+    },
+    {
+      name: `article:author`,
+      content: author
+    },
+    {
+      name: `twitter:creator`,
+      content: `schaudustin`
+    },
+    {
+      name: `author`,
+      content: author
+    },
+    {
+      name: `twitter:label1`,
+      content: `Reading time`
+    },
+    {
+      name: `twitter:data1`,
+      content: `${post.timeToRead} min read`
+    },
+    {
+      name: `article:published_time`,
+      content: post.frontmatter.rawDate
+    }
+  ].concat(
+    image
+      ? [
           {
             name: `og:image`,
-            content: image,
+            content: image
           },
           {
             name: `twitter:image`,
-            content: image,
-          },
-          {
-            name: `og:type`,
-            content: `article`,
-          },
-          {
-            name: `article:author`,
-            content: author,
-          },
-          {
-            name: `twitter:creator`,
-            content: `schaudustin`,
-          },
-          {
-            name: `author`,
-            content: author,
-          },
-          {
-            name: `twitter:label1`,
-            content: `Reading time`,
-          },
-          {
-            name: `twitter:data1`,
-            content: `${post.timeToRead} min read`,
-          },
-          {
-            name: `article:published_time`,
-            content: post.frontmatter.rawDate,
+            content: image
           }
-        ]}
-      />
+        ]
+      : []
+  )
+
+  return (
+    <Container>
+      <Helmet title={`Dustin Schau - ${post.frontmatter.title}`} meta={meta} />
       <Post
         className="blog-post"
         html={post.html}
@@ -101,7 +109,7 @@ export default function BlogPost({ data = {}, location, pathContext }) {
         {isAbout && <About />}
       </Post>
     </Container>
-  );
+  )
 }
 
 export const pageQuery = graphql`
@@ -134,4 +142,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

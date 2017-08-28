@@ -1,5 +1,7 @@
+const { remotePath: pathPrefix } = require('./.deploy.js');
+
 module.exports = {
-  pathPrefix: '/blog',
+  pathPrefix: `/${pathPrefix}`,
   siteMetadata: {
     title: `Dustin Schau - Blog`,
     author: `Dustin Schau`,
@@ -52,6 +54,7 @@ module.exports = {
         orientation: 'portrait',
         display: 'minimal-ui'
       }
-    }
+    },
+    `gatsby-plugin-offline`
   ],
 }

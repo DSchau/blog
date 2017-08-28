@@ -1,14 +1,13 @@
-import React from 'react';
-import styled, { injectGlobal } from 'styled-components';
-import { rhythm } from '../utils/typography';
-import Link from 'gatsby-link';
-import MdListIcon from 'react-icons/lib/md/list';
+import React from 'react'
+import styled, { injectGlobal } from 'styled-components'
+import { rhythm } from '../utils/typography'
+import MdListIcon from 'react-icons/lib/md/list'
 
-import PostTitle from './PostTitle';
-import Toolbar from './PostToolbar';
-import StyledLink from './Link';
+import PostTitle from './PostTitle'
+import Toolbar from './PostToolbar'
+import StyledLink from './Link'
 
-import '../css/posts.css';
+import '../css/posts.css'
 
 injectGlobal`
   h1.post-title {
@@ -40,7 +39,7 @@ injectGlobal`
     color: #333;
     line-height: ${rhythm(1.25)};
   }
-`;
+`
 
 const Post = styled.section`
   position: relative;
@@ -62,7 +61,7 @@ const Post = styled.section`
     margin-bottom: ${props => (props.preview ? rhythm(2) : 0)};
     padding-bottom: ${rhythm(2)};
   }
-`;
+`
 
 const PostContents = styled.div`
   max-width: 100%;
@@ -71,24 +70,24 @@ const PostContents = styled.div`
     padding: ${rhythm(1)} ${rhythm(2)};
     padding-top: ${rhythm(1)};
   }
-`;
+`
 
 const Divider = styled.hr`
   border: 0;
   width: 75%;
   margin: ${rhythm(1 / 2)} auto;
   border-bottom: 1px solid #eee;
-`;
+`
 
 const ListIcon = styled(MdListIcon)`
   font-size: 32px;
   margin-right: 0.5rem;
-`;
+`
 
 const AllPostsContainer = styled.span`
   display: flex;
   align-items: center;
-`;
+`
 
 export default function({
   children,
@@ -103,11 +102,10 @@ export default function({
 }) {
   const isPost = (truthy, falsy = null) => {
     if (linkTo === '/') {
-      return truthy;
+      return truthy
     }
-    return falsy;
-  };
-  const now = new Date();
+    return falsy
+  }
   return (
     <Post className={[`post`].concat(className || []).join(' ')} {...rest}>
       <PostTitle title={title} to={isPost(false, linkTo)}>
@@ -134,5 +132,5 @@ export default function({
         )}
       </StyledLink>
     </Post>
-  );
+  )
 }

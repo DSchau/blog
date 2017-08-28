@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { rhythm } from '../utils/typography';
+import React from 'react'
+import styled from 'styled-components'
+import { rhythm } from '../utils/typography'
 
-import SocialIcons from './SocialIcons';
+import SocialIcons from './SocialIcons'
 
-import me from '../images/me.jpeg';
+import me from '../images/me.jpeg'
 
 const Container = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ const Container = styled.div`
   @media only screen and (min-width: 768px) {
     max-width: 75%;
   }
-`;
+`
 
 const Image = styled.img`
   width: ${rhythm(3)};
@@ -27,7 +27,7 @@ const Image = styled.img`
     height: ${rhythm(5)};
     border-radius: ${rhythm(5)};
   }
-`;
+`
 
 const Details = styled.div`
   display: flex;
@@ -37,7 +37,7 @@ const Details = styled.div`
   @media only screen and (min-width: 768px) {
     margin: 0 ${rhythm(1)};
   }
-`;
+`
 
 const Name = styled.h1`
   margin: 0;
@@ -51,15 +51,15 @@ const Name = styled.h1`
   .wf-active & {
     font-family: 'Montserrat', sans-serif;
   }
-`;
+`
 
-const Last = styled.span`font-weight: 400;`;
+const Last = styled.span`font-weight: 400;`
 
 const Description = styled.p`
   margin-bottom: 0;
   color: #444;
   font-family: 'Bitter', sans-serif;
-`;
+`
 
 export default function About() {
   return (
@@ -76,5 +76,5 @@ export default function About() {
       </Details>
       <SocialIcons />
     </Container>
-  );
+  )
 }

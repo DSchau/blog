@@ -1,12 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import GatsbyLink from 'gatsby-link';
+import React from 'react'
+import styled from 'styled-components'
+import GatsbyLink from 'gatsby-link'
 
-import { rhythm } from '../utils/typography';
-import { getColorFromString } from '../utils/color';
+import { rhythm } from '../utils/typography'
+import { getColorFromString } from '../utils/color'
 
-import Link from '../components/Link';
-import Preview from '../components/Preview';
+import Preview from '../components/Preview'
 
 const List = styled.ul`
   display: flex;
@@ -16,16 +15,14 @@ const List = styled.ul`
   padding: ${rhythm(1)};
   padding-left: ${rhythm(2)};
   margin: 0;
-`;
+`
 
 const TagsContainer = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 
-const ListItem = styled.li`
-
-`;
+const ListItem = styled.li``
 
 const Header = styled.h1`
   background-color: ${props => getColorFromString(props.text)};
@@ -33,26 +30,32 @@ const Header = styled.h1`
   margin: ${rhythm(1 / 2)} auto;
   padding: ${rhythm(1 / 4)};
   text-align: center;
-  font-family: Georgia, serif;
+  font-family: 'Georgia', serif;
   .wf-active & {
-    font-family: 'Bitter', serif;
+    font-family: 'Bitter', 'Georgia', serif;
   }
   @media only screen and (min-width: 768px) {
     max-width: 65%;
   }
-`;
+`
 
 const TagHeader = ({ text }) => {
-  return <Header text={text}>{text}</Header>
-};
+  return (
+    <Header text={text}>
+      {text}
+    </Header>
+  )
+}
 
 export default function Tags({ pathContext }) {
-  const { tags, tag, tagName } = pathContext;
+  const { tags, tag, tagName } = pathContext
   if (tag) {
-    const len = tag.length;
+    const len = tag.length
     return (
       <div>
-        <TagHeader text={`${len} post${len > 1 ? 's' : ''} about "${tagName}"`} />
+        <TagHeader
+          text={`${len} post${len > 1 ? 's' : ''} about "${tagName}"`}
+        />
         {tag.map(post => {
           return (
             <Preview
@@ -62,10 +65,10 @@ export default function Tags({ pathContext }) {
               title={post.frontmatter.title}
               to={post.frontmatter.path}
             />
-          );
+          )
         })}
       </div>
-    );
+    )
   }
   return (
     <TagsContainer>
@@ -78,9 +81,9 @@ export default function Tags({ pathContext }) {
                 {name}
               </GatsbyLink>
             </ListItem>
-          );
+          )
         })}
       </List>
     </TagsContainer>
-  );
+  )
 }
