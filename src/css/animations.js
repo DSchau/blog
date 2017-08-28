@@ -10,7 +10,7 @@ export const animateBackground = `
       background-position:50% 0%;
     }
   }
-`.trim();
+`.trim()
 
 export const animateShake = `
   /*
@@ -33,7 +33,7 @@ export const animateShake = `
       transform: translate3d(2px, 0, 0);
     }
   }
-`.trim();
+`.trim()
 
 export const fadeInBottom = `
   @keyframes fade-in-bottom {
@@ -42,4 +42,4 @@ export const fadeInBottom = `
       opacity: 1;
     }
   }
-`;
+`

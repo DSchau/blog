@@ -1,15 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import SocialIcons from './SocialIcons';
+import SocialIcons from './SocialIcons'
 
 const Container = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem 0.5rem;
-`;
-
+`
 
 export default function Footer() {
   const colors = {
@@ -20,5 +19,5 @@ export default function Footer() {
     <Container>
       <SocialIcons flexDirection="row" width="240px" {...colors} />
     </Container>
-  );
+  )
 }

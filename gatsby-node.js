@@ -70,7 +70,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   }`)
     .then(result => {
       if (result.errors) {
-        return reject(result.errors)
+        return Promise.reject(result.errors)
       }
 
       const posts = result.data.allMarkdownRemark.edges;
