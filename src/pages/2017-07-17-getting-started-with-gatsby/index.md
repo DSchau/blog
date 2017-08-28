@@ -476,7 +476,7 @@ Now go build something great.
 [frontmatter]: https://jekyllrb.com/docs/frontmatter/
 [learn-graphql]: https://www.howtographql.com
 [node-spec]: https://gatsbyjs.org/docs/node-apis/
-[gatsby-bound-action-creators]: /docs/bound-action-creators/
+[gatsby-bound-action-creators]: https://www.gatsbyjs.org/docs/bound-action-creators/
 [styled-components]: https://github.com/styled-components/styled-components
 [yarn]: https://yarnpkg.com/en/
 
