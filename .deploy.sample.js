@@ -6,6 +6,6 @@ module.exports = {
   },
   paths: {
     localPath: '',
-    remotePath
+    remotePath: '/'
   }
 };
