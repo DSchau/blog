@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import Link from 'gatsby-link';
-import BackIcon from 'react-icons/lib/fa/chevron-left';
-import ForwardIcon from 'react-icons/lib/fa/chevron-right';
+import React from 'react'
+import styled from 'styled-components'
+import Link from 'gatsby-link'
+import BackIcon from 'react-icons/lib/fa/chevron-left'
+import ForwardIcon from 'react-icons/lib/fa/chevron-right'
 
-import { getColorFromString } from '../utils/color';
-import { rhythm } from '../utils/typography';
+import { getColorFromString } from '../utils/color'
+import { rhythm } from '../utils/typography'
 
 const StyledLink = styled(Link)`
   position: absolute;
@@ -45,15 +45,15 @@ const StyledLink = styled(Link)`
       white-space: nowrap;
     }
   }
-`;
+`
 
 const Prev = styled(StyledLink)`
   left: 0;
-`;
+`
 
 const Next = styled(StyledLink)`
   right: 0;
-`;
+`
 
 export default function BackButton({ children, to, next, prev, ...rest }) {
   if (prev) {
@@ -64,7 +64,7 @@ export default function BackButton({ children, to, next, prev, ...rest }) {
           {children}
         </span>
       </Prev>
-    );
+    )
   } else if (next) {
     return (
       <Next to={to} {...rest}>
@@ -73,6 +73,6 @@ export default function BackButton({ children, to, next, prev, ...rest }) {
         </span>
         <ForwardIcon className="icon" />
       </Next>
-    );
+    )
   }
 }

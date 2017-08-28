@@ -1,37 +1,35 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import Helmet from 'react-helmet';
-import styled from 'styled-components';
-import { rhythm } from '../utils/typography';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import styled from 'styled-components'
 
-import loadWebFonts from '../services/web-fonts';
+import loadWebFonts from '../services/web-fonts'
 
-import Content from '../components/Content';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Content from '../components/Content'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
 
-import '../css/base.css';
+import '../css/base.css'
 
 const Root = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-`;
+`
 
 export default class Template extends React.Component {
   static propTypes = {
-    children: PropTypes.func,
-  };
+    children: PropTypes.func
+  }
 
   componentDidMount() {
-    loadWebFonts();
+    loadWebFonts()
   }
 
   render() {
-    const { children, location } = this.props;
+    const { children, location } = this.props
     const isPost =
-      location.pathname !== '/' && !location.pathname.match(/^\/blog\/?$/);
+      location.pathname !== '/' && !location.pathname.match(/^\/blog\/?$/)
 
     return (
       <Root>
@@ -41,20 +39,20 @@ export default class Template extends React.Component {
             {
               name: 'description',
               content:
-                'The blog of the Omaha, Nebraska based front-end developer, Dustin Schau',
+                'The blog of the Omaha, Nebraska based front-end developer, Dustin Schau'
             },
             {
               name: 'keywords',
               content:
-                'Developer, javascript, programming, designer, angular, react, node, user experience, design, omaha, nebraska',
-            },
+                'Developer, javascript, programming, designer, angular, react, node, user experience, design, omaha, nebraska'
+            }
           ]}
         />
         <Header isPost={isPost} />
-        <Content isPost={isPost} Footer={Footer} >
+        <Content isPost={isPost} Footer={Footer}>
           {children()}
         </Content>
       </Root>
-    );
+    )
   }
 }

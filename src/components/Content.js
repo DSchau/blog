@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const Content = styled.main`
   position: absolute;
@@ -12,13 +12,15 @@ const Content = styled.main`
   @media only screen and (min-width: 768px) {
     top: ${props => (props.isPost ? '25vh' : '40vh')};
   }
-`;
+`
 
-export default function MainContent({ children, Footer, ...rest }) {
+function MainContent({ children, Footer, ...rest }) {
   return (
     <Content {...rest}>
       {children}
       {Footer && <Footer />}
     </Content>
-  );
+  )
 }
+
+export default MainContent

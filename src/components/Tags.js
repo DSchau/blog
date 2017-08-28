@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import GatsbyLink from 'gatsby-link';
+import React from 'react'
+import styled from 'styled-components'
+import GatsbyLink from 'gatsby-link'
 
-import { rhythm } from '../utils/typography';
-import { getColorFromString } from '../utils/color';
+import { rhythm } from '../utils/typography'
+import { getColorFromString } from '../utils/color'
 
 const TagsContainer = styled.ul`
   list-style-type: none;
@@ -11,7 +11,7 @@ const TagsContainer = styled.ul`
   padding: 0;
   font-family: sans-serif;
   width: 100%;
-`;
+`
 
 const Tag = styled.li`
   display: inline-block;
@@ -30,12 +30,12 @@ const Tag = styled.li`
     background-color: transparent;
     border-color: ${props => getColorFromString(props.title, 35, 40)};
   }
-`;
+`
 
 const Link = styled(GatsbyLink)`
   color: inherit;
   text-decoration: none;
-`;
+`
 
 const TagsHeader = styled.h3`
   text-transform: uppercase;
@@ -43,11 +43,11 @@ const TagsHeader = styled.h3`
   padding-top: ${rhythm(1 / 4)};
   font-size: ${rhythm(1 / 2)};
   line-height: ${rhythm(1)};
-`;
+`
 
 export default function TagList({ list: tags = [] }) {
   if (!tags || tags.length === 0) {
-    return null;
+    return null
   }
   return (
     <TagsContainer>
@@ -60,5 +60,5 @@ export default function TagList({ list: tags = [] }) {
         </Tag>
       )}
     </TagsContainer>
-  );
+  )
 }

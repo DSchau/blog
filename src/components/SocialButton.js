@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import GithubIcon from 'react-icons/lib/fa/github';
-import FacebookIcon from 'react-icons/lib/fa/facebook-square';
-import HomeIcon from 'react-icons/lib/fa/home';
-import TwitterIcon from 'react-icons/lib/fa/twitter';
+import GithubIcon from 'react-icons/lib/fa/github'
+import FacebookIcon from 'react-icons/lib/fa/facebook-square'
+import HomeIcon from 'react-icons/lib/fa/home'
+import TwitterIcon from 'react-icons/lib/fa/twitter'
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 
 const Link = styled.a`
   display: inline-block;
@@ -20,15 +20,15 @@ const Link = styled.a`
     transform: scale(1.1);
     color: ${props => props.hoverColor};
   }
-`;
+`
 
 const ExternalLink = props => {
   return (
     <Link target="_blank" rel="noopener" {...props}>
       {props.children}
     </Link>
-  );
-};
+  )
+}
 
 const Types = {
   facebook(props) {
@@ -40,37 +40,48 @@ const Types = {
       >
         <FacebookIcon size={32} />
       </ExternalLink>
-    );
+    )
   },
   git(props) {
     return (
-      <ExternalLink hoverColor="#333333" href="https://github.com/DSchau" {...props}>
+      <ExternalLink
+        hoverColor="#333333"
+        href="https://github.com/DSchau"
+        {...props}
+      >
         <GithubIcon size={32} />
       </ExternalLink>
-    );
+    )
   },
   home(props) {
     return (
-      <ExternalLink hoverColor="#fff" href="https://www.dustinschau.com"
-        {...props}>
+      <ExternalLink
+        hoverColor="#fff"
+        href="https://www.dustinschau.com"
+        {...props}
+      >
         <HomeIcon size={32} />
       </ExternalLink>
-    );
+    )
   },
   twitter(props) {
     return (
-      <ExternalLink hoverColor="#1da1f2" href="https://twitter.com/schaudustin" {...props}>
+      <ExternalLink
+        hoverColor="#1da1f2"
+        href="https://twitter.com/schaudustin"
+        {...props}
+      >
         <TwitterIcon size={32} />
       </ExternalLink>
-    );
-  },
-};
+    )
+  }
+}
 
 export default function SocialButton({ type, ...rest }) {
-  const Type = Types[type];
+  const Type = Types[type]
   return (
     <Container {...rest}>
       <Type {...rest} />
     </Container>
-  );
+  )
 }

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import Link from 'gatsby-link';
-import styled from 'styled-components';
+import React, { Component } from 'react'
+import Link from 'gatsby-link'
+import styled from 'styled-components'
 
-import NavigationButton from './NavigationButton';
+import NavigationButton from './NavigationButton'
 
-import particlesConfig from '../json/particles-config.json';
+import particlesConfig from '../json/particles-config.json'
 
-import '../css/particle-styles.css';
-import { animateBackground, animateShake } from '../css/animations';
+import '../css/particle-styles.css'
+import { animateBackground, animateShake } from '../css/animations'
 
 const Header = styled.header`
   ${animateBackground} ${animateShake} height: ${props =>
@@ -31,7 +31,7 @@ const Header = styled.header`
   @media only screen and (min-width: 768px) {
     height: ${props => (props.isPost ? '30vh' : '45vh')};
   }
-`;
+`
 
 const Name = styled.h1`
   display: flex;
@@ -57,7 +57,7 @@ const Name = styled.h1`
     font-size: 4.5rem;
     padding: 1rem 2rem;
   }
-`;
+`
 
 const Letter = styled.span`
   display: inline-block;
@@ -66,68 +66,70 @@ const Letter = styled.span`
   &:hover {
     animation: shake 1000ms ease-in-out;
   }
-`;
+`
 
 const First = styled.span`
   padding-right: 2vw;
   font-weight: 700;
   white-space: nowrap;
-`;
+`
 
 const Last = styled.span`
   font-weight: 400;
   white-space: nowrap;
-`;
-
-const NoWrap = styled.span`white-space: nowrap;`;
+`
 
 const StyledLink = styled(Link)`
   color: inherit;
-`;
+`
 
 const BackContainer = styled.div`
   position: fixed;
   z-index: 2;
   top: 4px;
   left: 0;
-`;
+`
 
 class BlogHeader extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       showBackButton: false
-    };
+    }
   }
 
   componentDidMount() {
     this.setState({
       showBackButton: document.referrer.match('dustinschau')
-    });
+    })
 
-    require.ensure('particles.js', () => {
-      this.Particles = require('particles.js');
-      this.Particles(`blog-header`, particlesConfig);
-    }, 'particles.js');
+    require.ensure(
+      'particles.js',
+      () => {
+        this.Particles = require('particles.js')
+        this.Particles(`blog-header`, particlesConfig)
+      },
+      'particles.js'
+    )
   }
 
   componentWillUnmount() {
     if (this.Particles) {
-      this.Particles.destroy();
+      this.Particles.destroy()
     }
   }
 
   render() {
-    const { showBackButton } = this.state;
+    const { showBackButton } = this.state
     return (
       <Header id="blog-header" {...this.props}>
-        {
-          showBackButton &&
+        {showBackButton &&
           <BackContainer>
-            <NavigationButton to="https://www.dustinschau.com" prev>Back to Home</NavigationButton>
-          </BackContainer>
-        }
+            <NavigationButton to="https://www.dustinschau.com" prev>
+              Back to Home
+            </NavigationButton>
+          </BackContainer>}
         <Name className="name">
           <StyledLink to="/">
             <First>
@@ -147,8 +149,8 @@ class BlogHeader extends Component {
           </StyledLink>
         </Name>
       </Header>
-    );
+    )
   }
 }
 
-export default BlogHeader;
+export default BlogHeader

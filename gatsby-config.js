@@ -1,5 +1,7 @@
+const { remotePath: pathPrefix } = require('./.deploy.js');
+
 module.exports = {
-  pathPrefix: '/blog',
+  pathPrefix: `/${pathPrefix}`,
   siteMetadata: {
     title: `Dustin Schau - Blog`,
     author: `Dustin Schau`,
