@@ -61,7 +61,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production gatsby build --prefix-paths",
     "clean": "del-cli \"public/**/*\" \".cache/**/*\"",
-    "###predeploy": "npm run clean && gatsby build --prefix-paths",
+    "predeploy": "npm run clean && gatsby build --prefix-paths",
     "deploy": "deploy-to-ftp-server",
     "develop": "npm run start",
     "lint": "eslint src/**/*.js",
