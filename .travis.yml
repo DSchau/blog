@@ -6,7 +6,7 @@ cache:
 
 script: yarn test
 
-before_deploy: yarn deploy
+before_deploy: yarn deploy # this will deploy to GithubPages AND to FTP aka hosted site
 deploy:
   provider: pages
   skip_cleanup: true
