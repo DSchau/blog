@@ -73,12 +73,19 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         return Promise.reject(result.errors)
       }
 
-      const posts = result.data.allMarkdownRemark.edges;
+      const posts = result.data.allMarkdownRemark.edges
+        .filter(({ node }) => {
+          if (process.env.NODE_ENV === 'production' && node.frontmatter.draft) {
+            return false;
+          }
+          return true;
+        });
 
       createTagPages(createPage, posts);
 
       // Create pages for each markdown file.
       posts.forEach(({ node }, index) => {
+        const { draft = false } = node.frontmatter;
         createPage({
           path: node.frontmatter.path,
           component: blogPostTemplate,

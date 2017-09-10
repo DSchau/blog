@@ -10,7 +10,7 @@ import '../css/particle-styles.css'
 import { animateBackground, animateShake } from '../css/animations'
 
 const Header = styled.header`
-  ${animateBackground} ${animateShake} height: ${props =>
+  height: ${props =>
       props.isPost ? '15vh' : '25vh'};
   background-color: #ffa81f;
   color: blue;
@@ -24,7 +24,7 @@ const Header = styled.header`
   align-items: center;
   background: linear-gradient(#ffa81f, #d85d15);
   background-size: 250% 250%;
-  animation: animateBg 10s ease infinite;
+  animation: ${animateBackground} 10s ease infinite;
   font-weight: 400;
   transition: height 250ms ease-in-out;
   user-select: none;
@@ -64,7 +64,7 @@ const Letter = styled.span`
   position: relative;
   z-index: 3;
   &:hover {
-    animation: shake 1000ms ease-in-out;
+    animation: ${animateShake} 1000ms ease-in-out;
   }
 `
 

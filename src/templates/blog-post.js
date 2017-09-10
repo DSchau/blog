@@ -11,12 +11,11 @@ import { fadeInBottom } from '../css/animations'
 import 'prismjs/themes/prism-okaidia.css'
 
 const Container = styled.div`
-  ${fadeInBottom};
   max-width: 100%;
   transform: translateY(16px) scale(.99);
   transform-origin: 50% 0;
   opacity: 0;
-  animation: fade-in-bottom 0.3s cubic-bezier(.39, .575, .565, 1) both;
+  animation: ${fadeInBottom} 0.3s cubic-bezier(.39, .575, .565, 1) both;
 `
 
 export default function BlogPost({ data = {}, location, pathContext }) {
