@@ -18,15 +18,7 @@ export default function Index({ data, location }) {
   return (
     <div>
       {posts
-        .filter(post => {
-          if (
-            process.env.NODE_ENV === 'production' &&
-            post.node.frontmatter.draft
-          ) {
-            return false
-          }
-          return post.node.frontmatter.title.length > 0
-        })
+        .filter(post => post.node.frontmatter.title.length > 0)
         .slice(start, end)
         .map(({ node: post }) => {
           return (
@@ -52,7 +44,12 @@ export const pageQuery = graphql`
         author
       }
     }
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: {
+        frontmatter: { draft: { ne: true }}
+      }
+    ) {
       edges {
         node {
           excerpt(pruneLength: 250)

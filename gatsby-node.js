@@ -47,9 +47,16 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
 
+  const draftFilter = `
+    filter: {
+      frontmatter: { draft: { ne: true }}
+    }
+  `;
+
   return graphql(`{
     allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___date] }
+      ${process.env.NODE_ENV === 'production' ? draftFilter : ''}
       limit: 1000
     ) {
       edges {
@@ -60,6 +67,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
+            draft
             path
             tags
             title
@@ -73,13 +81,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         return Promise.reject(result.errors)
       }
 
-      const posts = result.data.allMarkdownRemark.edges
-        .filter(({ node }) => {
-          if (process.env.NODE_ENV === 'production' && node.frontmatter.draft) {
-            return false;
-          }
-          return true;
-        });
+      const posts = result.data.allMarkdownRemark.edges;
 
       createTagPages(createPage, posts);
 

@@ -67,7 +67,7 @@
     "lint": "eslint src/**/*.js",
     "preserve": "gatsby build",
     "serve": "gatsby serve",
-    "start": "gatsby develop --open",
+    "start": "cross-env NODE_ENV=development gatsby develop --open",
     "format": "prettier --single-quote --no-semi --write \"src/**/*.js\"",
     "test": "jest",
     "test:watch": "jest -- --watch"
