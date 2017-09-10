@@ -33,5 +33,3 @@ public/
 # misc
 
 .DS_Store
-.deployrc
-.deploy.js
