@@ -1,4 +1,4 @@
-const remotePath = process.env.CONTENT ? '' : 'blog';
+const remotePath = process.env.CONTEXT ? '' : 'blog';
 
 module.exports = {
   ftp: {
