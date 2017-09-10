@@ -34,7 +34,7 @@
     "webfontloader": "~1.6.28"
   },
   "devDependencies": {
-    "@dschau/deploy-to-ftp-server": "1.0.0-rc.0",
+    "@dschau/deploy-to-ftp-server": "^1.0.0",
     "babel-eslint": "^7.2.3",
     "cross-env": "^5.0.5",
     "del-cli": "~1.1.0",
@@ -61,7 +61,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production gatsby build --prefix-paths",
     "clean": "del-cli \"public/**/*\" \".cache/**/*\"",
-    "predeploy": "npm run clean && gatsby build --prefix-paths",
+    "###predeploy": "npm run clean && gatsby build --prefix-paths",
     "deploy": "deploy-to-ftp-server",
     "develop": "npm run start",
     "lint": "eslint src/**/*.js",
