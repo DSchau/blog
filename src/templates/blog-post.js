@@ -119,11 +119,7 @@ export const pageQuery = graphql`
         author
       }
     }
-    markdownRemark(
-      frontmatter: {
-        path: { eq: $path }
-      }
-    ) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       id
       html
       excerpt(pruneLength: 160)

@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components';
+import { keyframes } from 'styled-components'
 
 export const animateBackground = keyframes`
     0%{
@@ -10,7 +10,7 @@ export const animateBackground = keyframes`
     100%{
       background-position:50% 0%;
     }
-`;
+`
 
 /*
 * https://css-tricks.com/snippets/css/shake-css-keyframe-animation/

@@ -10,8 +10,7 @@ import '../css/particle-styles.css'
 import { animateBackground, animateShake } from '../css/animations'
 
 const Header = styled.header`
-  height: ${props =>
-      props.isPost ? '15vh' : '25vh'};
+  height: ${props => (props.isPost ? '15vh' : '25vh')};
   background-color: #ffa81f;
   color: blue;
   position: fixed;
