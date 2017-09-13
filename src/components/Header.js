@@ -123,7 +123,7 @@ class BlogHeader extends Component {
     const { showBackButton } = this.state
     return (
       <Header id="blog-header" {...this.props}>
-        {true &&
+        {showBackButton &&
           <BackContainer>
             <NavigationButton to="https://www.dustinschau.com" absolute prev>
               Back to Home
