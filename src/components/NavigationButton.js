@@ -55,24 +55,20 @@ const Next = styled(StyledLink)`
   right: 0;
 `
 
-export default function BackButton({ children, to, next, prev, ...rest }) {
-  if (prev) {
-    return (
-      <Prev to={to} {...rest}>
-        <BackIcon className="icon" />
-        <span className="content">
-          {children}
-        </span>
-      </Prev>
-    )
-  } else if (next) {
-    return (
-      <Next to={to} {...rest}>
-        <span className="content">
-          {children}
-        </span>
-        <ForwardIcon className="icon" />
-      </Next>
-    )
-  }
+export default function BackButton({ absolute, children, to, next, prev, ...rest }) {
+  const Container = prev ? Prev : Next;
+  return (
+    <Container to={to} onClick={ev => {
+      if (absolute) {
+        ev.preventDefault();
+        location.href = to;
+      }
+    }}{...rest}>
+      {prev && <BackIcon className="icon" />}
+      <span className="content">
+        {children}
+      </span>
+      {next && <ForwardIcon className="icon" />}
+    </Container>
+  )
 }
