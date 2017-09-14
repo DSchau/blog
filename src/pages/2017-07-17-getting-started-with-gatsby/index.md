@@ -145,7 +145,7 @@ Whew! Seems like a lot of set up, but collectively these plugins are going to su
 
 The `gatsby-source-filesystem` plugin we configured earlier expects our content to be in `src/pages`, so that's exactly where we'll put it!
 
-Gatsby is not at all prescriptive in naming conventions, but a typical practice for blog posts is to name the folder something like `MM-DD-YYYY-title`, e.g. `07-12-2017-hello-world`. Let's do just that, and create the folder `src/pages/07-12-2017-getting-started`, and place an `index.md` inside!
+Gatsby is not at all prescriptive in naming conventions, but a typical practice for blog posts is to name the folder something like `MM-DD-YYYY-title`, e.g. `07-12-2017-hello-world`. Let's do just that, and create the folder `src/pages/07-12-2017-hello-world`, and place an `index.md` inside!
 
 The content of this Markdown file will be our blog post, authored in Markdown (of course!). Here's what it'll look like:
 
