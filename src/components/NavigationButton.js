@@ -75,6 +75,7 @@ export default function BackButton({ absolute, children, to, next, prev, ...rest
     Container = prev ? PrevA : NextA
     props = {
       href: to,
+      target: '_blank',
       ...rest
     }
   }
