@@ -47,6 +47,8 @@ const StyledLink = styled(Link)`
   }
 `
 
+const A = StyledLink.withComponent('a')
+
 const Prev = styled(StyledLink)`
   left: 0;
 `
@@ -55,15 +57,29 @@ const Next = styled(StyledLink)`
   right: 0;
 `
 
+const PrevA = styled(A)`
+  left: 0;
+`
+
+const NextA = styled(A)`
+  right: 0;
+`
+
 export default function BackButton({ absolute, children, to, next, prev, ...rest }) {
-  const Container = prev ? Prev : Next;
+  let Container = prev ? Prev : Next;
+  let props = {
+    to,
+    ...rest
+  };
+  if (absolute) {
+    Container = prev ? PrevA : NextA
+    props = {
+      href: to,
+      ...rest
+    }
+  }
   return (
-    <Container to={to} onClick={ev => {
-      if (absolute) {
-        ev.preventDefault();
-        location.href = to;
-      }
-    }}{...rest}>
+    <Container {...props}>
       {prev && <BackIcon className="icon" />}
       <span className="content">
         {children}
