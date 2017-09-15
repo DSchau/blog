@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
-import loadWebFonts from '../services/web-fonts'
-
 import Content from '../components/Content'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -20,10 +18,6 @@ const Root = styled.div`
 export default class Template extends React.Component {
   static propTypes = {
     children: PropTypes.func
-  }
-
-  componentDidMount() {
-    loadWebFonts()
   }
 
   render() {

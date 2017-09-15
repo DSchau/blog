@@ -28,6 +28,8 @@
     "react-icons": "~2.2.5",
     "react-typography": "^0.15.0",
     "styled-components": "~2.1.1",
+    "typeface-bitter": "^0.0.35",
+    "typeface-montserrat": "^0.0.37",
     "typography": "^0.15.8",
     "typography-breakpoint-constants": "^0.14.0",
     "typography-plugin-code": "^0.15.9",

@@ -29,9 +29,7 @@ const StyledLink = styled(Link)`
     color: ${props =>
       props.title ? getColorFromString(props.title) : 'white'};
   }
-  .wf-active & {
-    font-family: 'Montserrat', sans-serif;
-  }
+  font-family: 'Montserrat', sans-serif;
   .content {
     display: none;
     padding: 0 ${rhythm(1 / 4)};

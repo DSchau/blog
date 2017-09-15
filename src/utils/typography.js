@@ -2,6 +2,8 @@ import React from 'react'
 import Typography from 'typography'
 import CodePlugin from 'typography-plugin-code'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import 'typeface-bitter'
+import 'typeface-montserrat'
 
 const options = {
   baseFontSize: '18px',
