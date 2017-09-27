@@ -65,7 +65,7 @@ const NextA = styled(A)`
   right: 0;
 `
 
-export default function BackButton({ absolute, children, to, next, prev, ...rest }) {
+export default function BackButton({ absolute, children, to, next, prev, target = '_blank', ...rest }) {
   let Container = prev ? Prev : Next;
   let props = {
     to,
@@ -75,7 +75,7 @@ export default function BackButton({ absolute, children, to, next, prev, ...rest
     Container = prev ? PrevA : NextA
     props = {
       href: to,
-      target: '_blank',
+      target,
       ...rest
     }
   }
