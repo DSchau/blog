@@ -7,6 +7,7 @@ module.exports = {
     author: `Dustin Schau`,
   },
   plugins: [
+    'gatsby-plugin-react-next',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-styled-components',
     {
@@ -34,7 +35,6 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-offline',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -54,7 +54,6 @@ module.exports = {
         orientation: 'portrait',
         display: 'minimal-ui'
       }
-    },
-    `gatsby-plugin-offline`
+    }
   ],
 }
