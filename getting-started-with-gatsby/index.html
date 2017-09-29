@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+ <html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="https://fonts.gstatic.com" rel="preconnect"/><link rel="preload" href="/blog/component---src-layouts-index-js-de0aab0ef155e3999945.js" as="script"/><link rel="preload" href="/blog/component---src-templates-blog-post-js-b5eba70f4402feebaf75.js" as="script"/><link rel="preload" href="/blog/path---getting-started-with-gatsby-d69663d5524ac024898a.js" as="script"/><link rel="preload" href="/blog/app-5bf2546c10d52e780fb7.js" as="script"/><link rel="preload" href="/blog/commons-f8166ddd644d22b4c6a6.js" as="script"/><script id="webpack-manifest">
+            //<![CDATA[
+            window.webpackManifest = {"231608221292675":"app-5bf2546c10d52e780fb7.js","50739212244294":"component---src-templates-tags-js-d84ca76be1beb96b9571.js","107818501498521":"component---src-templates-blog-post-js-b5eba70f4402feebaf75.js","162898551421021":"component---src-pages-404-js-ffd6b1403ec86a006f05.js","35783957827783":"component---src-pages-index-js-326ea247209e6ae9933b.js","60335399758886":"path----557518bd178906f8d58a.js","55702396619907":"path---tags-22fb175b256adc9f0e82.js","260805160564950":"path---tags-tech-stack-5aec35e2b5046d283b61.js","4529922588608":"path---tags-colophon-da3cdab1038e37c3d9a0.js","128450838024984":"path---tags-about-27ed04ec7edff0969131.js","88245472118650":"path---tags-intro-d6b292b7cae972cedd25.js","134928267902561":"path---tags-gatsby-3138635bfa16a70cfe11.js","84586273293571":"path---tags-react-04c5560ba9922d8ff554.js","67335324583948":"path---tags-javascript-dde1f3e0d40374785a93.js","273950069227526":"path---about-1ba65c9f1b2079fc15f3.js","144342403179678":"path---hello-world-eb21b974d8d232ba9344.js","256262267754895":"path---getting-started-with-gatsby-d69663d5524ac024898a.js","254022195166212":"path---404-a0e39f21c11f6a62c5ab.js","142629428675168":"path---index-e45e7c2577b2c4ef2268.js","178698757827068":"path---404-html-a0e39f21c11f6a62c5ab.js","114276838955818":"component---src-layouts-index-js-de0aab0ef155e3999945.js","67604419171931":"webfontloader-7e2893ef542a12a5c720.js","16355028499350":"@dschau/particles.js-044bda3a24f6e96d36f1.js"}
+            //]]>
+            </script><style type="text/css" data-styled-components="XGzxf hBqEEn dDJuSi dGMhCM cduhFW fWgshG jwMxSJ" data-styled-components-is-local="true">/* sc-component-id: sc-bdVaJa */
+
+.XGzxf{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;z-index:1;background:hsl(66,90%,20%);color:white;position:relative;padding-top:1.5rem;padding-bottom:2.25rem;-webkit-transition:background-color 125ms ease-in-out;transition:background-color 125ms ease-in-out;}@media only screen and (min-width:768px){.XGzxf{padding:2.625rem 0;}}
+/* sc-component-id: sc-bwzfXH */
+
+.hBqEEn{display:block;margin:0;font-size:1.5rem;line-height:2.25rem;}@media only screen and (min-width:768px){.hBqEEn{padding:0.75rem 0;border-top:4px solid #fff;border-bottom:4px solid #fff;font-size:2.25rem;line-height:3rem;}}
+/* sc-component-id: sc-bxivhb */
+
+.cduhFW{position:absolute;top:0;background-color:transparent;color:white;text-decoration:none;padding:0 0.75rem;height:2.25rem;line-height:44px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:space-around;-webkit-justify-content:space-around;-ms-flex-pack:space-around;justify-content:space-around;-webkit-transition:all 125ms ease-in-out;transition:all 125ms ease-in-out;text-transform:uppercase;font-family:sans-serif;font-size:0.75rem;z-index:2;}.cduhFW:hover{background-color:white;color:hsl(66,90%,20%);}.wf-active .cduhFW{font-family:'Montserrat',sans-serif;}.cduhFW .content{display:none;padding:0 0.375rem;}.cduhFW .icon{font-size:1.125rem;}@media only screen and (min-width:768px){.cduhFW .content{display:inline-block;white-space:nowrap;}}
+/* sc-component-id: sc-EHOje */
+
+.dGMhCM{left:0;}
+/* sc-component-id: sc-dnqmqq */
+
+.fWgshG{position:absolute;bottom:8px;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);margin:0;padding:0;color:rgba(255,255,255,0.9);font-size:1.125rem;font-weight:400;z-index:2;}
+/* sc-component-id: sc-iwsKbI */
+
+.dDJuSi{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-bottom:0.375rem;}
+/* sc-component-id: sc-gZMcBi */
+
+.jwMxSJ{display:inline-block;background-color:white;padding:0.5rem 1.5rem;font-size:1.125rem;font-weight:bold;text-decoration:none;text-align:center;text-transform:uppercase;border-width:2px;border-style:solid;-webkit-transition:all 125ms ease-in-out;transition:all 125ms ease-in-out;font-family:sans-serif;background-color:hsl(66,90%,20%);color:white;border-color:hsl(66,90%,20%);}.jwMxSJ:hover{color:hsl(66,90%,20%);background-color:white;}
+</style><style type="text/css" data-styled-components="" data-styled-components-is-local="false">/* sc-component-id: sc-global-367058698 */
+h1.post-title{text-align:center;font-weight:700;display:inline-block;}.post-content h2{color:#333;margin:0.375rem 0;padding:0.375rem 0;border-bottom:2px solid #ddd;font-weight:400;}.post-content h3{display:inline-block;color:#444;margin:0.25rem 0;padding:0.25rem;padding-left:0;border-bottom:1px solid #ddd;font-weight:400;}.post-content p{margin:1.125rem auto;color:#333;line-height:1.875rem;}
+</style><style type="text/css" data-styled-components="kKvztC lisfJs imEtRc hyCCuZ bSfrYx jekgWr gwbaRD iQjCQX cTrdHm dqSKFT iOaiMb kJhsok eygiQO hWKMJG cNPhVp llyNSe inGUaL dNBNTd cCUhEF etbIEk bkfjuc fswDQX jRdkbe ciQRIH STGdU cJqkLF eojKsy" data-styled-components-is-local="true">/* sc-component-id: sc-gqjmRU */
+
+.eygiQO{position:relative;width:100%;background-color:white;box-shadow:0 0 4px 1px rgba(0,0,0,.2);background-color:white;outline:1px solid rgba(0,0,0,0.125);box-shadow:0 0 4px 1px rgba(0,0,0,.2);box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-bottom:1.5rem;}.eygiQO:last-child{border-bottom-width:0;}@media only screen and (min-width:768px){.eygiQO{margin-bottom:0;padding-bottom:3rem;}}
+/* sc-component-id: sc-VigVT */
+
+.hWKMJG{max-width:100%;padding:1.125rem 1.5rem;}@media only screen and (min-width:768px){.hWKMJG{padding:1.5rem 3rem;padding-top:1.5rem;}}
+/* sc-component-id: sc-jTzLTM */
+
+.bkfjuc{border:0;width:75%;margin:0.75rem auto;border-bottom:1px solid #eee;}
+/* sc-component-id: sc-fjdhpX */
+
+.jRdkbe{font-size:32px;margin-right:0.5rem;}
+/* sc-component-id: sc-jzJRlG */
+
+.fswDQX{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
+/* sc-component-id: sc-kGXeez */
+
+.cNPhVp{list-style-type:none;margin:0;padding:0;font-family:sans-serif;width:100%;}
+/* sc-component-id: sc-kpOJdX */
+
+.inGUaL{display:inline-block;margin:0.375rem 0.375rem;padding:0.25rem 0.75rem;background-color:hsl(296,35%,92.5%);border:2px solid hsl(296,35%,92.5%);color:hsl(296,40%,35%);-webkit-transition:all 150ms ease-in-out;transition:all 150ms ease-in-out;font-size:0.75rem;font-weight:bold;}.inGUaL:first-child{margin-left:0;}.inGUaL:hover{background-color:transparent;border-color:hsl(296,40%,35%);}
+
+.cCUhEF{display:inline-block;margin:0.375rem 0.375rem;padding:0.25rem 0.75rem;background-color:hsl(47,35%,92.5%);border:2px solid hsl(47,35%,92.5%);color:hsl(47,40%,35%);-webkit-transition:all 150ms ease-in-out;transition:all 150ms ease-in-out;font-size:0.75rem;font-weight:bold;}.cCUhEF:first-child{margin-left:0;}.cCUhEF:hover{background-color:transparent;border-color:hsl(47,40%,35%);}
+
+.etbIEk{display:inline-block;margin:0.375rem 0.375rem;padding:0.25rem 0.75rem;background-color:hsl(269,35%,92.5%);border:2px solid hsl(269,35%,92.5%);color:hsl(269,40%,35%);-webkit-transition:all 150ms ease-in-out;transition:all 150ms ease-in-out;font-size:0.75rem;font-weight:bold;}.etbIEk:first-child{margin-left:0;}.etbIEk:hover{background-color:transparent;border-color:hsl(269,40%,35%);}
+/* sc-component-id: sc-dxgOiQ */
+
+.dNBNTd{color:inherit;text-decoration:none;}
+/* sc-component-id: sc-ckVGcZ */
+
+.llyNSe{text-transform:uppercase;margin:0;padding-top:0.375rem;font-size:0.75rem;line-height:1.5rem;}
+/* sc-component-id: sc-jKJlTe */
+
+.cJqkLF{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}
+/* sc-component-id: sc-eNQAEJ */
+
+.eojKsy{display:inline-block;text-decoration:none;color:rgba(255,255,255,0.6);-webkit-transition:color 175ms ease-in-out,-webkit-transform 175ms ease-in-out;-webkit-transition:color 175ms ease-in-out,transform 175ms ease-in-out;transition:color 175ms ease-in-out,transform 175ms ease-in-out;}.eojKsy:hover{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1);color:rgba(255,255,255,1);}
+/* sc-component-id: sc-hMqMXs */
+
+.STGdU{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;width:240px;}.STGdU .button{margin:0.5rem 0;}
+/* sc-component-id: sc-keyframes-kKvztC */
+@-webkit-keyframes kKvztC{0%{background-position:50% 0%;}50%{background-position:51% 100%;}100%{background-position:50% 0%;}}@keyframes kKvztC{0%{background-position:50% 0%;}50%{background-position:51% 100%;}100%{background-position:50% 0%;}}
+/* sc-component-id: sc-keyframes-lisfJs */
+@-webkit-keyframes lisfJs{10%,90%{-webkit-transform:translate3d(-1px,0,0) rotate(5deg);-ms-transform:translate3d(-1px,0,0) rotate(5deg);transform:translate3d(-1px,0,0) rotate(5deg);}20%,80%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}30%,50%,70%{-webkit-transform:translate3d(-2px,0,0) rotate(-5deg);-ms-transform:translate3d(-2px,0,0) rotate(-5deg);transform:translate3d(-2px,0,0) rotate(-5deg);}40%,60%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}}@keyframes lisfJs{10%,90%{-webkit-transform:translate3d(-1px,0,0) rotate(5deg);-ms-transform:translate3d(-1px,0,0) rotate(5deg);transform:translate3d(-1px,0,0) rotate(5deg);}20%,80%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}30%,50%,70%{-webkit-transform:translate3d(-2px,0,0) rotate(-5deg);-ms-transform:translate3d(-2px,0,0) rotate(-5deg);transform:translate3d(-2px,0,0) rotate(-5deg);}40%,60%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}}
+/* sc-component-id: sc-keyframes-imEtRc */
+@-webkit-keyframes imEtRc{to{-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0);opacity:1;}}@keyframes imEtRc{to{-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0);opacity:1;}}
+/* sc-component-id: sc-jWBwVP */
+
+.kJhsok{max-width:100%;-webkit-transform:translateY(16px) scale(.99);-ms-transform:translateY(16px) scale(.99);transform:translateY(16px) scale(.99);-webkit-transform-origin:50% 0;-ms-transform-origin:50% 0;transform-origin:50% 0;opacity:0;-webkit-animation:imEtRc 0.3s cubic-bezier(.39,.575,.565,1) both;animation:imEtRc 0.3s cubic-bezier(.39,.575,.565,1) both;}
+/* sc-component-id: sc-jlyJG */
+
+.iOaiMb{position:absolute;top:15vh;right:0;left:0;margin:0 auto;max-width:840px;z-index:2;}@media only screen and (min-width:768px){.iOaiMb{top:25vh;}}
+/* sc-component-id: sc-gipzik */
+
+.ciQRIH{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:1rem 0.5rem;}
+/* sc-component-id: sc-csuQGl */
+
+.bSfrYx{height:15vh;background-color:#ffa81f;color:blue;position:fixed;top:0;right:0;left:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:linear-gradient(#ffa81f,#d85d15);background-size:250% 250%;-webkit-animation:kKvztC 10s ease infinite;animation:kKvztC 10s ease infinite;font-weight:400;-webkit-transition:height 250ms ease-in-out;transition:height 250ms ease-in-out;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}@media only screen and (min-width:768px){.bSfrYx{height:30vh;}}
+/* sc-component-id: sc-Rmtcm */
+
+.jekgWr{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;font-size:2rem;text-transform:uppercase;font-weight:700;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-transition:font-size 250ms ease-in-out,padding 150ms ease-in;transition:font-size 250ms ease-in-out,padding 150ms ease-in;background-color:#002635;color:white;padding:0.5rem 1rem;margin:0;width:auto;-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text;}.wf-active .jekgWr{font-family:'Montserrat',sans-serif;}@media only screen and (min-width:375px){.jekgWr{font-size:2.5rem;}}@media only screen and (min-width:768px){.jekgWr{font-size:4.5rem;padding:1rem 2rem;}}
+/* sc-component-id: sc-bRBYWo */
+
+.cTrdHm{display:inline-block;position:relative;z-index:3;}.cTrdHm:hover{-webkit-animation:lisfJs 1000ms ease-in-out;animation:lisfJs 1000ms ease-in-out;}
+/* sc-component-id: sc-hzDkRC */
+
+.iQjCQX{padding-right:2vw;font-weight:700;white-space:nowrap;}
+/* sc-component-id: sc-jhAzac */
+
+.dqSKFT{font-weight:400;white-space:nowrap;}
+/* sc-component-id: sc-fBuWsC */
+
+.gwbaRD{color:inherit;}
+/* sc-component-id: sc-dVhcbM */
+
+.hyCCuZ{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100%;}
+</style><style type="text/css">
+    .anchor {
+      float: left;
+      padding-right: 4px;
+      margin-left: -20px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = location.hash.replace('#', '')
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var offset = element.offsetTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><title data-react-helmet="true">Dustin Schau - Creating a Blog with Gatsby</title><meta data-react-helmet="true" name="keywords" content="Developer, javascript, programming, designer, angular, react, node, user experience, design, omaha, nebraska"/><meta data-react-helmet="true" name="description" content="Gatsby is an incredible static site generator that lets you build a static site that still has all the benefits expected from a modern web application. In this tutorial, we&#x27;ll create a static blog, and get an in-depth look at Gatsby and its feature-set."/><meta data-react-helmet="true" name="og:description" content="Gatsby is an incredible static site generator that lets you build a static site that still has all the benefits expected from a modern web application. In this tutorial, we&#x27;ll create a static blog, and get an in-depth look at Gatsby and its feature-set."/><meta data-react-helmet="true" name="twitter:description" content="Gatsby is an incredible static site generator that lets you build a static site that still has all the benefits expected from a modern web application. In this tutorial, we&#x27;ll create a static blog, and get an in-depth look at Gatsby and its feature-set."/><meta data-react-helmet="true" name="og:title" content="Creating a Blog with Gatsby"/><meta data-react-helmet="true" name="og:type" content="article"/><meta data-react-helmet="true" name="article:author" content="Dustin Schau"/><meta data-react-helmet="true" name="twitter:creator" content="schaudustin"/><meta data-react-helmet="true" name="author" content="Dustin Schau"/><meta data-react-helmet="true" name="twitter:label1" content="Reading time"/><meta data-react-helmet="true" name="twitter:data1" content="18 min read"/><meta data-react-helmet="true" name="article:published_time" content="2017-07-17T17:12:33.962Z"/><meta data-react-helmet="true" name="og:image" content="/blog/static/2e2425a623d633d1b1f4d4b156a32d6b-2c40b.png"/><meta data-react-helmet="true" name="twitter:image" content="/blog/static/2e2425a623d633d1b1f4d4b156a32d6b-2c40b.png"/><link rel="manifest" href="/manifest.json"/><meta name="theme-color" content="#002635"/><script>
+  !function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",[
+  "/blog/commons-f8166ddd644d22b4c6a6.js","/blog/app-5bf2546c10d52e780fb7.js","/blog/path---getting-started-with-gatsby-d69663d5524ac024898a.js","/blog/component---src-templates-blog-post-js-b5eba70f4402feebaf75.js","/blog/component---src-layouts-index-js-de0aab0ef155e3999945.js"
+])
+  </script><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.5em 'georgia',serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:'georgia',serif;font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:2.25rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.62671rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.38316rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.85028rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.78405rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}ul{margin-left:1.5rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.5rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;font-size:0.85rem;line-height:1.42;background:hsla(0,0%,0%,0.04);border-radius:3px;overflow:auto;word-wrap:normal;padding:1.5rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;font-size:1rem;line-height:1.5rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}blockquote{margin-left:1.5rem;margin-right:1.5rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.5rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.5rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.5rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.5rem;margin-bottom:calc(1.5rem / 2);margin-top:calc(1.5rem / 2);}li > ul{margin-left:1.5rem;margin-bottom:calc(1.5rem / 2);margin-top:calc(1.5rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.5rem / 2);}code{font-size:0.85rem;line-height:1.5rem;}kbd{font-size:0.85rem;line-height:1.5rem;}samp{font-size:0.85rem;line-height:1.5rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1rem;padding-right:1rem;padding-top:0.75rem;padding-bottom:calc(0.75rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}tt,code{background-color:hsla(0,0%,0%,0.04);border-radius:3px;font-family:"SFMono-Regular", Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Menlo,Courier,monospace;padding:0;padding-top:0.2em;padding-bottom:0.2em;}pre code{background:none;line-height:1.42;}code:before,code:after,tt:before,tt:after{letter-spacing:-0.2em;content:" ";}pre code:before,pre code:after,pre tt:before,pre tt:after{content:"";}@media only screen and (max-width:480px){html{font-size:100%;}}</style><style>.gatsby-highlight-code-line{background-color:#444;display:block;margin-right:-1em;margin-left:-1em;padding-right:1em;padding-left:.75em;border-left:.25em solid #66d9ef}.gatsby-highlight{background-color:#272822;border-radius:.3em;margin:.5em 0;padding:1em;overflow:auto}.gatsby-highlight pre[class*=language-]{background-color:transparent;margin:0;padding:0;overflow:visible;overflow:initial;float:left;min-width:100%}.gatsby-resp-image-wrapper{z-index:1!important}.wf-active .post h1{font-family:Bitter,Georgia,serif}.post h1,.post h2,.post h3,.post h4,.post h5{font-family:Georgia,serif;letter-spacing:.6px;word-spacing:0}.post-content a:not(.anchor){display:inline;color:#d85d15;position:relative;text-decoration:none;padding:2px;transition:all 175ms ease-in-out}.post-content a:after,.post-content a:before{content:"";position:absolute;left:0;right:0;width:100%;height:1px;background-color:#d85d15}.post-content a:hover{background-color:rgba(216,93,21,.05)}.post-content a:after{bottom:-2px;transition:.2s ease-out}.post-content a:before{top:-2px;-webkit-transform:translateY(24px);-ms-transform:translateY(24px);transform:translateY(24px);opacity:0;transition:.2s ease-out}.post-content a:hover:before{-webkit-transform-origin:center top;-ms-transform-origin:center top;transform-origin:center top;-webkit-transform:translateY(0) scaleX(1.025);-ms-transform:translateY(0) scaleX(1.025);transform:translateY(0) scaleX(1.025);opacity:1}.post-content a:hover:after{-webkit-transform-origin:center bottom;-ms-transform-origin:center bottom;transform-origin:center bottom;-webkit-transform:scaleX(1.025);-ms-transform:scaleX(1.025);transform:scaleX(1.025)}.post-content blockquote{margin-left:.75rem;padding-left:1.5rem;border-left:4px solid #ddd}.post-content video.responsive{max-width:100%;max-height:100%}code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:none;text-shadow:0 1px rgba(0,0,0,.3);font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#f8f8f2}.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.particles-js-canvas-el{position:absolute;top:0;right:0;bottom:0;left:0}#___gatsby,body,html{height:100%}body{background-color:#002635}::-moz-selection{background:#ff6138;color:#fff}::selection{background:#ff6138;color:#fff}</style></head><body><div id="___gatsby"><div class="sc-dVhcbM hyCCuZ" data-reactroot=""><header class="sc-csuQGl bSfrYx" id="blog-header"><h1 class="name sc-Rmtcm jekgWr"><a class="sc-fBuWsC gwbaRD" href="/blog/"><span class="sc-hzDkRC iQjCQX"><span class="sc-bRBYWo cTrdHm">D</span><span class="sc-bRBYWo cTrdHm">u</span><span class="sc-bRBYWo cTrdHm">s</span><span class="sc-bRBYWo cTrdHm">t</span><span class="sc-bRBYWo cTrdHm">i</span><span class="sc-bRBYWo cTrdHm">n</span></span><span class="sc-jhAzac dqSKFT"><span class="sc-bRBYWo cTrdHm">S</span><span class="sc-bRBYWo cTrdHm">c</span><span class="sc-bRBYWo cTrdHm">h</span><span class="sc-bRBYWo cTrdHm">a</span><span class="sc-bRBYWo cTrdHm">u</span></span></a></h1></header><main class="sc-jlyJG iOaiMb"><div class="sc-jWBwVP kJhsok"><section class="post blog-post sc-gqjmRU eygiQO"><div class="sc-bdVaJa XGzxf" title="Creating a Blog with Gatsby"><h1 class="post-title sc-bwzfXH hBqEEn">Creating a Blog with Gatsby</h1><div class="sc-iwsKbI dDJuSi"><div><a class="sc-EHOje dGMhCM sc-bxivhb cduhFW" title="Creating a Blog with Gatsby" href="/blog/hello-world"><svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 40 40" class="icon" style="vertical-align:middle"><g><path d="m31.1 6.7l-11.8 11.9 11.8 11.8q0.5 0.4 0.5 1t-0.5 1l-3.7 3.7q-0.4 0.5-1 0.5t-1-0.5l-16.5-16.5q-0.5-0.4-0.5-1t0.5-1l16.5-16.6q0.5-0.4 1-0.4t1 0.4l3.7 3.7q0.5 0.4 0.5 1t-0.5 1z"></path></g></svg><span class="content">Hello World</span></a></div><h2 class="sc-dnqmqq fWgshG">July 17, 2017</h2></div></div><div class="sc-VigVT hWKMJG"><div class="post-content"><p><em>This blog post was originally published at <a href="https://objectpartners.com/2017/07/19/creating-a-static-blog-with-gatsby/">Object Partners, Inc.</a>, and has since been cross-posted to the <a href="https://www.gatsbyjs.org/blog/2017-07-19-creating-a-blog-with-gatsby/">official gatsby blog</a></em></p>
+<p>Gatsby is an incredible static site generator that allows for React to be used as the underlying rendering engine to scaffold out a static site that truly has all the benefits expected in a modern web application. It does this by rendering dynamic React components into static HTML content via <a href="https://facebook.github.io/react/docs/react-dom-server.html">server side rendering</a> at build time. This means that your users get all the benefits of a static site such as the ability to work without JavaScript, search engine friendliness, speedy load times, etc. without losing the dynamism and interactivity that is expected of the modern web. Once rendered to static HTML, client-site React/JavaScript <em>can</em> take over (if creating stateful components or logic in <code>componentDidMount</code>) and add dynamism to the statically generated content.</p>
+<p>Gatsby <a href="https://gatsbyjs.org/blog/gatsby-v1/">recently released</a> a v1.0.0 with a bunch of new features, including (but not limited to) the ability to create content queries with GraphQL, integration with various CMSs—including WordPress, Contentful, Drupal, etc., and route based code splitting to keep the end-user experience as snappy as possible. In this post, we’ll take a deep dive into Gatsby and some of these new features by creating a static blog. Let’s get on it!</p>
+<h2 id="getting-started"><a href="#getting-started" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting started</h2>
+<h3 id="installing-the-cli"><a href="#installing-the-cli" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing the CLI</h3>
+<p><code>npm install -g gatsby</code></p>
+<p>Gatsby ships with a great CLI (command line interface) that contains the functionality of scaffolding out a working site, as well as commands to help develop the site once created.</p>
+<p><code>gatsby new personal-blog &#x26;&#x26; cd $_</code></p>
+<p>This command will create the folder <code>personal-blog</code> and then change into that directory. A working <code>gatsby</code> statically generated application can now be developed upon. The Gatsby CLI includes many common development features such as <code>gatsby build</code> (build a production, statically generated version of the project), <code>gatsby develop</code> (launch a hot-reload enabled web development server), etc.</p>
+<p>We can now begin the exciting task of <em>actually</em> developing on the site, and creating a functional, modern blog. You’ll generally want to use <code>gatsby develop</code> to launch the local development server to validate functionality as we progress through the steps.</p>
+<h2 id="adding-necessary-plugins"><a href="#adding-necessary-plugins" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding necessary plugins</h2>
+<p>Gatsby supports a <a href="https://gatsbyjs.org/docs/plugins/">rich plugin interface</a>, and many incredibly useful plugins have been authored to make accomplishing common tasks a breeze. Plugins can be broken up into three main categories: <strong>functional</strong> plugins, <strong>source</strong> plugins, and <strong>transformer</strong> plugins.</p>
+<h3 id="functional-plugins"><a href="#functional-plugins" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Functional plugins</h3>
+<p>Functional plugins either implement some functionality (e.g. offline support, generating a sitemap, etc.) <em>or</em> they extend Gatsby’s webpack configuration adding support for typescript, sass, etc.</p>
+<p>For this particular blog post, we want a single page app-like feel (without page reloads), as well as the ability to dynamically change the <code>title</code> tag within the <code>head</code> tags. As noted, the Gatsby plugin ecosystem is rich, vibrant, and growing, so oftentimes a plugin already exists that solves the particular problem you’re trying to solve. To address the functionality we want for <em>this</em> blog, we’ll use the following plugins:</p>
+<ul>
+<li>
+<p><a href="https://gatsbyjs.org/packages/gatsby-plugin-catch-links/"><code>gatsby-plugin-catch-links</code></a></p>
+<ul>
+<li>implements the history <code>pushState</code> API, and does not require a page reload on navigating to a different page in the blog</li>
+</ul>
+</li>
+<li>
+<p><a href="https://gatsbyjs.org/packages/gatsby-plugin-react-helmet/"><code>gatsby-plugin-react-helmet</code></a></p>
+<ul>
+<li><a href="https://github.com/nfl/react-helmet">react-helmet</a> is a tool that allows for modification of the <code>head</code> tags; Gatsby statically renders any of these <code>head</code> tag changes</li>
+</ul>
+</li>
+</ul>
+<p>with the following command:</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code>yarn add gatsby-plugin-catch-links gatsby-plugin-react-helmet
+</code></pre>
+      </div>
+<p>We’re using <a href="https://yarnpkg.com/en/">yarn</a>, but npm can just as easily be used with <code>npm i --save [deps]</code>.</p>
+<p>After installing each of these functional plugins, we’ll edit <code>gatsby-config.js</code>, which Gatsby loads at build-time to implement the exposed functionality of the specified plugins.</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  siteMetadata<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    title<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`Your Name - Blog`</span></span><span class="token punctuation">,</span>
+    author<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`Your Name`</span></span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="gatsby-highlight-code-line">  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'gatsby-plugin-catch-links'</span><span class="token punctuation">,</span> <span class="token string">'gatsby-plugin-react-helmet'</span><span class="token punctuation">]</span>
+</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<p>Without any additional work besides a <code>yarn install</code> and editing a config file, we now have the ability to edit our site’s head tags, as well as implement a single page app feel without reloads. Now let’s enhance the base functionality by implementing a source plugin which can load blog posts from our local file system.</p>
+<h3 id="source-plugins"><a href="#source-plugins" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Source plugins</h3>
+<p>Source plugins create <em>nodes</em> which can then be transformed into a usable format (if not already usable) by a transformer plugin. For instance, a typical workflow often involves using <a href="/packages/gatsby-source-filesystem/"><code>gatsby-source-filesystem</code></a>, which loads files off of disk—e.g. Markdown files—and then specifying a Markdown transformer to transform the Markdown into HTML.</p>
+<p>Since the bulk of the blog’s content, and each article, will be authored in Markdown, let’s add that <a href="/packages/gatsby-source-filesystem/"><code>gatsby-source-filesystem</code></a> plugin. Similarly to our previous step, we’ll install the plugin and then inject into our <code>gatsby-config.js</code>, like so:</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code>yarn add gatsby-source-filesystem
+</code></pre>
+      </div>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// previous configuration</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token string">'gatsby-plugin-catch-links'</span><span class="token punctuation">,</span>
+    <span class="token string">'gatsby-plugin-react-helmet'</span><span class="token punctuation">,</span>
+<span class="gatsby-highlight-code-line">    <span class="token punctuation">{</span>
+</span><span class="gatsby-highlight-code-line">      resolve<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`gatsby-source-filesystem`</span></span><span class="token punctuation">,</span>
+</span><span class="gatsby-highlight-code-line">      options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+</span><span class="gatsby-highlight-code-line">        path<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>__dirname<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/pages`</span></span><span class="token punctuation">,</span>
+</span><span class="gatsby-highlight-code-line">        name<span class="token punctuation">:</span> <span class="token string">'pages'</span>
+</span><span class="gatsby-highlight-code-line">      <span class="token punctuation">}</span>
+</span><span class="gatsby-highlight-code-line">    <span class="token punctuation">}</span>
+</span>  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<p>Some explanation will be helpful here! An <code>options</code> object can be passed to a plugin, and we’re passing the filesystem <code>path</code> (i.e. where our Markdown files will be located), and then a <code>name</code> for the source files. Now that Gatsby knows about our source files, we can begin applying some useful transformers to convert those files into usable data!</p>
+<h3 id="transformer-plugins"><a href="#transformer-plugins" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Transformer plugins</h3>
+<p>As mentioned, a transformer plugin takes some underlying data format that is not inherently usable in its current form (e.g. Markdown, json, yaml, etc.), and transforms it into a format that Gatsby can understand, and that we can query against with GraphQL. Jointly, the filesystem source plugin will load file nodes (as Markdown) off of our filesystem, and then the Markdown transformer will take over and convert to usable HTML.</p>
+<p>We’ll only be using one transformer plugin (for Markdown), so let’s get that installed.</p>
+<ul>
+<li>
+<p><a href="/packages/gatsby-transformer-remark/">gatsby-transformer-remark</a></p>
+<ul>
+<li>Uses the <a href="https://github.com/wooorm/remark">remark</a> Markdown parser to transform .md files on disk into HTML; additionally this transformer can optionally take plugins to further extend functionality—e.g. add syntax highlighting with <code>gatsby-remark-prismjs</code>, <code>gatsby-remark-copy-linked-files</code> to copy relative files specified in markdown, <code>gatsby-remark-images</code> to compress images and add responsive images with <code>srcset</code>, etc.</li>
+</ul>
+</li>
+</ul>
+<p>The process should be familiar by now, install and then add to config.</p>
+<div class="gatsby-highlight">
+      <pre class="language-bash"><code>yarn add gatsby-transformer-remark
+</code></pre>
+      </div>
+<p>and editing <code>gatsby-config.js</code></p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// previous setup</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token string">'gatsby-plugin-catch-links'</span><span class="token punctuation">,</span>
+    <span class="token string">'gatsby-plugin-react-helmet'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      resolve<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`gatsby-source-filesystem`</span></span><span class="token punctuation">,</span>
+      options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        path<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>__dirname<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/pages`</span></span><span class="token punctuation">,</span>
+        name<span class="token punctuation">:</span> <span class="token string">'pages'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+<span class="gatsby-highlight-code-line">      resolve<span class="token punctuation">:</span> <span class="token string">'gatsby-transformer-remark'</span><span class="token punctuation">,</span>
+</span><span class="gatsby-highlight-code-line">      options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+</span><span class="gatsby-highlight-code-line">        plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">// just in case those previously mentioned remark plugins sound cool :)</span>
+</span><span class="gatsby-highlight-code-line">      <span class="token punctuation">}</span>
+</span><span class="gatsby-highlight-code-line">    <span class="token punctuation">}</span>
+</span>  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<p>Whew! Seems like a lot of set up, but collectively these plugins are going to super charge Gatsby, and give us an incredibly powerful (yet relatively simple!) development environment. We have one more set up step and it’s an easy one. We’re simply going to create a Markdown file that will contain the content of our first blog post. Let’s get to it.</p>
+<h2 id="writing-our-first-markdown-blog-post"><a href="#writing-our-first-markdown-blog-post" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing our first Markdown blog post</h2>
+<p>The <code>gatsby-source-filesystem</code> plugin we configured earlier expects our content to be in <code>src/pages</code>, so that’s exactly where we’ll put it!</p>
+<p>Gatsby is not at all prescriptive in naming conventions, but a typical practice for blog posts is to name the folder something like <code>MM-DD-YYYY-title</code>, e.g. <code>07-12-2017-hello-world</code>. Let’s do just that, and create the folder <code>src/pages/07-12-2017-hello-world</code>, and place an <code>index.md</code> inside!</p>
+<p>The content of this Markdown file will be our blog post, authored in Markdown (of course!). Here’s what it’ll look like:</p>
+<div class="gatsby-highlight">
+      <pre class="language-markdown"><code><span class="token hr punctuation">---</span>
+path: "/hello-world"
+date: "2017-07-12T17:12:33.962Z"
+<span class="token title important">title: "My First Gatsby Post"
+<span class="token punctuation">---</span></span>
+
+Oooooh-weeee, my first blog post!
+</code></pre>
+      </div>
+<p><em>Fairly</em> typical stuff, except for the block surrounded in dashes. What is that? That is what is referred to as <a href="https://jekyllrb.com/docs/frontmatter/"><code>frontmatter</code></a>, and the contents of the block can be used to inject React components with the specified data, e.g. path, date, title, etc. Any piece of data can be injected here (e.g. tags, sub-title,draft, etc.), so feel free to experiment and find what necessary pieces of frontmatter are required to achieve an ideal blogging system for your usage. One important note is that <code>path</code> will be used when we dynamically create our pages to specify the URL/path to render the file (in a later step!). In this instance, <code>http://localhost:8000/hello-world</code> will be the path to this file.</p>
+<p>Now that we have created a blog post with frontmatter and some content, we can begin actually writing some React components that will display this data!</p>
+<h2 id="creating-the-react-template"><a href="#creating-the-react-template" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating the (React) template</h2>
+<p>As Gatsby supports server side rendering (to string) of React components, we can write our template in… you guessed it, React! (Or <a href="https://gatsbyjs.org/packages/gatsby-plugin-preact/">Preact</a>, if that’s more your style)</p>
+<p>We’ll want to create the file <code>src/templates/blog-post.js</code> (please create the <code>src/templates</code> folder if it does not yet exist!).</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Helmet <span class="token keyword">from</span> <span class="token string">'react-helmet'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// import '../css/blog-post.css'; // make it pretty!</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Template</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  data <span class="token comment" spellcheck="true">// this prop will be injected by the GraphQL query we'll write in a bit</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> markdownRemark<span class="token punctuation">:</span> post <span class="token punctuation">}</span> <span class="token operator">=</span> data<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// data.markdownRemark holds our post data</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"blog-post-container"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>Helmet title<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token string">`Your Blog Name - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>post<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"blog-post"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>h1<span class="token operator">></span>
+          <span class="token punctuation">{</span>post<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>title<span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+        <span class="token operator">&lt;</span>div
+          className<span class="token operator">=</span><span class="token string">"blog-post-content"</span>
+          dangerouslySetInnerHTML<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> __html<span class="token punctuation">:</span> post<span class="token punctuation">.</span>html <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+      </div>
+<p>Whoa, neat! This React component will be rendered to a static HTML string (for each route/blog post we define), which will serve as the basis of our routing/navigation for our blog.</p>
+<p>At this point, there is a reasonable level of confusion and “magic” occuring, particularly with the props injection. What is <code>markdownRemark</code>? Where is this <code>data</code> prop injected from? All good questions, so let’s answer them by writing a GraphQL query to seed our <code>&#x3C;Template /></code> component with content!</p>
+<h3 id="writing-the-graphql-query"><a href="#writing-the-graphql-query" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Writing the GraphQL query</h3>
+<p>Below the <code>Template</code> declaration, we’ll want to add a GraphQL query. This is an incredibly powerful utility provided by Gatsby which lets us pick and choose very simply the pieces of data that we want to display for our blog post. Each piece of data our query selects will be injected via the <code>data</code> property we specified earlier.</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Helmet <span class="token keyword">from</span> <span class="token string">'react-helmet'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// import '../css/blog-post.css';</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Template</span><span class="token punctuation">(</span><span class="token punctuation">{</span> data <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> markdownRemark<span class="token punctuation">:</span> post <span class="token punctuation">}</span> <span class="token operator">=</span> data<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"blog-post-container"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>Helmet title<span class="token operator">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token string">`Your Blog Name - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>post<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"blog-post"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>h1<span class="token operator">></span>
+          <span class="token punctuation">{</span>post<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>title<span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+        <span class="token operator">&lt;</span>div
+          className<span class="token operator">=</span><span class="token string">"blog-post-content"</span>
+          dangerouslySetInnerHTML<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> __html<span class="token punctuation">:</span> post<span class="token punctuation">.</span>html <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="gatsby-highlight-code-line"><span class="token keyword">export</span> <span class="token keyword">const</span> pageQuery <span class="token operator">=</span> graphql<span class="token template-string"><span class="token string">`
+</span><span class="gatsby-highlight-code-line">  query BlogPostByPath($path: String!) {
+</span><span class="gatsby-highlight-code-line">    markdownRemark(frontmatter: { path: { eq: $path } }) {
+</span><span class="gatsby-highlight-code-line">      html
+</span><span class="gatsby-highlight-code-line">      frontmatter {
+</span><span class="gatsby-highlight-code-line">        date(formatString: "MMMM DD, YYYY")
+</span><span class="gatsby-highlight-code-line">        path
+</span><span class="gatsby-highlight-code-line">        title
+</span><span class="gatsby-highlight-code-line">      }
+</span><span class="gatsby-highlight-code-line">    }
+</span><span class="gatsby-highlight-code-line">  }
+</span><span class="gatsby-highlight-code-line">`</span></span><span class="token punctuation">;</span>
+</span></code></pre>
+      </div>
+<p>If you’re not familar with GraphQL, this may seem slightly confusing, but we can break down what’s going down here piece by piece.</p>
+<p><em>Note: To learn more about GraphQL, consider this <a href="https://www.howtographql.com">excellent resource</a></em></p>
+<p>The underlying query name <code>BlogPostByPath</code> (note: these query names need to be unique!) will be injected with the current path, e.g. the specific blog post we are viewing. This path will be available as <code>$path</code> in our query. For instance, if we were viewing our previously created blog post, the path of the file that data will be pulled from will be <code>/hello-world</code>.</p>
+<p><code>markdownRemark</code> will be the injected property available via the prop <code>data</code>, as named in the GraphQL query. Each property we pull via the GraphQL query will be available under this <code>markdownRemark</code> property. For example, to access the transformed HTML we would access the <code>data</code> prop via <code>data.markdownRemark.html</code>.</p>
+<p><code>frontmatter</code>, is of course our data structure we provided at the beginning of our Markdown file. Each key we define there will be available to be injected into the query.</p>
+<p>At this point, we have a bunch of plugins installed to load files off of disk, transform Markdown to HTML, and other utilities. We have a single, lonely Markdown file that will be rendered as a blog post. Finally, we have a React template for blog posts, as well as a wired up GraphQL query to query for a blog post and inject the React template with the queried data. Next up: programatically creating the necessary static pages (and injecting the templates) with Gatsby’s Node API. Let’s get down to it.</p>
+<p>An important note to make at this point is that the GraphQL query takes place at <strong>build</strong> time. The component is injected with the <code>data</code> prop that is seeded by the GraphQL query. Unless anything dynamic (e.g. logic in <code>componentDidMount</code>, state changes, etc.) occurs, this component will be pure, rendered HTML generated via the React rendering engine, GraphQL, and Gatsby!</p>
+<h2 id="creating-the-static-pages"><a href="#creating-the-static-pages" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating the static pages</h2>
+<p>Gatsby exposes a powerful Node API, which allows for functionality such as creating dynamic pages (blog posts!), extending the babel or webpack configs, modifying the created nodes or pages, etc. This API is exposed in the <code>gatsby-node.js</code> file in the root directory of your project—e.g. at the same level as <code>gatsby-config.js</code>. Each export found in this file will be parsed by Gatsby, as detailed in its <a href="https://gatsbyjs.org/docs/node-apis/">Node API specification</a>. However, we only care about one particular API in this instance, <code>createPages</code>.</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+exports<span class="token punctuation">.</span>createPages <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> boundActionCreators<span class="token punctuation">,</span> graphql <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> createPage <span class="token punctuation">}</span> <span class="token operator">=</span> boundActionCreators<span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> blogPostTemplate <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`src/templates/blog-post.js`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<p>Nothing super complex yet! We’re using the <code>createPages</code> API (which Gatsby will call at build time with injected parameters). We’re also grabbing the <em>path</em> to our blogPostTemplate we created earlier. Finally, we’re using the <code>createPage</code> action creator/function made available in boundActionCreators. Gatsby uses Redux internally to manage its state, and <code>boundActionCreators</code> are simply the exposed action creators of Gatsby, of which <code>createPage</code> is one of the action creators! For the full list of exposed action creators, check out <a href="https://www.gatsbyjs.org/docs/bound-action-creators/">Gatsby’s documentation</a>. We can now construct the GraphQL query, which will fetch all of our Markdown posts.</p>
+<h3 id="querying-for-posts"><a href="#querying-for-posts" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Querying for posts</h3>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+exports<span class="token punctuation">.</span>createPages <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> boundActionCreators<span class="token punctuation">,</span> graphql <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> createPage <span class="token punctuation">}</span> <span class="token operator">=</span> boundActionCreators<span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> blogPostTemplate <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`src/templates/blog-post.js`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="gatsby-highlight-code-line">  <span class="token keyword">return</span> <span class="token function">graphql</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`{
+</span><span class="gatsby-highlight-code-line">    allMarkdownRemark(
+</span><span class="gatsby-highlight-code-line">      sort: { order: DESC, fields: [frontmatter___date] }
+</span><span class="gatsby-highlight-code-line">      limit: 1000
+</span><span class="gatsby-highlight-code-line">    ) {
+</span><span class="gatsby-highlight-code-line">      edges {
+</span><span class="gatsby-highlight-code-line">        node {
+</span><span class="gatsby-highlight-code-line">          excerpt(pruneLength: 250)
+</span><span class="gatsby-highlight-code-line">          html
+</span><span class="gatsby-highlight-code-line">          id
+</span><span class="gatsby-highlight-code-line">          frontmatter {
+</span><span class="gatsby-highlight-code-line">            date
+</span><span class="gatsby-highlight-code-line">            path
+</span><span class="gatsby-highlight-code-line">            title
+</span><span class="gatsby-highlight-code-line">          }
+</span><span class="gatsby-highlight-code-line">        }
+</span><span class="gatsby-highlight-code-line">      }
+</span><span class="gatsby-highlight-code-line">    }
+</span><span class="gatsby-highlight-code-line">  }`</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>result <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="gatsby-highlight-code-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>errors<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="gatsby-highlight-code-line">      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>errors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="gatsby-highlight-code-line">    <span class="token punctuation">}</span>
+</span><span class="gatsby-highlight-code-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="gatsby-highlight-code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></code></pre>
+      </div>
+<p>We’re using GraphQL to get all Markdown nodes and making them available under the <code>allMarkdownRemark</code> GraphQL property. Each exposed property (on <code>node</code>) is made available for querying against. We’re effectively seeding a GraphQL “database” that we can then query against via page-level GraphQL queries. One note here is that the <code>exports.createPages</code> API expects a Promise to be returned, so it works seamlessly with the <code>graphql</code> function, which returns a Promise (although note a callback API is also available if that’s more your thing).</p>
+<p>One cool note here is that the <code>gatsby-plugin-remark</code> plugin exposes some useful data for us to query with GraphQL, e.g. <code>excerpt</code> (a short snippet to display as a preview), <code>id</code> (a unique identifier for each post), etc.</p>
+<p>We now have our query written, but we haven’t yet programatically created the pages (with the <code>createPage</code> action creator). Let’s do that!</p>
+<h3 id="creating-the-pages"><a href="#creating-the-pages" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating the pages</h3>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+exports<span class="token punctuation">.</span>createPages <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> boundActionCreators<span class="token punctuation">,</span> graphql <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> createPage <span class="token punctuation">}</span> <span class="token operator">=</span> boundActionCreators<span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> blogPostTemplate <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`src/templates/blog-post.js`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token function">graphql</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`{
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 1000
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          html
+          id
+          frontmatter {
+            date
+            path
+            title
+          }
+        }
+      }
+    }
+  }`</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>result <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>errors<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>errors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    result<span class="token punctuation">.</span>data<span class="token punctuation">.</span>allMarkdownRemark<span class="token punctuation">.</span>edges<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">{</span> node <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="gatsby-highlight-code-line">      <span class="token function">createPage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="gatsby-highlight-code-line">        path<span class="token punctuation">:</span> node<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>path<span class="token punctuation">,</span>
+</span><span class="gatsby-highlight-code-line">        component<span class="token punctuation">:</span> blogPostTemplate<span class="token punctuation">,</span>
+</span><span class="gatsby-highlight-code-line">        context<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// additional data can be passed via context</span>
+</span><span class="gatsby-highlight-code-line">      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<p>We’ve now tied into the Promise chain exposed by the <code>graphql</code> query. The actual posts are available via the path <code>result.data.allMarkdownRemark.edges</code>. Each edge contains an internal node, and this node holds the useful data that we will use to construct a page with Gatsby. Our GraphQL “shape” is directly reflected in this data object, so each property we pulled from that query will be available when we are querying in our GraphQL blog post template.</p>
+<p>The <code>createPage</code> API accepts an object which requires <code>path</code> and <code>component</code> properties to be defined, which we have done above. Additionally, an optional property <code>context</code> can be used to inject data and make it available to the blog post template component via injected props (log out props to see each available prop!). Each time we build with Gatsby, <code>createPage</code> will be called, and Gatsby will create a static HTML file of the path we specified in the post’s frontmatter—the result of which will be our stringified and parsed React template injected with the data from our GraphQL query. Whoa, it’s actually starting to come together!</p>
+<p>We can run <code>yarn develop</code> at this point, and then navigate to <code>http://localhost:8000/hello-world</code> to see our first blog post, which should look something like below:</p>
+<p>
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; ; max-width: 650px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 67.28395061728395%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVQ4y2PYvHmzyNnj25suX77cdOzYsaZz5841Xbt2Dcy/evUq0fjMmTNNe/fuVWBoKuk32Lbo5P9tC0/837Lg+P+dS8/837P83P89K86ThHcsPvV/SstiDwY3+SzDdL3Z/zON5vzvjN34vzth038QnxwcoFLpyTCla67hjZNP/187/vj/mX03/5/ac+P/qd3X/58G0iD++QN3/oPkicEr523xZFi3bp3hfyD49evX/1u3bv2/ffv2/3v37v0Hhsv/u3fvgsWIBSdOnEAY+Pfv3/8fP36E43fv3oHFSAEoBlIDjBo4WA3MyMgQmzt3bvHMmTPLKMFz5swpqampUQAAyRlw3+gP5fsAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="My first blog post with Gatsby"
+        title=""
+        src="/blog/static/deb7f0d56ec7013985a6053e9c88601d-83a8b.png"
+        srcset="/blog/static/deb7f0d56ec7013985a6053e9c88601d-8992e.png 163w,
+/blog/static/deb7f0d56ec7013985a6053e9c88601d-ae0a7.png 325w,
+/blog/static/deb7f0d56ec7013985a6053e9c88601d-83a8b.png 650w,
+/blog/static/deb7f0d56ec7013985a6053e9c88601d-50453.png 975w,
+/blog/static/deb7f0d56ec7013985a6053e9c88601d-af9d4.png 1300w,
+/blog/static/deb7f0d56ec7013985a6053e9c88601d-7cf95.png 1950w,
+/blog/static/deb7f0d56ec7013985a6053e9c88601d-dcfb2.png 2592w"
+        sizes="(max-width: 650px) 100vw, 650px"
+      />
+    </span>
+  </span>
+  </p>
+<p>At this point, we’ve created a single static blog post as an HTML file, which was created by a React component and several GraphQL queries. However, this isn’t a blog! We can’t expect our users to guess the path of each post, we need to have an index or listing page, where we display each blog post, a short snippet, and a link to the full blog post. Wouldn’t you know it, we can do this incredibly easily with Gatsby, using a similar strategy as we used in our blog template, e.g. a React component and a GraphQL query.</p>
+<h2 id="creating-the-blog-listing"><a href="#creating-the-blog-listing" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating the Blog Listing</h2>
+<p>I won’t go into quite as much detail for this section, because we’ve already done something very similar for our blog template! Look at us, we’re pro Gatsby-ers at this point!</p>
+<p>Gatsby has a standard for “listing pages,” and they’re placed in the root of our filesystem we specified in <code>gatsby-source-filesystem</code>, e.g. <code>src/pages/index.js</code>. So create that file if it does not exist, and let’s get it working! Additionally note that any static JavaScript files (that export a React component!) will get a corresponding static HTML file. For instance, if we create <code>src/pages/tags.js</code>, the path <code>http://localhost:8000/tags/</code> will be available within the browser and the statically generated site.</p>
+<div class="gatsby-highlight">
+      <pre class="language-javascript"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Link <span class="token keyword">from</span> <span class="token string">'gatsby-link'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Helmet <span class="token keyword">from</span> <span class="token string">'react-helmet'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// import '../css/index.css'; // add some style if you want!</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Index</span><span class="token punctuation">(</span><span class="token punctuation">{</span> data <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> edges<span class="token punctuation">:</span> posts <span class="token punctuation">}</span> <span class="token operator">=</span> data<span class="token punctuation">.</span>allMarkdownRemark<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"blog-posts"</span><span class="token operator">></span>
+      <span class="token punctuation">{</span>posts
+        <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>post <span class="token operator">=></span> post<span class="token punctuation">.</span>node<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>title<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">{</span> node<span class="token punctuation">:</span> post <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"blog-post-preview"</span> key<span class="token operator">=</span><span class="token punctuation">{</span>post<span class="token punctuation">.</span>id<span class="token punctuation">}</span><span class="token operator">></span>
+              <span class="token operator">&lt;</span>h1<span class="token operator">></span>
+                <span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token punctuation">{</span>post<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>path<span class="token punctuation">}</span><span class="token operator">></span>
+                  <span class="token punctuation">{</span>post<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>title<span class="token punctuation">}</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">></span>
+              <span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+              <span class="token operator">&lt;</span>h2<span class="token operator">></span>
+                <span class="token punctuation">{</span>post<span class="token punctuation">.</span>frontmatter<span class="token punctuation">.</span>date<span class="token punctuation">}</span>
+              <span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">></span>
+              <span class="token operator">&lt;</span>p<span class="token operator">></span>
+                <span class="token punctuation">{</span>post<span class="token punctuation">.</span>excerpt<span class="token punctuation">}</span>
+              <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+          <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> pageQuery <span class="token operator">=</span> graphql<span class="token template-string"><span class="token string">`
+  query IndexQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          id
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            path
+          }
+        }
+      }
+    }
+  }
+`</span></span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<p>OK! So we’ve followed a similar approach to our blog post template, so this should hopefully seem pretty familiar. Once more we’re exporting <code>pageQuery</code> which contains a GraphQL query. Note that we’re pulling a slightly different data set, specifically we are pulling an <code>excerpt</code> of 250 characters rather than the full HTML, as well as we are formatting the pulled date with a format string! GraphQL is awesome.</p>
+<p>The actual React component is fairly trivial, but one important note should be made. It’s important that when linking to internal content, i.e. other blog links, that you should always use <code>gatsby-link</code>. Gatsby does not work if pages are not routed via this utility. Additionally, this utility also works with <code>pathPrefix</code>, which allows for a Gatsby site to be deployed a non-root domain. This is useful if this blog will be hosted on something like Github Pages, or perhaps hosted at <code>/blog</code>.</p>
+<p>Now this is getting exciting and it feels like we’re finally getting somewhere! At this point, we have a fully functional blog generated by Gatsby, with real content authored in Markdown, a blog listing, and the ability to navigate around in the blog. If you run <code>yarn develop</code>, <code>http://localhost:8000</code> should display a preview of each blog post, and each post title links to the content of the blog post. A real blog!</p>
+<p>
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; ; max-width: 650px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 67.28395061728395%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABDklEQVQ4y2PYvHmzyNnj25suXrzYdPz4CTB948aNpsuXLzddvXqVaHzmzJmmvXv3KjA0lfQbbFlw/P+2hSf+g+h9Ky/837fq4v89K86ThHcsPvV/SstiDwY3+SzDdL3Z/zON5vzvjN34vzth038QnxwcoFLpyTCla67hjZNP/187/uT/+b33/5/bfe//WSA+t+c+mH/xwMP/IHli8Mp5WzwZ1q1bZ/gfCH7//PP/ztnn/2+fefb/7oUX/68fe/z/3sUXYD6x4MSJEwgD//79+//evXtg/OLFi////v0DY1IAhoEfP36E43fv3oHFyDaQGmDUQCoZmJGRITZ37tzimTNnllGC58yZU1JTU6MAAFZ3cBSKsPk7AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Blog listing"
+        title=""
+        src="/blog/static/2a8d86802d4b0d0a8d662e1281b0f522-83a8b.png"
+        srcset="/blog/static/2a8d86802d4b0d0a8d662e1281b0f522-8992e.png 163w,
+/blog/static/2a8d86802d4b0d0a8d662e1281b0f522-ae0a7.png 325w,
+/blog/static/2a8d86802d4b0d0a8d662e1281b0f522-83a8b.png 650w,
+/blog/static/2a8d86802d4b0d0a8d662e1281b0f522-50453.png 975w,
+/blog/static/2a8d86802d4b0d0a8d662e1281b0f522-af9d4.png 1300w,
+/blog/static/2a8d86802d4b0d0a8d662e1281b0f522-7cf95.png 1950w,
+/blog/static/2a8d86802d4b0d0a8d662e1281b0f522-dcfb2.png 2592w"
+        sizes="(max-width: 650px) 100vw, 650px"
+      />
+    </span>
+  </span>
+  </p>
+<p>It’s now on you to make something incredible with the knowledge you’ve gained in following along with this tutorial! You can not only make it pretty and style with CSS (or <a href="https://github.com/styled-components/styled-components">styled-components</a>!), but you could improve it functionally by implementing some of the following:</p>
+<ul>
+<li>
+<p>Add a tag listing and tag search page</p>
+<ul>
+<li>hint: the <code>createPages</code> API in <code>gatsby-node.js</code> file is useful here, as is frontmatter</li>
+</ul>
+</li>
+<li>adding navigation between a specific blog post and past/present blog posts (the <code>context</code> API of <code>createPages</code> is useful here), etc.</li>
+</ul>
+<p>With our new found knowledge of Gatsby and its API, you should feel empowered to begin to utilize Gatsby to its fullest potential. A blog is just the starting point; Gatsby’s rich ecosystem, extensible API, and advanced querying capabilities provide a powerful toolset for building truly incredible, performant sites.</p>
+<p>Now go build something great.</p>
+<p>
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block; ; max-width: 552px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 47.57281553398058%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBP/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAcsWiVHD/8QAHBAAAgAHAAAAAAAAAAAAAAAAAQMCEBESIzEy/9oACAEBAAEFArhSDbRkT3L/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAcEAABAwUAAAAAAAAAAAAAAAAAASExAhAREoH/2gAIAQEABj8CqXLqxIusHL//xAAcEAACAgIDAAAAAAAAAAAAAAAAASExEIERUbH/2gAIAQEAAT8h0MCXNwXRQND2CtY//9oADAMBAAIAAwAAABBjD//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EAB0QAQACAgIDAAAAAAAAAAAAAAERIQBBofAQUYH/2gAIAQEAAT8QUUSUGxPfGIRUEooXUc5qesCkGLD7OXv1PCdd3n//2Q=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Dream Bigger"
+        title=""
+        src="/blog/static/1eb72aab7f753fd71411e0b504f13608-d5ba4.jpeg"
+        srcset="/blog/static/1eb72aab7f753fd71411e0b504f13608-9ee55.jpeg 163w,
+/blog/static/1eb72aab7f753fd71411e0b504f13608-02abf.jpeg 325w,
+/blog/static/1eb72aab7f753fd71411e0b504f13608-d5ba4.jpeg 650w,
+/blog/static/1eb72aab7f753fd71411e0b504f13608-6f613.jpeg 721w"
+        sizes="(max-width: 552px) 100vw, 552px"
+      />
+    </span>
+  </span>
+  </p>
+<h2 id="links"><a href="#links" aria-hidden="true" class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Links</h2>
+<ul>
+<li>
+<p><a href="https://github.com/dschau/gatsby-blog-starter-kit"><code>@dschau/gatsby-blog-starter-kit</code></a></p>
+<ul>
+<li>A working repo demonstrating all of the aforementioned functionality of Gatsby</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/DSchau/create-gatsby-blog-post"><code>@dschau/create-gatsby-blog-post</code></a></p>
+<ul>
+<li>A utility and CLI I created to scaffold out a blog post following the predefined Gatsby structure with frontmatter, date, path, etc.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/dschau/blog">Source code for my blog</a></p>
+<ul>
+<li>The source code for my blog, which takes the gatsby-starter-blog-post (previous link), and expands upon it with a bunch of features and some more advanced functionality</li>
+</ul>
+</li>
+</ul></div><ul class="sc-kGXeez cNPhVp"><h3 class="sc-ckVGcZ llyNSe">More about…</h3><li class="sc-kpOJdX inGUaL" title="gatsby"><a class="sc-dxgOiQ dNBNTd" href="/blog/tags/gatsby">gatsby</a></li><li class="sc-kpOJdX cCUhEF" title="react"><a class="sc-dxgOiQ dNBNTd" href="/blog/tags/react">react</a></li><li class="sc-kpOJdX etbIEk" title="javascript"><a class="sc-dxgOiQ dNBNTd" href="/blog/tags/javascript">javascript</a></li></ul><hr class="sc-jTzLTM bkfjuc"/></div><a class="sc-gZMcBi jwMxSJ" title="Creating a Blog with Gatsby" href="/blog/"><span class="sc-jzJRlG fswDQX"><svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" viewBox="0 0 40 40" class="sc-fjdhpX jRdkbe" style="vertical-align:middle"><g><path d="m11.6 11.6h23.4v3.4h-23.4v-3.4z m0 16.8v-3.4h23.4v3.4h-23.4z m0-6.8v-3.2h23.4v3.2h-23.4z m-6.6-6.6v-3.4h3.4v3.4h-3.4z m0 13.4v-3.4h3.4v3.4h-3.4z m0-6.8v-3.2h3.4v3.2h-3.4z"></path></g></svg>All posts</span></a></section></div><footer class="sc-gipzik ciQRIH"><div class="sc-hMqMXs STGdU" width="240px" color="rgba(255, 255, 255, 0.6)"><div class="button sc-jKJlTe cJqkLF" width="240px" color="rgba(255, 255, 255, 0.6)"><a class="button sc-eNQAEJ eojKsy" target="_blank" rel="noopener" href="https://github.com/DSchau" width="240px" color="rgba(255, 255, 255, 0.6)"><svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="32" width="32" viewBox="0 0 40 40" style="vertical-align:middle"><g><path d="m20.1 2.9q4.7 0 8.6 2.3t6.3 6.2 2.3 8.6q0 5.6-3.3 10.1t-8.4 6.2q-0.6 0.1-0.9-0.2t-0.3-0.7q0 0 0-1.7t0-3q0-2.1-1.2-3.1 1.3-0.2 2.3-0.4t2.1-0.9 1.8-1.5 1.2-2.3 0.5-3.4q0-2.7-1.8-4.6 0.8-2-0.2-4.5-0.6-0.2-1.8 0.2t-2 1l-0.9 0.5q-2-0.6-4.3-0.6t-4.2 0.6q-0.4-0.2-1-0.6t-1.9-0.8-1.9-0.3q-1 2.5-0.1 4.5-1.8 1.9-1.8 4.6 0 1.9 0.5 3.4t1.1 2.3 1.8 1.5 2.1 0.9 2.3 0.4q-0.9 0.8-1.1 2.3-0.4 0.2-1 0.3t-1.3 0.1-1.4-0.5-1.3-1.4q-0.4-0.7-1-1.1t-1.1-0.6l-0.5 0q-0.5 0-0.6 0.1t-0.1 0.2 0.2 0.3 0.2 0.3l0.2 0.1q0.5 0.2 1 0.9t0.7 1.1l0.2 0.5q0.3 0.9 1 1.4t1.5 0.7 1.5 0.1 1.3-0.1l0.5 0q0 0.8 0 1.9t0 1.2q0 0.5-0.3 0.7t-0.9 0.2q-5.2-1.7-8.4-6.2t-3.3-10.1q0-4.7 2.3-8.6t6.2-6.2 8.6-2.3z m-10.6 24.6q0.1-0.2-0.2-0.3-0.2-0.1-0.2 0.1-0.1 0.1 0.1 0.2 0.2 0.2 0.3 0z m0.7 0.7q0.1-0.1-0.1-0.3-0.2-0.2-0.3-0.1-0.2 0.1 0 0.4 0.3 0.2 0.4 0z m0.7 1q0.2-0.1 0-0.4-0.2-0.3-0.4-0.1-0.2 0.1 0 0.4t0.4 0.1z m0.9 1q0.2-0.2-0.1-0.4-0.3-0.3-0.4-0.1-0.2 0.2 0 0.4 0.3 0.3 0.5 0.1z m1.3 0.5q0-0.2-0.3-0.3-0.4-0.1-0.4 0.1t0.2 0.4q0.4 0.1 0.5-0.2z m1.4 0.1q0-0.2-0.4-0.2-0.4 0-0.4 0.2 0 0.3 0.4 0.3 0.4 0 0.4-0.3z m1.3-0.2q-0.1-0.2-0.4-0.2-0.4 0.1-0.3 0.4t0.4 0.1 0.3-0.3z"></path></g></svg></a></div><div class="button sc-jKJlTe cJqkLF" width="240px" color="rgba(255, 255, 255, 0.6)"><a class="button sc-eNQAEJ eojKsy" target="_blank" rel="noopener" href="https://twitter.com/schaudustin" width="240px" color="rgba(255, 255, 255, 0.6)"><svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="32" width="32" viewBox="0 0 40 40" style="vertical-align:middle"><g><path d="m37.7 9.1q-1.5 2.2-3.7 3.7 0.1 0.3 0.1 1 0 2.9-0.9 5.8t-2.6 5.5-4.1 4.7-5.7 3.3-7.2 1.2q-6.1 0-11.1-3.3 0.8 0.1 1.7 0.1 5 0 9-3-2.4-0.1-4.2-1.5t-2.6-3.5q0.8 0.1 1.4 0.1 1 0 1.9-0.3-2.5-0.5-4.1-2.5t-1.7-4.6v0q1.5 0.8 3.3 0.9-1.5-1-2.4-2.6t-0.8-3.4q0-2 0.9-3.7 2.7 3.4 6.6 5.4t8.3 2.2q-0.2-0.9-0.2-1.7 0-3 2.1-5.1t5.1-2.1q3.2 0 5.3 2.3 2.4-0.5 4.6-1.7-0.8 2.5-3.2 3.9 2.1-0.2 4.2-1.1z"></path></g></svg></a></div><div class="button sc-jKJlTe cJqkLF" width="240px" color="rgba(255, 255, 255, 0.6)"><a class="button sc-eNQAEJ eojKsy" target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100004599014794" width="240px" color="rgba(255, 255, 255, 0.6)"><svg fill="currentColor" preserveAspectRatio="xMidYMid meet" height="32" width="32" viewBox="0 0 40 40" style="vertical-align:middle"><g><path d="m30.9 2.9q2.6 0 4.5 1.8t1.9 4.6v21.4q0 2.7-1.9 4.6t-4.5 1.8h-4.2v-13.2h4.4l0.7-5.2h-5.1v-3.3q0-1.3 0.5-1.9t2-0.6l2.8 0v-4.7q-1.5-0.2-4-0.2-3.1 0-4.9 1.8t-1.8 5.1v3.8h-4.5v5.2h4.5v13.2h-11.9q-2.6 0-4.5-1.8t-1.9-4.6v-21.4q0-2.7 1.9-4.6t4.5-1.8h21.5z"></path></g></svg></a></div></div></footer></main></div></div><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-102928446-2', 'auto');
+  ga('send', 'pageview');
+      </script></body></html>

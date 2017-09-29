@@ -1,0 +1,2 @@
+webpackJsonp([55702396619907],{"./node_modules/json-loader/index.js!./.cache/json/tags.json":function(o,t){o.exports={pathContext:{tags:["tech stack","colophon","about","intro","gatsby","react","javascript"]}}}});
+//# sourceMappingURL=path---tags-22fb175b256adc9f0e82.js.map
