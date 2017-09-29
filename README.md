@@ -1,5 +1,7 @@
 # blog (1.0.0)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/DSchau/blog.svg)](https://greenkeeper.io/)
+
 The source code for the [Gatsby][gatsby] driven statically generated blog
 
 ![blog](./assets/blog.png)
