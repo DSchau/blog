@@ -58,7 +58,7 @@ const StyledLink = styled(Link)`
 export default function PostTitle({ children, title, to }) {
   const Container = () => {
     return (
-      <TitleContainer title={title} to={!!to}>
+      <TitleContainer title={title} to={to}>
         <Title className="post-title">
           {title}
         </Title>

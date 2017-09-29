@@ -7,6 +7,7 @@ module.exports = {
     author: `Dustin Schau`,
   },
   plugins: [
+    'gatsby-plugin-react-next',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-styled-components',
     {

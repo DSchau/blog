@@ -5,7 +5,7 @@ import { rhythm } from '../utils/typography'
 
 const PostDate = styled.h2`
   position: absolute;
-  bottom: 0;
+  bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
