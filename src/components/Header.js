@@ -46,6 +46,7 @@ const Name = styled.h1`
   margin: 0;
   width: auto;
   user-select: text;
+  pointer-events: none;
   .wf-active & {
     font-family: 'Montserrat', sans-serif;
   }
