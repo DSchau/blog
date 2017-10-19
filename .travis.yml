@@ -11,11 +11,15 @@ before_script: greenkeeper-lockfile-update
 script: yarn test
 after_script: greenkeeper-lockfile-upload
 
-before_deploy: yarn deploy # this will deploy to GithubPages AND to FTP aka hosted site
+before_deploy: yarn build
 deploy:
-  provider: pages
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: "dustinschau.com"
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: public
+  local-dir: public
+  upload-dir: blog
+  acl: public_read
   on:
     branch: master
