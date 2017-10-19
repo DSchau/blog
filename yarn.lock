@@ -2,14 +2,6 @@
 # yarn lockfile v1
 
 
-"@dschau/deploy-to-ftp-server@~1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@dschau/deploy-to-ftp-server/-/deploy-to-ftp-server-1.0.0.tgz#f2e042db4fbc4c647727aee48953b0c7251778ca"
-  dependencies:
-    promise-ftp "~1.3.3"
-    rc "~1.2.1"
-    recursive-readdir "~2.2.1"
-
 "@dschau/particles.js@~2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@dschau/particles.js/-/particles.js-2.0.0.tgz#7eff39237c4b2528598a344f52372e27c69b6e23"
@@ -1522,10 +1514,6 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-bluebird@2.x:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-2.11.0.tgz#534b9033c022c9579c56ba3b3e5a5caafbb650e1"
-
 bluebird@^3.0.5, bluebird@^3.3.4, bluebird@^3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
@@ -1583,7 +1571,7 @@ boxen@^1.0.0:
     term-size "^1.2.0"
     widest-line "^1.0.0"
 
-brace-expansion@^1.0.0, brace-expansion@^1.1.7:
+brace-expansion@^1.1.7:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.8.tgz#c07b211c7c952ec1f8efd51a77ef0d1d3990a292"
   dependencies:
@@ -4094,13 +4082,6 @@ fstream@^1.0.0, fstream@^1.0.10, fstream@^1.0.2:
     inherits "~2.0.0"
     mkdirp ">=0.5 0"
     rimraf "2"
-
-ftp@0.3.10:
-  version "0.3.10"
-  resolved "https://registry.yarnpkg.com/ftp/-/ftp-0.3.10.tgz#9197d861ad8142f3e63d5a83bfe4c59f7330885d"
-  dependencies:
-    readable-stream "1.1.x"
-    xregexp "2.0.0"
 
 function-bind@^1.0.2, function-bind@^1.1.1:
   version "1.1.1"
@@ -6955,12 +6936,6 @@ minimalistic-crypto-utils@^1.0.0, minimalistic-crypto-utils@^1.0.1:
   dependencies:
     brace-expansion "^1.1.7"
 
-minimatch@3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.3.tgz#2a4e4090b96b2db06a9d7df01055a62a77c9b774"
-  dependencies:
-    brace-expansion "^1.0.0"
-
 minimist@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
@@ -8342,18 +8317,6 @@ promise-each@^2.2.0:
   dependencies:
     any-promise "^0.1.0"
 
-promise-ftp-common@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/promise-ftp-common/-/promise-ftp-common-1.1.5.tgz#b4f8082a74035647703506763edb14230d9865da"
-
-promise-ftp@~1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/promise-ftp/-/promise-ftp-1.3.3.tgz#08ec3a954862b359ab073ed2553a8ade2b4b73c9"
-  dependencies:
-    bluebird "2.x"
-    ftp "0.3.10"
-    promise-ftp-common "^1.1.5"
-
 promise@^7.1.1:
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/promise/-/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
@@ -8500,7 +8463,7 @@ raw-loader@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
 
-rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.1.7, rc@~1.2.1:
+rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.1.7:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.1.tgz#2e03e8e42ee450b8cb3dce65be1bf8974e1dfd95"
   dependencies:
@@ -8680,15 +8643,6 @@ readable-stream@1.0, "readable-stream@>=1.0.33-1 <1.1.0-0", readable-stream@~1.0
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@1.1.x, readable-stream@~1.1.9:
-  version "1.1.14"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
-  dependencies:
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "0.0.1"
-    string_decoder "~0.10.x"
-
 readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.2.6:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.3.tgz#368f2512d79f9d46fdfc71349ae7878bbc1eb95c"
@@ -8700,6 +8654,15 @@ readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable
     safe-buffer "~5.1.1"
     string_decoder "~1.0.3"
     util-deprecate "~1.0.1"
+
+readable-stream@~1.1.9:
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
+  dependencies:
+    core-util-is "~1.0.0"
+    inherits "~2.0.1"
+    isarray "0.0.1"
+    string_decoder "~0.10.x"
 
 readdir-enhanced@^1.5.2:
   version "1.5.2"
@@ -8731,12 +8694,6 @@ rechoir@^0.6.2:
   resolved "https://registry.yarnpkg.com/rechoir/-/rechoir-0.6.2.tgz#85204b54dba82d5742e28c96756ef43af50e3384"
   dependencies:
     resolve "^1.1.6"
-
-recursive-readdir@~2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/recursive-readdir/-/recursive-readdir-2.2.1.tgz#90ef231d0778c5ce093c9a48d74e5c5422d13a99"
-  dependencies:
-    minimatch "3.0.3"
 
 redbox-react@^1.3.6:
   version "1.5.0"
@@ -11245,10 +11202,6 @@ xml-name-validator@^2.0.1:
 xmlhttprequest-ssl@1.5.3:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.3.tgz#185a888c04eca46c3e4070d99f7b49de3528992d"
-
-xregexp@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-2.0.0.tgz#52a63e56ca0b84a7f3a5f3d61872f126ad7a5943"
 
 "xtend@>=4.0.0 <4.1.0-0", xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.1"

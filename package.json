@@ -35,7 +35,6 @@
     "webfontloader": "~1.6.28"
   },
   "devDependencies": {
-    "@dschau/deploy-to-ftp-server": "~1.0.0",
     "babel-eslint": "~8.0.1",
     "cross-env": "~5.0.5",
     "del-cli": "~1.1.0",
