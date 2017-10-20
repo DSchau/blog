@@ -16,10 +16,9 @@ deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: "dustinschau.com"
+  bucket: "blog.dustinschau.com"
   skip_cleanup: true
   local-dir: public
-  upload-dir: blog
   acl: public_read
   on:
     branch: master
