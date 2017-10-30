@@ -84,6 +84,8 @@ CSS naming methodologies like BEM exist to solve this exact problem re: name col
   
 ![run](./images/screenshots/17-run.png)
 
+I am very much not a fan of these methodologies. They introduce cognitive overhead and introduce naming concerns. Is this particular thing a modifier? An element? A block? Naming is already notoriously hard; this technique certainly does solve the class name collision problem, but I contend it imposes extraneous concerns on behalf of the developer that can be solved in other, cleaner ways.
+  
 ![hard stuff](./images/screenshots/18-hard-stuff.png)
 
 Consider this quote by Kent C. Dodds. Why would we not use tooling to automate trivial naming concerns? Development is oftentimes all about automating hard problems, ans is naming not one of the most (unecessarily) difficult ones we face?
