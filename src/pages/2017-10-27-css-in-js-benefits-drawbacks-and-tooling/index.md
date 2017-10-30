@@ -11,35 +11,33 @@ tags:
   - glamorous
 ---
 
-![0](./images/screenshots/2-0.png)
+![0](./images/screenshots/01-0.png)
 
-![about me](./images/screenshots/3-about-me.png)
-
-- Frontend developer specializing in all things JavaScript
-- Done a bit of everything, whether that's jQuery, Angular, React, you name it
-- I've also done a fair bit of everything in CSS land, whether it's vanilla CSS, LESS, SASS, CSS Modules, and (of course) the gamut of CSS in JS solutions
+My name is Dustin Schau, and I'm going to hopefully teach you all about CSS in JS today. We'll start with some drawbacks of CSS that led to the creation of these libraries, then discuss advantages of CSS in JS over CSS, shift to discussion of some common patterns, utilities, and libraries to instrument CSS in JS, and then finally end with an illustration of the drawbacks of CSS in JS. Let's get started!
   
-![nebraska actual](./images/screenshots/4-nebraska-actual.png)
+![about me](./images/screenshots/02-about-me.png)
 
-![sponsors](./images/screenshots/5-sponsors.png)
-
-![object partners](./images/screenshots/6-object-partners.png)
-
-- I work at a great company called Object Partners
-- Specialize in JVM and frontend development of all sorts
-- About 100 consultants between here, MN, and Chicago
-- Come talk to me after if you'd like to learn more (and I'll have some swag to give out too)
+I'm a frontend developer speciailizing in all things JavaScript. Throughout my career, I've done a fair bit of everything: Angular, React, jQuery, you name it. Of course, I've also done a fair bit of everything in CSS land, whether it's vanilla CSS, LESS, SASS, CSS Modules, and (of course) the gamut of CSS in JS solutions. I'm from little ol' Omaha, Nebraska, which I think most people looks a bit like this.
   
-![from here](./images/screenshots/7-from-here.png)
+![nebraska actual](./images/screenshots/03-nebraska-actual.png)
 
-- Many of you probably have a pretty negative perception of CSS in JS
-- It goes against the "separation of concerns" that has been ingrained and regularly re-enforced
-- It feels weird, feels unclean, and feels like it's a solution looking for a problem
+But... here's what Omaha actually looks like. It's been a great city for me to hone my craft, and I think it's a great technology city for professionals young and old.
+    
+![sponsors](./images/screenshots/04-sponsors.png)
+
+Every presentation has this prerequisite sponsors slide, but they truly deserve so much credit. Without their support, we wouldn't have all gotten together for this great conference, so it is _sincerely_ appreciated. Thank you so much!
   
-![to here](./images/screenshots/8-to-here.png)
+![object partners](./images/screenshots/05-object-partners.png)
 
-- My goal is to take you from that initial perception/feeling to at least understanding/slightly skeptical of the practice
-- If I'm successful, maybe even a few of you will leave and want to use/experiment with some of these technologies
+I work at a great company called Object Partners. Specialize in JVM and frontend development of all sorts. Between Omaha, Minneapolis, and Chicago, we have about 100 consultants. Come talk to me after if you'd like to learn more--and I'll have some swag to give out to.
+  
+![from here](./images/screenshots/06-from-here.png)
+
+I feel like some of you _may_ have a pretty negative perception of CSS in JS, or at least not an overtly positive perception. This can be for a variety of reasons, but I thik paramount in some people's minds is that it goes against the "separation of concerns" that have been ingrained in our minds and regularly re-enforced. It can feel weird, it can feel unclean, and it may even feel like a solution looking for a problem.
+  
+![to here](./images/screenshots/07-to-here.png)
+
+My goal is to take you from this initial possibly negative stance to an understanding of why CSS in JS exists, and how it can solve some some very real developmental problems.  I'm I'm successful, maybe even several of you will leave and want to use/experiment with some of these technologies 😍
 
 ## Agenda
 
@@ -48,399 +46,420 @@ tags:
 - Discussing some various CSS in JS libraries, any real world examples of usage of these
 - Finishing up with some discussion of drawbacks of CSS in JS and some quick demos
   
-![to here](./images/screenshots/9-to-here.png)
+![the problems](./images/screenshots/08-the-problems.png)
 
-- My goal is to take you from that initial perception/feeling to at least understanding/slightly skeptical of the practice
-- If I'm successful, maybe even a few of you will leave and want to use/experiment with some of these technologies
+Let's start with a brief discussion of some of the problems of CSS. I will attempt to construct real-world examples, problems that not only I've faced, but I think many developers have experienced whether or not they're aware they have been facing these issues. In illustrating these problems, the foundational basis for the creation of these CSS in JS techniques will be made apparent.
 
-## Agenda
-
-- Discussion of the problems of CSS
-- Defining what CSS in JS is, and how it can solve some of these problems
-- Discussing some various CSS in JS libraries, any real world examples of usage of these
-- Finishing up with some discussion of drawbacks of CSS in JS and some quick demos
+I also want to note that I've attempted to focus these problems on real-world applications, not necessarily problems oftentimes described "at scale." It's so valuable to consider that perspective if you're devoloping those kind of applications, but by narrowing the scope we can more clearly define the problem in more approachable terms and concepts.
   
-![the problems](./images/screenshots/10-the-problems.png)
+![first button](./images/screenshots/09-first-button.png)
 
-- This section will discuss the problems (as I see them) of CSS
-- The goal is by the outset that these problems will be clear, and from this foundation we can begin to construct the argument for CSS in JS solutions
+We get a requirement from our UX team to design a button component that will be used throughout our application suite. This button looks great, meets every current need we have, and the code is quite succinct, to boot. This is great!
   
-![first button](./images/screenshots/11-first-button.png)
+![second button](./images/screenshots/10-second-button.png)
 
-- We design a button component used in our application
-- It looks great, works great, and meets every need we have
+Our UX team makes another request of our team. We now need a secondary style, and the previous button will be considered the primary style. So&hellip; we add this secondary class, we complete the objective, and we're feeling fairly good about our button component.
   
-![second button](./images/screenshots/12-second-button.png)
+![third button](./images/screenshots/11-third-button.png)
 
-- We get a request for an alternately styled variant for one particular screen of the application
-- We add some CSS and style it with a "secondary class"
+We get another request that the button is far too large for certain applications, and the request has been made that we add a button with reduced padding, font-size, etc. We add this \`tiny\` class, and we complete the business requirements. This is fine&hellip;
   
-![third button](./images/screenshots/13-third-button.png)
+![fourth button](./images/screenshots/12-fourth-button.png)
 
-- We get another request that the button is far too large
-- We add a "tiny" class that can be added so that the button displays with a smaller font, padding, etc.
+We get a final request that the button neds to a have a hover state for accessibility and more intuitive feedback on desktop screens. We add this class, and our button is completed, for now. This is _not_ fine 😫
   
-![fourth button](./images/screenshots/14-fourth-button.png)
+![the globals](./images/screenshots/13-the-globals.png)
 
-- We get a final request that the button needs to have a hover state that is inverted for a certain screen
+Our clean, pristine button component and CSS are no longer so clean. Each of these simple requests stack and increase the complexity of the component. In effect, we've introduced a number of CSS globals. As anyone is aware, globals are a common enemy of any codebase, and the introduction of globals will make this CSS harder to maintain and use. This is especially evident if designing something like a component library, where hundreds of other developers will use this button, extend upon it, and introduce their own globals. It's incredibly easy to imagine a scenario where collision occurs and this practice makes this approach untenable.
   
-![the globals](./images/screenshots/15-the-globals.png)
+![global problems](./images/screenshots/14-global-problems.png)
 
-![global problems](./images/screenshots/16-global-problems.png)
+![but wait](./images/screenshots/15-but-wait.png)
 
-![global problems](./images/screenshots/17-global-problems.png)
-
-![global problems](./images/screenshots/18-global-problems.png)
-
-![but wait](./images/screenshots/19-but-wait.png)
-
-![bem](./images/screenshots/20-bem.png)
-
-- CSS naming methodologies like BEM exist to solve this problem!
-- Also see Atomic CSS, SMACSS, Object oriented CSS, etc.
+But wait&hellip; we've invented techniques to solve these problems!
   
-![run](./images/screenshots/21-run.png)
+![bem](./images/screenshots/16-bem.png)
 
-![hard stuff](./images/screenshots/22-hard-stuff.png)
-
-- Consider this code by Kent C Dodds
-- Why not use tools to automate these trivial naming concerns
-- This is why we use tools, to automate and make something that can be hard, easy or easier
+CSS naming methodologies like BEM exist to solve this exact problem re: name collision and CSS globals. Also consider other solutions like Atomic CSS, SMACSS, Object-oriented CSS, etc.
   
-![alternatives](./images/screenshots/23-alternatives.png)
+![run](./images/screenshots/17-run.png)
 
-- But this problem of globals has been solved
-- Why should we care about CSS in JS when we have the shadow dom and/or CSS modules?
-- CSS Modules is CSS in JS
-- Shadow modules are going to be great, but not quite ready yet
+![hard stuff](./images/screenshots/18-hard-stuff.png)
+
+Consider this quote by Kent C. Dodds. Why would we not use tooling to automate trivial naming concerns? Development is oftentimes all about automating hard problems, ans is naming not one of the most (unecessarily) difficult ones we face?
   
-![shadow dom-support](./images/screenshots/24-shadow-dom-support.png)
+![alternatives](./images/screenshots/19-alternatives.png)
 
-![it does-not-scale](./images/screenshots/25-it-does-not-scale.png)
+But others will note that this problem of globals has been solved with tooling in other areas. CSS Modules and Shadow DOM (a staged spec introduced in web components to isolate styling to a particular subset of the DOM) _both_ are intended to solve this problem.
 
-- In order to work around CSS's inherent scaling issues, tools like BEM, LESS, SASS, etc. are often utilized
-- CSS in JS removes this cognitive overload
-- Generally when I hear "does not scale," that can be a sign that the person just doesn't like the technology; however, it's actually true here!
-- The earlier example with the button is an illustration of the underlying issue
-- The bigger your application gets, the more CSS you will write, which creates more globals and a harder to maintain application
+CSS Modules is an implement of CSS in JS, so if you leave here with nothing else, consider integrating CSS Modules support into your application. It'll generate a unique hash based on a user supplied class name. Shadow modules are similarly going to be great, but I'm not quite sure they're ready for primetime yet (nor are web components _quite_ there).
   
-![dead code-elimination](./images/screenshots/26-dead-code-elimination.png)
+![shadow dom-support](./images/screenshots/20-shadow-dom-support.png)
 
-- Anyone who's ever re-factored a large app knows that it can be incredibly difficult to re-factor "unused" CSS
-- Any rule could be used in unforseen places
-- Removing rules can be spooky, and you need automated testing or a person who really knows the code to validate 0 unforeseen effects
-- CSS in JS gives you confidence that by removing this component/CSS, you are only removing code applicable to this component  
+![it does-not-scale](./images/screenshots/21-it-does-not-scale.png)
+
+The bigger your application gets (and the more CSS you write), the more globals you will create which is quite simply making your application harder to maintain and use. In order to work around these scaling issues, naming strategies or tools--LESS, SASS, etc.--are often utilized.
+
+CSS in JS solves this problems cleanly, clearly, and simply.
+
+Also I'd like to note here that, in general, I tend to think "does not scale," is a perjorative used by people who are just not fans of that particular technology. That is not the case here though, as most advocates of CSS in JS _love_ CSS. You'll also see soon that when you're writing CSS in JS, you're using all the funcitionality that we know and love available in CSS.
   
-![sharing constants](./images/screenshots/27-sharing-constants.png)
+![dead code-elimination](./images/screenshots/22-dead-code-elimination.png)
 
-![sharing constants-example](./images/screenshots/28-sharing-constants-example.png)
+Your class names and styles (i.e. \`.css\` files) are separately located to what is being styled, typically JSX with \`className\` or in non-React projects, as separate HTML files. Additionally, as previously mentioned, as CSS is global by default, your styles could be styling unrelated functionality in your application. Jointly, these two concerns make it incredibly difficult to re-factor unused CSS.
 
-- Anyone who's developed an application before has probably ran into this problem
-- We can solve this with a build process and some defined constants, but that can oftentimes be fragile and/or brittle
-- Why not use one "source of truth" for all shared application constants, whether it's constants used in the HTML, CSS, or JavaScript
+Removing styles can be a spooky (👻) endeavour, and many regression tests, QA, or manual testing is often required to validate with certainty that only certain functionality was impacted.
+
+CSS in JS gives you confidence that by removing this particular component, you're removing code applicable to this component _only_.
   
-![facebook problems](./images/screenshots/29-facebook-problems.png)
+![sharing constants](./images/screenshots/23-sharing-constants.png)
 
-- Credit where credit is due
-- Christopher Cheudeau (a developer at Facebook) illustrates these problems in a great talk a few years ago
-- It's linked at the end if you want to take a look!
+Theming, stylistic concerns (e.g. padding, line-height, etc.), and other possibly shared constants are a naturual and intuitive fit to be colocated within your JavaScript. Want to re-use that branding color in your header for a button? Sure makes sense to share that with your CSS and JS. Media query breakpoints? Another intuitive and obvious fit.
   
-![benefits intro](./images/screenshots/30-benefits-intro.png)
+![sharing constants-example](./images/screenshots/24-sharing-constants-example.png)
 
-Early on in my career, I was in a meeting where I said that a solution/idea wasn't good and left it at that. Another person in the meeting said something to the effect of "If you can't bring anything to the table, then don't say anything at all." Obviously I don't agree with his sentiment, but that doesn't detract from the fact that he wasn't wrong. So now that we've illustrated some of the problems of CSS, the discussion will shift into what CSS in JS is, and how it can fix some of these aforementioned problems aka I'm trying to bring something to the table :).  
-  
-![not broken](./images/screenshots/31-not-broken.png)
+Oftentimes, I know I've needed to share things like colors, breakpoints, etc. between my CSS and JavaScript. I've oftentimes resorted to using a brittle build process, which inevitably can fall out of sync or require tweaks at some later point.
 
-- I want to be *very* clear here, if you haven't seen yourself running into any of the aforementioned problems, and if you leave here unconvinced, that's fine!
-- CSS as it exists will continue to exist
-- It's not CSS in JS or CSS. CSS in JS uses CSS and uses what I think are the best parts of CSS (aka the rules) and avoids the worst parts (aka the nesting, globals, etc.)
+Why not use one source of truth for all application constants, and why not make that source of truth a JavaScript file with CSS in JS?
   
-![but maybe-it-is](./images/screenshots/32-but-maybe-it-is.png)
+![facebook problems](./images/screenshots/25-facebook-problems.png)
 
-- Maybe we can use JS to solve some of the ills of CSS
-- Maybe there's actually some validity to this practice, and
-- Maybe it can really improve the quality and maintainability of your styling solution to your apps/websites/etc.
-- Maybe we'll see :)
+Many of these problems were identified in a formative CSS in JS presentation by Christopher Chedeau (a developer at Facebook), who delivered a great presentation targeting many of these issues in 2014!
   
-![lesh tweet](./images/screenshots/33-lesh-tweet.png)
+![benefits intro](./images/screenshots/26-benefits-intro.png)
 
-- So Ben Lesh (sarcastically) puts into words what I think is going to be the most common reaction to CSS in JS
-- It goes against everything we've been taught, and the kind of "hyper modularization" that we've been saying in the JS ecosystem lately
+Early in my career, I was in a meeting where I criticized a poor proposed solution, and left it at that. Another person in the meeting said "If you can't bring anything to the table, then don't say anything at all." While the character of the message was delivered imperfectly, the content of the message still resonates with me. It's easy to criticize something. It's far, far harder to criticize something, and propose something better, or that could be better.
+
+At this point, the discussion will shift into what CSS in JS is, and how it can fix some of these aforementioned problems. In other words, I'm trying (_always_) to bring something to the table!
   
-![seperation of-concerns](./images/screenshots/34-seperation-of-concerns.png)
+![not broken](./images/screenshots/27-not-broken.png)
+
+It's not CSS in JS *or* CSS. It's CSS in JS *with* CSS.
+
+The CSS you've formerly written can continue to be written with this paradigm shift. The best parts of CSS are maintained, and, for the most part, the ills of CSS are remedied with these new approaches.
+  
+![but maybe-it-is](./images/screenshots/28-but-maybe-it-is.png)
+
+Maybe by recontextualizing the problem and bringing the power of JavaScript to CSS we can solve some real problems with CSS.
+
+Maybe there's actually some validity to this practice.
+
+Maybe it can really improve the quality and maintainability of your application.
+
+Maybe we will see!
+  
+![lesh tweet](./images/screenshots/29-lesh-tweet.png)
+
+*But*, *But*, *But*, you exclaim! This goes against everything we've been taught about seperation of concerns. HTML in my JS was already enough of a shift, but this is just too much!
+
+It goes against this hyper-modularization we've seen in the JavaScript ecosystem.
+
+It just _feels_ wrong.
+  
+![seperation of-concerns](./images/screenshots/30-seperation-of-concerns.png)
 
 However... seperation of concerns is not the same as seperation of technologies. It is incredibly likely that the rendering of a component will require intermingling between HTML, CSS, and JavaScript, and if we can make this intermingling as clean as possible, that's a win for code clarity and maintainability, not a loss.
   
-![seperation of-concerns-image](./images/screenshots/35-seperation-of-concerns-image.png)
+![seperation of-concerns-image](./images/screenshots/31-seperation-of-concerns-image.png)
 
-- Consider this great slide by Cristiano Rastelli
-- The whole "component driven" model blurs the lines between HTML, CSS, and JavaScript because there inevitably will be shared concerns between a single component which is composed of each of these pieces
-- A great illustration of this is with Vue's single file components, which a lot of people love
+Consider this great slide by [Cristiano Rastelli](https://twitter.com/areaweb).
+
+The component driven model blurs the line between HTML, CSS, and JavaScript beacuse there will inevitably be shared concerns between a single component which is composed of these "disparate" parts.
+
+Consider also Vue's single file components, which are a perfect encapsulation of this model.
   
-![is not](./images/screenshots/36-is-not.png)
+![is not](./images/screenshots/32-is-not.png)
 
-- Definition by contradiction :)
-- CSS in JS is not, or not exclusively, inline styles
-- CSS in JS, at its "best," leverages CSS and the power of CSS
-- This means the best parts of CSS (e.g. rules, media queries, pseudo styles, etc.) still exist and are usable in this CSS in JS paradigm
-- You can certainly go that route, and many libraries exist to go that route
+Let's start with a definition by contradiction, or in other words, what CSS in JS is *not*.
+
+CSS in JS is not, or not exclusively, inline styles. While inline styles are certainly an example of what CSS in JS can look like, they're not necessarily the best implementation for a variety of reasons. First and foremost, only a subset of CSS is supported, so things like pseudo styles (\`:hover\`, \`:focus\`, etc.), media queries, and a number of other useful and *required* CSS functionality is not supported with this implementation model. Additionally, inline styles can be difficult to override, which makes components that use them historically harder to extend.
+
+You can certainly go this route, and several libraries exist to allow for this implementation while adding some of these needed features back, of particular note is [Radium](https://github.com/FormidableLabs/radium).
   
-![inline styles](./images/screenshots/37-inline-styles.png)
+![inline styles](./images/screenshots/33-inline-styles.png)
 
-![is](./images/screenshots/38-is.png)
+![is](./images/screenshots/34-is.png)
 
-- High time to actually begin talking about what CSS in JS **is**
-- We'll go over some high-level goals of CSS in JS, as well as what it can do
-- We'll also discuss in some detail how it can solve some of the previously mentioned problems with CSS in JS
+It's high time to begin talking about what CSS in JS actually *is*. We'll go over some high level goals of CSS in JS, as well as some common patterns and coding techniques for what it can do for a modern application. Additionally, detail will be provided for how it actually solves the aforementioned "problems with CSS".
   
-![abstractions](./images/screenshots/39-abstractions.png)
+![abstractions](./images/screenshots/35-abstractions.png)
 
-- CSS abstracts style to the document level
-- CSS in JS abstracts style to the component level
-- CSS in JS brings CSS into the "component age"
-- In a similar way that React/Angular are abstractions on JavaScript, CSS in JS abstracts upon the base model of CSS and improves it
+CSS abstracts style to the document level.
+
+CSS in JS abstracts style to the component level.
+
+In a similar way that React, Vue, Angular, et al. are abstractions on JavaScript, CSS in JS abstracts upon the base model of CSS and  fixes some of its inherent issues!
   
-![scoped styles](./images/screenshots/40-scoped-styles.png)
+![scoped styles](./images/screenshots/36-scoped-styles.png)
 
-- Creating a hash for the class name inherently scopes the styles
-- This gives us a shadow-dom like effect today, without a polyfill
-- It truly brings the component-era to CSS, and eliminates issues with CSS such as globals and dead code elimination
+With naming methodologies like BEM, we can get pseudo encapsulation. With Shadow DOM, we can get true encapsulation at the component level, but this requires a polyfill in many browsers.
+
+With CSS in JS, we can get true encapsulation at the component level, today. Under the hood, a unique hash will be generated for the class name, and a real stylesheet will be created with this class. This allows us to target a unique element (a component!) today, without polyfills and in an automated way so we never again need to waste cognitive cycles constructing meaningful, isolated class names.
   
-![powerful](./images/screenshots/41-powerful.png)
+![powerful](./images/screenshots/37-powerful.png)
 
-- Leveraging the full power of JS teaches CSS new ways of doing things
-- Full sharing of any constants; particulaly useful for breakpoints, colors, etc.
-- Injection/modification via props
+Leveraging the full power of JavaScript lets us extend CSS in new, interesting ways. We can create a "mixin" just like we can in SASS, LESS, etc. We can use helpers to lighten a color, darken a color, share style code, etc. We can, of course, easily share constants and modify them, when needed. We can do all of us in a language each of us are familiar with, and without learning/remembering syntactical sugar for doing so in SASS, LESS, etc.
   
-![real styles](./images/screenshots/42-real-styles.png)
+![real styles](./images/screenshots/38-real-styles.png)
 
-- It takes the good parts of CSS (flexbox, styling, etc.)
-- It "cures" the bad parts of CSS (globals, leaky abstractions, etc.)
-- If you already know CSS, great! CSS in JS presumes that you do; use the properties/rules/etc. of CSS that you already know
+A real stylesheet gives you the best parts of CSS (media queries, pseudo styles, flexbox, etc.).
+
+It lessens the bad parts of CSS (globals!) by scoping to a class name
+
+If you already know CSS, great! CSS in JS presumes that you do; use the properties, rules, etc. of CSS that you already know and love.
   
-![component styling](./images/screenshots/43-component-styling.png)
+![component styling](./images/screenshots/39-component-styling.png)
 
-- It brings CSS into the component age
-- We've removed globals from our JavaScript, why not do the same with CSS?
-- Distributable, single import components that are entirely encapsulated
+CSS in JS brings CSS into the component era.
+
+We've removed globals from our JavaScript, why should we not do the same with our CSS?
   
-![java script-styling](./images/screenshots/44-java-script-styling.png)
+![java script-styling](./images/screenshots/40-java-script-styling.png)
 
-- It uses JavaScript to write styles
-- This leverages the full power of the JS ecosystem
-- Easy to use, distribute, load with module bundler of choice
+Using JavaScript to write styles feels incredibly natural and intuitive. There's 
+
+Distributable, single import components that are entirely encapsulated. No configuring of loaders, no loading of additional stylesheets. One import, highly shareable, highly consumable, and highly effective!
   
-![semantic elements](./images/screenshots/45-semantic-elements.png)
+![semantic elements](./images/screenshots/41-semantic-elements.png)
 
-- True, unlimited semantic elements
-- HTML5 gave us header, footer, section, aside, etc.
-- Some of these libraries give us unlimited semantic "tags"
+Truly unlimited semantic elements.
+
+HTML5 gave us header, footer, section, aside, and others.
+
+CSS in JS gives us truly unlimited semantic elements that are semantically clear at a glance: \`Logo\`, \`Branding\`, \`Toolbar\`, \`Copyright\`, the possibilities are endless.
   
-![semantic comparison](./images/screenshots/46-semantic-comparison.png)
+![semantic comparison](./images/screenshots/42-semantic-comparison.png)
 
-- Makes it incredibly clear what the element is doing, just via its tag
+At a glance, each element's intent/purpose is incredibly clear. On the left, _some_ of the element's meaning is clear. It's clear that semantic elements have meaningful value, and the fact that CSS in JS gives effectively unlimited semantic elements is an underrated positive!
   
-![style cognitive-load](./images/screenshots/47-style-cognitive-load.png)
+![style cognitive-load](./images/screenshots/43-style-cognitive-load.png)
 
-- Removes the need to keep a mental modal (or debug!) stacking rule priorities
-- Cures the global ailment
+The left is the mental model we must keep in our minds when writing CSS centered around HTML. We must be aware that a class we apply in HTML is styled with a class name. We must be aware that these class names can cascade and stuck, sometimes interfering in unforseen ways. These cacading rules then become stylesheets in our DOM that can themselves conflict.
+
+The right is the mental model when writing CSS in JS. Write HTML (JSX) that is encapsulated with component-scoped styles. No stacking. Never worry again about CSS rule specificity, and truly think in components!
   
-![libraries intro](./images/screenshots/48-libraries-intro.png)
+![libraries intro](./images/screenshots/44-libraries-intro.png)
 
-- Now that we've talked about all this CSS in JS for quite some time, let's talk about some libraries to instrument this practice
+The case for CSS in JS has hopefully been made apparent. These techniques solve real problems of CSS. But, how do they solve them? What libraries exist to implement these CSS in JS techniques, and what does writing code in each of them look like?
   
-![caveat](./images/screenshots/49-caveat.png)
+![caveat](./images/screenshots/45-caveat.png)
 
-- Most of these are tied to React
-- However, some of them (or the underlying dependencies that power them) are library/framework-agnostic
-- So while you may have the tendency to gloss over the ones that are all React, try to resist, because you may still be able to use techniques or practices from that ecosystem
+First, a caveat: most of these libraries are tied to React. However, not _all_ of them are tied to React, and I'll specifically point out libraries that do not require React.
+
+In general, libraries that simply export a className hash (which can be used as a \`className\` in the consuming component) are typically framework agnostic. Some of the most interesting libraries expose several libraries, some of which can be used in any framework, and others that specifically target React.
   
-![styled components](./images/screenshots/50-styled-components.png)
+![styled components](./images/screenshots/46-styled-components.png)
 
-- The gateway drug to CSS in JS libraries
-- You use tagged template literals, which basically means you call a function with all arguments specified as an array
-- You can pretty much copy and paste CSS (even nesting, although it's not recommended!) from an existing CSS architecture
+styled-components is what I would call the "gateway drug" to CSS in JS libraries. You author using template strings, so you can write CSS not as an object, but as a string and dasherized just like it's authored in CSS.
+
+This means that styled-components is probably the easiest to get up and running, and I would recommend it to get your feet wet with CSS in JS techniques. In addition, it's a great choice for beginning to move off of a formerly vanilla CSS code base, because you can generally re-use most of your existing CSS, with some modifications, of course.
   
-![styled components-example](./images/screenshots/51-styled-components-example.png)
+![styled components-example](./images/screenshots/47-styled-components-example.png)
 
-![glamorous](./images/screenshots/52-glamorous.png)
+The css helper constructs a "mixin" that can be re-used and applied when needed. This can be particularly helpful to encapsulate rules, and then use them conditionally, when required.
 
-- Glamorous built on some of the ideas, particularly the exporting of "tags" to remove the need for wrapping elements
-- However, the major difference is that it expects style objects, rather than style strings
-- Another difference is the general API of injecting props/calling functions, etc.
+Additionally, you can see here another of styled-components' great features. Prop injection! This means that props can be passed to these styled-components, and then parsed and rules can be conditionally applied/removed. Very cool!
   
-![glamorous example](./images/screenshots/53-glamorous-example.png)
+![glamorous](./images/screenshots/48-glamorous.png)
 
-![emotion](./images/screenshots/54-emotion.png)
+Glamorous built on some of the ideas of not only styled-components, but also glamor, the library that powers much of Glamorous' underlying functionality.
 
-- Leverages ideas from both Glamorous and styled-components
-- Can write styles as string or as a style object
-- Has a really interesting babel plugin that compiles away the compiler at build time (think Angular AOT compilation for CSS in JS)
+The central difference with Glamorous is that is expects objects (like the kind passed to inline styles), but that can also be merged with subsequent objects.
+
+It might seem more natural to begin using styled-components, but as of late, I've found myself increasingly drawn to and really liking the functionality available in Glamorous, particularly with the style objects. Merging, conditional applying of rules, etc. feel very natural with Glamorous.
+
+_Note: glamor, the underlying library, is framework agnostic!_
   
-![emotion example](./images/screenshots/55-emotion-example.png)
+![glamorous example](./images/screenshots/49-glamorous-example.png)
 
-![polished](./images/screenshots/56-polished.png)
+We can begin to get a solid feel for Glamorous' API. The function takes 0 to N objects (or functions that return an object). Any function is injected with the current props passed to the component, as well as a global theme prop if tying into Glamorous' exposed theming capability.
 
-- SASS/LESS helpers for CSS in JS
-- lighten/darken/rgba/etc/etc
-- I've heard it described as the lodash of CSS in JS libraries, and I think that's a fair comparison
-- It was originally designed for usage in styled-components, but should work in any CSS in JS lib
+The code here is using the object rest spread syntax, which makse the code slightly more terse.
   
-![polished example](./images/screenshots/57-polished-example.png)
+![emotion](./images/screenshots/50-emotion.png)
 
-![polished methods](./images/screenshots/58-polished-methods.png)
+Emotion is another excellent library that feels very similar to styled-components because it also allows for template literals to inject styles. The key difference, and a particularly interesting idea, is that it ships with a babel plugin which attempts to pre-compile the styles that aren't dynamic, thereby reducing the payload of the resulting bundle. In general, this space will continue to be particularly interesting, so keep on eye on other libraries or enhancements that attempt to minimize the runtime that is shipped to the end user!
+  
+![emotion example](./images/screenshots/51-emotion-example.png)
+
+As you can see, the code feels _very_ similar to styled-components. If you're looking for a similar API but with some other benefits (and trade-offs), consider emotion as it's a very solid alternative.
+  
+![polished](./images/screenshots/52-polished.png)
+
+Polished is a *framework agnostic* collection of utility methods for CSS in JS functionality. Some have described it as the "lodash of CSS in JS," and that's a very fair comparison.
+
+Many helpers/mixins are provided for usage in any CSS in JS library, and functionality such as \`lighten\`, \`darken\`, \`rgba\`, etc. can be utilized in your application to do some really interesting things.
+  
+![polished example](./images/screenshots/53-polished-example.png)
+
+Polished is particularly useful in adjusting color (hue shifting, adjusting transpraency, darkening colors, lightening colors, etc.), but contains a number of other additional utilities.
+  
+![polished methods](./images/screenshots/54-polished-methods.png)
 
 These are just the color methods, but polished contains a bunch more including:
 
 - em/rem helpers
 - radial gradient generators
-- normalize.css injection
+- normalize.css injection (CSS reset)
 - shorthands for common things such as text-overflow ellipsis, font-face, etc.
   
-![library download-count](./images/screenshots/59-library-download-count.png)
+![library download-count](./images/screenshots/55-library-download-count.png)
 
-- styled-components is probably the most popular, but of these, it was also the first
-- glamorous requires glamor, so a lot of the glamor downloads are likely from glamorous
-- aphrodite and radium were huge players (and may still be a good choice in certain scenarios), but I tend to like the others a bit more; radium is inline style based
+It _can_ be helpful to consider library downlaod count, but that is in no way, shape, or form indicative of a library's quality or usefulness for your application.
+
+That said, it can be valuable just to get a baseline of relative support, community activity, etc. which can be a metric to consider when targeting a CSS in JS library to use in your application. 
+
+- styled-components is probably the most popular
+- glamorous requires glamor, so a lot of the glamor downloads are likely from glamorous (but note: glamor can be used outside of glamorous)
+- aphrodite and radium were huge players (and may still be a good choice in certain scenarios), but I tend to like the others a bit more
+- radium is inline style based, but adds pseudo styles and other expected CSS functionality while still using inline styles; however, it's not quite as utilized or "in vogue" as it may have once been
   
-![github stars-count](./images/screenshots/60-github-stars-count.png)
+![github stars-count](./images/screenshots/56-github-stars-count.png)
 
-- Similar story here, styled-components tends to be the most starred of each of them
-- radium was a huge player prior to the introduction of the CSS injection style of libraries, which I think tend to be a bit more useful
+Similar story here, styled-components tends to be the most starred of each of them.
+
+Radium was a huge player prior to the introduction of the stylesheet injection and uniquely generated hased class names style of libraries, which arguably tend to be a bit more useful.
   
-![payload size-chart](./images/screenshots/61-payload-size-chart.png)
+![payload size-chart](./images/screenshots/57-payload-size-chart.png)
 
-- The cost of using these libraries is non-null
-- However, each of them is a fairly small payload GZipped
+The cost of using these libraries is non-null, even when using babel plugins or other techniques to reduce the file size as much as possible.
+
+However, the cost is relatively small, so weighing developer utility and other benefits of CSS in JS vs. a relatively small size seems to be a fairly inoccuous concern.
   
-![companies](./images/screenshots/62-companies.png)
+![companies](./images/screenshots/58-companies.png)
 
-- I always like seeing lists of companies using tech.
-- Makes me personally feel like there's validity to the practice if these other, big companies are also using it
-- Also, Twitter, Facebook, and probably others!
+Seeing some of the companies that are utilizing these technologies lends some validity to the practice and makes it more obvious that there's some real value being generated by the usage of these libraries.
   
-![usage](./images/screenshots/63-usage.png)
+![usage](./images/screenshots/59-usage.png)
 
-- Wanted to give each of you a feel for what it feels like actually writing code in each of these libraries
-- Doing some common things like theming, using props, composing/extending components, etc.
-- Note I'm not endorsing any particular library, so I tried to show each of them at their best!
-- Additionally note, nearly all of these examples are React based, but the underlying ideas could likely be utilized in other frameworks/libraries
+I think it's important to actually show some real-world usage and common patterns for writing "real world" code in each of these libraries.
+
+Common things like theming, utilizing props, inheriting/composing styles, etc.
+
+_Note: I'm not endorsing any particular library, so I'll jump around a bit to give you a better idea of what each library feels like._
   
-![using props](./images/screenshots/64-using-props.png)
+![using props](./images/screenshots/60-using-props.png)
 
-- Props injection can be super handy to just make a little change here or there
-- For instance, a button may want to take an inverted style, or even a backgroundColor prop to change the bgColor
+Props injection is a natural, React-y method of altering a given component's style under certain conditions. For instance, if re-visit our earlier CSS only button, we can create the same with props, but with complete encapsulation to that single button component.
   
-![inheritance](./images/screenshots/65-inheritance.png)
+![inheritance](./images/screenshots/61-inheritance.png)
 
-- How do we extend a component?
-- You use it like a function, and the extension takes precedence over the underyling style
-- styled-components has a similar API, as well as a new \`.extend\` function that exists on a styled component
+A common question is that one of CSS' great features is inheritance and easy extension of base classes. Inheritance is typically accomplished in these libraries by injecting a previously styled component (😉) and adding additional styles.
   
-![real css](./images/screenshots/66-real-css.png)
+![real css](./images/screenshots/62-real-css.png)
 
-- Just wanted to drive home that this is truly real CSS
-- Most of these libraries (particularly styled-components and glamorous) inject real stylesheets with a unique class name
-- This means you get the full power of CSS including media queries, pseduo styles, etc.
+One final reminder that in each of these libraries, real CSS and real stylesheets are added to the DOM. The value of CSS remains but with the clear and numerous benefits that CSS in JS provides.
   
-![animation](./images/screenshots/67-animation.png)
+![animation](./images/screenshots/63-animation.png)
 
-- But what about animations, particularly keyframe animations? Those are global!
-- Most libraries include some type of helper to return a unique identifier for these animations so no globals are introduced!
+But what about animations? Those are inherently global!
+
+Most libraries include some type of helper utility to return a unique identifier/hash for those animations so that globals remain stripped from the code base.
   
-![using class-name](./images/screenshots/68-using-class-name.png)
+![using class-name](./images/screenshots/64-using-class-name.png)
 
-If you're designing a component library and want to make it CSS in JS friendly, consider exposing the className prop
+If you're designing a component library and want to make it CSS in JS friendly, consider exposing the className prop for consumption
 
-- these libraries inject a className, which would then be applied on top of the existing styles
-- Note this may not work perfectly, but it's worth checking out!
+- these libraries inject a className (and a \`style\` tag in the DOM), which would then be applied on top of the existing styles
 - Additionally, if you are "wrapping" your styled elements, this is a great way to make those wrappers extensible, as well
   
-![external libraries](./images/screenshots/69-external-libraries.png)
+![external libraries](./images/screenshots/65-external-libraries.png)
 
-- Libraries that require a certain class structure (e.g. Bootstrap), can also work with CSS in JS libraries!
-- This example exposes a wrapped bootstrap Alert, which can then be used as a regular React component
+Libraries that require a certain class structure (e.g. Bootstrap), can also work with CSS in JS libraries!
+
+This example exposes a wrapped bootstrap Alert, which can then be used as a regular React component
   
-![external libraries-styled](./images/screenshots/70-external-libraries-styled.png)
+![theming intro](./images/screenshots/66-theming-intro.png)
 
-- The styled-components variant
+Theming is a particularly common use case that can be semi-difficult to architect cleanly. Most of these major libraries expose a \`ThemeProvider\` component which can be used to provide a theme (via context) to each styled component.
+
+It is, for instance, incredibly easy to make a light/dark theme for an application, or any number of color variants.
   
-![theming intro](./images/screenshots/71-theming-intro.png)
+![theme provider](./images/screenshots/67-theme-provider.png)
 
-- Theming is a common concern (and can be kinda hard!) for CSS
-- CSS in JS libraries generally expose a ThemeProvider, which then makes the theme rules & colors available to the underlying components
-- Super easy to make a light/dark variant, for example
+Check out the [code slide](https://cssinjs.dustinschau.com/#/theme-provider) to see the full, navigable example
   
-![theme provider](./images/screenshots/72-theme-provider.png)
+![drawbacks intro](./images/screenshots/68-drawbacks-intro.png)
 
-- I'm showing a theme object here, and then a component consuming the current theme value(s)
+However, there aren't any silver bullets it seems in frontend web technology. While CSS in JS may seem like a great fit for most applications, there are certainly some drawbacks that are worth considering.
   
-![drawbacks intro](./images/screenshots/73-drawbacks-intro.png)
+![java script-disabled](./images/screenshots/69-java-script-disabled.png)
 
-- In the interest of fairness, CSS in JS certainly has some drawbacks worth considering
+When JavaScript is disabled (still can be a concern!), how do we progressively enhance? If JavaScript is our styling and rendering solution, we're serving effectively an unstyled mess of content, which goes directly contrary to the ideas of progressive enhancement.
+
+0.2% of users may not seem like much, but if you're Facebook scale or driving a lot of traffic it's a concern
+
+- 1,000,000 monthly users means 2,000 users may not be getting a usable site
+
+How can we fix this?
+
+You can mitigate with server side rendering (something like next would be terrific) or statically rendering to HTML (with something like Gatsby)
   
-![java script-disabled](./images/screenshots/74-java-script-disabled.png)
+![not scrapeable](./images/screenshots/70-not-scrapeable.png)
 
-- When JavaScript is disabled (still a concern!), how do we progressively enhance?
-- This is precisely where Progressive Enhancement rears its head
-- You can mitigate with statically rendering or server-side rendering (hydrating) some launch HTML, or at least using the 'noscript' tag to display some content
-- 0.2% may not seem like much, but if you're Facebook scale or driving a lot of traffic it's a concern
-  - 1,000,000 monthly users means 2,000 users may not be getting a usable site
+Rich Harris, creator of such tools as Rollup, Buble, Svelte, etc. raises an interesting point. Not only are the styles not scrapeable, but the styles can be hard to query, as well. Things like e2e tests or integration tests should not be pointed to a unique hash, and so it's certainly a best practice to either use one of the existing babel plugins for most libraries that adds a humanized class name, or manually add your own!
   
-![not scrapeable](./images/screenshots/75-not-scrapeable.png)
+![editor tooling](./images/screenshots/71-editor-tooling.png)
 
-- To get the style scoping working, a unique identifier/className is generated
-- However, this takes away some of the semantic meaning when viewing the compiled version
-- I'm not overly concerned about this, but it is worth mentioning
-- There are some ways you can guide to generate more human readable class names, but haven't done a ton of research into that
+Editor tooling is still in its infancy, but as CSS in JS continues to grow in popularity, I think we'll see marked improvement on this front.
   
-![editor tooling](./images/screenshots/76-editor-tooling.png)
+![editor tooling-plugin](./images/screenshots/72-editor-tooling-plugin.png)
 
-- Editor tooling is still in its infancy
-- Autocomplete in particular has room for improvement
+However, it seems like every week there are new developments to get this working as seamlessly as possible
   
-![editor tooling-plugin](./images/screenshots/77-editor-tooling-plugin.png)
+![sanitization concerns](./images/screenshots/73-sanitization-concerns.png)
 
-- But it seems like every week there are new developments to get this working as seamlessly as possible
+As with anything, if you're directly injecting user input (even into CSS!) you open yourself up to issues
+
+_Great article on [React Armory](https://reactarmory.com/answers/how-can-i-use-css-in-js-securely)_
   
-![editor tooling-but-wait](./images/screenshots/78-editor-tooling-but-wait.png)
+![performance concerns](./images/screenshots/74-performance-concerns.png)
 
-![sanitization concerns](./images/screenshots/79-sanitization-concerns.png)
+Performance can be a concern, but I'd urge you here to not prematurely optimize. The difference between each of the libraries is arguably minimal, and the difference between CSS is relatively minimal as well.
 
-- As with anything, if you're directly injecting user input (even into CSS!) you open yourself up to issues
-- Great article on React-Armory that just came out this week, linked to at the end
+However, if you're pushing Facebook-scale™, or after measuring your application's performance, then it may be worth re-visiting whether these libraries are for you, or whether there are performance optimizations you can make to improve perf.
   
-![performance concerns](./images/screenshots/80-performance-concerns.png)
+![wrap up-intro](./images/screenshots/75-wrap-up-intro.png)
 
-- This is a big question mark for me currently
-- It's something I'd like to investigate for my talk in November
-- In general, it seems hard to believe CSS in JS is 1:1 with CSS because of the layers of abstraction/libraries we're adding, but I'm not sure (yet!) if this performance difference is meaningful
-- But stay tuned! I'll probably be posting on twitter some findings as I start investigating this
+So what should we make of all of this?
+
+1. CSS in JS solves very real problems of CSS
+1. It does so in a clean, component focused, and developer friendly way
+1. ...
+1. Profit
   
-![wrap up-intro](./images/screenshots/81-wrap-up-intro.png)
+![instructions](./images/screenshots/76-instructions.png)
 
-- So what are we to make of all of this?
-- CSS in JS solves real problems of CSS
-- It does so in a very clean, and developer friendly way
-- Performance may be a concern, as is the reliance on JS
+If I were to give a call to action, or best advice for getting started, I would give this:
+
+1. Start with \`styled-components\` as a starter (or final!) CSS in JS library
+  - It tends to be the most approachable as it uses actual CSS syntax, rather than style objects
+1. If you're a fan, consider experimenting with other libraries in the ecosystem; who knows, you may like them even more than styled-components!
   
-![instructions](./images/screenshots/82-instructions.png)
+![happy](./images/screenshots/77-happy.png)
 
-![happy](./images/screenshots/83-happy.png)
+Overall, I'm _very_ enthused with the direction that CSS in JS is taking and the things it's doing for the ecosystem. I think it provides very tangible benefits to any application, particularly in the approach it takes to solve some of the problems of CSS *now,* and does so in a way that feels like a real improvement over authoring in CSS.
 
-- Overall, I'm really happy with CSS in JS and what it's done for the ecosystem
-- If I were to start a new project today, I'd author it using one of the CSS in JS libraries we've talked about, and I'd feel good about doing so
+If I were to start a new project right this moment, I'd author it using one of the CSS in JS libraries we've talked about, and I'd feel very enthused with that direction.
   
-![css in-js-playground](./images/screenshots/84-css-in-js-playground.png)
+![css in-js-playground](./images/screenshots/78-css-in-js-playground.png)
 
-- On that note, I recently finished a project using and demonstrating (you guessed it!) CSS in JS libraries
-- Let's do a quick demo
+The React community can certainly inspire what many have called "selection anxiety." The proliferation of libraries, techniques, etc. can make it incredibly hard--especially as a beginner--to know what choice to make, and whether the choice is _most_ correct.
+
+To help alleviate this, I recently created what I'm calling the "CSS in JS Playground," which is a live-editable comparison of some of the most common CSS in JS libraries.
+
+My hope is that this tool will help each of you get a feel for each of the libraries, and hopefully be able to make a more informed decision for what is best for _your_ particular app and use cases.
   
-![attributions](./images/screenshots/85-attributions.png)
+![attributions](./images/screenshots/79-attributions.png)
 
-![links](./images/screenshots/86-links.png)
+This talk, and so many other things in the front-end community, would not be possible without the work of so many others. To them, I am so very grateful. Hopefully I, too, have contributed to the conversation!
 
-![fin the-end-thats-all-folks](./images/screenshots/87-fin-the-end-thats-all-folks.png)
+> If I have seen further, it is by standing on the shoulders of giants
+  
+![links](./images/screenshots/80-links.png)
 
-- One final thanks to the organizers and sponsors of this conference, and for giving me an opportunity to present at my first ever conference
-- Come talk to me tonight at the after party :)
+![fin the-end-thats-all-folks](./images/screenshots/81-fin-the-end-thats-all-folks.png)
+
+One final thank you to the organizers and sponsors of this conference, and for giving me an opportunity to present at my first ever conference.
+
+I'd like to also thank each of the attendees. Without you, each of us would be speaking to an empty room, and where's the fun in that!?
