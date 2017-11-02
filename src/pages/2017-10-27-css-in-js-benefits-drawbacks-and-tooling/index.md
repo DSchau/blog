@@ -11,6 +11,7 @@ tags:
   - glamorous
 ---
 
+
 ![0](./images/screenshots/01-0.png)
 
 I'm a frontend developer specializing in all things JavaScript. Throughout my career, I've done a fair bit of everything: Angular, React, jQuery, you name it. Of course, I've also done a fair bit of everything in CSS land, whether it's vanilla CSS, LESS, SASS, CSS Modules, and (of course) the gamut of CSS in JS solutions. I'm from little ol' Omaha, Nebraska, which I think most people looks a bit like this.
@@ -221,7 +222,7 @@ A real stylesheet gives you the best parts of CSS (media queries, pseudo styles,
 
 It lessens the bad parts of CSS (globals!) by scoping to a class name
 
-If you already know CSS, great! CSS in JS presumes that you do; use the properties, rules, etc. of CSS that you already know and love continue to function just as they do in vanilla CSS.
+If you already know CSS, great! CSS in JS presumes that you do; the properties, rules, etc. of CSS that you already know and love continue to function just as they do in vanilla CSS.
   
 ![real styles](./images/screenshots/39-real-styles.png)
 
@@ -257,7 +258,7 @@ At a glance, each element's intent &amp; purpose is incredibly clear. On the lef
   
 ![semantic comparison](./images/screenshots/44-semantic-comparison.png)
 
-The left is the mental model we must keep in our minds when writing CSS centered around HTML. We must be aware that a class we apply in HTML is styled with a class name. We must be aware that these class names can cascade and stuck, sometimes interfering in unforseen ways. These cacading rules then become stylesheets in our DOM that can themselves conflict.
+The left is the mental model we must keep in our minds when writing CSS centered around HTML. We must be aware that a class we apply in HTML is styled with a class name. We must be aware that these class names can cascade and stack, sometimes interfering in unforseen ways. These cacading rules then become stylesheets in our DOM that can themselves conflict.
 
 The right is the mental model when writing CSS in JS. Write HTML (JSX) that is encapsulated with component-scoped styles. No stacking. Never worry again about CSS rule specificity (and no `!important` hacks), and truly think in components!
   
