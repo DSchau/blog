@@ -11,7 +11,6 @@ tags:
   - glamorous
 ---
 
-
 ![0](./images/screenshots/01-0.png)
 
 I'm a frontend developer specializing in all things JavaScript. Throughout my career, I've done a fair bit of everything: Angular, React, jQuery, you name it. Of course, I've also done a fair bit of everything in CSS land, whether it's vanilla CSS, LESS, SASS, CSS Modules, and (of course) the gamut of CSS in JS solutions. I'm from little ol' Omaha, Nebraska, which I think most people looks a bit like this.
@@ -88,9 +87,7 @@ I am very much not a fan of these methodologies. They introduce cognitive overhe
   
 ![run](./images/screenshots/17-run.png)
 
-This pie chart by [Jeremy Thomas](https://twitter.com/jgthms) perfectly encapsulates the issue. Naming is an unnecessary cognitive strain on the process of writing CSS. It does not have to be!
-  
-![naming is-hard-image](./images/screenshots/18-naming-is-hard-image.png)
+![safety through-automation](./images/screenshots/18-safety-through-automation.png)
 
 Consider this quote by Kent C. Dodds. Why would we not use tooling to automate trivial naming concerns? Development is oftentimes all about automating hard problems, and is naming not one of the most (unecessarily) difficult ones we face?
   
