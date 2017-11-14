@@ -12,17 +12,30 @@ const ToolbarContainer = styled.div`
 `
 
 export default function PostToolbar({ date, isPost, next, prev, title }) {
+  const truncate = (str, limit = 35) => {
+    if (str.length <= limit) {
+      return str;
+    }
+    return str.split(' ')
+      .reduce((acc, part) => {
+        const joined = `${acc} ${part}`;
+        if (joined.length < limit) {
+          return joined;
+        }
+        return acc;
+      }, '') + '...';
+  };
   const Buttons = () => {
     if (isPost) {
       return (
         <div>
           {prev &&
             <NavigationButton title={title} to={prev.frontmatter.path} prev>
-              {prev.frontmatter.title}
+              {truncate(prev.frontmatter.title)}
             </NavigationButton>}
           {next &&
             <NavigationButton title={title} to={next.frontmatter.path} next>
-              {next.frontmatter.title}
+              {truncate(next.frontmatter.title)}
             </NavigationButton>}
         </div>
       )

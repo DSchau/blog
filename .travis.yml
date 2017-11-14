@@ -4,7 +4,9 @@ node_js:
 cache:
   yarn: true
 
-before_install: yarn global add greenkeeper-lockfile@1
+before_install:
+  - yarn global add greenkeeper-lockfile@1
+  - yarn global add travis-ci-cloudfront-invalidation
 install: yarn
 
 before_script: greenkeeper-lockfile-update
@@ -22,3 +24,6 @@ deploy:
   acl: public_read
   on:
     branch: master
+after_deploy:
+  - travis-ci-cloudfront-invalidation -a $AWS_ACCESS_KEY_ID -s $AWS_SECRET_ACCESS_KEY -c $AWS_CLOUDFRONT_ID -i '/*' -b $TRAVIS_BRANCH -p $TRAVIS_PULL_REQUEST
+
