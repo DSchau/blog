@@ -28,7 +28,7 @@
     "react-dom": "~16.0.0",
     "react-icons": "~2.2.5",
     "react-typography": "~0.16.5",
-    "styled-components": "~2.2.0",
+    "styled-components": "~2.3.3",
     "typography": "~0.16.6",
     "typography-breakpoint-constants": "~0.15.10",
     "typography-plugin-code": "~0.15.11",
