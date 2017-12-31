@@ -41,7 +41,7 @@
     "eslint": "~4.5.0",
     "eslint-config-standard": "~10.2.1",
     "eslint-config-standard-react": "~5.0.0",
-    "eslint-plugin-class-property": "~1.0.6",
+    "eslint-plugin-class-property": "~1.1.0",
     "eslint-plugin-import": "~2.7.0",
     "eslint-plugin-node": "~5.1.1",
     "eslint-plugin-promise": "~3.5.0",
