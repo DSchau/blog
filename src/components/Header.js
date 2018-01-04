@@ -125,7 +125,7 @@ class BlogHeader extends Component {
       <Header id="blog-header" {...this.props}>
         {showBackButton &&
           <BackContainer>
-            <NavigationButton to="https://www.dustinschau.com" absolute prev>
+            <NavigationButton to="https://www.dustinschau.com" absolute prev target="_self">
               Back to Home
             </NavigationButton>
           </BackContainer>}
