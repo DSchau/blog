@@ -5,6 +5,19 @@ module.exports = {
     author: `Dustin Schau`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: `Dustin Schau's Blog`,
+        description: 'The blog of the developer, Dustin Schau',
+        short_name: 'DSchau Blog',
+        background_color: 'white',
+        theme_color: '#002635',
+        orientation: 'portrait',
+        display: 'minimal-ui'
+      }
+    }, 
+    'gatsby-plugin-offline',
     'gatsby-plugin-react-next',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-styled-components',
@@ -40,18 +53,6 @@ module.exports = {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-102928446-2'
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: `Dustin Schau's Blog`,
-        description: 'The blog of the developer, Dustin Schau',
-        short_name: 'DSchau Blog',
-        background_color: 'white',
-        theme_color: '#002635',
-        orientation: 'portrait',
-        display: 'minimal-ui'
       }
     }
   ],
