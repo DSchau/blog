@@ -8,6 +8,7 @@ module.exports = {
     'gatsby-plugin-react-next',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-remove-trailing-slashes',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
