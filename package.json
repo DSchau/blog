@@ -38,7 +38,7 @@
     "babel-eslint": "~8.0.1",
     "cross-env": "~5.0.5",
     "del-cli": "~1.1.0",
-    "eslint": "~4.5.0",
+    "eslint": "~4.8.0",
     "eslint-config-standard": "~10.2.1",
     "eslint-config-standard-react": "~5.0.0",
     "eslint-plugin-class-property": "~1.0.6",
