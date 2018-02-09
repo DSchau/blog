@@ -32,7 +32,7 @@
     "styled-components": "2.4.0",
     "typography": "0.16.6",
     "typography-breakpoint-constants": "0.15.10",
-    "typography-plugin-code": "0.15.11",
+    "typography-plugin-code": "0.16.11",
     "webfontloader": "1.6.28"
   },
   "devDependencies": {
