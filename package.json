@@ -6,7 +6,7 @@
   "author": "Dustin Schau <dustinschau@gmail.com>",
   "dependencies": {
     "@dschau/particles.js": "~2.0.0",
-    "gatsby": "~1.9.49",
+    "gatsby": "1.9.186",
     "gatsby-link": "~1.6.17",
     "gatsby-plugin-catch-links": "~1.0.8",
     "gatsby-plugin-google-analytics": "~1.0.7",
@@ -61,7 +61,6 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "prebuild": "npm run clean",
     "build": "cross-env NODE_ENV=production gatsby build --prefix-paths",
     "clean": "del-cli \"public/**/*\" \".cache/**/*\"",
     "develop": "npm run start",
