@@ -1,5 +1,5 @@
 ---
-date: "2018-06-10T17:00:58.893Z"
+date: "2018-06-10T17:15:34.619Z"
 title: "GraphQL: Most of the Parts"
 tags:
   - graphql
@@ -112,7 +112,7 @@ Remember that earlier interface for a user? Here's how that same user is represe
 1. The `!` means that a field is non-nullable. In other words, a User will always contain a field of id and it will be type ID
 2. The `ID` type is a special type in GraphQL, and using it enables some nice functionality like improved caching, unique resource recognition, etc.
 
-Note: I am using the library [graphql-tools][graphql-tools] from Apollo to leverage this string type system. You can also use the reference implementation [graphqljs][graphqljs], but it tends to be a bit more verbose.
+Note: I am using the library [graphql-tools][graphql-tools] from [Apollo](https://www.apollographql.com/) to leverage this string type system. You can also use the reference implementation [graphqljs][graphqljs], but it tends to be a bit more verbose.
 
 [graphql-tools]: https://github.com/apollographql/graphql-tools
 [graphqljs]: https://github.com/graphql/graphql-js
@@ -127,7 +127,7 @@ As the schema is strongly typed, as mentioned we can get some great functionalit
 
 An incredibly simple schema is shown here. We have our familiar `User` type, and now we've introduced a Query. Our `users` query accepts a non-nullable limit argument and returns an Array of non-nullable User resources.
 
-In just several lines of code, we've created a strongly typed representation of our data model that can be queried against and used by a client. Once-more, this is utilizing the library [graphql-tools][graphql-tools] from Apollo.
+In just several lines of code, we've created a strongly typed representation of our data model that can be queried against and used by a client. Once-more, this is utilizing the library [graphql-tools][graphql-tools] from [Apollo](https://www.apollographql.com/).
 
 [graphql-tools]: https://github.com/apollographql/graphql-tools
 
@@ -135,7 +135,7 @@ In just several lines of code, we've created a strongly typed representation of 
 
 GraphQL's query language is powered by a core technique known as resolvers. _Every_ field you request can have custom resolvers, and even deeply nested requests can be easily and cleanly resolved with this technique.
 
-Resolvers are the foundational technique that enable the heart of GraphQL's functionality. Resolvers allow you to specify how query fields are resolved--as you'd expect! This means that whatever mechanism you use to store data (i.e. MySQL, RESTful backend, MongoDB, etc.) can be used to request resources from that data store and return it to the client, on demand. If a field isn't requested in a query, the fiels is never resolved and an additional request is not made!
+Resolvers are the foundational technique that enable the heart of GraphQL's functionality. Resolvers allow you to specify how query fields are resolved--as you'd expect! This means that whatever mechanism you use to store data (i.e. MySQL, RESTful backend, MongoDB, etc.) can be used to request resources from that data store and return it to the client, on demand. If a field isn't requested in a query, the field is never resolved and an additional request is not made!
 
 Additionally, resolvers can be defined for _any_ field, or even to add additional functionality to a resource (e.g. a computed property on User which adds fullName).
 
@@ -153,7 +153,7 @@ Additionally, each resolver function is injected with three arguments:
 
 ## root
 
-The root is effectively the "parent" of the current resolved field. For instance, when we resolve a user's manager, root refers to the already resolved user. This makes it easy to use resolved fields (i.e. a user's id) to make a second request to get additional resovled data.
+The root is effectively the "parent" of the current resolved field. For instance, when we resolve a user's manager, root refers to the already resolved user. This makes it easy to use resolved fields (i.e. a user's id) to make a second request to get additional resolved data.
 
 ## args
 
@@ -207,11 +207,11 @@ Check out all the [implementations here](https://graphql.org/code/).
 
 ![30](./images/31-30.png)
 
-By going through the foundational concepts of GraphQL, some of the problems it is attempting to fix are made extremely apparent. That said, it never hurts to go into a bit more detail and be eplicit about the high-level goals of GraphQL and how it attempts to solve some very real API problems many of us have run into over our careers.
+By going through the foundational concepts of GraphQL, some of the problems it is attempting to fix are made extremely apparent. That said, it never hurts to go into a bit more detail and be explicit about the high-level goals of GraphQL and how it attempts to solve some very real API problems many of us have run into over our careers.
 
 ![31](./images/32-31.png)
 
-John Resig mentions here a crucial benefit of GraphQL. If you've perhaps made a mistake, and your database layer may be fairly hard to query against or update resources, GraphQL can be used as a shim layer to abstract some of this complexity while introducing reasonable, understandable queries for your client/users.
+[John Resig](https://twitter.com/jeresig?lang=en) mentions here a crucial benefit of GraphQL. If you've perhaps made a mistake, and your database layer may be fairly hard to query against or update resources, GraphQL can be used as a shim layer to abstract some of this complexity while introducing reasonable, understandable queries for your client/users.
 
 ![32](./images/33-32.png)
 
@@ -247,7 +247,7 @@ This simple interaction of scrolling through and clicking on a tweet could have 
 
 We've effectively introduced waterfall requests in our UI. Structured cleanly, this complexity is maintainable, but it's certainly not an easy problem to solve.
 
-Why not use something we're now familiar with... resolvers, and hydate our client with the minimal data payload they need, thereby reducing waterfall requests and requesting just the minimum subset of data we need for our client.
+Why not use something we're now familiar with... resolvers, and hydrate our client with the minimal data payload they need, thereby reducing waterfall requests and requesting just the minimum subset of data we need for our client.
 
 ![39](./images/40-39.png)
 
@@ -273,7 +273,7 @@ If you were to integrate GraphQL into your stack today, I would have some simple
 
 ![43](./images/44-43.png)
 
-Quite simply, start by introducing GraphQL as a layer in front of your GraphQL layers. Keep your RESTful backend as is, but tie into the very tangible benefits of GraphQL using the resolvers approach I've shown earlier.
+Quite simply, start by introducing GraphQL as a layer in front of your existing API/backend. Keep your backend as is, but tie into the very tangible benefits of GraphQL using the resolvers approach I've shown earlier.
 
 ![44](./images/45-44.png)
 
@@ -285,11 +285,11 @@ Introducing GraphQL absolutely does not, and I'd argue _should not_, constitute 
 
 ![46](./images/47-46.png)
 
-Utilize the existing service offerings, be it open source or otherwise. There are some big hitters in this space that can certainly save you some work, and Apollo is certainly one of the most prominent players in this space. Investigate their service offerings yourself and see if it makes financial sense to tie into some of their excellent services that enhance GraphQL and make it easier to adopt!
+Utilize the existing service offerings, be it open source or otherwise. There are some big hitters in this space that can certainly save you some work, and [Apollo](https://www.apollographql.com/) is certainly one of the most prominent players in this space. Investigate their service offerings yourself and see if it makes financial sense to tie into some of their excellent services that enhance GraphQL and make it easier to adopt!
 
 ![47](./images/48-47.png)
 
-Graphcool is also an excellent service, and offers some of the same service offerings of Apollo. I haven't used it as much, but I have heard excellent things, so be sure to do some due diligence to see if either meet your needs more effectively.
+[Graphcool](https://www.graph.cool/) is also an excellent service, and offers some of the same service offerings of [Apollo](https://www.apollographql.com/). I haven't used it as much, but I have heard excellent things, so be sure to do some due diligence to see if either meet your needs more effectively.
 
 ![48](./images/49-48.png)
 
@@ -303,7 +303,7 @@ Up to this point, I've primarily focused on backend technologies, but there are 
 
 ![50](./images/51-50.png)
 
-First and foremost, Apollo has some excellent open-source client-side offerings.
+First and foremost, [Apollo](https://www.apollographql.com/) has some excellent open-source client-side offerings.
 
 ![51](./images/52-51.png)
 
@@ -313,11 +313,11 @@ In particular, I'd like to mention [apollo-boost][apollo-boost], which makes int
 
 ![apollo boost example](./images/53-apollo-boost-example.png)
 
-Graphcool also has a number of client-side libraries, but once again, I haven't investigated them as much. That said, it's still worth comparing side-by-side with Apollo to see what fits your needs better!
+[Graphcool](https://www.graph.cool/) also has a number of client-side libraries, but once again, I haven't investigated them as much. That said, it's still worth comparing side-by-side with [Apollo](https://www.apollographql.com/) to see what fits your needs better!
 
 ![53](./images/54-53.png)
 
-If you haven't noticed a trend yet, you may not have been paying close enough attention :) Apollo and Graphcool are two of the big players in this space, and you can bet that if you're running into a problem there is likely a service or open-source offering from one of these two companies, if not from Facebook.
+If you haven't noticed a trend yet, you may not have been paying close enough attention :) [Apollo](https://www.apollographql.com/) and [Graphcool](https://www.graph.cool/) are two of the big players in this space, and you can bet that if you're running into a problem there is likely a service or open-source offering from one of these two companies, if not from Facebook.
 
 ![54](./images/55-54.png)
 
@@ -327,7 +327,7 @@ If so, you may consider going "vanilla" and utilizing the Fetch API, which can a
 
 ![55](./images/56-55.png)
 
-Finally, urql from FormidableLabs is a newer offering that shows some promise. It is circling much the same space as Apollo boost and intends to make getting started with GraphQL--from a client-side perspective--as simple as possible.
+Finally, [urql from FormidableLabs](https://github.com/FormidableLabs/urql) is a newer offering that shows some promise. It is circling much the same space as apollo-boost and intends to make getting started with GraphQL--from a client-side perspective--as simple as possible.
 
 It's a great time to be in the GraphQL ecosystem with all this excellent tooling. Exciting times!
 
@@ -337,7 +337,7 @@ I've created (and open sourced!) some demos and repositories to illustrate some 
 
 ![57](./images/58-57.png)
 
-I've created a number of demos and open sourced them, so be sure to check out the code to learn even more about real-world GraphQL.
+Check out some of the below demos/source code to learn more!
 
 ## [graphql-rest-implementation](https://github.com/DSchau/graphql-rest-implementation)
 
