@@ -112,14 +112,15 @@ export default function BlogPost({ data = {}, location, pathContext }) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query BlogPostByPath($slug: String!) {
     site {
       siteMetadata {
         title
         author
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+
+    markdownRemark(fields:{slug:{eq:$slug}}) {
       id
       html
       excerpt(pruneLength: 160)
@@ -128,7 +129,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         rawDate: date
         excerpt
-        path
         tags
         title
         image {
