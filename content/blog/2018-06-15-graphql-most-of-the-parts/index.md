@@ -1,5 +1,5 @@
 ---
-date: "2018-06-10T16:31:48.849Z"
+date: "2018-06-10T16:49:01.502Z"
 title: "GraphQL: Most of the Parts"
 tags:
   - graphql
@@ -7,7 +7,6 @@ tags:
   - node
 excerpt: In this post, I'll do a deep dive on most of the parts of GraphQL. I'll start with the foundational concepts and then from this foundational basis I'll construct the value of GraphQL and illustrate how it could be a hugely transformative technology for server and client communication.
 ---
-
 Hello! My name is Dustin Schau and I hope to share some knowledge with you about... you guessed it, GraphQL!
 
 I intend for this to be a gentle introduction to foundational concepts of GraphQL. In illustrating these concepts, we gain a greater understanding of what makes GraphQL such a transformative technology, and a greater appreciation for the value it can provide for an application. I go into some detail of the problems that GraphQL is trying to solve and how it solves them.
@@ -16,7 +15,7 @@ I'll end with a section on integration into an existing backend. This is primari
 
 ![0](./images/01-0.png)
 
-My name is Dustin Schau, and I'm a frontend developer who likes to claim that I specialize in all things JavaScript. The last few months, the client work I've been doing has had a NodeJS focus, so that ties in particularly well for a deep dive into GraphQL.
+I'm a frontend developer who likes to claim that I specialize in all things JavaScript. The last few months, the client work I've been doing has had a NodeJS focus, so that ties in particularly well for a deep dive into GraphQL.
 
 I work for an awesome company called Object Partners. We have offices in Minneapolis and Omaha, and about 100 senior developers between both offices.
 
@@ -388,7 +387,5 @@ Check out some of these links to view the repos and/or live demonstration sites 
 Thanks for reading, and I hope this leaves you feeling much more confident about the value of GraphQL and informed enough to make a decision as to whether it may make sense to adopt for your applications in the future!
 
 ![59](./images/60-59.png)
-
-
 
 ![60](./images/61-60.png)
