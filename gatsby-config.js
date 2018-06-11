@@ -1,8 +1,8 @@
 module.exports = {
-  pathPrefix: `/`,
+  pathPrefix: '/',
   siteMetadata: {
-    title: `Dustin Schau - Blog`,
-    author: `Dustin Schau`,
+    title: 'Dustin Schau - Blog',
+    author: 'Dustin Schau',
   },
   plugins: [
     {
@@ -24,7 +24,7 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-remove-trailing-slashes',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/blog`,
         name: 'post',
@@ -48,8 +48,8 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
