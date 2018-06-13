@@ -4378,7 +4378,7 @@ gatsby-plugin-manifest@1.0.13:
     babel-runtime "^6.26.0"
     bluebird "^3.5.0"
 
-gatsby-plugin-netlify-cache@~0.0.2:
+gatsby-plugin-netlify-cache@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cache/-/gatsby-plugin-netlify-cache-0.0.2.tgz#dc8d293248e8010e39001c4ded59a1aea610a064"
   dependencies:
@@ -6459,7 +6459,7 @@ jest-worker@^23.0.1:
   dependencies:
     merge-stream "^1.0.1"
 
-jest@~23.1.0:
+jest@23.1.0:
   version "23.1.0"
   resolved "https://registry.yarnpkg.com/jest/-/jest-23.1.0.tgz#bbb7f893100a11a742dd8bd0d047a54b0968ad1a"
   dependencies:
@@ -6794,7 +6794,7 @@ liftoff@^2.2.0:
     rechoir "^0.6.2"
     resolve "^1.1.7"
 
-limax@~1.6.0:
+limax@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/limax/-/limax-1.6.0.tgz#996163291c7e8c6e7dd5b438c0190b69622f1b33"
   dependencies:
