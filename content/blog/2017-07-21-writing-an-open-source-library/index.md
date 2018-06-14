@@ -9,7 +9,7 @@ tags:
   - travis
   - jest
   - unit testing
-image: preview.png
+featured: preview.png
 draft: true
 ---
 

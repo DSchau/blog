@@ -37,7 +37,9 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              linkImagesToOriginal: false
+              backgroundColor: 'transparent',
+              linkImagesToOriginal: false,
+              maxWidth: 800
             }
           },
           'gatsby-remark-prismjs',

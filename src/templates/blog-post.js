@@ -28,8 +28,8 @@ export default function BlogPost({ data = {}, location, pageContext, ...rest }) 
   const description = post.frontmatter.excerpt
     ? post.frontmatter.excerpt
     : post.excerpt
-  const image = post.frontmatter.image
-    ? post.frontmatter.image.childImageSharp.resize.src
+  const image = post.frontmatter.featured
+    ? post.frontmatter.featured.image.resize.src
     : null
   const author = data.site.siteMetadata.author
 
@@ -134,8 +134,8 @@ export const pageQuery = graphql`
         excerpt
         tags
         title
-        image {
-          childImageSharp {
+        featured {
+          image:childImageSharp {
             resize(width: 1500, height: 1500) {
               src
             }

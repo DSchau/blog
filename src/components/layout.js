@@ -19,7 +19,7 @@ const Root = styled.div`
 
 export default class Template extends React.Component {
   static propTypes = {
-    children: PropTypes.func
+    children: PropTypes.node
   }
 
   componentDidMount() {

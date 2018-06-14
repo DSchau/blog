@@ -71,7 +71,6 @@ const Image = styled(ImageShift)`
 
 export default class OhNoFourOhFour extends Component {
   render() {
-    const props = this.props;
     return (
       <Layout {...this.props}>
         <Helmet>

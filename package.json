@@ -6,7 +6,7 @@
   "author": "Dustin Schau <dustinschau@gmail.com>",
   "dependencies": {
     "@dschau/particles.js": "2.0.0",
-    "gatsby": "1.9.186",
+    "gatsby": "next",
     "gatsby-link": "next",
     "gatsby-plugin-catch-links": "next",
     "gatsby-plugin-google-analytics": "next",
@@ -24,8 +24,10 @@
     "gatsby-transformer-remark": "next",
     "gatsby-transformer-sharp": "next",
     "lodash.debounce": "4.0.8",
-    "react": "16.2.0",
-    "react-dom": "16.2.0",
+    "prismjs": "~1.14.0",
+    "react": "~16.4.1",
+    "react-dom": "~16.4.1",
+    "react-helmet": "~5.2.0",
     "react-icons": "2.2.7",
     "react-typography": "0.16.13",
     "styled-components": "2.4.0",
@@ -36,6 +38,7 @@
   },
   "devDependencies": {
     "babel-eslint": "8.2.1",
+    "babel-plugin-styled-components": "~1.5.1",
     "cross-env": "5.1.3",
     "del-cli": "1.1.0",
     "eslint": "4.18.0",
@@ -50,6 +53,7 @@
     "gatsby-plugin-netlify-cache": "next",
     "gatsby-plugin-remove-trailing-slashes": "next",
     "gh-pages": "1.1.0",
+    "hast-to-hyperscript": "git://github.com/lfittl/hast-to-hyperscript",
     "jest": "~23.1.0",
     "limax": "~1.6.0",
     "prettier": "1.10.2"

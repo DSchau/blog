@@ -15,17 +15,6 @@ export default class HTML extends React.Component {
   render() {
     const head = Helmet.rewind()
 
-    let css
-    if (process.env.NODE_ENV === 'production') {
-      css = (
-        <style
-          dangerouslySetInnerHTML={{
-            __html: require('!raw!../public/styles.css')
-          }}
-        />
-      )
-    }
-
     return (
       <html lang="en">
         <head>
@@ -38,7 +27,6 @@ export default class HTML extends React.Component {
           <link href="https://fonts.gstatic.com" rel="preconnect" crossOrigin="anonymous" />
           {this.props.headComponents}
           <TypographyStyle typography={typography} />
-          {css}
         </head>
         <body>
           <div
