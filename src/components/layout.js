@@ -50,7 +50,7 @@ export default class Template extends React.Component {
         />
         <Header isPost={isPost} />
         <Content isPost={isPost} Footer={Footer}>
-          {children()}
+          {children}
         </Content>
       </Root>
     )

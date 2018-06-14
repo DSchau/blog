@@ -43,8 +43,8 @@ const createTagPages = (createPage, edges) => {
     });
 };
 
-module.exports = function createPages({ boundActionCreators, graphql }) {
-  const { createPage } = boundActionCreators;
+module.exports = function createPages({ actions, graphql }) {
+  const { createPage } = actions;
 
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
 

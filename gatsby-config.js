@@ -18,7 +18,6 @@ module.exports = {
       }
     }, 
     'gatsby-plugin-offline',
-    'gatsby-plugin-react-next',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-netlify-cache',
     'gatsby-plugin-styled-components',

@@ -15,8 +15,8 @@ const handleNodeSourceType = ({ createNodeField }) => {
   };
 };
 
-module.exports = function createNode({ node, boundActionCreators, getNode }) {
-  const { createNodeField } = boundActionCreators;
+module.exports = function createNode({ node, actions, getNode }) {
+  const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
     const { sourceInstanceName: type } = getNode(node.parent);
     const handleSourceType = handleNodeSourceType({ createNodeField });

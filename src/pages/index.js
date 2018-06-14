@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Layout from '../components/Layout';
 import Preview from '../components/Preview'
 
 const getParams = search => {
@@ -12,11 +13,11 @@ const getParams = search => {
   }, {})
 }
 
-export default function Index({ data, location }) {
+export default function Index({ data, location, ...rest }) {
   const { edges: posts } = data.allMarkdownRemark
   const { start = 0, end = 10 } = getParams(location.search)
   return (
-    <div>
+    <Layout location={location} {...rest}>
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .slice(start, end)
@@ -32,7 +33,7 @@ export default function Index({ data, location }) {
             </div>
           )
         })}
-    </div>
+    </Layout>
   )
 }
 

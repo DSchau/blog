@@ -6,6 +6,7 @@ import Link from 'gatsby-link'
 import { fadeInBottom } from '../css/animations'
 
 import ImageShift from '../components/ImageShift'
+import Layout from '../components/Layout';
 import FourOhFour from '../images/404.jpeg'
 
 const Container = styled.div`
@@ -70,8 +71,9 @@ const Image = styled(ImageShift)`
 
 export default class OhNoFourOhFour extends Component {
   render() {
+    const props = this.props;
     return (
-      <div>
+      <Layout {...this.props}>
         <Helmet>
           <title>404 - Not Found</title>
         </Helmet>
@@ -84,7 +86,7 @@ export default class OhNoFourOhFour extends Component {
             </ImageContainer>
           </Link>
         </Container>
-      </div>
+      </Layout>
     )
   }
 }

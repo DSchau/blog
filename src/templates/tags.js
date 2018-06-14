@@ -5,6 +5,7 @@ import GatsbyLink from 'gatsby-link'
 import { rhythm } from '../utils/typography'
 import { getColorFromString } from '../utils/color'
 
+import Layout from '../components/Layout'
 import Preview from '../components/Preview'
 
 const List = styled.ul`
@@ -47,12 +48,12 @@ const TagHeader = ({ text }) => {
   )
 }
 
-export default function Tags({ pathContext }) {
-  const { tags, tag, tagName } = pathContext
+export default function Tags({ pageContext, ...rest }) {
+  const { tags, tag, tagName } = pageContext
   if (tag) {
     const len = tag.length
     return (
-      <div>
+      <Layout {...rest}>
         <TagHeader
           text={`${len} post${len > 1 ? 's' : ''} about "${tagName}"`}
         />
@@ -67,23 +68,25 @@ export default function Tags({ pathContext }) {
             />
           )
         })}
-      </div>
+      </Layout>
     )
   }
   return (
-    <TagsContainer>
-      <TagHeader text="All tags" />
-      <List>
-        {tags.map(name => {
-          return (
-            <ListItem key={name}>
-              <GatsbyLink to={`/tags/${name}`}>
-                {name}
-              </GatsbyLink>
-            </ListItem>
-          )
-        })}
-      </List>
-    </TagsContainer>
+    <Layout {...rest}>
+      <TagsContainer>
+        <TagHeader text="All tags" />
+        <List>
+          {tags.map(name => {
+            return (
+              <ListItem key={name}>
+                <GatsbyLink to={`/tags/${name}`}>
+                  {name}
+                </GatsbyLink>
+              </ListItem>
+            )
+          })}
+        </List>
+      </TagsContainer>
+    </Layout>
   )
 }
