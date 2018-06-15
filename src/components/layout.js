@@ -17,7 +17,7 @@ const Root = styled.div`
   height: 100%;
 `
 
-export default class Template extends React.Component {
+export default class Layout extends React.Component {
   static propTypes = {
     children: PropTypes.node
   }
