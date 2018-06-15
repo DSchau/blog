@@ -52,6 +52,13 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        omitGoogleFont: true,
+        pathToConfigModule: 'src/utils/typography'
+      }
+    },
+    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-102928446-2'

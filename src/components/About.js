@@ -43,14 +43,11 @@ const Name = styled.h1`
   margin: 0;
   padding: 0;
   padding-bottom: ${rhythm(1 / 4)};
-  font-family: sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: ${rhythm(1)};
   color: #002635;
   text-transform: uppercase;
   line-height: ${rhythm(1)};
-  .wf-active & {
-    font-family: 'Montserrat', sans-serif;
-  }
 `
 
 const Last = styled.span`font-weight: 400;`

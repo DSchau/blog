@@ -37,12 +37,9 @@ const Header = styled.h1`
   font-size: 72px;
   text-transform: uppercase;
   text-align: center;
-  font-family: Georgia, serif;
+  font-family: Bitter, Georgia, serif;
   line-height: 96px;
   pointer-events: none;
-  .wf-active & {
-    font-family: 'Bitter', Georgia, serif;
-  }
 `
 
 const Description = styled.p`
@@ -55,10 +52,8 @@ const Description = styled.p`
   font-family: sans-serif;
   z-index: 2;
   text-align: center;
+  font-family: Montserrat, sans-serif;
   font-style: italic;
-  .wf-active & {
-    font-family: 'Montserrat', sans-serif;
-  }
 `
 
 const Image = styled(ImageShift)`
