@@ -17,7 +17,6 @@ module.exports = {
         display: 'minimal-ui'
       }
     }, 
-    'gatsby-plugin-offline',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-netlify-cache',
     'gatsby-plugin-styled-components',
