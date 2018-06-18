@@ -46,7 +46,6 @@ const Name = styled.h1`
   margin: 0;
   width: auto;
   user-select: text;
-  font-family: Montserrat, sans-serif;
   @media only screen and (min-width: 375px) {
     font-size: 2.5rem;
   }

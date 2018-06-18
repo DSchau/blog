@@ -31,7 +31,6 @@ const Header = styled.h1`
   margin: ${rhythm(1 / 2)} auto;
   padding: ${rhythm(1 / 4)};
   text-align: center;
-  font-family: Bitter, Georgia, serif;
   @media only screen and (min-width: 768px) {
     max-width: 65%;
   }

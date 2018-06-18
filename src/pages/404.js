@@ -37,7 +37,6 @@ const Header = styled.h1`
   font-size: 72px;
   text-transform: uppercase;
   text-align: center;
-  font-family: Bitter, Georgia, serif;
   line-height: 96px;
   pointer-events: none;
 `
@@ -49,10 +48,8 @@ const Description = styled.p`
   left: 0;
   right: 0;
   color: rgba(255, 255, 255, 0.8);
-  font-family: sans-serif;
   z-index: 2;
   text-align: center;
-  font-family: Montserrat, sans-serif;
   font-style: italic;
 `
 

@@ -1,6 +1,5 @@
 ---
-title: Creating a Blog with Gatsby
-path: /getting-started-with-gatsby
+title: Getting Started with Gatsby
 date: '2017-07-17T17:12:33.962Z'
 tags:
   - gatsby

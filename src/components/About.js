@@ -43,7 +43,6 @@ const Name = styled.h1`
   margin: 0;
   padding: 0;
   padding-bottom: ${rhythm(1 / 4)};
-  font-family: Montserrat, sans-serif;
   font-size: ${rhythm(1)};
   color: #002635;
   text-transform: uppercase;
@@ -55,7 +54,6 @@ const Last = styled.span`font-weight: 400;`
 const Description = styled.p`
   margin-bottom: 0;
   color: #444;
-  font-family: 'Bitter', sans-serif;
 `
 
 export default function About() {

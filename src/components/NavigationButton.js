@@ -21,7 +21,6 @@ const StyledLink = styled(Link)`
   justify-content: space-around;
   transition: all 125ms ease-in-out;
   text-transform: uppercase;
-  font-family: Montserrat, sans-serif;
   font-size: ${rhythm(1 / 2)};
   z-index: 2;
   &:hover {

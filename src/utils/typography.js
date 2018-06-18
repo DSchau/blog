@@ -7,6 +7,8 @@ import 'typeface-bitter'
 const options = {
   baseFontSize: '18px',
   baseLineHeight: 1.5,
+  bodyFontFamily: ['Bitter', 'Georgia', 'serif'],
+  headerFontFamily: ['Montserrat', 'Helvetica', 'sans-serif'],
   scaleRatio: 2.25,
   plugins: [new CodePlugin()],
   overrideStyles: () => ({

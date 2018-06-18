@@ -1,5 +1,4 @@
 ---
-path: /hello-world
 date: "2017-07-13T05:00:00.000Z"
 title: "Hello World"
 tags:
