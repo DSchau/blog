@@ -52,7 +52,7 @@
     "gatsby-plugin-remove-trailing-slashes": "1.0.4",
     "gh-pages": "1.1.0",
     "jest": "~23.1.0",
-    "limax": "~1.6.0",
+    "limax": "1.6.0",
     "prettier": "1.10.2"
   },
   "keywords": [

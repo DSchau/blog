@@ -6794,7 +6794,7 @@ liftoff@^2.2.0:
     rechoir "^0.6.2"
     resolve "^1.1.7"
 
-limax@~1.6.0:
+limax@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/limax/-/limax-1.6.0.tgz#996163291c7e8c6e7dd5b438c0190b69622f1b33"
   dependencies:
