@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from 'react'
 import styled from 'styled-components'
 import { rhythm } from '../utils/typography'
@@ -30,6 +31,5 @@ export default styled(Link)`
   border-width: 2px;
   border-style: solid;
   transition: all 125ms ease-in-out;
-  font-family: sans-serif;
   ${props => getColors(props)};
 `

@@ -46,9 +46,6 @@ const Name = styled.h1`
   margin: 0;
   width: auto;
   user-select: text;
-  .wf-active & {
-    font-family: 'Montserrat', sans-serif;
-  }
   @media only screen and (min-width: 375px) {
     font-size: 2.5rem;
   }
@@ -98,25 +95,15 @@ class BlogHeader extends Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.setState({
       showBackButton: document.referrer.match('dustinschau')
     })
 
-    require.ensure(
-      '@dschau/particles.js',
-      () => {
-        this.Particles = require('@dschau/particles.js')
-        this.Particles(`blog-header`, particlesConfig)
-      },
-      '@dschau/particles.js'
-    )
-  }
+    this.Particles = await import(/* webpackChunkName: "dschau/particles.js" */ '@dschau/particles.js')
+      .then(({ default: Particles }) => Particles)
 
-  componentWillUnmount() {
-    if (this.Particles) {
-      this.Particles.destroy()
-    }
+    this.Particles('blog-header', particlesConfig)
   }
 
   render() {

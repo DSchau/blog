@@ -17,11 +17,11 @@ export default function PostToolbar({ date, isPost, next, prev, title }) {
       return (
         <div>
           {prev &&
-            <NavigationButton title={title} to={prev.fields.slug} prev>
+            <NavigationButton title={title} to={prev.slug} prev>
               {prev.frontmatter.title}
             </NavigationButton>}
           {next &&
-            <NavigationButton title={title} to={next.fields.slug} next>
+            <NavigationButton title={title} to={next.slug} next>
               {next.frontmatter.title}
             </NavigationButton>}
         </div>

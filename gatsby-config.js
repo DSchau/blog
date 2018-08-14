@@ -17,8 +17,6 @@ module.exports = {
         display: 'minimal-ui'
       }
     }, 
-    'gatsby-plugin-offline',
-    'gatsby-plugin-react-next',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-netlify-cache',
     'gatsby-plugin-styled-components',
@@ -39,7 +37,7 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               backgroundColor: 'transparent',
-              linkImagesToOriginal: false
+              linkImagesToOriginal: false,
             }
           },
           'gatsby-remark-prismjs',
@@ -51,6 +49,13 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        omitGoogleFont: true,
+        pathToConfigModule: 'src/utils/typography'
+      }
+    },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {

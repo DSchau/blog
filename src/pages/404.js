@@ -6,6 +6,7 @@ import Link from 'gatsby-link'
 import { fadeInBottom } from '../css/animations'
 
 import ImageShift from '../components/ImageShift'
+import Layout from '../components/Layout';
 import FourOhFour from '../images/404.jpeg'
 
 const Container = styled.div`
@@ -36,12 +37,8 @@ const Header = styled.h1`
   font-size: 72px;
   text-transform: uppercase;
   text-align: center;
-  font-family: Georgia, serif;
   line-height: 96px;
   pointer-events: none;
-  .wf-active & {
-    font-family: 'Bitter', Georgia, serif;
-  }
 `
 
 const Description = styled.p`
@@ -51,13 +48,9 @@ const Description = styled.p`
   left: 0;
   right: 0;
   color: rgba(255, 255, 255, 0.8);
-  font-family: sans-serif;
   z-index: 2;
   text-align: center;
   font-style: italic;
-  .wf-active & {
-    font-family: 'Montserrat', sans-serif;
-  }
 `
 
 const Image = styled(ImageShift)`
@@ -71,7 +64,7 @@ const Image = styled(ImageShift)`
 export default class OhNoFourOhFour extends Component {
   render() {
     return (
-      <div>
+      <Layout {...this.props}>
         <Helmet>
           <title>404 - Not Found</title>
         </Helmet>
@@ -84,7 +77,7 @@ export default class OhNoFourOhFour extends Component {
             </ImageContainer>
           </Link>
         </Container>
-      </div>
+      </Layout>
     )
   }
 }

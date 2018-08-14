@@ -1,2 +1,2 @@
 exports.createPages = require('./gatsby/create-pages');
-exports.onCreateNode = require('./gatsby/on-create-node');
+exports.setFieldsOnGraphQLNodeType = require('./gatsby/set-fields-on-graphql-node');

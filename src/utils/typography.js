@@ -1,11 +1,14 @@
-import React from 'react'
 import Typography from 'typography'
 import CodePlugin from 'typography-plugin-code'
 import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import 'typeface-montserrat'
+import 'typeface-bitter'
 
 const options = {
-  baseFontSize: '18px',
+  baseFontSize: 16,
   baseLineHeight: 1.5,
+  bodyFontFamily: ['Bitter', 'Georgia', 'serif'],
+  headerFontFamily: ['Montserrat', 'Helvetica', 'sans-serif'],
   scaleRatio: 2.25,
   plugins: [new CodePlugin()],
   overrideStyles: () => ({
@@ -19,10 +22,7 @@ const options = {
 }
 
 const typography = new Typography(options)
+const { rhythm } = typography;
 
-// Hot reload typography in development.
-if (process.env.NODE_ENV !== 'production') {
-  typography.injectStyles()
-}
-
+export { rhythm }
 export default typography

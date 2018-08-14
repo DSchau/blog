@@ -43,8 +43,8 @@ const createTagPages = (createPage, edges) => {
     });
 };
 
-module.exports = function createPages({ boundActionCreators, graphql }) {
-  const { createPage } = boundActionCreators;
+module.exports = function createPages({ actions, graphql }) {
+  const { createPage } = actions;
 
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
 
@@ -66,9 +66,7 @@ module.exports = function createPages({ boundActionCreators, graphql }) {
           html
           id
           timeToRead
-          fields {
-            slug
-          }
+          slug
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             draft
@@ -90,14 +88,13 @@ module.exports = function createPages({ boundActionCreators, graphql }) {
 
       // Create pages for each markdown file.
       posts.forEach(({ node }, index) => {
-        const { draft = false } = node.frontmatter;
-        const slug = node.fields.slug;
+        const { slug } = node;
         createPage({
           path: slug,
           component: blogPostTemplate,
           context: {
-            prev: index === 0 ? false : posts[index - 1].node,
-            next: index === posts.length - 1 ? false : posts[index + 1].node,
+            prev: index === 0 ? null : posts[index - 1].node,
+            next: index === posts.length - 1 ? null : posts[index + 1].node,
             slug
           }
         });

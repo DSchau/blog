@@ -39,12 +39,7 @@
   z-index: 1 !important;
 }
 
-.wf-active .post h1 {
-  font-family: 'Bitter', 'Georgia', serif;
-}
-
 .post h1, .post h2, .post h3, .post h4, .post h5 {
-  font-family: 'Georgia', serif;
   letter-spacing: 0.6px;
   word-spacing: 0px;
 }

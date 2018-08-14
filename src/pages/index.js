@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Layout from '../components/Layout';
 import Preview from '../components/Preview'
 
 const getParams = search => {
@@ -12,11 +13,11 @@ const getParams = search => {
   }, {})
 }
 
-export default function Index({ data, location }) {
+export default function Index({ data, location, ...rest }) {
   const { edges: posts } = data.allMarkdownRemark
   const { start = 0, end = 10 } = getParams(location.search)
   return (
-    <div>
+    <Layout location={location} {...rest}>
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .slice(start, end)
@@ -27,12 +28,12 @@ export default function Index({ data, location }) {
                 excerpt={post.frontmatter.excerpt || post.excerpt}
                 date={post.frontmatter.date}
                 title={post.frontmatter.title}
-                to={post.fields.slug}
+                to={post.slug}
               />
             </div>
           )
         })}
-    </div>
+    </Layout>
   )
 }
 
@@ -50,18 +51,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 250)
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            draft
-            excerpt
-            tags
-            title
-          }
+          ...Post
         }
       }
     }

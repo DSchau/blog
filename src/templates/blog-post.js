@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
+import Layout from '../components/Layout'
 import Post from '../components/Post'
 import Tags from '../components/Tags'
 import About from '../components/About'
@@ -18,17 +19,17 @@ const Container = styled.div`
   animation: ${fadeInBottom} 0.3s cubic-bezier(.39, .575, .565, 1) both;
 `
 
-export default function BlogPost({ data = {}, location, pathContext }) {
+export default function BlogPost({ data = {}, location, pageContext, ...rest }) {
   const { markdownRemark: post } = data
-  const { next, prev } = pathContext
+  const { next, prev } = pageContext
 
   const isAbout = location.pathname.match(/about/)
 
   const description = post.frontmatter.excerpt
     ? post.frontmatter.excerpt
     : post.excerpt
-  const image = post.frontmatter.image
-    ? post.frontmatter.image.childImageSharp.resize.src
+  const image = post.frontmatter.featured
+    ? post.frontmatter.featured.image.resize.src
     : null
   const author = data.site.siteMetadata.author
 
@@ -93,21 +94,23 @@ export default function BlogPost({ data = {}, location, pathContext }) {
   )
 
   return (
-    <Container>
-      <Helmet title={`Dustin Schau - ${post.frontmatter.title}`} meta={meta} />
-      <Post
-        className="blog-post"
-        html={post.html}
-        date={post.frontmatter.date}
-        linkTo={post.frontmatter.link || '/'}
-        title={post.frontmatter.title}
-        next={next}
-        prev={prev}
-      >
-        <Tags list={post.frontmatter.tags} />
-        {isAbout && <About />}
-      </Post>
-    </Container>
+    <Layout location={location} {...rest}>
+      <Container>
+        <Helmet title={`Dustin Schau - ${post.frontmatter.title}`} meta={meta} />
+        <Post
+          className="blog-post"
+          html={post.html}
+          date={post.frontmatter.date}
+          linkTo={post.frontmatter.link || '/'}
+          title={post.frontmatter.title}
+          next={next}
+          prev={prev}
+        >
+          <Tags list={post.frontmatter.tags} />
+          {isAbout && <About />}
+        </Post>
+      </Container>
+    </Layout>
   )
 }
 
@@ -120,19 +123,11 @@ export const pageQuery = graphql`
       }
     }
 
-    markdownRemark(fields:{slug:{eq:$slug}}) {
-      id
-      html
-      excerpt(pruneLength: 160)
-      timeToRead
+    markdownRemark(slug:{eq:$slug}) {
+      ...Post
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        rawDate: date
-        excerpt
-        tags
-        title
-        image {
-          childImageSharp {
+        featured {
+          image:childImageSharp {
             resize(width: 1500, height: 1500) {
               src
             }

@@ -21,16 +21,12 @@ const StyledLink = styled(Link)`
   justify-content: space-around;
   transition: all 125ms ease-in-out;
   text-transform: uppercase;
-  font-family: sans-serif;
   font-size: ${rhythm(1 / 2)};
   z-index: 2;
   &:hover {
     background-color: ${props => (props.title ? 'white' : '#002635')};
     color: ${props =>
       props.title ? getColorFromString(props.title) : 'white'};
-  }
-  .wf-active & {
-    font-family: 'Montserrat', sans-serif;
   }
   .content {
     display: none;

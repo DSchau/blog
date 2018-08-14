@@ -1,12 +1,11 @@
 ---
-path: /about
 date: '2017-07-10T23:36:56.503Z'
-title: About this Site
+title: About
 tags:
   - tech stack
   - colophon
   - about
-image: ui-and-code.png
+featured: ui-and-code.png
 excerpt: Welcome to the second version of my blog, powered by Gatsby, an incredible site generator. Learn more about the tech stack and things I built to power this blog.
 ---
 Welcome to the second version of my blog, powered by [Gatsby][gatsby], an incredible static site generator.
