@@ -22,6 +22,9 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-plugin-remove-trailing-slashes',
     {
+      resolve: 'gatsby-mdx'
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/blog`,
