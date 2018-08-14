@@ -5852,6 +5852,12 @@ gatsby-plugin-sharp@next:
     sharp "^0.20.2"
     svgo "^0.7.2"
 
+gatsby-plugin-twitter@~2.0.0-beta.3:
+  version "2.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-twitter/-/gatsby-plugin-twitter-2.0.0-beta.3.tgz#eb43c72fd4b7edb29c95ca80a0ee35e0e8b45fc9"
+  dependencies:
+    "@babel/runtime" "7.0.0-beta.52"
+
 gatsby-plugin-typography@~2.0.1-13:
   version "2.0.1-13"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-2.0.1-13.tgz#434df7deb5675f219d3f81117c38ed822d95932e"

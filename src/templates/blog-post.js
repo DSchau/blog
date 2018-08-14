@@ -17,6 +17,10 @@ const Container = styled.div`
   transform-origin: 50% 0;
   opacity: 0;
   animation: ${fadeInBottom} 0.3s cubic-bezier(.39, .575, .565, 1) both;
+
+  twitterwidget {
+    margin: 1rem auto;
+  }
 `
 
 export default function BlogPost({ data = {}, location, pageContext, ...rest }) {

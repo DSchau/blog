@@ -21,6 +21,7 @@ module.exports = {
     'gatsby-plugin-netlify-cache',
     'gatsby-plugin-emotion',
     'gatsby-plugin-remove-trailing-slashes',
+    'gatsby-plugin-twitter',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -38,6 +39,7 @@ module.exports = {
             options: {
               backgroundColor: 'transparent',
               linkImagesToOriginal: false,
+              showCaptions: true
             }
           },
           'gatsby-remark-prismjs',
