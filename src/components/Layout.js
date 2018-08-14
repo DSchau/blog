@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
+import styled from 'react-emotion'
 
 import Content from '../components/Content'
 import Footer from '../components/Footer'
@@ -41,7 +41,9 @@ export default class Layout extends React.Component {
                 'Developer, javascript, programming, designer, angular, react, node, user experience, design, omaha, nebraska'
             }
           ]}
-        />
+        >
+          <html lang="en" />
+        </Helmet>
         <Header isPost={isPost} />
         <Content isPost={isPost} Footer={Footer}>
           {children}

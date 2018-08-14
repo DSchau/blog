@@ -5,7 +5,7 @@ import 'typeface-montserrat'
 import 'typeface-bitter'
 
 const options = {
-  baseFontSize: 16,
+  baseFontSize: '16px',
   baseLineHeight: 1.5,
   bodyFontFamily: ['Bitter', 'Georgia', 'serif'],
   headerFontFamily: ['Montserrat', 'Helvetica', 'sans-serif'],

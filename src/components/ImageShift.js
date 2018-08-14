@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled from 'react-emotion'
 import debounce from 'lodash.debounce'
 
 const Image = styled.img`

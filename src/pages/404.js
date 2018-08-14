@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
+import styled from 'react-emotion'
 import Link from 'gatsby-link'
 
 import { fadeInBottom } from '../css/animations'

@@ -1,17 +1,15 @@
 # blog (1.0.0)
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/DSchau/blog.svg)](https://greenkeeper.io/)
-
 The source code for the [Gatsby][gatsby] driven statically generated blog
 
 ![blog](./assets/blog.png)
 
 ## Tech stack
 
-- [gatsby][gatsby]
+- [gatsby v2][gatsby]
   - An awesome React-driven static site generator
-- [styled-components][styled-components]
-  - "Visual primitives for the component age," used as a styling solution with CSS
+- CSS in JS with [emotion][emotion]
+  - "The Next Generation of CSS-in-JS," used as a styling solution
 - [particles.js][particles.js]
   - A cool particle effect seen in the header
 - [jest][jest]
@@ -20,7 +18,7 @@ The source code for the [Gatsby][gatsby] driven statically generated blog
   - Each and every post is authored in Markdown parsed by [remark][remark]
 
 [gatsby]: https://github.com/gatsbyjs/gatsby
-[styled-components]: https://github.com/styled-components/styled-components
+[emotion]: https://emotion.sh/
 [particles.js]: https://github.com/VincentGarreau/particles.js/
 [markdown]: https://en.wikipedia.org/wiki/Markdown
 [remark]: http://remark.js.org/

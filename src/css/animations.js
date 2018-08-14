@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components'
+import { keyframes } from 'emotion'
 
 export const animateBackground = keyframes`
     0%{

@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
+import styled from 'react-emotion'
 
 import Layout from '../components/Layout'
 import Post from '../components/Post'
