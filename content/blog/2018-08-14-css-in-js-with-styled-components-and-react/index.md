@@ -23,7 +23,7 @@ The intent is for the course to be super approachable to beginners. However, mak
 
 ## Deal of the Day
 
-If that's not enough, the course has been selected as the "Deal of the Day" on **August 15th**! If this course sounds like it could be up your alley--think it will be!--consider using the following code for 50% off if purchased on **August 15th** or **August 16th**.
+If that's not enough, the course has been selected as the "Deal of the Day" on **August 15th**! If this course sounds like it could be up your alley--and I truly believe it will be!--consider using the following code for 50% off if purchased on **August 15th** or **August 16th**.
 
 <h1 style="text-align: center; display: block;"><code>dotd081518au</code></h1>
 
