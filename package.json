@@ -34,7 +34,7 @@
     "styled-components": "2.4.0",
     "typeface-bitter": "~0.0.54",
     "typeface-montserrat": "~0.0.54",
-    "typography": "0.16.6",
+    "typography": "0.16.17",
     "typography-breakpoint-constants": "0.15.10",
     "typography-plugin-code": "0.16.11"
   },
