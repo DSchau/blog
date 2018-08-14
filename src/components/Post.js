@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { injectGlobal } from 'styled-components'
+import { graphql } from 'gatsby'
 import { rhythm } from '../utils/typography'
 import MdListIcon from 'react-icons/lib/md/list'
 
@@ -134,3 +135,20 @@ export default function({
     </Post>
   )
 }
+
+export const postFragment = graphql`
+  fragment Post on MarkdownRemark {
+    id
+    html
+    excerpt(pruneLength: 160)
+    timeToRead
+    frontmatter {
+      date(formatString: "MMMM DD, YYYY")
+      rawDate: date
+      draft
+      excerpt
+      tags
+      title
+    }
+  }
+`;

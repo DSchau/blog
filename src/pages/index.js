@@ -28,7 +28,7 @@ export default function Index({ data, location, ...rest }) {
                 excerpt={post.frontmatter.excerpt || post.excerpt}
                 date={post.frontmatter.date}
                 title={post.frontmatter.title}
-                to={post.fields.slug}
+                to={post.slug}
               />
             </div>
           )
@@ -51,18 +51,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 250)
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            draft
-            excerpt
-            tags
-            title
-          }
+          ...Post
         }
       }
     }

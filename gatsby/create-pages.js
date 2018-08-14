@@ -66,9 +66,7 @@ module.exports = function createPages({ actions, graphql }) {
           html
           id
           timeToRead
-          fields {
-            slug
-          }
+          slug
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             draft
@@ -91,7 +89,7 @@ module.exports = function createPages({ actions, graphql }) {
       // Create pages for each markdown file.
       posts.forEach(({ node }, index) => {
         const { draft = false } = node.frontmatter;
-        const slug = node.fields.slug;
+        const slug = node.slug;
         createPage({
           path: slug,
           component: blogPostTemplate,

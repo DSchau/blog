@@ -123,17 +123,9 @@ export const pageQuery = graphql`
       }
     }
 
-    markdownRemark(fields:{slug:{eq:$slug}}) {
-      id
-      html
-      excerpt(pruneLength: 160)
-      timeToRead
+    markdownRemark(slug:{eq:$slug}) {
+      ...Post
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        rawDate: date
-        excerpt
-        tags
-        title
         featured {
           image:childImageSharp {
             resize(width: 1500, height: 1500) {
