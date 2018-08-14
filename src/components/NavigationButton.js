@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'react-emotion'
 import Link from 'gatsby-link'
 import BackIcon from 'react-icons/lib/fa/chevron-left'
 import ForwardIcon from 'react-icons/lib/fa/chevron-right'

@@ -1,5 +1,6 @@
 import React from 'react'
-import styled, { injectGlobal } from 'styled-components'
+import styled from 'react-emotion'
+import { injectGlobal } from 'emotion'
 import { graphql } from 'gatsby'
 import { rhythm } from '../utils/typography'
 import MdListIcon from 'react-icons/lib/md/list'
@@ -109,7 +110,7 @@ export default function({
   }
   return (
     <Post className={[`post`].concat(className || []).join(' ')} {...rest}>
-      <PostTitle title={title} to={isPost(false, linkTo)}>
+      <PostTitle title={title} to={isPost(undefined, linkTo)}>
         <Toolbar
           title={title}
           date={date}

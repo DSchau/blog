@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'react-emotion'
 import { rhythm } from '../utils/typography'
 import Link from 'gatsby-link'
 

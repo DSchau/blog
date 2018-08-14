@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
-import styled from 'styled-components'
+import styled from 'react-emotion'
 
 import NavigationButton from './NavigationButton'
 

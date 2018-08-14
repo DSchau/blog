@@ -19,7 +19,7 @@ module.exports = {
     }, 
     'gatsby-plugin-catch-links',
     'gatsby-plugin-netlify-cache',
-    'gatsby-plugin-styled-components',
+    'gatsby-plugin-emotion',
     'gatsby-plugin-remove-trailing-slashes',
     {
       resolve: 'gatsby-source-filesystem',
