@@ -142,6 +142,7 @@ export const postFragment = graphql`
     html
     excerpt(pruneLength: 160)
     timeToRead
+    slug
     frontmatter {
       date(formatString: "MMMM DD, YYYY")
       rawDate: date

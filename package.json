@@ -76,7 +76,6 @@
     "clean": "del-cli \"public/**/*\" \".cache/**/*\"",
     "develop": "npm run start",
     "lint": "eslint src/**/*.js",
-    "preserve": "gatsby build",
     "serve": "gatsby serve",
     "start": "cross-env NODE_ENV=development gatsby develop --open",
     "format": "prettier --single-quote --no-semi --write \"src/**/*.js\"",

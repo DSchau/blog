@@ -88,14 +88,13 @@ module.exports = function createPages({ actions, graphql }) {
 
       // Create pages for each markdown file.
       posts.forEach(({ node }, index) => {
-        const { draft = false } = node.frontmatter;
-        const slug = node.slug;
+        const { slug } = node;
         createPage({
           path: slug,
           component: blogPostTemplate,
           context: {
-            prev: index === 0 ? false : posts[index - 1].node,
-            next: index === posts.length - 1 ? false : posts[index + 1].node,
+            prev: index === 0 ? null : posts[index - 1].node,
+            next: index === posts.length - 1 ? null : posts[index + 1].node,
             slug
           }
         });
