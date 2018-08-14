@@ -41,7 +41,9 @@ export default class Layout extends React.Component {
                 'Developer, javascript, programming, designer, angular, react, node, user experience, design, omaha, nebraska'
             }
           ]}
-        />
+        >
+          <html lang="en" />
+        </Helmet>
         <Header isPost={isPost} />
         <Content isPost={isPost} Footer={Footer}>
           {children}
