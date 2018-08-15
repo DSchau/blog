@@ -18,7 +18,6 @@ module.exports = {
       }
     }, 
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-netlify-cache',
     'gatsby-plugin-emotion',
     'gatsby-plugin-remove-trailing-slashes',
     'gatsby-plugin-twitter',
