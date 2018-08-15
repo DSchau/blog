@@ -18,7 +18,7 @@ const Container = styled.div`
   opacity: 0;
   animation: ${fadeInBottom} 0.3s cubic-bezier(.39, .575, .565, 1) both;
 
-  twitterwidget {
+  twitterwidget, .twitter-tweet {
     margin: 1rem auto;
   }
 `
