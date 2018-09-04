@@ -18,7 +18,7 @@ I'm incredibly excited to announce that I've accepted a role with Gatsby Inc. wo
 
 For those who may not be aware of what Gatsby is, go check out [the documentation](https://gatsbyjs.org) and read up on the [company itself](https://gatsbyjs.com) if it tickles your fancy--oh, and this blog you're reading right now? Created with and powered by Gatsby! Gatsby powers an increasing number of incredibly successful and performant websites, including [the ReactJS.org docs](https://reactjs.org), [CSS Grid by Mozilla](https://mozilladevelopers.github.io/playground/), and [far, far more][site-showcase].
 
-The role with Gatsby will be far different than anything I've done as of yet in my career, but I look very much forward to this next journey into the unknown working on something that I believe to be transformative and incredible.
+The role with Gatsby will be far different than anything I've done as of yet in my career, but I look very much forward to this next journey working on something that I believe to be transformative, powerful, and capable of shaping the modern web experience.
 
 ## Thank you
 
