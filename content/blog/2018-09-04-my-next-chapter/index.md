@@ -21,6 +21,6 @@ The role with Gatsby will be far different than anything I've done as of yet in 
 
 ## Thank you
 
-I want to thank each and every one of my co-workers at not only Object Partners, but also Union Pacific. Both were transformative places in my career, and I can't recommend them both highly enough. Talented folks working on fun projects, what more could you want!?
+I want to thank each and every one of my co-workers (and friends!) not only at Object Partners, but also Union Pacific. Both were transformative places in my career, and I can't recommend them both highly enough. Talented folks working on fun projects, what more could you want!?
 
 [site-showcase]: https://next.gatsbyjs.org/showcase/
