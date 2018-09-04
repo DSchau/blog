@@ -1,6 +1,7 @@
 ---
 date: "2018-09-04T20:50:21.302Z"
 title: "My Next Chapter"
+excerpt: "I am happy to announce that I've accepted a role as Software Engineer for Gatsby Inc, a startup working on making a more performant web through smart defaults and optimizations."
 featured: images/my-next-chapter.jpg
 tags:
   - career
@@ -13,9 +14,9 @@ tags:
 
 _(Pretend that's me and not Kevin Durant)_
 
-It is with an incredible blend of happiness, sadness, and everything in between that I announce that I've accepted a role with Gatsby Inc., working on an incredible static site generator with React.
+I'm incredibly excited to announce that I've accepted a role with Gatsby Inc. working on an awesome static-site generator for React--although anyone who follows me on Twitter knows I think it's so much more 😅.
 
-For anyone who isn't aware of what Gatsby is, go check out [the documentation](https://gatsbyjs.org) and read up on the [company itself](https://gatsbyjs.com) if it tickles your fancy--oh, and this blog you're reading right now? Created with and powered by Gatsby! Gatsby powers an increasing number of incredibly successful and performant websites, including [the ReactJS.org docs](https://reactjs.org), [CSS Grid by Mozilla](https://mozilladevelopers.github.io/playground/), and [far, far more][site-showcase].
+For those who may not be aware of what Gatsby is, go check out [the documentation](https://gatsbyjs.org) and read up on the [company itself](https://gatsbyjs.com) if it tickles your fancy--oh, and this blog you're reading right now? Created with and powered by Gatsby! Gatsby powers an increasing number of incredibly successful and performant websites, including [the ReactJS.org docs](https://reactjs.org), [CSS Grid by Mozilla](https://mozilladevelopers.github.io/playground/), and [far, far more][site-showcase].
 
 The role with Gatsby will be far different than anything I've done as of yet in my career, but I look very much forward to this next journey into the unknown working on something that I believe to be transformative and incredible.
 
