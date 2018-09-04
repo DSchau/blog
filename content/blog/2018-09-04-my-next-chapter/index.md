@@ -1,0 +1,26 @@
+---
+date: "2018-09-04T20:50:21.302Z"
+title: "My Next Chapter"
+featured: images/my-next-chapter.jpg
+tags:
+  - career
+  - gatsby
+  - gatsby inc
+  - object partners
+---
+
+![My next chapter](./images/my-next-chapter.jpg)
+
+_(Pretend that's me and not Kevin Durant)_
+
+It is with an incredible blend of happiness, sadness, and everything in between that I announce that I've accepted a role with Gatsby Inc., working on an incredible static site generator with React.
+
+For anyone who isn't aware of what Gatsby is, go check out [the documentation](https://gatsbyjs.org) and read up on the [company itself](https://gatsbyjs.com) if it tickles your fancy--oh, and this blog you're reading right now? Created with and powered by Gatsby! Gatsby powers an increasing number of incredibly successful and performant websites, including [the ReactJS.org docs](https://reactjs.org), [CSS Grid by Mozilla](https://mozilladevelopers.github.io/playground/), and [far, far more][site-showcase].
+
+The role with Gatsby will be far different than anything I've done as of yet in my career, but I look very much forward to this next journey into the unknown working on something that I believe to be transformative and incredible.
+
+## Thank you
+
+I want to thank each and every one of my co-workers at not only Object Partners, but also Union Pacific. Both were transformative places in my career, and I can't recommend them both highly enough. Talented folks working on fun projects, what more could you want!?
+
+[site-showcase]: https://next.gatsbyjs.org/showcase/
