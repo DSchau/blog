@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'react-emotion'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Post from '../components/Post'
