@@ -1,9 +1,10 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout';
 import Preview from '../components/Preview'
 
-const getParams = search => {
+const getParams = (search = '') => {
   return search.replace('?', '').split('&').reduce((params, keyValue) => {
     const [key, value = ''] = keyValue.split('=')
     if (key && value) {
