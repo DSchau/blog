@@ -60,7 +60,7 @@
     "eslint-plugin-react": "7.7.0",
     "eslint-plugin-standard": "3.0.1",
     "gatsby-plugin-remove-trailing-slashes": "2.0.0",
-    "gh-pages": "1.1.0",
+    "gh-pages": "1.2.0",
     "hast-to-hyperscript": "git://github.com/lfittl/hast-to-hyperscript",
     "jest": "~23.6.0",
     "limax": "~1.6.0",
