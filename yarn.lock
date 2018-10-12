@@ -2075,7 +2075,7 @@ babel-plugin-syntax-do-expressions@^6.8.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-do-expressions/-/babel-plugin-syntax-do-expressions-6.13.0.tgz#5747756139aa26d390d09410b03744ba07e4796d"
   integrity sha1-V0d1YTmqJtOQ0JQQsDdEugfkeW0=
 
-babel-plugin-syntax-dynamic-import@^6.18.0, babel-plugin-syntax-dynamic-import@~6.18.0:
+babel-plugin-syntax-dynamic-import@6.18.0, babel-plugin-syntax-dynamic-import@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-dynamic-import/-/babel-plugin-syntax-dynamic-import-6.18.0.tgz#8d6a26229c83745a9982a441051572caa179b1da"
   integrity sha1-jWomIpyDdFqZgqRBBRVyyqF5sdo=
@@ -2482,7 +2482,7 @@ babel-polyfill@^6.20.0:
     core-js "^2.5.0"
     regenerator-runtime "^0.10.5"
 
-babel-preset-env@~1.7.0:
+babel-preset-env@1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.7.0.tgz#dea79fa4ebeb883cd35dab07e260c1c9c04df77a"
   integrity sha512-9OR2afuKDneX2/q2EurSftUYM0xGu4O2D9adAhVfADDhrYDaxXV0rBbevVYoY9n6nyX1PmQW/0jtpJvUNr9CHg==
@@ -2567,7 +2567,7 @@ babel-preset-jest@^23.2.0:
     babel-plugin-jest-hoist "^23.2.0"
     babel-plugin-syntax-object-rest-spread "^6.13.0"
 
-babel-preset-react@~6.24.1:
+babel-preset-react@6.24.1:
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-preset-react/-/babel-preset-react-6.24.1.tgz#ba69dfaea45fc3ec639b6a4ecea6e17702c91380"
   integrity sha1-umnfrqRfw+xjm2pOzqbhdwLJE4A=
@@ -2579,7 +2579,7 @@ babel-preset-react@~6.24.1:
     babel-plugin-transform-react-jsx-source "^6.22.0"
     babel-preset-flow "^6.23.0"
 
-babel-preset-stage-0@~6.24.1:
+babel-preset-stage-0@6.24.1:
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-preset-stage-0/-/babel-preset-stage-0-6.24.1.tgz#5642d15042f91384d7e5af8bc88b1db95b039e6a"
   integrity sha1-VkLRUEL5E4TX5a+LyIsduVsDnmo=
@@ -5129,14 +5129,14 @@ emojis-list@^2.0.0:
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
   integrity sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
 
-emotion-server@~9.2.9:
+emotion-server@9.2.9:
   version "9.2.9"
   resolved "https://registry.yarnpkg.com/emotion-server/-/emotion-server-9.2.9.tgz#2a17d272982e59667e759ce470cff15c30adb0c6"
   integrity sha512-Ff/f8NoyDKKVEIeYFXF14uAgNfCM5iSETMPqH1PPFGbkbNeWji7x1gMCIn+faAATq8z4y1VfzJy3dIY3e89SIw==
   dependencies:
     create-emotion-server "^9.2.9"
 
-emotion@~9.2.9:
+emotion@9.2.9:
   version "9.2.9"
   resolved "https://registry.yarnpkg.com/emotion/-/emotion-9.2.9.tgz#c2028705acc60a138ecb69d3fc1d2056764f61a1"
   integrity sha512-G5qJxf8hVWzYWmfmYt6LDTaYd4SmW+urh3Ls/nx67w5wKFJ/HjOHVh7ms0hL0U2008hOWXct6zOSQDJGsGjoxA==
@@ -6681,7 +6681,7 @@ gatsby-plugin-catch-links@2.0.2:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-emotion@~2.0.5:
+gatsby-plugin-emotion@2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-2.0.5.tgz#e44d0ee58fc07bb49889a28ca51e0cb4690aeeb4"
   integrity sha512-+qqX1Hs8R/9n9zBvbz2tanql1Y34hGq23DnnJZ096UIhXrtXc/et9/J+FF9+zhX/kBAWYNE+IvzzcpURyFTv8g==
@@ -6695,7 +6695,7 @@ gatsby-plugin-google-analytics@2.0.5:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-layout@^1.0.3:
+gatsby-plugin-layout@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-layout/-/gatsby-plugin-layout-1.0.3.tgz#ffa63925f56cc68e2326ec8aca3e3da33d23c1ae"
   integrity sha512-PtNke+NfJ4WVH6GxYQHZcR5cEnsQr0BmSEuFgN4QjkCR+5hjNQ+7eKg/jDZbEvvVnYnlPPLLEl1XBu9DIK+2zw==
@@ -6711,7 +6711,7 @@ gatsby-plugin-manifest@2.0.2:
     bluebird "^3.5.0"
     sharp "^0.20.2"
 
-gatsby-plugin-offline@^2.0.5:
+gatsby-plugin-offline@2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-2.0.5.tgz#11cd7941116ea3f7d3127a4343ce880ca1d10497"
   integrity sha512-sxdhaylmVlgdW7Vi2DmoKx12/OvpbzxLtn9JfM1MnhG4AGVhXPtbVAfPhx4oaai966A6ze3Bh7XM4DaPEY6WUA==
@@ -6749,7 +6749,7 @@ gatsby-plugin-remove-trailing-slashes@2.0.0:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-sharp@^2.0.6:
+gatsby-plugin-sharp@2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.6.tgz#6d0b7e7102fcedbe8d0018e53d366018ebc84fdf"
   integrity sha512-ie3vPvOkxoX+DLG/xyxg5Ibha3RqtnWZFmchYWPOdJDofKMA2rIiCMkTspSOA17yvfJf0AiqLe68Uri6ssw0gw==
@@ -6770,14 +6770,14 @@ gatsby-plugin-sharp@^2.0.6:
     sharp "^0.20.2"
     svgo "^0.7.2"
 
-gatsby-plugin-twitter@~2.0.5:
+gatsby-plugin-twitter@2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-twitter/-/gatsby-plugin-twitter-2.0.5.tgz#a078ff70d3a43e160e4afb9623a3f967d6195683"
   integrity sha512-T/rZ0sPDOVwZRThUkR1sEYYe2+6at3XL3x4LgJfmTQBojnwGBx/S4YHFrPuafV4wClePYHzzwcrqyGT7Ulk49w==
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-typography@~2.2.0:
+gatsby-plugin-typography@2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-2.2.0.tgz#7c78cb7cd931f4ad9ad95d616588c6337b264b3d"
   integrity sha512-qq5yXlTp8xPlcgKZSyXGZiZ0BIjsmsoFWJCI/IdWZj9gvsFoUcz0LV7Qtca+ISkS2HS6M26sPL/D2KW2G3pWHA==
@@ -6817,7 +6817,7 @@ gatsby-remark-copy-linked-files@2.0.5:
     probe-image-size "^4.0.0"
     unist-util-visit "^1.3.0"
 
-gatsby-remark-images@^2.0.3:
+gatsby-remark-images@2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-2.0.3.tgz#0d2f90a9e200a20112da5d62b0906a2ac8e01d9f"
   integrity sha512-lQjgYS5BCu8llXJodqU8hX5UVfNRCtmAHcz2elfkK5QHKUV8cz+CNpW+1MwXBFMvMgL33TNIVtomajtVdYdvYw==
@@ -6892,7 +6892,7 @@ gatsby-transformer-remark@2.1.1:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.3.0"
 
-gatsby-transformer-sharp@^2.1.3:
+gatsby-transformer-sharp@2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.1.3.tgz#9929919884e9edaab0179545c23d1cfc497c5070"
   integrity sha512-irEGZBcYp52oU/ACASRYuMYBvztOrf4RoKVbyZbKjJLI9rZPVom8wnLHK0cxGxHWgbvsyX63I1gpt7lENPFTSw==
@@ -6904,7 +6904,7 @@ gatsby-transformer-sharp@^2.1.3:
     probe-image-size "^4.0.0"
     sharp "^0.20.2"
 
-gatsby@^2.0.18:
+gatsby@2.0.18:
   version "2.0.18"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.18.tgz#a07d47b99812a69f49aa5b6a6fcb65b66722beab"
   integrity sha512-E+8aFsfnZVUdO3WBcCUtI6ctsD+AJY1TAupSm0vg+a9/aKz8VZ3VWhtDWBC3kDqoh65hUGaUy1dUXj/sfilPPg==
@@ -9239,7 +9239,7 @@ jest-worker@^23.2.0:
   dependencies:
     merge-stream "^1.0.1"
 
-jest@~23.6.0:
+jest@23.6.0:
   version "23.6.0"
   resolved "https://registry.yarnpkg.com/jest/-/jest-23.6.0.tgz#ad5835e923ebf6e19e7a1d7529a432edfee7813d"
   integrity sha512-lWzcd+HSiqeuxyhG+EnZds6iO3Y3ZEnMrfZq/OTGvF/C+Z4fPMCdhWTGSAiO2Oym9rbEXfwddHhh6jqrTF3+Lw==
@@ -9584,7 +9584,7 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-limax@~1.6.0:
+limax@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/limax/-/limax-1.6.0.tgz#996163291c7e8c6e7dd5b438c0190b69622f1b33"
   integrity sha1-mWFjKRx+jG591bQ4wBkLaWIvGzM=
@@ -11998,7 +11998,7 @@ pretty-format@^23.6.0:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
-prismjs@~1.14.0:
+prismjs@1.14.0:
   version "1.14.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.14.0.tgz#bbccfdb8be5d850d26453933cb50122ca0362ae0"
   integrity sha512-sa2s4m60bXs+kU3jcuUwx3ZCrUH7o0kuqnOOINbODqlRrDB7KY8SRx+xR/D7nHLlgfDdG7zXbRO8wJ+su5Ls0A==
@@ -12307,7 +12307,7 @@ react-dev-utils@^4.2.1:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dom@~16.5.1:
+react-dom@16.5.1:
   version "16.5.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.5.1.tgz#29d0c5a01ed3b6b4c14309aa91af6ec4eb4f292c"
   integrity sha512-l4L9GtX7ezgnDIIr6AaNvGBM4BiK0fSs4/V8bdsu9X6xqrtHr+jp6auT0hbHpN7bH9WRvDBZceWQ9WJ3lGCIvQ==
@@ -12317,7 +12317,7 @@ react-dom@~16.5.1:
     prop-types "^15.6.2"
     schedule "^0.4.0"
 
-react-emotion@~9.2.9:
+react-emotion@9.2.9:
   version "9.2.9"
   resolved "https://registry.yarnpkg.com/react-emotion/-/react-emotion-9.2.9.tgz#fe4eaa801a1c87a371dfd8ecab52ee4e8bf75b07"
   integrity sha512-Y659k6/Ow1KAs975Sy/wv8U7vvjgcgpeQi98+RuxsKNsfmSgzTNOMKT9hwR9QFBz9k+sOqAeAmwgc08PZeN4KQ==
@@ -12330,7 +12330,7 @@ react-error-overlay@^3.0.0:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
   integrity sha512-XzgvowFrwDo6TWcpJ/WTiarb9UI6lhA4PMzS7n1joK3sHfBBBOQHUc0U4u57D6DWO9vHv6lVSWx2Q/Ymfyv4hw==
 
-react-helmet@~5.2.0:
+react-helmet@5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.2.0.tgz#a81811df21313a6d55c5f058c4aeba5d6f3d97a7"
   integrity sha1-qBgR3yExOm1VxfBYxK66XW89l6c=
@@ -12382,7 +12382,7 @@ react-typography@0.16.13:
   resolved "https://registry.yarnpkg.com/react-typography/-/react-typography-0.16.13.tgz#94bdd2a9448823bc74d8ebf7465d86c7dbe20dcf"
   integrity sha512-lqyl8yqRN6O8Gn596+9QpRegmjnUaNvJuz11u99+gJ2hJ2iSUFqlLDfCs+j8+y0efCFyM5+oy2IYNBwBCTF9qQ==
 
-react@~16.5.1:
+react@16.5.1:
   version "16.5.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.5.1.tgz#8cb8e9f8cdcb4bde41c9a138bfbf907e66132372"
   integrity sha512-E+23+rbpPsJgSX812LQkwupUCFnbVE84+L8uxlkqN5MU0DcraWMlVf9cRvKCKtGu0XvScyRnW7Z+9d7ymkjy3A==
@@ -14718,12 +14718,12 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typeface-bitter@~0.0.54:
+typeface-bitter@0.0.54:
   version "0.0.54"
   resolved "https://registry.yarnpkg.com/typeface-bitter/-/typeface-bitter-0.0.54.tgz#b932661d3ffa0f1cd2ee764e9ddb8738eaf1c437"
   integrity sha512-Kaq3EkrkfE+ZVpKFr6PKh7K/Pp6QnGkFGxAlX2f4bUqiDeHaZjnoKuTjI4PzjPWuO7PphA6+HYbF8oLkj/OS5w==
 
-typeface-montserrat@~0.0.54:
+typeface-montserrat@0.0.54:
   version "0.0.54"
   resolved "https://registry.yarnpkg.com/typeface-montserrat/-/typeface-montserrat-0.0.54.tgz#3fc338db6428d73485b75aa7bd2af8c9a55b9ab3"
   integrity sha512-Typhap0PWT299+Va0G/8ZtycHMXrH4gBWKfiW977KEBx5rXUUCa70gvqLx1fdA0WAo6bhSAQmo8uc+QFAmjPww==
