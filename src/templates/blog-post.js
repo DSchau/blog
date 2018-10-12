@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import styled from 'react-emotion'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
 import Post from '../components/Post'
 import Tags from '../components/Tags'
 import About from '../components/About'
@@ -99,7 +98,6 @@ export default function BlogPost({ data = {}, location, pageContext, ...rest }) 
   )
 
   return (
-    <Layout location={location} {...rest}>
       <Container>
         <Helmet title={`Dustin Schau - ${post.frontmatter.title}`} meta={meta} />
         <Post
@@ -115,7 +113,6 @@ export default function BlogPost({ data = {}, location, pageContext, ...rest }) 
           {isAbout && <About />}
         </Post>
       </Container>
-    </Layout>
   )
 }
 

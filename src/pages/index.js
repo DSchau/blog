@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/Layout';
 import Preview from '../components/Preview'
 
 const getParams = (search = '') => {
@@ -18,23 +17,23 @@ export default function Index({ data, location, ...rest }) {
   const { edges: posts } = data.allMarkdownRemark
   const { start = 0, end = 10 } = getParams(location.search)
   return (
-    <Layout location={location} {...rest}>
-      {posts
-        .filter(post => post.node.frontmatter.title.length > 0)
-        .slice(start, end)
-        .map(({ node: post }) => {
-          return (
-            <div key={post.id}>
-              <Preview
-                excerpt={post.frontmatter.excerpt || post.excerpt}
-                date={post.frontmatter.date}
-                title={post.frontmatter.title}
-                to={post.slug}
-              />
-            </div>
-          )
-        })}
-    </Layout>
+    <React.Fragment>
+    {posts
+      .filter(post => post.node.frontmatter.title.length > 0)
+      .slice(start, end)
+      .map(({ node: post }) => {
+        return (
+          <div key={post.id}>
+            <Preview
+              excerpt={post.frontmatter.excerpt || post.excerpt}
+              date={post.frontmatter.date}
+              title={post.frontmatter.title}
+              to={post.slug}
+            />
+          </div>
+        )
+      })}
+      </React.Fragment>
   )
 }
 

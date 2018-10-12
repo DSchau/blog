@@ -5,7 +5,6 @@ import GatsbyLink from 'gatsby-link'
 import { rhythm } from '../utils/typography'
 import { getColorFromString } from '../utils/color'
 
-import Layout from '../components/Layout'
 import Preview from '../components/Preview'
 
 const List = styled.ul`
@@ -49,7 +48,7 @@ export default function Tags({ pageContext, ...rest }) {
   if (tag) {
     const len = tag.length
     return (
-      <Layout {...rest}>
+      <React.Fragment>
         <TagHeader
           text={`${len} post${len > 1 ? 's' : ''} about "${tagName}"`}
         />
@@ -64,11 +63,11 @@ export default function Tags({ pageContext, ...rest }) {
             />
           )
         })}
-      </Layout>
+      </React.Fragment>
     )
   }
   return (
-    <Layout {...rest}>
+    <React.Fragment>
       <TagsContainer>
         <TagHeader text="All tags" />
         <List>
@@ -83,6 +82,6 @@ export default function Tags({ pageContext, ...rest }) {
           })}
         </List>
       </TagsContainer>
-    </Layout>
+    </React.Fragment>
   )
 }

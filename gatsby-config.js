@@ -48,8 +48,10 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-layout',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
