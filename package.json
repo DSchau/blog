@@ -64,7 +64,7 @@
     "hast-to-hyperscript": "git://github.com/lfittl/hast-to-hyperscript",
     "jest": "~23.6.0",
     "limax": "~1.6.0",
-    "prettier": "1.14.2"
+    "prettier": "1.15.3"
   },
   "keywords": [
     "gatsby",
