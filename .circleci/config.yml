@@ -48,12 +48,12 @@ jobs:
           at: public
       - run: sudo pip install awscli
       - run: >
-          aws s3 sync public s3://blog.dustinschau.com \
-            --acl public_read \
+          aws s3 sync public s3://blog.dustinschau.com
+            --acl public_read
             --delete
       - run: >
-          aws cloudfront create-invalidation \
-            --distribution-id $AWS_CLOUDFRONT_ID \
+          aws cloudfront create-invalidation
+            --distribution-id $AWS_CLOUDFRONT_ID
             --paths /*
 
 workflows:
