@@ -793,11 +793,12 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@dschau/gatsby-theme-blog@^0.0.0-rc.18":
-  version "0.0.0-rc.18"
-  resolved "https://registry.yarnpkg.com/@dschau/gatsby-theme-blog/-/gatsby-theme-blog-0.0.0-rc.18.tgz#ae13eafb2b16becc4093fe24ad9223b1dead3a0f"
-  integrity sha512-GNAmgJ5nS0xdL7p+1g30akMP2WZmm/M+EZ1MK3++DxOzPOzN/MXZ9DI3HmjDsj4L1PKfFUeXic3SU1MRhZ431A==
+"@dschau/gatsby-theme-blog@^0.0.0-rc.19":
+  version "0.0.0-rc.19"
+  resolved "https://registry.yarnpkg.com/@dschau/gatsby-theme-blog/-/gatsby-theme-blog-0.0.0-rc.19.tgz#2d2eccd0cba1fdb8289767499b6b192766599a79"
+  integrity sha512-LXpk3YnvVQQzzTKP68SvesyYBurT9n8+Isceingr3/UtPrBC+ENZdD4hKh1M0qH93/3B2Ia9jBF983y8TYLlCA==
   dependencies:
+    "@dschau/gatsby-theme-utils" "^0.0.1"
     "@dschau/particles.js" "2.0.0"
     "@emotion/core" "^10.0.5"
     "@emotion/styled" "^10.0.5"
@@ -837,6 +838,11 @@
     typography "0.16.18"
     typography-breakpoint-constants "0.16.18"
     typography-plugin-code "0.16.18"
+
+"@dschau/gatsby-theme-utils@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@dschau/gatsby-theme-utils/-/gatsby-theme-utils-0.0.1.tgz#d6df5c71e7c908697f4a137752ac831e753a5ce7"
+  integrity sha512-FmiXrOgd+JWPCqJofdQEE/lKw4aSQGYv+wWfiI2hM5Q1TDZAZ78fZTTisPrOQCq/wl3cnQ/y4wzuTz6TyMU9ZQ==
 
 "@dschau/particles.js@2.0.0":
   version "2.0.0"
