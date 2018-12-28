@@ -28,7 +28,7 @@ aliases:
         - ~/.cache
 
 jobs:
-  deploy:
+  build:
     executor: node
     steps:
       - checkout
@@ -36,13 +36,35 @@ jobs:
       - <<: *install_node_modules
       - <<: *persist_cache
       - run: yarn build
+      - persist_to_workspace:
+          root: public
+          paths:
+            - "*"
+  deploy:
+    docker:
+      - image: circleci/python:2.7-jessie
+    steps:
+      - attach_workspace:
+          at: public
+      - run: sudo pip install awscli
+      - run: >
+          aws s3 sync public s3://blog.dustinschau.com \
+            --acl public_read \
+            --delete
+      - run: >
+          aws cloudfront create-invalidation \
+            --distribution-id $AWS_CLOUDFRONT_ID \
+            --paths /*
 
 workflows:
   version: 2
-  build-test:
+  build-and-deploy:
     jobs:
+      - build
       - deploy:
           filters:
             branches:
               only:
                 - master
+          requires:
+            - build
