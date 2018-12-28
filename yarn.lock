@@ -793,10 +793,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@dschau/gatsby-theme-blog@^0.0.0-rc.19":
-  version "0.0.0-rc.19"
-  resolved "https://registry.yarnpkg.com/@dschau/gatsby-theme-blog/-/gatsby-theme-blog-0.0.0-rc.19.tgz#2d2eccd0cba1fdb8289767499b6b192766599a79"
-  integrity sha512-LXpk3YnvVQQzzTKP68SvesyYBurT9n8+Isceingr3/UtPrBC+ENZdD4hKh1M0qH93/3B2Ia9jBF983y8TYLlCA==
+"@dschau/gatsby-theme-blog@^0.0.0-rc.32":
+  version "0.0.0-rc.32"
+  resolved "https://registry.yarnpkg.com/@dschau/gatsby-theme-blog/-/gatsby-theme-blog-0.0.0-rc.32.tgz#88545785ff78b1548d3be8db937312fed818d4fb"
+  integrity sha512-gnLseYa9GwpRlCiUUbF/i/AEd7r5ODdfZWL/11uYnYth2AvfAbLeZvjKq4WvP1Ws+cd128OwdmN40gxkS35beQ==
   dependencies:
     "@dschau/gatsby-theme-utils" "^0.0.1"
     "@dschau/particles.js" "2.0.0"
@@ -827,6 +827,7 @@
     limax "^1.7.0"
     lodash.debounce "4.0.8"
     prismjs "~1.15.0"
+    prop-types "^15.6.2"
     react "~16.6.3"
     react-dom "~16.6.3"
     react-emotion "~10.0.0"

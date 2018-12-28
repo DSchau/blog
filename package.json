@@ -5,7 +5,7 @@
   "private": true,
   "author": "Dustin Schau <dustinschau@gmail.com> (https://blog.dustinschau.com)",
   "dependencies": {
-    "@dschau/gatsby-theme-blog": "^0.0.0-rc.19",
+    "@dschau/gatsby-theme-blog": "^0.0.0-rc.32",
     "gatsby": "^2.0.73"
   },
   "keywords": [
