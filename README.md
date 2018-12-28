@@ -1,8 +1,8 @@
 # blog (1.0.0)
 
-The source code for the [Gatsby][gatsby] driven statically generated blog
+The source code for the [Gatsby][gatsby] driven statically generated blog. See dschau/gatsby-theme-blog for the theme that powers the functionality.
 
-![blog](./assets/blog.png)
+![blog](./content/preview.png)
 
 ## Tech stack
 
