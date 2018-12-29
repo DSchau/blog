@@ -793,16 +793,16 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@dschau/gatsby-theme-blog@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@dschau/gatsby-theme-blog/-/gatsby-theme-blog-0.0.1.tgz#264badc3ba2d053db9aa426dde183e20c7eee9be"
-  integrity sha512-e1EY2kgLDA7H6OHGtQscsuOHr7v4f8mVP6J/0xd7VWX4AKvO2/BssqxzYa1eM4Fs2Wri0PTW4wxSlTyeA8cBkg==
+"@dschau/gatsby-theme-blog@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@dschau/gatsby-theme-blog/-/gatsby-theme-blog-0.1.0.tgz#0bd96288af3efbd68a4d04373901f480dde06d26"
+  integrity sha512-5ysYBdu9tTEBD/xfUFBxyz4JbcbLfZvXlrCk8O/3Kv3UG1+hTx3sffhgk7IbWKY0YxzaYUV25adpUIEo/I9vHA==
   dependencies:
-    "@dschau/gatsby-theme-utils" "^0.0.1"
+    "@dschau/gatsby-theme-utils" "^0.0.3"
     "@dschau/particles.js" "2.0.0"
     "@emotion/core" "^10.0.5"
     "@emotion/styled" "^10.0.5"
-    gatsby "^2.0.73"
+    gatsby-image "^2.0.25"
     gatsby-link "2.0.7"
     gatsby-plugin-catch-links "2.0.9"
     gatsby-plugin-emotion "^4.0.1"
@@ -840,10 +840,10 @@
     typography-breakpoint-constants "0.16.18"
     typography-plugin-code "0.16.18"
 
-"@dschau/gatsby-theme-utils@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@dschau/gatsby-theme-utils/-/gatsby-theme-utils-0.0.1.tgz#d6df5c71e7c908697f4a137752ac831e753a5ce7"
-  integrity sha512-FmiXrOgd+JWPCqJofdQEE/lKw4aSQGYv+wWfiI2hM5Q1TDZAZ78fZTTisPrOQCq/wl3cnQ/y4wzuTz6TyMU9ZQ==
+"@dschau/gatsby-theme-utils@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@dschau/gatsby-theme-utils/-/gatsby-theme-utils-0.0.3.tgz#46145b5519b2657d49db5e84d485d937f6347577"
+  integrity sha512-9549CRvnyBfWIlxoop2U+bzLfr4ak6DNkVW6TLgb4i0gFX9lxeY6/t5ZTOoID76PJsZLPUuTJuZ2NkB3W1QibQ==
 
 "@dschau/particles.js@2.0.0":
   version "2.0.0"
@@ -5944,10 +5944,10 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
-gatsby-cli@^2.4.7:
-  version "2.4.7"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.4.7.tgz#f5821ca550f894d182435f0ee1e6a6875bd1064f"
-  integrity sha512-yVRmYI2nY0D/P2vlD6TwwUsP3KyMKMfs0VqTo9ZrsO+feYfELh6O4gULLbPsE6bl/pwFy8YncRYS5zfH1PVoFg==
+gatsby-cli@^2.4.8:
+  version "2.4.8"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.4.8.tgz#6f02e5076e1710aade0ad8e7524b1ec2cf2ee76f"
+  integrity sha512-YmS+eYSInI+E9/NrZ3p9Z0WWHIojbnei/ZpD9GhbtVFNDfl9qvv3reK05GekoAwQzLw5cMkiw7ur6WosqqCiHg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
@@ -5969,6 +5969,14 @@ gatsby-cli@^2.4.7:
     update-notifier "^2.3.0"
     yargs "^11.1.0"
     yurnalist "^1.0.2"
+
+gatsby-image@^2.0.25:
+  version "2.0.25"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.25.tgz#30547589701db4c4c3e954609201fce2103ec8de"
+  integrity sha512-Czjwf1m/8p7OX1hEh5YKHIFgqGZylGYKqXcDQ9myOQW3qOZ3Mw82ERjT6YSSHTQsELK27LgrKacL0YvvPR+ZJQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    prop-types "^15.6.1"
 
 gatsby-link@2.0.7, gatsby-link@^2.0.7:
   version "2.0.7"
@@ -6217,10 +6225,10 @@ gatsby-transformer-sharp@^2.1.9:
     probe-image-size "^4.0.0"
     sharp "^0.21.0"
 
-gatsby@^2.0.73:
-  version "2.0.73"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.73.tgz#7fd237faa69fdf7ad077f606398337988d4333aa"
-  integrity sha512-TSf0JYhL9/RRb7abMGiPDLq1x4qMaI2Lgyouz5OyMFLqJkfV4tQaJ7d3ltXdpGZPECazEjecXh/NVZEhGEWZzA==
+gatsby@^2.0.77:
+  version "2.0.77"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.77.tgz#5bfb447fcba2087182c96bd1650f87303c3c274a"
+  integrity sha512-Ge4rOTTwjXYwsEErx3U7AOfRALa3cwBOZg1SyZu1bNmLS6cgImcu3Mht27eD08DawRNmEtRg2GMFSKB/KuPAcg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -6274,7 +6282,7 @@ gatsby@^2.0.73:
     friendly-errors-webpack-plugin "^1.6.1"
     fs-exists-cached "1.0.0"
     fs-extra "^5.0.0"
-    gatsby-cli "^2.4.7"
+    gatsby-cli "^2.4.8"
     gatsby-link "^2.0.7"
     gatsby-plugin-page-creator "^2.0.5"
     gatsby-react-router-scroll "^2.0.2"
