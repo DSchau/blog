@@ -1,4 +1,6 @@
-# blog (1.0.0)
+# blog
+
+[![CircleCI](https://circleci.com/gh/DSchau/blog.svg?style=svg)](https://circleci.com/gh/DSchau/blog)
 
 The source code for the [Gatsby][gatsby] driven statically generated blog. See dschau/gatsby-theme-blog for the theme that powers the functionality.
 

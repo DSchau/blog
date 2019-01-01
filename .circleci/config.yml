@@ -1,0 +1,66 @@
+version: 2.1
+executors:
+  node:
+    parameters:
+      image:
+        type: string
+        default: "11"
+    docker:
+      - image: circleci/node:<< parameters.image >>
+
+aliases:
+  restore_cache: &restore_cache
+    restore_cache:
+      name: Restore node_modules cache
+      keys:
+        - yarn-cypress-cache-{{ checksum "yarn.lock" }}
+
+  install_node_modules: &install_node_modules
+    run:
+      name: Install node modules
+      command: yarn --frozen-lockfile
+
+  persist_cache: &persist_cache
+    save_cache:
+      name: Save node modules cache
+      key: yarn-cypress-cache-{{ checksum "yarn.lock" }}
+      paths:
+        - ~/.cache
+
+jobs:
+  build:
+    executor: node
+    steps:
+      - checkout
+      - <<: *restore_cache
+      - <<: *install_node_modules
+      - <<: *persist_cache
+      - run: yarn build
+      - persist_to_workspace:
+          root: public
+          paths:
+            - "*"
+  deploy:
+    docker:
+      - image: circleci/python:2.7-jessie
+    steps:
+      - attach_workspace:
+          at: public
+      - run: sudo pip install awscli
+      - run: >
+          aws s3 sync public s3://blog.dustinschau.com --acl public-read --delete
+      - run: >
+          aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_ID --paths /*
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
