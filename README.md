@@ -4,7 +4,7 @@
 
 The source code for the [Gatsby][gatsby] driven statically generated blog. See dschau/gatsby-theme-blog for the theme that powers the functionality.
 
-![blog](./content/preview.png)
+![blog](https://screenshot-v2.now.sh/blog.dustinschau.com?type=png)
 
 ## Tech stack
 
