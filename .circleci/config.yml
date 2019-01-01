@@ -48,13 +48,9 @@ jobs:
           at: public
       - run: sudo pip install awscli
       - run: >
-          aws s3 sync public s3://blog.dustinschau.com
-            --acl public_read
-            --delete
+          aws s3 sync public s3://blog.dustinschau.com --acl public_read --delete
       - run: >
-          aws cloudfront create-invalidation
-            --distribution-id $AWS_CLOUDFRONT_ID
-            --paths /*
+          aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_ID --paths /*
 
 workflows:
   version: 2
