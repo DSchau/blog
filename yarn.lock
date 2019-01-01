@@ -793,7 +793,7 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@dschau/gatsby-theme-blog@^0.1.1":
+"@dschau/gatsby-theme-blog@0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@dschau/gatsby-theme-blog/-/gatsby-theme-blog-0.1.1.tgz#94fef1ed510c8361d026a47cbcf33ba2151cdc9f"
   integrity sha512-zSjf5qN83aGGYbcYD30eUgUqyyP7xtSHWYfMYSWVrw+vqnR/4up8d2TahDxuMu6/8YSDoVBe4hsReHGiqrpViA==
@@ -6225,7 +6225,7 @@ gatsby-transformer-sharp@^2.1.9:
     probe-image-size "^4.0.0"
     sharp "^0.21.0"
 
-gatsby@^2.0.77:
+gatsby@2.0.77:
   version "2.0.77"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.77.tgz#5bfb447fcba2087182c96bd1650f87303c3c274a"
   integrity sha512-Ge4rOTTwjXYwsEErx3U7AOfRALa3cwBOZg1SyZu1bNmLS6cgImcu3Mht27eD08DawRNmEtRg2GMFSKB/KuPAcg==
