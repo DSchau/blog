@@ -1,6 +1,7 @@
 ---
 date: "2019-01-04"
 title: "Search Engine Optimization with Gatsby"
+author: Dustin Schau
 featured: images/seo.jpg
 excerpt: "SEO and Gatsby: A Perfect Pairing. Learn how Gatsby implements SEO utilizing React Helmet and smart defaults and how you can use these tools to implement your own!"
 tags:
@@ -412,9 +413,9 @@ npx gatsby new my-new-gatsby-app
 
 and you'll have the `SEO` component available to maximize your SEO and social sharing capabilities. Check it out!
 
-## Additional Resources
+## Further Learning
 
-This article is merely a shallow dive into the depths of SEO optimization--consider it a primer for further learning. To begin to learn more, check out the following resources:
+This article is merely a shallow dive into the depths of SEO optimization--consider it a primer for further learning. To learn more, check out the following resources:
 
 - Facebook uses the [Open Graph][og] tag format
 - Twitter uses `twitter:` keywords. See [Twitter Cards][twitter-cards] for more info
