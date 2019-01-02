@@ -6,7 +6,7 @@
   "author": "Dustin Schau <dustinschau@gmail.com> (https://blog.dustinschau.com)",
   "dependencies": {
     "@dschau/gatsby-theme-blog": "0.1.1",
-    "gatsby": "2.0.81"
+    "gatsby": "2.0.82"
   },
   "keywords": [
     "gatsby",
