@@ -274,7 +274,7 @@ SEO.propTypes = {
 export default SEO;
 ```
 
-Woo hoo! What we've done up to this point is enabled not only SEO for search engines like Google, Bing (people use Bing, right?) but _also_ in the process enabled enhanced sharing capabilities on social networks. That's a win-win if I've ever seen one 😍
+Woo hoo! What we've done up to this point is enabled not only SEO for search engines like Google, Bing (people use Bing, right?) but we've also laid the groundwork for enhanced sharing capabilities on social networks. That's a win-win if I've ever seen one 😍
 
 To bring it all home, let's consider actually _using_ this extensible SEO component.
 
@@ -304,7 +304,7 @@ export default Index;
 
 ### In a template
 
-Let's pretend we have a Markdown powered blog. We--of course--want some nice SEO as well as a nifty image for sharing on Twitter, Facebook, and Slack. We're going to do this with a few steps, specifically:
+Let's pretend we have a Markdown powered blog (see: [this tutorial][gatsby-markdown-blog] for more info). We--of course--want some nice SEO as well as a nifty image for sharing on Twitter, Facebook, and Slack. We're going to do this with a few steps, specifically:
 
 - Create a Markdown post
 - Add an image, and add it to the Markdown posts frontmatter
@@ -431,6 +431,7 @@ Thanks for reading--I cannot wait to see what you build next. 💪
 
 [gatsby-starter-default]: https://github.com/gatsbyjs/gatsby-starter-default
 [gatsby-static-query]: https://www.gatsbyjs.org/docs/static-query/
+[gatsby-markdown-blog]: https://www.gatsbyjs.org/docs/adding-markdown-pages/
 [react-helmet]: https://github.com/nfl/react-helmet
 [unstructured-data]: https://www.gatsbyjs.org/docs/using-unstructured-data/
 [og]: https://developers.facebook.com/docs/sharing/webmasters/#markup
