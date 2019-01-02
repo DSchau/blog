@@ -10,47 +10,55 @@ tags:
   - seo
 ---
 
-Search Engine Optimization--from here on out I'll call this SEO is something _everyone_ wants. You've probably been approached by an SEO _expert_ who can surely maximize your revenue and page views. However, relatively few make the concerted effort to implement SEO in their web app. In this post, I'll share some of the ins and outs of SEO and how you can implement common, simple SEO patterns in your Gatsby application, today. By the end of this post you'll know how to do the following:
+Search Engine Optimization (hereafter SEO) is something that you should want. You've possibly even been approached by an SEO _expert_ who can maximize your revenue and page views just by following these **Three Simple Tricks**! However, relatively few make the concerted effort to implement SEO in their web app. In this post, I'll share some of the ins and outs of SEO and how you can implement common, simple SEO patterns in your Gatsby web app, today. By the end of this post you'll know how to do the following:
 
-- Implement SEO patterns with react-helmet
-- Query for an image with GraphQL
+- Implement SEO patterns with [react-helmet][react-helmet]
 - Create an optimized social sharing card for Twitter, Facebook, and Slack
-- Tweak the SEO component exposed in (official) Gatsby starters
+- Tweak the SEO component exposed in the default gatsby starter ([`gatsby-starter-default`][gatsby-starter-default])
 
 ## Implementation
 
 The core technology powering SEO is the humble, ubiquitiuous `meta` tag. You've probably seen something like:
 
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
 ```
 
 or further still with more of an SEO spin something as simple as the `description` and/or `keywords` properties:
 
 ```html
-<meta name="description" content="This is probably some earth-shattering excerpt that is around ~200 characters or less">
-<meta name="keywords" content="science dog, another term, do-i-use-spaces, hello">
+<meta
+  name="description"
+  content="This is probably some earth-shattering excerpt that is around ~200 characters or less"
+/>
+<meta
+  name="keywords"
+  content="science dog, another term, do-i-use-spaces, hello"
+/>
 ```
 
-These are the _bare minimum_ requirements that should be implemented for simple and basic SEO. However--we can go further, and we can go further with the powerful combo of statically rendered content meta tags powered by Gatsby and GraphQL. Let's dive in.
+These are the _bare minimum_ requirements that should be implemented for simple and basic SEO. However--we can go further, and we can go further with the powerful combo of content rendered at _build time_ powered by Gatsby and GraphQL. Let's dive in.
 
 ## Gatsby + GraphQL
 
-GraphQL is a crucial feature enabled via Gatsby (although note: you don't [_have_ to use GraphQL with Gatsby][unstructured-data]). Leveraging GraphQL to query your indexable content--wherever it lives--is one of the most powerful and flexible technologies of GraphQL. Let's briefly look at how we can implement an extensible and flexible SEO component.
+GraphQL is a crucial feature enabled via Gatsby (note: you don't [_have_ to use GraphQL with Gatsby][unstructured-data]). Leveraging GraphQL to query your indexable content--wherever it lives (at build time!)--is one of the most powerful and flexible techniques enabled via Gatsby. Let's briefly look at how we can implement an extensible and flexible SEO component.
 
 ### `StaticQuery`
 
-Gatsby distinguishes between page-level queries and component queries. The former can use page GraphQL queries while the latter can use a new in Gatsby v2 feature called `StaticQuery`. A StaticQuery will be parsed, evaluated, and injected at _build time_ into the component that is requesting the data. This is a perfect scenario in which we can create an SEO component with sane defaults.
+Gatsby distinguishes between page-level queries and component queries. The former can use page GraphQL queries while the latter can use a new in Gatsby v2 feature called [`StaticQuery`][gatsby-static-query]. A StaticQuery will be parsed, evaluated, and injected at _build time_ into the component that is requesting the data. This is a perfect scenario in which we can create an SEO component with sane defaults that can be easily extended.
 
 ### Creating the component
 
 Using the power and flexibility of React, we can create a React component to power this functionality.
 
 ```jsx:title=src/components/seo.js
-import React from 'react'
+import React from "react";
 // highlight-start
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import Helmet from "react-helmet";
+import { StaticQuery, graphql } from "gatsby";
 // highlight-end
 
 function SEO() {
@@ -63,6 +71,7 @@ function SEO() {
             siteMetadata {
               description
               keywords
+              siteUrl
             }
           }
         }
@@ -70,10 +79,10 @@ function SEO() {
       `}
       render={data => null}
     />
-  )
+  );
 }
 
-export default SEO
+export default SEO;
 ```
 
 This component doesn't _do_ anything yet, but we're laying the foundation for a useful, extensible component. What we've done up to this point is leverage the `StaticQuery` functionality enabled via Gatsby to query our siteMetadata (e.g. details in `gatsby-config.js`) so that we can grab description and keywords.
@@ -81,9 +90,9 @@ This component doesn't _do_ anything yet, but we're laying the foundation for a 
 The `StaticQuery` component accepts a render prop, and at this point, we're simply returning `null` to render nothing. Let's _actually_ render something and build out our prototype for this SEO component. Let's iterate further.
 
 ```jsx:title=src/components/seo.js
-import React from 'react'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import React from "react";
+import Helmet from "react-helmet";
+import { StaticQuery, graphql } from "gatsby";
 
 function SEO() {
   return (
@@ -94,7 +103,7 @@ function SEO() {
             siteMetadata {
               author
               description
-              keywords
+              siteUrl
             }
           }
         }
@@ -102,18 +111,14 @@ function SEO() {
       render={data => (
         <Helmet
           htmlAttributes={{
-            lang: 'en'
+            lang: "en"
           }}
           meta={
             // highlight-start
             [
               {
-                name: 'description',
+                name: "description",
                 content: data.site.siteMetadata.description
-              },
-              {
-                name: 'keywords',
-                content: data.site.siteMetadata.keywords.join(',')
               }
             ]
             // highlight-end
@@ -121,15 +126,15 @@ function SEO() {
         />
       )}
     />
-  )
+  );
 }
 
-export default SEO
+export default SEO;
 ```
 
-whew, getting closer! This will now render the `meta` `description` and `keywords` tags, and will do so using content injected at build-time with the `StaticQuery` component. Additionally, it will add the `lang="en"` attribute to our root-level `html` tag to silence that pesky Lighthouse warning 😉
+whew, getting closer! This will now render the `meta` `description` tag, and will do so using content injected at build-time with the `StaticQuery` component. Additionally, it will add the `lang="en"` attribute to our root-level `html` tag to silence that pesky Lighthouse warning 😉
 
-If you remember earlier, I claimed this was the bare bones, rudimentary approach to SEO, and that still holds true. Let's super charge this and get some useful functionality for sharing a page via social networks like Facebook, Twitter, and Slack.
+If you remember earlier, I claimed this was the bare bones, rudimentary approach to SEO, and that still holds true. Let's enhance this functionality this and get some useful functionality for sharing a page via social networks like Facebook, Twitter, and Slack.
 
 ### Implementing social SEO
 
@@ -142,10 +147,10 @@ In addition to SEO for actual _search_ engines we also want those pretty cards t
 Let's implement it 👌
 
 ```jsx:title=src/components/seo.js
-import React from 'react'
-import Helmet from 'react-helmet'
-import PropTypes from 'prop-types' // highlight-line
-import { StaticQuery, graphql } from 'gatsby'
+import React from "react";
+import Helmet from "react-helmet";
+import PropTypes from "prop-types"; // highlight-line
+import { StaticQuery, graphql } from "gatsby";
 
 // highlight-next-line
 function SEO({ description, meta, image: metaImage, title }) {
@@ -164,83 +169,93 @@ function SEO({ description, meta, image: metaImage, title }) {
         }
       `}
       render={data => {
-        const metaDescription = description || data.site.siteMetadata.description
-        const image = metaImage && metaImage.src ? `${data.site.siteMetadata.siteUrl}${metaImage.src}` : null
+        // highlight-start
+        const metaDescription =
+          description || data.site.siteMetadata.description;
+        const image =
+          metaImage && metaImage.src
+            ? `${data.site.siteMetadata.siteUrl}${metaImage.src}`
+            : null;
+        // highlight-end
         return (
           <Helmet
             htmlAttributes={{
-              lang: 'en'
+              lang: "en"
             }}
             title={title}
             meta={
               [
                 {
-                  name: 'description',
+                  name: "description",
                   content: metaDescription
                 },
                 {
-                  name: 'keywords',
-                  content: data.site.siteMetadata.keywords.join(',')
+                  name: "keywords",
+                  content: data.site.siteMetadata.keywords.join(",")
                 },
                 // highlight-start
                 {
-                  property: 'og:title',
+                  property: "og:title",
                   content: title
                 },
                 {
-                  property: 'og:description',
+                  property: "og:description",
                   content: metaDescription
                 },
                 {
-                  name: 'twitter:creator',
+                  name: "twitter:creator",
                   content: data.site.siteMetadata.author
                 },
                 {
-                  name: 'twitter:title',
+                  name: "twitter:title",
                   content: title
                 },
                 {
-                  name: 'twitter:description',
+                  name: "twitter:description",
                   content: metaDescription
                 }
               ]
-                .concat(metaImage ? [
-                  {
-                    property: 'og:image',
-                    content: image
-                  },
-                   {
-                    property: 'og:image:width',
-                    content: metaImage.width
-                  },
-                  {
-                    property: 'og:image:height',
-                    content: metaImage.height
-                  },
-                  {
-                    name: 'twitter:card',
-                    content: 'summary_large_image'
-                  }
-                ] : [
-                  {
-                    name: 'twitter:card',
-                    content: 'summary'
-                  },
-                ])
+                .concat(
+                  metaImage
+                    ? [
+                        {
+                          property: "og:image",
+                          content: image
+                        },
+                        {
+                          property: "og:image:width",
+                          content: metaImage.width
+                        },
+                        {
+                          property: "og:image:height",
+                          content: metaImage.height
+                        },
+                        {
+                          name: "twitter:card",
+                          content: "summary_large_image"
+                        }
+                      ]
+                    : [
+                        {
+                          name: "twitter:card",
+                          content: "summary"
+                        }
+                      ]
+                )
                 .concat(meta)
-                // highlight-end
+              // highlight-end
             }
           />
-        )
+        );
       }}
     />
-  )
+  );
 }
 
 // highlight-start
 SEO.defaultProps = {
   meta: []
-}
+};
 // highlight-end
 
 // highlight-start
@@ -253,10 +268,10 @@ SEO.propTypes = {
   }),
   meta: PropTypes.array,
   title: PropTypes.string.isRequired
-}
+};
 // highlight-end
 
-export default SEO
+export default SEO;
 ```
 
 Woo hoo! What we've done up to this point is enabled not only SEO for search engines like Google, Bing (people use Bing, right?) but _also_ in the process enabled enhanced sharing capabilities on social networks. That's a win-win if I've ever seen one 😍
@@ -265,15 +280,15 @@ To bring it all home, let's consider actually _using_ this extensible SEO compon
 
 ## Using the SEO component
 
-We now have our extensible SEO component. It takes a `title` prop, and then (optionally) `description`, `meta`, and  `image` props. Let's wire it all up!
+We now have our extensible SEO component. It takes a `title` prop, and then (optionally) `description`, `meta`, and `image` props. Let's wire it all up!
 
 ### In a page component
 
 ```jsx:title=src/pages/index.js
-import React from 'react'
+import React from "react";
 
-import Layout from '../components/layout'
-import SEO from '../components/seo' // highlight-line
+import Layout from "../components/layout";
+import SEO from "../components/seo"; // highlight-line
 
 function Index() {
   return (
@@ -281,10 +296,10 @@ function Index() {
       <SEO title="My Amazing Gatsby App" /> {/* highlight-line */}
       <h1>lol - pretend this is meaningful content</h1>
     </Layout>
-  )
+  );
 }
 
-export default Index
+export default Index;
 ```
 
 ### In a template
@@ -320,7 +335,6 @@ Feel free to add whatever, or perhaps use this _very pertinent_ image:
 the image will need to be located at `content/blog/2019-01-04-hello-world-seo/images/featured.jpg`
 
 #### Querying with GraphQL
-
 
 ```jsx:title=src/templates/blog-post.js
 import React from 'react'
@@ -415,13 +429,14 @@ Finally, check out the [`gatsby-seo-example`][gatsby-seo-example] for a ready-to
 
 Thanks for reading--I cannot wait to see what you build next. 💪
 
+[gatsby-starter-default]: https://github.com/gatsbyjs/gatsby-starter-default
+[gatsby-static-query]: https://www.gatsbyjs.org/docs/static-query/
+[react-helmet]: https://github.com/nfl/react-helmet
 [unstructured-data]: https://www.gatsbyjs.org/docs/using-unstructured-data/
 [og]: https://developers.facebook.com/docs/sharing/webmasters/#markup
 [twitter-cards]: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards.html
 [slack-unfurl]: https://medium.com/slack-developer-blog/everything-you-ever-wanted-to-know-about-unfurling-but-were-afraid-to-ask-or-how-to-make-your-e64b4bb9254
-
 [google-validation]: https://support.google.com/webmasters/answer/6066468?hl=en
 [twitter-validation]: https://cards-dev.twitter.com/validator
 [facebook-validation]: https://developers.facebook.com/tools/debug/sharing
-
 [gatsby-seo-example]: https://github.com/DSchau/gatsby-seo-example

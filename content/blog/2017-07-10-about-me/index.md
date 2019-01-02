@@ -1,5 +1,5 @@
 ---
-date: '2017-07-10T23:36:56.503Z'
+date: "2017-07-10T23:36:56.503Z"
 title: About
 tags:
   - tech stack
@@ -8,14 +8,15 @@ tags:
 featured: ui-and-code.png
 excerpt: Welcome to the second version of my blog, powered by Gatsby, an incredible site generator. Learn more about the tech stack and things I built to power this blog.
 ---
+
 Welcome to the second version of my blog, powered by [Gatsby][gatsby], an incredible static site generator.
 
 Inspired by [Daring Fireball][df], some detail will be provided for the technologies, applications, and techniques that power this site.
 
 ## Mac apps
 
--   [VSCode][vscode]
--   [Hyper][hyper]
+- [VSCode][vscode]
+- [Hyper][hyper]
 
 ## Backend software
 
@@ -27,12 +28,12 @@ The content is partially server-side rendered via [gatsby][gatsby], which uses r
 
 The following gatsby plugins are each used as the backbone for much of the functionality present in this blog:
 
--   [gatsby-plugin-styled-components][gatsby-plugin-styled-components]
--   [gatsby-source-filesystem][gatsby-source-filesystem]
--   [gatsby-transformer-remark][gatsby-transformer-remark]
--   [gatsby-remark-copy-linked-files][gatsby-remark-copy-linked-files]
--   [gatsby-remark-smartypants][gatsby-remark-smartypants]
--   [gatsby-plugin-react-helmet][gatsby-plugin-react-helmet]
+- [gatsby-plugin-styled-components][gatsby-plugin-styled-components]
+- [gatsby-source-filesystem][gatsby-source-filesystem]
+- [gatsby-transformer-remark][gatsby-transformer-remark]
+- [gatsby-remark-copy-linked-files][gatsby-remark-copy-linked-files]
+- [gatsby-remark-smartypants][gatsby-remark-smartypants]
+- [gatsby-plugin-react-helmet][gatsby-plugin-react-helmet]
 
 ## Web technologies
 
@@ -51,17 +52,17 @@ Whenever possible, I attempt to only use JavaScript to _enhance_ the site, rathe
  * https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/
  */
 export default function loadWebFonts() {
-  const families = ['Montserrat:400,700', 'Bitter:400,700'];
-  if (sessionStorage.fonts === families.join(' ')) {
-    document.documentElement.classList.add('wf-active');
+  const families = ["Montserrat:400,700", "Bitter:400,700"];
+  if (sessionStorage.fonts === families.join(" ")) {
+    document.documentElement.classList.add("wf-active");
   }
 
-  require.ensure('webfontloader', () => {
-    const WebFonts = require('webfontloader');
+  require.ensure("webfontloader", () => {
+    const WebFonts = require("webfontloader");
 
     WebFonts.load({
       active() {
-        sessionStorage.fonts = families.join(' ');
+        sessionStorage.fonts = families.join(" ");
       },
       google: {
         families
@@ -70,42 +71,23 @@ export default function loadWebFonts() {
     });
   });
 }
-
-
 ```
 
 [gatsby]: https://github.com/gatsbyjs/gatsby
-
 [df]: https://daringfireball.net/colophon/
-
 [vscode]: https://code.visualstudio.com/
-
 [hyper]: https://hyper.is/
-
 [media-temple]: https://mediatemple.net
-
 [remark]: https://www.npmjs.com/package/remark
-
 [gatsby-plugin-catch-links]: https://www.npmjs.com/package/gatsby-plugin-catch-links
-
 [gatsby-plugin-styled-components]: https://www.npmjs.com/package/gatsby-plugin-styled-components
-
 [gatsby-source-filesystem]: https://www.npmjs.com/package/gatsby-source-filesystem
-
 [gatsby-transformer-remark]: https://www.npmjs.com/package/gatsby-transformer-remark
-
 [gatsby-remark-copy-linked-files]: https://www.npmjs.com/package/gatsby-remark-copy-linked-files
-
 [gatsby-remark-prismjs]: https://www.npmjs.com/package/gatsby-remark-prismjs
-
 [gatsby-remark-smartypants]: https://www.npmjs.com/package/gatsby-remark-smartypants
-
 [gatsby-plugin-react-helmet]: https://www.npmjs.com/package/gatsby-plugin-react-helmet
-
 [gatsby-plugin-offline]: https://www.npmjs.com/package/gatsby-plugin-offline
-
 [styled-components]: https://www.styled-components.com/
-
 [google-fonts]: https://fonts.google.com/
-
 [webfontloader]: https://github.com/typekit/webfontloader

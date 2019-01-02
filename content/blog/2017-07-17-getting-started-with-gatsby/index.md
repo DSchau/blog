@@ -1,6 +1,6 @@
 ---
 title: Getting Started with Gatsby
-date: '2017-07-17T17:12:33.962Z'
+date: "2017-07-17T17:12:33.962Z"
 tags:
   - gatsby
   - react
@@ -60,9 +60,8 @@ module.exports = {
     title: `Your Name - Blog`,
     author: `Your Name`
   },
-  plugins: ['gatsby-plugin-catch-links', 'gatsby-plugin-react-helmet']
+  plugins: ["gatsby-plugin-catch-links", "gatsby-plugin-react-helmet"]
 };
-
 ```
 
 Without any additional work besides a `yarn install` and editing a config file, we now have the ability to edit our site's head tags, as well as implement a single page app feel without reloads. Now let's enhance the base functionality by implementing a source plugin which can load blog posts from our local file system.
@@ -81,18 +80,17 @@ yarn add gatsby-source-filesystem
 module.exports = {
   // previous configuration
   plugins: [
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-react-helmet',
+    "gatsby-plugin-catch-links",
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages'
+        name: "pages"
       }
     }
   ]
 };
-
 ```
 
 Some explanation will be helpful here! An `options` object can be passed to a plugin, and we're passing the filesystem `path` (i.e. where our Markdown files will be located), and then a `name` for the source files. Now that Gatsby knows about our source files, we can begin applying some useful transformers to convert those files into usable data!
@@ -118,24 +116,23 @@ and editing `gatsby-config.js`
 module.exports = {
   // previous setup
   plugins: [
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-react-helmet',
+    "gatsby-plugin-catch-links",
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages'
+        name: "pages"
       }
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [] // just in case those previously mentioned remark plugins sound cool :)
       }
     }
   ]
 };
-
 ```
 
 Whew! Seems like a lot of set up, but collectively these plugins are going to super charge Gatsby, and give us an incredibly powerful (yet relatively simple!) development environment. We have one more set up step and it's an easy one. We're simply going to create a Markdown file that will contain the content of our first blog post. Let's get to it.
@@ -169,8 +166,8 @@ As Gatsby supports server side rendering (to string) of React components, we can
 We'll want to create the file `src/templates/blog-post.js` (please create the `src/templates` folder if it does not yet exist!).
 
 ```javascript
-import React from 'react';
-import Helmet from 'react-helmet';
+import React from "react";
+import Helmet from "react-helmet";
 
 // import '../css/blog-post.css'; // make it pretty!
 
@@ -182,9 +179,7 @@ export default function Template({
     <div className="blog-post-container">
       <Helmet title={`Your Blog Name - ${post.frontmatter.title}`} />
       <div className="blog-post">
-        <h1>
-          {post.frontmatter.title}
-        </h1>
+        <h1>{post.frontmatter.title}</h1>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -193,7 +188,6 @@ export default function Template({
     </div>
   );
 }
-
 ```
 
 Whoa, neat! This React component will be rendered to a static HTML string (for each route/blog post we define), which will serve as the basis of our routing/navigation for our blog.
@@ -205,8 +199,8 @@ At this point, there is a reasonable level of confusion and "magic" occuring, pa
 Below the `Template` declaration, we'll want to add a GraphQL query. This is an incredibly powerful utility provided by Gatsby which lets us pick and choose very simply the pieces of data that we want to display for our blog post. Each piece of data our query selects will be injected via the `data` property we specified earlier.
 
 ```javascript{24-35}
-import React from 'react';
-import Helmet from 'react-helmet';
+import React from "react";
+import Helmet from "react-helmet";
 
 // import '../css/blog-post.css';
 
@@ -216,9 +210,7 @@ export default function Template({ data }) {
     <div className="blog-post-container">
       <Helmet title={`Your Blog Name - ${post.frontmatter.title}`} />
       <div className="blog-post">
-        <h1>
-          {post.frontmatter.title}
-        </h1>
+        <h1>{post.frontmatter.title}</h1>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -240,7 +232,6 @@ export const pageQuery = graphql`
     }
   }
 `;
-
 ```
 
 If you're not familar with GraphQL, this may seem slightly confusing, but we can break down what's going down here piece by piece.
@@ -262,14 +253,13 @@ An important note to make at this point is that the GraphQL query takes place at
 Gatsby exposes a powerful Node API, which allows for functionality such as creating dynamic pages (blog posts!), extending the babel or webpack configs, modifying the created nodes or pages, etc. This API is exposed in the `gatsby-node.js` file in the root directory of your project--e.g. at the same level as `gatsby-config.js`. Each export found in this file will be parsed by Gatsby, as detailed in its [Node API specification][node-spec]. However, we only care about one particular API in this instance, `createPages`.
 
 ```javascript
-const path = require('path');
+const path = require("path");
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
 };
-
 ```
 
 Nothing super complex yet! We're using the `createPages` API (which Gatsby will call at build time with injected parameters). We're also grabbing the _path_ to our blogPostTemplate we created earlier. Finally, we're using the `createPage` action creator/function made available in boundActionCreators. Gatsby uses Redux internally to manage its state, and `boundActionCreators` are simply the exposed action creators of Gatsby, of which `createPage` is one of the action creators! For the full list of exposed action creators, check out [Gatsby's documentation][gatsby-bound-action-creators]. We can now construct the GraphQL query, which will fetch all of our Markdown posts.
@@ -277,38 +267,39 @@ Nothing super complex yet! We're using the `createPages` API (which Gatsby will 
 ### Querying for posts
 
 ```javascript{8-31}
-const path = require('path');
+const path = require("path");
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
 
-  return graphql(`{
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 1000
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 250)
-          html
-          id
-          frontmatter {
-            date
-            path
-            title
+  return graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            excerpt(pruneLength: 250)
+            html
+            id
+            frontmatter {
+              date
+              path
+              title
+            }
           }
         }
       }
     }
-  }`).then(result => {
+  `).then(result => {
     if (result.errors) {
       return Promise.reject(result.errors);
     }
   });
 };
-
 ```
 
 We're using GraphQL to get all Markdown nodes and making them available under the `allMarkdownRemark` GraphQL property. Each exposed property (on `node`) is made available for querying against. We're effectively seeding a GraphQL "database" that we can then query against via page-level GraphQL queries. One note here is that the `exports.createPages` API expects a Promise to be returned, so it works seamlessly with the `graphql` function, which returns a Promise (although note a callback API is also available if that's more your thing).
@@ -320,32 +311,34 @@ We now have our query written, but we haven't yet programatically created the pa
 ### Creating the pages
 
 ```javascript{32-36}
-const path = require('path');
+const path = require("path");
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
 
-  return graphql(`{
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 1000
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 250)
-          html
-          id
-          frontmatter {
-            date
-            path
-            title
+  return graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            excerpt(pruneLength: 250)
+            html
+            id
+            frontmatter {
+              date
+              path
+              title
+            }
           }
         }
       }
     }
-  }`).then(result => {
+  `).then(result => {
     if (result.errors) {
       return Promise.reject(result.errors);
     }
@@ -359,7 +352,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     });
   });
 };
-
 ```
 
 We've now tied into the Promise chain exposed by the `graphql` query. The actual posts are available via the path `result.data.allMarkdownRemark.edges`. Each edge contains an internal node, and this node holds the useful data that we will use to construct a page with Gatsby. Our GraphQL "shape" is directly reflected in this data object, so each property we pulled from that query will be available when we are querying in our GraphQL blog post template.
@@ -379,9 +371,9 @@ I won't go into quite as much detail for this section, because we've already don
 Gatsby has a standard for "listing pages," and they're placed in the root of our filesystem we specified in `gatsby-source-filesystem`, e.g. `src/pages/index.js`. So create that file if it does not exist, and let's get it working! Additionally note that any static JavaScript files (that export a React component!) will get a corresponding static HTML file. For instance, if we create `src/pages/tags.js`, the path `http://localhost:8000/tags/` will be available within the browser and the statically generated site.
 
 ```javascript
-import React from 'react';
-import Link from 'gatsby-link';
-import Helmet from 'react-helmet';
+import React from "react";
+import Link from "gatsby-link";
+import Helmet from "react-helmet";
 
 // import '../css/index.css'; // add some style if you want!
 
@@ -395,16 +387,10 @@ export default function Index({ data }) {
           return (
             <div className="blog-post-preview" key={post.id}>
               <h1>
-                <Link to={post.frontmatter.path}>
-                  {post.frontmatter.title}
-                </Link>
+                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
               </h1>
-              <h2>
-                {post.frontmatter.date}
-              </h2>
-              <p>
-                {post.excerpt}
-              </p>
+              <h2>{post.frontmatter.date}</h2>
+              <p>{post.excerpt}</p>
             </div>
           );
         })}
@@ -429,7 +415,6 @@ export const pageQuery = graphql`
     }
   }
 `;
-
 ```
 
 OK! So we've followed a similar approach to our blog post template, so this should hopefully seem pretty familiar. Once more we're exporting `pageQuery` which contains a GraphQL query. Note that we're pulling a slightly different data set, specifically we are pulling an `excerpt` of 250 characters rather than the full HTML, as well as we are formatting the pulled date with a format string! GraphQL is awesome.
@@ -471,14 +456,12 @@ Now go build something great.
 [remark]: https://github.com/wooorm/remark
 [gatsby-source-filesystem]: /packages/gatsby-source-filesystem/
 [react-helmet]: https://github.com/nfl/react-helmet
-
 [frontmatter]: https://jekyllrb.com/docs/frontmatter/
 [learn-graphql]: https://www.howtographql.com
 [node-spec]: https://gatsbyjs.org/docs/node-apis/
 [gatsby-bound-action-creators]: https://www.gatsbyjs.org/docs/bound-action-creators/
 [styled-components]: https://github.com/styled-components/styled-components
 [yarn]: https://yarnpkg.com/en/
-
 [source-code]: https://github.com/dschau/gatsby-blog-starter-kit
 [blog-source-code]: https://github.com/dschau/blog
 [create-gatsby-blog-post]: https://github.com/DSchau/create-gatsby-blog-post

@@ -31,4 +31,3 @@ Visit the [Deal of the Day Page][dod] to learn more!
 
 [manning]: https://www.manning.com/
 [dod]: http://bit.ly/2nxt6sK
-

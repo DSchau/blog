@@ -7,6 +7,7 @@ tags:
   - node
 excerpt: In this post, I'll do a deep dive on most of the parts of GraphQL. I'll start with the foundational concepts and then from this foundational basis I'll construct the value of GraphQL and illustrate how it could be a hugely transformative technology for server and client communication.
 ---
+
 Hello! My name is Dustin Schau and I hope to share some knowledge with you about... you guessed it, GraphQL!
 
 I intend for this to be a gentle introduction to foundational concepts of GraphQL. In illustrating these concepts, we gain a greater understanding of what makes GraphQL such a transformative technology, and a greater appreciation for the value it can provide for an application. I go into some detail of the problems that GraphQL is trying to solve and how it solves them.
@@ -23,9 +24,9 @@ I work for an awesome company called Object Partners. We have offices in Minneap
 
 Lately, I think there's been a tendency to follow what is essentially Facebook Driven Development. With React, GraphQL, Jest, and other Facebook open source initiatives eating the world, it sometimes feels that if you're _not_ using this new hotness you're falling behind. With this perception comes a perhaps deserved backlash and mistrust of some of these technologies.
 
- > _I_ don't need React; jQuery|Vue|Insert framework here works fine for me thank you very much
+> _I_ don't need React; jQuery|Vue|Insert framework here works fine for me thank you very much
 
- > Jest? Nah, Mocha and Karma are all I'll ever need.
+> Jest? Nah, Mocha and Karma are all I'll ever need.
 
 I'd like you to resist succumbing to this mindset, and rather approach GraphQL with an eager and open mind. Whether React is in your wheel house or company's stack or not, I still strongly feel that GraphQL is a transformative technology for data querying and how we communicate between client and server, so try to resist those notions to reject GraphQL simply _just_ because it's new, hot, and from Facebook.
 
