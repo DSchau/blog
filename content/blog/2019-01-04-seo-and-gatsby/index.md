@@ -55,6 +55,10 @@ Gatsby distinguishes between page-level queries and component queries. The forme
 
 Using the power and flexibility of React, we can create a React component to power this functionality.
 
+> Note: `react-helmet` is enabled, by default, in gatsby-starter-default and gatsby-starter-blog
+>
+> If you're not using those: [follow this guide for installation instructions][gatsby-plugin-react-helmet]
+
 ```jsx:title=src/components/seo.js
 import React from "react";
 // highlight-start
@@ -433,6 +437,7 @@ Thanks for reading--I cannot wait to see what you build next. 💪
 [gatsby-starter-default]: https://github.com/gatsbyjs/gatsby-starter-default
 [gatsby-static-query]: https://www.gatsbyjs.org/docs/static-query/
 [gatsby-markdown-blog]: https://www.gatsbyjs.org/docs/adding-markdown-pages/
+[gatsby-plugin-react-helmet]: https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/
 [react-helmet]: https://github.com/nfl/react-helmet
 [unstructured-data]: https://www.gatsbyjs.org/docs/using-unstructured-data/
 [og]: https://developers.facebook.com/docs/sharing/webmasters/#markup
