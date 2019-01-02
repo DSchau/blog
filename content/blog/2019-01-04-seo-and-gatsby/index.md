@@ -2,18 +2,20 @@
 date: "2019-01-04"
 title: "Search Engine Optimization with Gatsby"
 featured: images/seo.jpg
-excerpt: "SEO and Gatsby: A Perfect Pairing. Learn how Gatsby implements SEO utilizing React Helmet and smart defaults and how you can do implement your own!"
+excerpt: "SEO and Gatsby: A Perfect Pairing. Learn how Gatsby implements SEO utilizing React Helmet and smart defaults and how you can use these tools to implement your own!"
 tags:
   - gatsby
   - javascript
   - react
+  - seo
 ---
 
-Search Engine Optimization--from here on out I'll call this SEO. Everyone wants it--and you've probably been approached by an SEO _expert_ who can surely maximize your revenue and page counts--but relatively few make the concerted effort to implement SEO in their web app. In this post, I'll deep dive into some of the ins and outs of SEO and how you can implement common, simple SEO patterns in your Gatsby application, today. By the end of this post you'll know how to do the following:
+Search Engine Optimization--from here on out I'll call this SEO is something _everyone_ wants. You've probably been approached by an SEO _expert_ who can surely maximize your revenue and page views. However, relatively few make the concerted effort to implement SEO in their web app. In this post, I'll share some of the ins and outs of SEO and how you can implement common, simple SEO patterns in your Gatsby application, today. By the end of this post you'll know how to do the following:
 
 - Implement SEO patterns with react-helmet
 - Query for an image with GraphQL
 - Create an optimized social sharing card for Twitter, Facebook, and Slack
+- Tweak the SEO component exposed in (official) Gatsby starters
 
 ## Implementation
 
@@ -131,7 +133,13 @@ If you remember earlier, I claimed this was the bare bones, rudimentary approach
 
 ### Implementing social SEO
 
-In addition to SEO for actual _search_ engines we also want those pretty cards that social networks like Twitter and Slack enable. Let's implement this functionality.
+In addition to SEO for actual _search_ engines we also want those pretty cards that social networks like Twitter and Slack enable. Specifically, we'd like to implement the following:
+
+- Description for embedded results
+- Title for embedded results
+- (Optionally) display an image and a card if an image is passed in to the component
+
+Let's implement it 👌
 
 ```jsx:title=src/components/seo.js
 import React from 'react'
@@ -140,7 +148,7 @@ import PropTypes from 'prop-types' // highlight-line
 import { StaticQuery, graphql } from 'gatsby'
 
 // highlight-next-line
-function SEO({ description, meta, title }) {
+function SEO({ description, meta, image: metaImage, title }) {
   return (
     <StaticQuery
       query={graphql`
@@ -149,6 +157,7 @@ function SEO({ description, meta, title }) {
             siteMetadata {
               author
               description
+              siteUrl
               keywords
             }
           }
@@ -156,6 +165,7 @@ function SEO({ description, meta, title }) {
       `}
       render={data => {
         const metaDescription = description || data.site.siteMetadata.description
+        const image = metaImage && metaImage.src ? `${data.site.siteMetadata.siteUrl}${metaImage.src}` : null
         return (
           <Helmet
             htmlAttributes={{
@@ -182,10 +192,6 @@ function SEO({ description, meta, title }) {
                   content: metaDescription
                 },
                 {
-                  name: 'twitter:card',
-                  content: 'summary'
-                },
-                {
                   name: 'twitter:creator',
                   content: data.site.siteMetadata.author
                 },
@@ -198,6 +204,29 @@ function SEO({ description, meta, title }) {
                   content: metaDescription
                 }
               ]
+                .concat(metaImage ? [
+                  {
+                    property: 'og:image',
+                    content: image
+                  },
+                   {
+                    property: 'og:image:width',
+                    content: metaImage.width
+                  },
+                  {
+                    property: 'og:image:height',
+                    content: metaImage.height
+                  },
+                  {
+                    name: 'twitter:card',
+                    content: 'summary_large_image'
+                  }
+                ] : [
+                  {
+                    name: 'twitter:card',
+                    content: 'summary'
+                  },
+                ])
                 .concat(meta)
                 // highlight-end
             }
@@ -217,6 +246,11 @@ SEO.defaultProps = {
 // highlight-start
 SEO.propTypes = {
   description: PropTypes.string,
+  image: PropTypes.shape({
+    src: PropTypes.string.isRequired(),
+    height: PropTypes.string.isRequired(),
+    width: PropTypes.string.isRequired()
+  }),
   meta: PropTypes.array,
   title: PropTypes.string.isRequired
 }
@@ -227,20 +261,11 @@ export default SEO
 
 Woo hoo! What we've done up to this point is enabled not only SEO for search engines like Google, Bing (people use Bing, right?) but _also_ in the process enabled enhanced sharing capabilities on social networks. That's a win-win if I've ever seen one 😍
 
-For further info, consider the following resources:
-
-- Facebook uses the [Open Graph][og] tag format
-- Twitter uses `twitter:` keywords. See [Twitter Cards][twitter-cards] for more info
-- Slack reads tags in the following order ([source][slack-unfurl])
-  1. oEmbed server
-  1. Twitter cards tags / Facebook Open Graph tags
-  1. HTML meta tags
-
 To bring it all home, let's consider actually _using_ this extensible SEO component.
 
 ## Using the SEO component
 
-We now have our extensible SEO component. It takes a `title` prop, and then (optionally) `description` and `meta` keywords. Let's wire it all up!
+We now have our extensible SEO component. It takes a `title` prop, and then (optionally) `description`, `meta`, and  `image` props. Let's wire it all up!
 
 ### In a page component
 
@@ -248,12 +273,12 @@ We now have our extensible SEO component. It takes a `title` prop, and then (opt
 import React from 'react'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import SEO from '../components/seo' // highlight-line
 
 function Index() {
   return (
     <Layout>
-      <SEO title="My Amazing Gatsby App" />
+      <SEO title="My Amazing Gatsby App" /> {/* highlight-line */}
       <h1>lol - pretend this is meaningful content</h1>
     </Layout>
   )
@@ -302,12 +327,16 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import SEO from '../components/seo' // highlight-line
 
+// highlight-start
 function BlogPost({ data }) {
-  const { markdown: { excerpt, html, frontmatter, image } } = data
+  const { markdown: { excerpt, html, frontmatter } } = data
+  const image = frontmatter.image ? frontmatter.image.childImageSharp.resize : null
+  // highlight-end
   return (
     <Layout>
+      {/* highlight-next-line */}
       <SEO title="My Amazing Gatsby App" description={excerpt} image={image}>
       <h1>{frontmatter.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -316,18 +345,25 @@ function BlogPost({ data }) {
 }
 
 export const blogPostQuery = graphql`
+  # highlight-start
   query BlogPostBySlug($slug: String!) {
     markdown: markdownRemark(fields: { $slug: { eq: $slug }}) {
       html
-      image: featuredImage {
-        childImageSharp {
-          resize(width: 1200) {
-            src
+      excerpt(pruneLength: 200)
+      frontmatter {
+        image: featured {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
           }
         }
+        title
       }
-      excerpt(pruneLength: 200)
     }
+    # highlight-end
   }
 `
 
@@ -336,7 +372,56 @@ export default BlogPost
 
 ## The Payoff
 
+Utilizing the techniques outlined in this post, we've made our Gatsby application SEO-friendly as well as sharable on common social networks. Don't just take _my_ word for it, though--check out the following examples of a sample blog post.
+
+### Google
+
+![Google](./images/google.png)
+
+### Facebook
+
+![Facebook](./images/facebook.png)
+
+### Twitter
+
+![Twitter](./images/twitter.png)
+
+### Slack
+
+![Slack](./images/slack.png)
+
+These SEO resources outlined in this post aren't _only_ a best practice, they're also a best practice enabled, by default. Available **today** in `gatsby-starter-default`, simply use:
+
+```shell
+npx gatsby new my-new-gatsby-app
+```
+
+and you'll have the `SEO` component available to maximize your SEO and social sharing capabilities. Check it out!
+
+## Additional Resources
+
+This article is merely a shallow dive into the depths of SEO optimization--consider it a primer for further learning. To begin to learn more, check out the following resources:
+
+- Facebook uses the [Open Graph][og] tag format
+- Twitter uses `twitter:` keywords. See [Twitter Cards][twitter-cards] for more info
+- Slack reads tags in the following order ([source][slack-unfurl])
+  1. oEmbed server
+  1. Twitter cards tags / Facebook Open Graph tags
+  1. HTML meta tags
+
+Perhaps even more importantly, check out how to _validate_ SEO with the following tools from [Google][google-validation], [Twitter][twitter-validation], and [Facebook][facebook-validation].
+
+Finally, check out the [`gatsby-seo-example`][gatsby-seo-example] for a ready-to-use starter for powering your Markdown-based blog.
+
+Thanks for reading--I cannot wait to see what you build next. 💪
+
 [unstructured-data]: https://www.gatsbyjs.org/docs/using-unstructured-data/
 [og]: https://developers.facebook.com/docs/sharing/webmasters/#markup
 [twitter-cards]: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards.html
 [slack-unfurl]: https://medium.com/slack-developer-blog/everything-you-ever-wanted-to-know-about-unfurling-but-were-afraid-to-ask-or-how-to-make-your-e64b4bb9254
+
+[google-validation]: https://support.google.com/webmasters/answer/6066468?hl=en
+[twitter-validation]: https://cards-dev.twitter.com/validator
+[facebook-validation]: https://developers.facebook.com/tools/debug/sharing
+
+[gatsby-seo-example]: https://github.com/DSchau/gatsby-seo-example
