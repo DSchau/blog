@@ -19,29 +19,21 @@ Search Engine Optimization (hereafter SEO) is something that you should want. Yo
 
 ## Implementation
 
-The core technology powering SEO is the humble, ubiquitiuous `meta` tag. You've probably seen something like:
+The core technology powering SEO is the humble, ubiquitiuous `meta` tag along with common tags like `title`. You've probably seen something like the below:
 
 ```html
+<title>My Wonderful App</title>
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 />
-```
-
-or further still with more of an SEO spin something as simple as the `description` and/or `keywords` properties:
-
-```html
 <meta
   name="description"
   content="This is probably some earth-shattering excerpt that is around ~200 characters or less"
 />
-<meta
-  name="keywords"
-  content="science dog, another term, do-i-use-spaces, hello"
-/>
 ```
 
-These are the _bare minimum_ requirements that should be implemented for simple and basic SEO. However--we can go further, and we can go further with the powerful combo of content rendered at _build time_ powered by Gatsby and GraphQL. Let's dive in.
+These are the _bare minimum_ requirements that should be implemented within an application's `head` tags for simple and basic SEO. However--we can go further, and we can go further with the powerful combo of content rendered at _build time_ powered by Gatsby and GraphQL. Let's dive in.
 
 ## Gatsby + GraphQL
 
