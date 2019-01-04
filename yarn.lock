@@ -708,10 +708,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@dschau/gatsby-theme-blog@0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@dschau/gatsby-theme-blog/-/gatsby-theme-blog-0.1.6.tgz#a269a3b6048575a4a7409a649ec09fd30424e841"
-  integrity sha512-U/hiun10qdrEhy2az1V1KhJPtRgkhJEcpJH76GYn5vZ2W1F7Es8614y7bMlKC+0YhWp2awlseAcdwyh68UtqDA==
+"@dschau/gatsby-theme-blog@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@dschau/gatsby-theme-blog/-/gatsby-theme-blog-0.2.0.tgz#ac735fee2b1afc3fec61e0a539f29d61e5c81ccd"
+  integrity sha512-naLX1S6JO/iCw/0nGA/yqjhv2nNS0YRyrL9uUi3p+CJxLLMFN/okgXip0oRr0SP5r9G8Xde22JAx/Q0+gGwewQ==
   dependencies:
     "@dschau/gatsby-theme-utils" "^0.0.3"
     "@dschau/particles.js" "2.0.0"
