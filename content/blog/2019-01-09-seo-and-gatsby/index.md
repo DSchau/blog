@@ -3,7 +3,7 @@ date: '2019-01-09'
 title: 'Search Engine Optimization with Gatsby'
 author: Dustin Schau
 featured: images/seo.jpg
-excerpt: 'SEO and Gatsby: A Perfect Pairing. Learn how Gatsby enables SEO utilizing React Helmet and smart defaults and how you can use these tools to implement your own!'
+excerpt: 'Learn how to use Gatsby to implement SEO with React Helmet and smart defaults!'
 tags:
   - gatsby
   - javascript
@@ -33,7 +33,7 @@ The core technology powering SEO is the humble, ubiquitiuous `meta` tag along wi
 />
 ```
 
-These are the _bare minimum_ requirements that should be implemented within an application's `head` tags for simple and basic SEO. However--we can go further, and we can go further with the powerful combo of content rendered at _build time_ powered by Gatsby and GraphQL. Let's dive in.
+These are the _bare minimum_ requirements that should be implemented within an application's `head` tags for simple and basic SEO. However--we can go further with the powerful combo of content rendered at _build time_ powered by Gatsby and GraphQL. Let's dive in.
 
 ## Gatsby + GraphQL
 
@@ -41,15 +41,15 @@ GraphQL is a crucial feature enabled via Gatsby (note: you don't [_have_ to use 
 
 ### `StaticQuery`
 
-Gatsby distinguishes between page-level queries and component queries. The former can use page GraphQL queries while the latter can use a new in Gatsby v2 feature called [`StaticQuery`][gatsby-static-query]. A StaticQuery will be parsed, evaluated, and injected at _build time_ into the component that is requesting the data. This is a perfect scenario in which we can create an SEO component with sane defaults that can be easily extended.
+Gatsby distinguishes between page-level queries and component queries. The former can use page GraphQL queries while the latter can use a new in Gatsby v2 feature called [`StaticQuery`][gatsby-static-query]. A StaticQuery will be parsed, evaluated, and injected at _build time_ into the component that is requesting the data. We can use the data from this query to fall back to sane defaults, while also providing an extensible, reusable component.
 
-### Creating the component
+### Creating the SEO component
 
 Using the power and flexibility of React, we can create a React component to power this functionality.
 
 > Note: `react-helmet` is enabled, by default, in gatsby-starter-default and gatsby-starter-blog
 >
-> If you're not using those: [follow this guide for installation instructions][gatsby-plugin-react-helmet]
+> If you're not using those starters [follow this guide for installation instructions][gatsby-plugin-react-helmet]
 
 ```jsx:title=src/components/seo.js
 import React from 'react';
@@ -129,9 +129,9 @@ function SEO() {
 export default SEO;
 ```
 
-whew, getting closer! This will now render the `meta` `description` tag, and will do so using content injected at build-time with the `StaticQuery` component. Additionally, it will add the `lang="en"` attribute to our root-level `html` tag to silence that pesky Lighthouse warning 😉
+Whew, getting closer! This will now render the `meta` `description` tag, and will do so using content injected at build-time with the `StaticQuery` component. Additionally, it will add the `lang="en"` attribute to our root-level `html` tag to silence that pesky Lighthouse warning 😉
 
-If you remember earlier, I claimed this was the bare bones, rudimentary approach to SEO, and that still holds true. Let's enhance this functionality this and get some useful functionality for sharing a page via social networks like Facebook, Twitter, and Slack.
+If you remember earlier, I claimed this was the bare bones, rudimentary approach to SEO, and that still holds true. Let's enhance this functionality and get some useful functionality for sharing a page via social networks like Facebook, Twitter, and Slack.
 
 ### Implementing social SEO
 
@@ -291,7 +291,7 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 // highlight-next-line
-function SEO({ description, meta, image: metaImage, pathname, title }) {
+function SEO({ description, meta, image: metaImage, slug, title }) {
   return (
     <StaticQuery
       query={graphql`
@@ -315,7 +315,7 @@ function SEO({ description, meta, image: metaImage, pathname, title }) {
             : null;
         // highlight-next-line
         const canonical = pathname
-          ? `${data.site.siteMetadata.siteUrl}${pathname}`
+          ? `${data.site.siteMetadata.siteUrl}${slug}`
           : null;
         return (
           <Helmet
@@ -413,14 +413,16 @@ SEO.propTypes = {
   }),
   meta: PropTypes.array,
   // highlight-next-line
-  pathname: PropTypes.string,
+  slug: PropTypes.string,
   title: PropTypes.string.isRequired,
 };
 
 export default SEO;
 ```
 
-To bring it all home, let's consider actually _using_ this extensible SEO component.
+Woo hoo! Lot to digest here, but we've enabled adding an _absolute_ canonical link simply my passing in a `slug` prop and prefixing with our `siteUrl`.
+
+To bring it all home, it's high time to begin actually _using_ this extensible SEO component to show all of these moving parts coming together to deliver a great SEO experience.
 
 ## Using the SEO component
 
@@ -525,8 +527,8 @@ export const blogPostQuery = graphql`
         title
       }
     }
-    # highlight-end
   }
+  # highlight-end
 `
 
 export default BlogPost
@@ -542,7 +544,7 @@ There are a few aspects worth nothing here:
 
 ## The Payoff
 
-Utilizing the techniques outlined in this post, we've made our Gatsby application SEO-friendly as well as sharable on common social networks. Don't just take _my_ word for it, though--check out the following examples of a sample blog post.
+Using the techniques outlined in this post, we've made our Gatsby application SEO-friendly as well as sharable on common social networks. Don't just take _my_ word for it, though--check out the following examples of a sample blog post.
 
 ### Google
 
@@ -560,6 +562,8 @@ Utilizing the techniques outlined in this post, we've made our Gatsby applicatio
 
 ![Slack](./images/slack.png)
 
+To learn more about these validations were created, check out how to _validate_ SEO with the following tools from [Google][google-validation], [Twitter][twitter-validation], and [Facebook][facebook-validation].
+
 These SEO resources outlined in this post aren't _only_ a best practice, they're also a best practice enabled, by default. Available **today** in `gatsby-starter-default`, simply use:
 
 ```shell
@@ -570,7 +574,11 @@ and you'll have the `SEO` component available to maximize your SEO and social sh
 
 ## Further Learning
 
-This article is merely a shallow dive into the depths of SEO optimization--consider it a primer for further learning. To learn more, check out the following resources:
+This article is merely a shallow dive into the depths of SEO optimization--consider it a primer for further learning and a gentle introduction to some SEO concepts with a Gatsby twist. To truly master these concepts is outside the scope of this article, but it truly is fascinating stuff that can directly lead to more eyes on your content!
+
+Thanks for reading--I cannot wait to see what you build next. 💪
+
+### References
 
 - Facebook uses the [Open Graph][og] tag format
 - Twitter uses `twitter:` keywords. See [Twitter Cards][twitter-cards] for more info
@@ -578,12 +586,9 @@ This article is merely a shallow dive into the depths of SEO optimization--consi
   1. oEmbed server
   1. Twitter cards tags / Facebook Open Graph tags
   1. HTML meta tags
-
-Perhaps even more importantly, check out how to _validate_ SEO with the following tools from [Google][google-validation], [Twitter][twitter-validation], and [Facebook][facebook-validation].
-
-Finally, check out the [`gatsby-seo-example`][gatsby-seo-example] for a ready-to-use starter for powering your Markdown-based blog.
-
-Thanks for reading--I cannot wait to see what you build next. 💪
+- Both [Google][google-json-ld] and [Apple][apple-json-ld] offer support for JSON-LD, which is _not covered_ in this guide
+  - If you'd like to learn more, check out [this excellent guide](https://nystudio107.com/blog/json-ld-structured-data-and-erotica) for more info on JSON-LD
+- Check out the [`gatsby-seo-example`][gatsby-seo-example] for a ready-to-use starter for powering your Markdown-based blog.
 
 [gatsby-starter-default]: https://github.com/gatsbyjs/gatsby-starter-default
 [gatsby-static-query]: https://www.gatsbyjs.org/docs/static-query/
@@ -601,3 +606,5 @@ Thanks for reading--I cannot wait to see what you build next. 💪
 [twitter-validation]: https://cards-dev.twitter.com/validator
 [facebook-validation]: https://developers.facebook.com/tools/debug/sharing
 [gatsby-seo-example]: https://github.com/DSchau/gatsby-seo-example
+[google-json-ld]: https://developers.google.com/search/docs/guides/intro-structured-data
+[apple-json-ld]: https://developer.apple.com/library/archive/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-DontLinkElementID_2
