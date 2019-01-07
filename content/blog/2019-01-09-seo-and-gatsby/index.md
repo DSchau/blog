@@ -1,9 +1,9 @@
 ---
-date: "2019-01-04"
-title: "Search Engine Optimization with Gatsby"
+date: '2019-01-09'
+title: 'Search Engine Optimization with Gatsby'
 author: Dustin Schau
 featured: images/seo.jpg
-excerpt: "SEO and Gatsby: A Perfect Pairing. Learn how Gatsby implements SEO utilizing React Helmet and smart defaults and how you can use these tools to implement your own!"
+excerpt: 'SEO and Gatsby: A Perfect Pairing. Learn how Gatsby enables SEO utilizing React Helmet and smart defaults and how you can use these tools to implement your own!'
 tags:
   - gatsby
   - javascript
@@ -11,7 +11,7 @@ tags:
   - seo
 ---
 
-Search Engine Optimization (hereafter SEO) is something that you should want. You've possibly even been approached by an SEO _expert_ who can maximize your revenue and page views just by following these **Three Simple Tricks**! However, relatively few make the concerted effort to implement SEO in their web app. In this post, I'll share some of the ins and outs of SEO and how you can implement common, simple SEO patterns in your Gatsby web app, today. By the end of this post you'll know how to do the following:
+Search Engine Optimization (hereafter SEO) is something you should be considering. Perhaps you've even been approached by an SEO _expert_ who can maximize your revenue and page views just by following these **Three Simple Tricks**! However, relatively few make the concerted effort to implement SEO in their web app. In this post, I'll share some of the ins and outs of SEO and how you can implement common, simple SEO patterns in your Gatsby web app, today. By the end of this post you'll know how to do the following:
 
 - Implement SEO patterns with [react-helmet][react-helmet]
 - Create an optimized social sharing card for Twitter, Facebook, and Slack
@@ -52,10 +52,10 @@ Using the power and flexibility of React, we can create a React component to pow
 > If you're not using those: [follow this guide for installation instructions][gatsby-plugin-react-helmet]
 
 ```jsx:title=src/components/seo.js
-import React from "react";
+import React from 'react';
 // highlight-start
-import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
 // highlight-end
 
 function SEO() {
@@ -87,9 +87,9 @@ This component doesn't _do_ anything yet, but we're laying the foundation for a 
 The `StaticQuery` component accepts a render prop, and at this point, we're simply returning `null` to render nothing. Let's _actually_ render something and build out our prototype for this SEO component. Let's iterate further.
 
 ```jsx:title=src/components/seo.js
-import React from "react";
-import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
+import React from 'react';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
 
 function SEO() {
   return (
@@ -108,15 +108,15 @@ function SEO() {
       render={data => (
         <Helmet
           htmlAttributes={{
-            lang: "en"
+            lang: 'en',
           }}
           meta={
             // highlight-start
             [
               {
-                name: "description",
-                content: data.site.siteMetadata.description
-              }
+                name: 'description',
+                content: data.site.siteMetadata.description,
+              },
             ]
             // highlight-end
           }
@@ -144,10 +144,10 @@ In addition to SEO for actual _search_ engines we also want those pretty cards t
 Let's implement it 👌
 
 ```jsx:title=src/components/seo.js
-import React from "react";
-import Helmet from "react-helmet";
-import PropTypes from "prop-types"; // highlight-line
-import { StaticQuery, graphql } from "gatsby";
+import React from 'react';
+import Helmet from 'react-helmet';
+import PropTypes from 'prop-types'; // highlight-line
+import { StaticQuery, graphql } from 'gatsby';
 
 // highlight-next-line
 function SEO({ description, meta, image: metaImage, title }) {
@@ -177,66 +177,66 @@ function SEO({ description, meta, image: metaImage, title }) {
         return (
           <Helmet
             htmlAttributes={{
-              lang: "en"
+              lang: 'en',
             }}
             title={title}
             meta={
               [
                 {
-                  name: "description",
-                  content: metaDescription
+                  name: 'description',
+                  content: metaDescription,
                 },
                 {
-                  name: "keywords",
-                  content: data.site.siteMetadata.keywords.join(",")
+                  name: 'keywords',
+                  content: data.site.siteMetadata.keywords.join(','),
                 },
                 // highlight-start
                 {
-                  property: "og:title",
-                  content: title
+                  property: 'og:title',
+                  content: title,
                 },
                 {
-                  property: "og:description",
-                  content: metaDescription
+                  property: 'og:description',
+                  content: metaDescription,
                 },
                 {
-                  name: "twitter:creator",
-                  content: data.site.siteMetadata.author
+                  name: 'twitter:creator',
+                  content: data.site.siteMetadata.author,
                 },
                 {
-                  name: "twitter:title",
-                  content: title
+                  name: 'twitter:title',
+                  content: title,
                 },
                 {
-                  name: "twitter:description",
-                  content: metaDescription
-                }
+                  name: 'twitter:description',
+                  content: metaDescription,
+                },
               ]
                 .concat(
                   metaImage
                     ? [
                         {
-                          property: "og:image",
-                          content: image
+                          property: 'og:image',
+                          content: image,
                         },
                         {
-                          property: "og:image:width",
-                          content: metaImage.width
+                          property: 'og:image:width',
+                          content: metaImage.width,
                         },
                         {
-                          property: "og:image:height",
-                          content: metaImage.height
+                          property: 'og:image:height',
+                          content: metaImage.height,
                         },
                         {
-                          name: "twitter:card",
-                          content: "summary_large_image"
-                        }
+                          name: 'twitter:card',
+                          content: 'summary_large_image',
+                        },
                       ]
                     : [
                         {
-                          name: "twitter:card",
-                          content: "summary"
-                        }
+                          name: 'twitter:card',
+                          content: 'summary',
+                        },
                       ]
                 )
                 .concat(meta)
@@ -251,7 +251,7 @@ function SEO({ description, meta, image: metaImage, title }) {
 
 // highlight-start
 SEO.defaultProps = {
-  meta: []
+  meta: [],
 };
 // highlight-end
 
@@ -261,31 +261,178 @@ SEO.propTypes = {
   image: PropTypes.shape({
     src: PropTypes.string.isRequired(),
     height: PropTypes.string.isRequired(),
-    width: PropTypes.string.isRequired()
+    width: PropTypes.string.isRequired(),
   }),
   meta: PropTypes.array,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 // highlight-end
 
 export default SEO;
 ```
 
-Woo hoo! What we've done up to this point is enabled not only SEO for search engines like Google, Bing (people use Bing, right?) but we've also laid the groundwork for enhanced sharing capabilities on social networks. That's a win-win if I've ever seen one 😍
+Woo hoo! What we've done up to this point is enabled not only SEO for search engines like Google, Bing (people use Bing, right?) but we've also laid the groundwork for enhanced sharing capabilities on social networks. That's a win-win if I've ever seen one 😍 Finally, we need to add support for one of the more useful functionalities for SEO, specifically a canonical link.
+
+## `link rel="canonical"`
+
+A canonical link is a hint to a search engine that this is the _source_ for this content. It helps resolve duplicate content issues. For instance, if you have several paths to the same content, you can use a canonical link as akin to a soft redirect which will **not** harm your search ranking if implemented correctly.
+
+To implement this functionality, we will need to:
+
+1. Enable passing a `pathname` prop to our SEO component
+1. Prefix our `pathname` prop with our `siteUrl` (from `gatsby-config.js`)
+   - A canonical link should be _absolute_ (e.g. https://your-site.com/canonical-link), so we will need to prefix with this `siteUrl`
+1. Tie into the `link` prop of `react-helmet` to create a `<link rel="canonical" >` tag
+
+```jsx
+import React from 'react';
+import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
+
+// highlight-next-line
+function SEO({ description, meta, image: metaImage, pathname, title }) {
+  return (
+    <StaticQuery
+      query={graphql`
+        {
+          site {
+            siteMetadata {
+              author
+              description
+              siteUrl
+              keywords
+            }
+          }
+        }
+      `}
+      render={data => {
+        const metaDescription =
+          description || data.site.siteMetadata.description;
+        const image =
+          metaImage && metaImage.src
+            ? `${data.site.siteMetadata.siteUrl}${metaImage.src}`
+            : null;
+        // highlight-next-line
+        const canonical = pathname
+          ? `${data.site.siteMetadata.siteUrl}${pathname}`
+          : null;
+        return (
+          <Helmet
+            htmlAttributes={{
+              lang: 'en',
+            }}
+            title={title}
+            link={
+              // highlight-start
+              canonical
+                ? [
+                    {
+                      rel: 'canonical',
+                      href: canonical,
+                    },
+                  ]
+                : []
+              //highlight-end
+            }
+            meta={[
+              {
+                name: 'description',
+                content: metaDescription,
+              },
+              {
+                name: 'keywords',
+                content: data.site.siteMetadata.keywords.join(','),
+              },
+              {
+                property: 'og:title',
+                content: title,
+              },
+              {
+                property: 'og:description',
+                content: metaDescription,
+              },
+              {
+                name: 'twitter:creator',
+                content: data.site.siteMetadata.author,
+              },
+              {
+                name: 'twitter:title',
+                content: title,
+              },
+              {
+                name: 'twitter:description',
+                content: metaDescription,
+              },
+            ]
+              .concat(
+                metaImage
+                  ? [
+                      {
+                        property: 'og:image',
+                        content: image,
+                      },
+                      {
+                        property: 'og:image:width',
+                        content: metaImage.width,
+                      },
+                      {
+                        property: 'og:image:height',
+                        content: metaImage.height,
+                      },
+                      {
+                        name: 'twitter:card',
+                        content: 'summary_large_image',
+                      },
+                    ]
+                  : [
+                      {
+                        name: 'twitter:card',
+                        content: 'summary',
+                      },
+                    ]
+              )
+              .concat(meta)}
+          />
+        );
+      }}
+    />
+  );
+}
+
+SEO.defaultProps = {
+  meta: [],
+};
+
+SEO.propTypes = {
+  description: PropTypes.string,
+  image: PropTypes.shape({
+    src: PropTypes.string.isRequired(),
+    height: PropTypes.string.isRequired(),
+    width: PropTypes.string.isRequired(),
+  }),
+  meta: PropTypes.array,
+  // highlight-next-line
+  pathname: PropTypes.string,
+  title: PropTypes.string.isRequired,
+};
+
+export default SEO;
+```
 
 To bring it all home, let's consider actually _using_ this extensible SEO component.
 
 ## Using the SEO component
 
-We now have our extensible SEO component. It takes a `title` prop, and then (optionally) `description`, `meta`, and `image` props. Let's wire it all up!
+We now have our extensible SEO component. It takes a `title` prop, and then (optionally) `description`, `meta`, `image`, and `pathname` props. Let's wire it all up!
 
 ### In a page component
 
 ```jsx:title=src/pages/index.js
-import React from "react";
+import React from 'react';
 
-import Layout from "../components/layout";
-import SEO from "../components/seo"; // highlight-line
+import Layout from '../components/layout';
+import SEO from '../components/seo'; // highlight-line
 
 function Index() {
   return (
@@ -341,14 +488,15 @@ import Layout from '../components/layout'
 import SEO from '../components/seo' // highlight-line
 
 // highlight-start
-function BlogPost({ data }) {
-  const { markdown: { excerpt, html, frontmatter } } = data
+function BlogPost({ data, location }) {
+  const { markdown: { excerpt, html, fields, frontmatter } } = data
   const image = frontmatter.image ? frontmatter.image.childImageSharp.resize : null
   // highlight-end
   return (
     <Layout>
-      {/* highlight-next-line */}
-      <SEO title="My Amazing Gatsby App" description={excerpt} image={image}>
+      {/* highlight-start */}
+      <SEO title="My Amazing Gatsby App" description={excerpt} image={image} pathname={fields.slug}>
+      /* highlight-end */}
       <h1>{frontmatter.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
@@ -360,7 +508,10 @@ export const blogPostQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     markdown: markdownRemark(fields: { $slug: { eq: $slug }}) {
       html
-      excerpt(pruneLength: 200)
+      excerpt(pruneLength: 160)
+      fields {
+        slug
+      }
       frontmatter {
         image: featured {
           childImageSharp {
@@ -380,6 +531,14 @@ export const blogPostQuery = graphql`
 
 export default BlogPost
 ```
+
+There are a few aspects worth nothing here:
+
+1. We're using `pruneLength: 160` for the excerpt; this is because [SEO meta descriptions should be between 150-170 characters][seo-description-length]
+
+- This is a slick feature of Gatsby's GraphQL capabilities, and will truncate (e.g. with a trailing `...`) appropriately. Perfect!
+
+1. The image querying is intentionally simplified, but a good base to build upon. There are specific size and aspect ratio requirements for [both Facebook][facebook-og-image] and [Twitter][twitter-image].
 
 ## The Payoff
 
@@ -434,6 +593,9 @@ Thanks for reading--I cannot wait to see what you build next. 💪
 [unstructured-data]: https://www.gatsbyjs.org/docs/using-unstructured-data/
 [og]: https://developers.facebook.com/docs/sharing/webmasters/#markup
 [twitter-cards]: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards.html
+[seo-description-length]: https://yoast.com/shorter-meta-descriptions/
+[facebook-og-image]: https://developers.facebook.com/docs/sharing/best-practices#images
+[twitter-image]: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image.html
 [slack-unfurl]: https://medium.com/slack-developer-blog/everything-you-ever-wanted-to-know-about-unfurling-but-were-afraid-to-ask-or-how-to-make-your-e64b4bb9254
 [google-validation]: https://support.google.com/webmasters/answer/6066468?hl=en
 [twitter-validation]: https://cards-dev.twitter.com/validator
