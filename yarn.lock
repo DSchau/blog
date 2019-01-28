@@ -1867,10 +1867,10 @@ babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.4.2:
     cosmiconfig "^5.0.5"
     resolve "^1.8.1"
 
-babel-plugin-remove-graphql-queries@^2.5.2:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.5.2.tgz#7e1c11f381c5c94ff3dec6ca42ee06d1df396175"
-  integrity sha512-txof6/YcbYgl0CTPFJPCIkaxqAkLz0JZzzl9jp9fd3csRT2vpKKLmCiD5vWApRvBcQ4LB5pa9Rmkwns6xBMoaA==
+babel-plugin-remove-graphql-queries@^2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.5.3.tgz#7316a0ada1c78fa0e8f9f47e6a9d5cbe4dc7f7ac"
+  integrity sha512-jfHSx/ApuKEvax/gnLKn9TnbVED1wyC6PLnk8PU10T0lN3kue/oJ+IPcJPC+4FJgbdK/gQ76IcwC7Y0vLUP2uw==
 
 babel-plugin-syntax-class-properties@^6.8.0:
   version "6.13.0"
@@ -6294,10 +6294,10 @@ gatsby-transformer-sharp@^2.1.9:
     probe-image-size "^4.0.0"
     sharp "^0.21.0"
 
-gatsby@2.0.101:
-  version "2.0.101"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.101.tgz#ea13233d7f3e0625df66dc7f013b6c7656c43038"
-  integrity sha512-kSvGFd62RYzPwF6VqdCIm9yqHTAUuQmjRqArlcJaVued+4LwjOvLe5xie7ka6ylDoBxn+VzXujqjgb/+YbuYEA==
+gatsby@2.0.103:
+  version "2.0.103"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.103.tgz#e8d666c269cf67e30f10e9778d9b52b3ebba9101"
+  integrity sha512-5YMc23dn0k3lV9/cGrP08dS7r6K/KfrFliaBBXBbQsaLF3IdAGkojbqUXue1UaI1Kzdl8kNPopQYQoa0oONxRw==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -6313,7 +6313,7 @@ gatsby@2.0.101:
     babel-loader "^8.0.0"
     babel-plugin-add-module-exports "^0.2.1"
     babel-plugin-dynamic-import-node "^1.2.0"
-    babel-plugin-remove-graphql-queries "^2.5.2"
+    babel-plugin-remove-graphql-queries "^2.5.3"
     babel-preset-gatsby "^0.1.6"
     better-opn "0.1.4"
     better-queue "^3.8.6"
