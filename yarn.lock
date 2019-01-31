@@ -6294,10 +6294,10 @@ gatsby-transformer-sharp@^2.1.9:
     probe-image-size "^4.0.0"
     sharp "^0.21.0"
 
-gatsby@2.0.106:
-  version "2.0.106"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.106.tgz#e3a24a976dd36d5ef34b07b06ff5439ad83359b7"
-  integrity sha512-hBJcJEkTF6/APZPlw1Pl26gk4oU1BGvNCdezJIfUeT+OsepAfY1iq6FwpGWW0iImbBp/hEvsHPsbuRvv5Edp1w==
+gatsby@2.0.107:
+  version "2.0.107"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.107.tgz#45a2e12fbc186a15a35ddf02f376c897e2496b44"
+  integrity sha512-GYqYEUg6TstZQ/TBDABiogdQO6jTjIZlGvOWCrCYBPGZf0eMm4xVSP0VxM0uMAZo+y/kRNrLdxBv9jIPNGYGnQ==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -6385,7 +6385,6 @@ gatsby@2.0.106:
     null-loader "^0.1.1"
     opentracing "^0.14.3"
     optimize-css-assets-webpack-plugin "^5.0.1"
-    parse-filepath "^1.0.1"
     physical-cpu-count "^2.0.0"
     postcss-flexbugs-fixes "^3.0.0"
     postcss-loader "^2.1.3"
