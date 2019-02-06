@@ -1,8 +1,5 @@
 {
   "extends": [
     "config:base"
-  ],
-  "patch": {
-    "automerge": true
-  }
+  ]
 }
