@@ -1,5 +1,5 @@
 ---
-date: "2019-01-04"
+date: 2019-01-04
 title: "Search Engine Optimization with Gatsby"
 author: Dustin Schau
 featured: images/seo.jpg

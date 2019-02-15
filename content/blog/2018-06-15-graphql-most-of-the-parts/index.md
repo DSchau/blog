@@ -1,5 +1,5 @@
 ---
-date: "2018-06-10T17:15:34.619Z"
+date: 2018-06-10T17:15:34.619Z
 title: "GraphQL: Most of the Parts"
 tags:
   - graphql

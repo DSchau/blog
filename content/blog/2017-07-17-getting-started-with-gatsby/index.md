@@ -1,6 +1,6 @@
 ---
 title: Getting Started with Gatsby
-date: "2017-07-17T17:12:33.962Z"
+date: 2017-07-17T17:12:33.962Z
 tags:
   - gatsby
   - react
@@ -148,7 +148,7 @@ The content of this Markdown file will be our blog post, authored in Markdown (o
 ```markdown
 ---
 path: "/hello-world"
-date: "2017-07-12T17:12:33.962Z"
+date: 2017-07-12T17:12:33.962Z
 title: "My First Gatsby Post"
 ---
 

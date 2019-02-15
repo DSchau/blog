@@ -1,5 +1,5 @@
 ---
-date: "2018-09-04T20:50:21.302Z"
+date: 2018-09-04T20:50:21.302Z
 title: "My Next Chapter"
 excerpt: "I am happy to announce that I've accepted a role as Software Engineer for Gatsby Inc, a startup working on making a more performant web through smart defaults and optimizations."
 featured: images/my-next-chapter.jpg

@@ -1,5 +1,5 @@
 ---
-date: "2017-07-21T20:44:35.199Z"
+date: 2017-07-21T20:44:35.199Z
 title: Writing an Open Source JavaScript Library
 tags:
   - open source
