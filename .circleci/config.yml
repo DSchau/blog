@@ -42,7 +42,7 @@ jobs:
             - "*"
   deploy:
     docker:
-      - image: circleci/python:2.7-jessie
+      - image: circleci/python:3.6-jessie
     steps:
       - attach_workspace:
           at: public
