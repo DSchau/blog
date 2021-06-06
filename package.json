@@ -7,8 +7,8 @@
   "dependencies": {
     "@dschau/gatsby-theme-blog": "^0.2.3",
     "gatsby": "^2.1.4",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2"
+    "react": "16.14.0",
+    "react-dom": "16.14.0"
   },
   "devDependencies": {
     "husky": "1.3.1",
