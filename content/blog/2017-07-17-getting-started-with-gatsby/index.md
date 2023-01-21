@@ -360,7 +360,7 @@ The `createPage` API accepts an object which requires `path` and `component` pro
 
 We can run `yarn develop` at this point, and then navigate to `http://localhost:8000/hello-world` to see our first blog post, which should look something like below:
 
-![My first blog post with Gatsby](./images/my-first-blog-post.png)
+![My first blog post with Gatsby](./images/my-first-blog-post.jpeg)
 
 At this point, we've created a single static blog post as an HTML file, which was created by a React component and several GraphQL queries. However, this isn't a blog! We can't expect our users to guess the path of each post, we need to have an index or listing page, where we display each blog post, a short snippet, and a link to the full blog post. Wouldn't you know it, we can do this incredibly easily with Gatsby, using a similar strategy as we used in our blog template, e.g. a React component and a GraphQL query.
 
