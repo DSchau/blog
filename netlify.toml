@@ -1,7 +1,11 @@
 [[redirects]]
-  from = "/search-engine-optimization-with-gatsby"
-  to = "https://dustinschau.com/posts/2019-01-04-seo-and-gatsby/"
+  from = "/*"
+  to = "https://dustinschau.com/posts/:splat"
   status = 301
-  force = false
-  query = {path = ":path"}
-  conditions = {Language = ["en"], Country = ["US"], Role = ["admin"]}
+  force = true
+
+[[redirects]]
+  from = "/"
+  to = "https://dustinschau.com/posts"
+  status = 301
+  force = true
