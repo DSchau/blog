@@ -1,0 +1,7 @@
+[[redirects]]
+  from = "/search-engine-optimization-with-gatsby"
+  to = "https://dustinschau.com/posts/2019-01-04-seo-and-gatsby/"
+  status = 301
+  force = false
+  query = {path = ":path"}
+  conditions = {Language = ["en"], Country = ["US"], Role = ["admin"]}
