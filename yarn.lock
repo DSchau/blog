@@ -6057,9 +6057,7 @@ gatsby-transformer-sharp@^2.1.9:
     sharp "^0.21.0"
 
 gatsby@^2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.1.4.tgz#a69ee6212d37326cb93238a5cf21d3237d7a6f16"
-  integrity sha512-WWbl7DkF6FSL/HE+hMEUxPPi8vGvEieGLTvXOxvS5S1C0FF3P2GOr/TP28TVqzaEQ4sPKtlPeV7s2v1P3MW/2A==
+  version "2.32.13"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
